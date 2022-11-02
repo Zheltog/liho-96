@@ -225,11 +225,11 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 30d266dc803164048a6436f32c18ef1a, type: 3}
+  m_Sprite: {fileID: 21300000, guid: df278e273a6ec8c458d802145f92b448, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
-  m_FillMethod: 4
+  m_FillMethod: 0
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
@@ -605,8 +605,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u041F\u0440\u0438\u043C\u0435\u0440 \u0442\u0435\u043A\u0441\u0442\u0430.
-    \u041D\u043E\u0440\u043C?"
+  m_text: ...
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: f5e2f29014125154582b2f5e6e5b5577, type: 2}
   m_sharedMaterial: {fileID: 8484781638188740009, guid: f5e2f29014125154582b2f5e6e5b5577, type: 2}
@@ -695,7 +694,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a5ca0b7e7a41c748b4043ebd70d4ca7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  secondsBeforeNextSymbol: 0.1
+  secondsBeforeNextSymbol: 0.085
 --- !u!1 &749773711
 GameObject:
   m_ObjectHideFlags: 0
@@ -753,7 +752,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "> \xAB\u041A\u043E\u0442\u043B\u0435\u0442\u043A\u0443 \u0441 \u043F\u044E\u0440\u0435\u0448\u043A\u043E\u0439\xBB"
+  m_text: "> \xAB\u041A\u043E\u0442\u043B\u0435\u0442\u0443 \u0441 \u043F\u044E\u0440\u0435\u0448\u043A\u043E\u0439\xBB"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ed4e1291b97678349b35d914e99517a6, type: 2}
   m_sharedMaterial: {fileID: -7953744970066264230, guid: ed4e1291b97678349b35d914e99517a6, type: 2}
