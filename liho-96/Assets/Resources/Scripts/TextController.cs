@@ -1,4 +1,6 @@
 using System.Collections;
+using System.Linq;
+using Newtonsoft.Json;
 using TMPro;
 using UnityEngine;
 
@@ -30,6 +32,10 @@ public class TextController : MonoBehaviour
 
     private void Start()
     {
+        var jsonString = Resources.Load<TextAsset>("Text/gameStructure").text;
+        var structure = JsonConvert.DeserializeObject<GameStructure>(jsonString);
+        _phrases = structure.Frames.Values.Select(s => s.Text).ToArray();
+        
         _text = GetComponent<TextMeshProUGUI>();
     }
 
@@ -51,6 +57,8 @@ public class TextController : MonoBehaviour
         }
         
         _currentPhraseFinal = _phrases[_currentPhraseIndex];
+        Debug.Log(_currentPhraseFinal);
+        
         _currentPhraseChars = _currentPhraseFinal.ToCharArray();
         _currentPhrase = "";
         _currentPhraseIndex++;

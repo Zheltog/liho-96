@@ -1,0 +1,114 @@
+{
+  "StartingFrame": "start",
+  "StartingFlags": [
+    "test_var",
+    "aaa"
+  ],
+  "Frames": {
+    "start": {
+      "Picture": "rainy_road.png",
+      "Text": "По заказу кинокомпании FITFIJA Pictures\n34мб Productions и Noormak Studios представляют...",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "start_1"
+      }
+    },
+    "start_1": {
+      "Animation": "driving_car",
+      "Text": "...",
+      "Music": "music.mp3",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "start_2"
+      }
+    },
+    "start_2": {
+      "Picture": "car_driving_on_a_rainy_road.png",
+      "Text": "Ноябрь, 1996 год. Дорога к небольшому провинциальному городу ведет через лес. Одинокая машина едет под проливным дождём.",
+      "TextDelay": 0.1,
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "start_3"
+      }
+    },
+    "start_3": {
+      "Picture": "courier_in_a_car.png",
+      "Text": "Молчаливый курьер везёт груз. Он никогда не спрашивает, что и кому он доставляет. За это его и ценят - и, возможно, лишь поэтому он до сих пор не получил пулю в лоб.",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "start_4"
+      }
+    },
+    "start_4": {
+      "Picture": "courier_in_a_car.png",
+      "Text": "Его имя? Райан Гослинг.",
+      "TextSound": "honk.mp3",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "start_5"
+      }
+    },
+    "start_5": {
+      "Picture": "courier_in_a_car.png",
+      "Text": "Да?",
+      "Type": "Choice",
+      "Choices": [
+        {
+          "Text": "Да",
+          "Visibility": [
+            {
+              "Type": "And",
+              "Flags": [
+                "prostak",
+                "est_rubl"
+              ]
+            }
+          ],
+          "Transition": {
+            "Type": "Frame",
+            "Next": "start_6"
+          }
+        },
+        {
+          "Text": "Пизда",
+          "Visibility": [
+            {
+              "Type": "Or",
+              "Flags": [
+                "derzky",
+                "toopoy"
+              ]
+            }
+          ],
+          "Transition": {
+            "Type": "Scene",
+            "Next": "poluchit_pizdy",
+            "Actions": [
+              {
+                "Type": "Add",
+                "Flag": "ty_loh"
+              },
+              {
+                "Type": "Remove",
+                "Flag": "ty_norm"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "start_6": {
+      "Picture": "courier_in_a_car.png",
+      "Text": "Хорошо.",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Exit"
+      }
+    }
+  }
+}
