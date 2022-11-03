@@ -1,6 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
-using Newtonsoft.Json;
 using TMPro;
 using UnityEngine;
 
@@ -10,12 +8,6 @@ public class FrameTextController : MonoBehaviour
     public float secondsBeforeNextSymbol = 0.075f;
 
     public float delayMultiplier = 5;
-
-    private Dictionary<string, Frame> _frames;
-    
-    private Frame _startFrame;
-
-    private Frame _currentFrame;
 
     private char[] _currentPhraseChars;
 
@@ -27,27 +19,25 @@ public class FrameTextController : MonoBehaviour
 
     private TextMeshProUGUI _textBox;
 
+    private GameController _gameController;
+
     private void Start()
     {
-        var jsonString = Resources.Load<TextAsset>("Text/gameStructure").text;
-        var structure = JsonConvert.DeserializeObject<GameStructure>(jsonString);
-
-        _frames = structure.Frames;
-        _startFrame = _frames[structure.StartingFrame];
-
         _textBox = GetComponent<TextMeshProUGUI>();
+        _gameController = GameObject.FindWithTag("GameController").GetComponent<GameController>();
     }
 
     private void Update()
     {
         if (Input.GetMouseButtonDown(0))
         {
-            UpdatePhrase();
+            UpdateText();
         }
     }
 
-    private void UpdatePhrase()
+    private void UpdateText()
     {
+        // Печатает весь текст, если он ещё не был отображен полностью.
         if (_isPrinting)
         {
             _textBox.text = _currentPhraseFinal;
@@ -55,25 +45,24 @@ public class FrameTextController : MonoBehaviour
             return;
         }
 
-        _currentFrame = NextFrame();
-        _currentPhraseFinal = _currentFrame.Text;
-        
-        Debug.Log(_currentPhraseFinal);
-        
-        _currentPhraseChars = _currentPhraseFinal.ToCharArray();
-        _currentPhrase = "";
-        _isPrinting = true;
-        StartCoroutine(PrintNextPhrase());
-    }
-
-    private Frame NextFrame()
-    {
-        if (_currentFrame == null)
+        // Запускает переход, если у кадра не было вариантов выбора
+        if (GameStateHolder.State == State.Start ||
+            GameStateHolder.CurrentFrame.Type != FrameType.Choice)
         {
-            return _startFrame;
+            _gameController.SimpleTransition();
         }
 
-        return _frames[_currentFrame.Transition.Next];
+        // Если после перехода попали на новый кадр - запускает показ нового текста
+        if (GameStateHolder.State == State.Frame)
+        {
+            _currentPhraseFinal = GameStateHolder.CurrentFrame.Text;
+            Debug.Log(_currentPhraseFinal);
+
+            _currentPhraseChars = _currentPhraseFinal.ToCharArray();
+            _currentPhrase = "";
+            _isPrinting = true;
+            StartCoroutine(PrintNextPhrase());
+        }
     }
 
     private IEnumerator PrintNextPhrase()
