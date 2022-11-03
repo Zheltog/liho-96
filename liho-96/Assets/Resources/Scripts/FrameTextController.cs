@@ -4,19 +4,14 @@ using Newtonsoft.Json;
 using TMPro;
 using UnityEngine;
 
-public class TextController : MonoBehaviour
+public class FrameTextController : MonoBehaviour
 {
 
-    public float secondsBeforeNextSymbol = 0.1f;
+    public float secondsBeforeNextSymbol = 0.075f;
 
-    private string[] _phrases =
-    {
-        "Ноябрь, 1996 год. Дорога к небольшому провинциальному городу ведет через лес. Одинокая машина едет под проливным дождём.",
-        "Молчаливый курьер везёт груз. Он никогда не спрашивает, что и кому он доставляет. За это его и ценят - и, возможно, лишь поэтому он до сих пор не получил пулю в лоб.",
-        "А это вторая фраза.",
-        "А вот и третья (последняя). И длинннннная штууууууууууууууууууууууууууууууууууууууууууууука (по приколу).\n\nИ перенос строки.......",
-        "Да?"
-    };
+    public float delayMultiplier = 5;
+    
+    private string[] _phrases;
 
     private int _currentPhraseIndex;
 
@@ -28,7 +23,7 @@ public class TextController : MonoBehaviour
 
     private bool _isPrinting;
 
-    private TextMeshProUGUI _text;
+    private TextMeshProUGUI _textBox;
 
     private void Start()
     {
@@ -36,7 +31,7 @@ public class TextController : MonoBehaviour
         var structure = JsonConvert.DeserializeObject<GameStructure>(jsonString);
         _phrases = structure.Frames.Values.Select(s => s.Text).ToArray();
         
-        _text = GetComponent<TextMeshProUGUI>();
+        _textBox = GetComponent<TextMeshProUGUI>();
     }
 
     private void Update()
@@ -51,7 +46,7 @@ public class TextController : MonoBehaviour
     {
         if (_isPrinting)
         {
-            _text.text = _currentPhraseFinal;
+            _textBox.text = _currentPhraseFinal;
             _isPrinting = false;
             return;
         }
@@ -68,15 +63,31 @@ public class TextController : MonoBehaviour
 
     private IEnumerator PrintNextPhrase()
     {
+        var prevChar = ' ';
         foreach (var currentChar in _currentPhraseChars)
         {
-            yield return new WaitForSeconds(secondsBeforeNextSymbol);
+            yield return new WaitForSeconds(GetDelay(prevChar, currentChar));
             if (!_isPrinting)
             {
                 yield break;
             }
             _currentPhrase += currentChar;
-            _text.text = _currentPhrase;
+            _textBox.text = _currentPhrase;
+            prevChar = currentChar;
         }
+
+        _isPrinting = false;
+    }
+
+    // Возвращает значение задержки между печатью двух символов.
+    // Задержка увеличена, если предыдущий символ - знак пунктуации или переход на новую строку.
+    private float GetDelay(char prevChar, char nextChar)
+    {
+        if (char.IsPunctuation(prevChar) || nextChar == '\n')
+        {
+            return secondsBeforeNextSymbol * delayMultiplier;
+        }
+
+        return secondsBeforeNextSymbol;
     }
 }
