@@ -1,5 +1,5 @@
 using System.Collections;
-using System.Linq;
+using System.Collections.Generic;
 using Newtonsoft.Json;
 using TMPro;
 using UnityEngine;
@@ -10,10 +10,12 @@ public class FrameTextController : MonoBehaviour
     public float secondsBeforeNextSymbol = 0.075f;
 
     public float delayMultiplier = 5;
-    
-    private string[] _phrases;
 
-    private int _currentPhraseIndex;
+    private Dictionary<string, Frame> _frames;
+    
+    private Frame _startFrame;
+
+    private Frame _currentFrame;
 
     private char[] _currentPhraseChars;
 
@@ -29,8 +31,10 @@ public class FrameTextController : MonoBehaviour
     {
         var jsonString = Resources.Load<TextAsset>("Text/gameStructure").text;
         var structure = JsonConvert.DeserializeObject<GameStructure>(jsonString);
-        _phrases = structure.Frames.Values.Select(s => s.Text).ToArray();
-        
+
+        _frames = structure.Frames;
+        _startFrame = _frames[structure.StartingFrame];
+
         _textBox = GetComponent<TextMeshProUGUI>();
     }
 
@@ -50,15 +54,26 @@ public class FrameTextController : MonoBehaviour
             _isPrinting = false;
             return;
         }
+
+        _currentFrame = NextFrame();
+        _currentPhraseFinal = _currentFrame.Text;
         
-        _currentPhraseFinal = _phrases[_currentPhraseIndex];
         Debug.Log(_currentPhraseFinal);
         
         _currentPhraseChars = _currentPhraseFinal.ToCharArray();
         _currentPhrase = "";
-        _currentPhraseIndex++;
         _isPrinting = true;
         StartCoroutine(PrintNextPhrase());
+    }
+
+    private Frame NextFrame()
+    {
+        if (_currentFrame == null)
+        {
+            return _startFrame;
+        }
+
+        return _frames[_currentFrame.Transition.Next];
     }
 
     private IEnumerator PrintNextPhrase()

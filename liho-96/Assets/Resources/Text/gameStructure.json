@@ -50,7 +50,7 @@
       "Type": "Simple",
       "Transition": {
         "Type": "Frame",
-        "Next": "start_5"
+        "Next": "start_3"
       }
     },
     "start_5": {
