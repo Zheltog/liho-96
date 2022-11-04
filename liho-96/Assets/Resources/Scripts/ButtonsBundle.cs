@@ -19,31 +19,45 @@ public class ButtonsBundle : MonoBehaviour
     public void Activate(List<Choice> choices)
     {
         _currentChoices = choices;
-        SetActive(true);
+        
+        var choice1 = choices[0];
+        var choice2 = choices[1];
+        Choice choice3 = null;
+
+        if (choices.Count == 3)
+        {
+            choice3 = choices[2];
+        }
+        
+        SetButtonsActive(
+            ChoiceAvailabilityCalculator.IsAvailable(choice1),
+            ChoiceAvailabilityCalculator.IsAvailable(choice2),
+            ChoiceAvailabilityCalculator.IsAvailable(choice3)
+        );
     }
     
     public void ChooseFirst()
     {
         _gameController.Transition(_currentChoices[0].Transition);
-        SetActive(false);
+        SetButtonsActive(false, false, false);
     }
     
     public void ChooseSecond()
     {
         _gameController.Transition(_currentChoices[1].Transition);
-        SetActive(false);
+        SetButtonsActive(false, false, false);
     }
 
     public void ChooseThird()
     {
         _gameController.Transition(_currentChoices[2].Transition);
-        SetActive(false);
+        SetButtonsActive(false, false, false);
     }
     
-    private void SetActive(bool isActive)
+    private void SetButtonsActive(bool is1Active, bool is2Active, bool is3Active)
     {
-        button1.SetActive(isActive);
-        button2.SetActive(isActive);
-        if (button3 != null) button3.SetActive(isActive);
+        button1.SetActive(is1Active);
+        button2.SetActive(is2Active);
+        if (button3 != null) button3.SetActive(is3Active);
     }
 }
