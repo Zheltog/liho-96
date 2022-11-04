@@ -30,6 +30,22 @@ public class GameStateHolder
 
         State = State.Start;
     }
+
+    public static void UpdateFlags(List<FlagAction> actions)
+    {
+        foreach (var action in actions)
+        {
+            switch (action.Type)
+            {
+                case FlagActionType.Add:
+                    Flags.Add(action.Name);
+                    break;
+                case FlagActionType.Remove:
+                    Flags.Remove(action.Name);
+                    break;
+            }
+        }
+    }
 }
 
 public enum State

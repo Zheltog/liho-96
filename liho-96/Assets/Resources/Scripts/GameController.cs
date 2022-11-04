@@ -40,6 +40,8 @@ public class GameController : MonoBehaviour
 
     public void Transition(Transition transition)
     {
+        GameStateHolder.UpdateFlags(transition.Actions);
+        
         switch (transition.Type)
         {
             case TransitionType.Frame:
