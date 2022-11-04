@@ -10,15 +10,10 @@ public class ImageController : MonoBehaviour
         _image  = gameObject.GetComponent<Image>();
     }
     
-    public void NewImage()
+    public void NewImage(string imageName)
     {
-        var nextImage = GameStateHolder.CurrentFrame.Picture;
-        if (nextImage == null)
-        {
-            return;
-        }
-        
-        var sprite = Resources.Load<Sprite>("Images/" + nextImage);
+        if (imageName == null) return;
+        var sprite = Resources.Load<Sprite>("Images/" + imageName);
         _image.sprite = sprite;
     }
 }

@@ -45,9 +45,9 @@ public class FrameTextController : MonoBehaviour
     }
 
     // Установка нового текста. Вызывается из игрового контроллера
-    public void NewText()
+    public void NewText(string text)
     {
-        _currentPhraseFinal = GameStateHolder.CurrentFrame.Text;
+        _currentPhraseFinal = text;
         _currentPhraseChars = _currentPhraseFinal.ToCharArray();
         _currentPhrase = "";
         _isPrinting = true;

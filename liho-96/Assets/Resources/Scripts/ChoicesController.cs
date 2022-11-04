@@ -19,18 +19,12 @@ public class ChoicesController : MonoBehaviour
 
     public void NewChoices(List<Choice> choices)
     {
-        if (choices.Count == 2)
+        _currentType = choices.Count switch
         {
-            _currentType = ChoiceType.DOUBLE;
-        }
-        else if (choices.Count == 3)
-        {
-            _currentType = ChoiceType.TRIPLE;
-        }
-        else
-        {
-            throw new Exception("should be 2 or 3 choices");
-        }
+            2 => ChoiceType.DOUBLE,
+            3 => ChoiceType.TRIPLE,
+            _ => throw new Exception("should be 2 or 3 choices")
+        };
 
         _currentChoices = choices;
 

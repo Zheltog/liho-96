@@ -65,14 +65,17 @@ public class GameController : MonoBehaviour
 
     private void UpdateFrame()
     {
-        text.NewText();
-        image.NewImage();
-        player.NewAudio();
+        var currentFrame = GameStateHolder.CurrentFrame;
+        
+        text.NewText(currentFrame.Text);
+        image.NewImage(currentFrame.Picture);
+        player.NewMusic(currentFrame.Music);
+        player.NewSound(currentFrame.Sound);
 
-        var choicesList = GameStateHolder.CurrentFrame.Choices;
+        var choicesList = currentFrame.Choices;
         if (choicesList != null)
         {
-            choices.NewChoices(choicesList);
+            choices.NewChoices(currentFrame.Choices);
         }
     }
 }
