@@ -1,16 +1,22 @@
+using System.Collections.Generic;
 using System.Linq;
 
-public static class ChoiceAvailabilityCalculator
+public static class ChoicesFilter
 {
-    public static bool IsAvailable(Choice choice)
+    public static List<Choice> FilterChoices(List<Choice> choices)
+    {
+        return choices.Where(IsAvailable).ToList();
+    }
+    
+    private static bool IsAvailable(Choice choice)
     {
         return choice != null && choice.Visibility.Aggregate(
             true,
-            (current, predicate) => current && predicateResult(predicate)
+            (current, predicate) => current && PredicateResult(predicate)
         );
     }
 
-    private static bool predicateResult(VisibilityPredicate predicate)
+    private static bool PredicateResult(VisibilityPredicate predicate)
     {
         var result = predicate.Type == VisibilityPredicateType.And;
         

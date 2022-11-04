@@ -141,7 +141,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &294591549
 RectTransform:
   m_ObjectHideFlags: 0
@@ -206,8 +206,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1775608351}
-        m_TargetAssemblyTypeName: ButtonsBundle, Assembly-CSharp
+      - m_Target: {fileID: 1084159667}
+        m_TargetAssemblyTypeName: ChoicesController, Assembly-CSharp
         m_MethodName: ChooseFirst
         m_Mode: 1
         m_Arguments:
@@ -481,14 +481,13 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 425348324}
-  - component: {fileID: 425348325}
   m_Layer: 5
   m_Name: ButtonsDouble
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &425348324
 RectTransform:
   m_ObjectHideFlags: 0
@@ -510,21 +509,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &425348325
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 425348323}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 283ec836ebb6ee84c8a8d14707e2493d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  button1: {fileID: 1416394783}
-  button2: {fileID: 508957524}
-  button3: {fileID: 0}
 --- !u!1 &470071707
 GameObject:
   m_ObjectHideFlags: 0
@@ -643,7 +627,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &508957525
 RectTransform:
   m_ObjectHideFlags: 0
@@ -708,8 +692,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 425348325}
-        m_TargetAssemblyTypeName: ButtonsBundle, Assembly-CSharp
+      - m_Target: {fileID: 1084159667}
+        m_TargetAssemblyTypeName: ChoicesController, Assembly-CSharp
         m_MethodName: ChooseSecond
         m_Mode: 1
         m_Arguments:
@@ -1313,7 +1297,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1045922690
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1378,8 +1362,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1775608351}
-        m_TargetAssemblyTypeName: ButtonsBundle, Assembly-CSharp
+      - m_Target: {fileID: 1084159667}
+        m_TargetAssemblyTypeName: ChoicesController, Assembly-CSharp
         m_MethodName: ChooseSecond
         m_Mode: 1
         m_Arguments:
@@ -1457,8 +1441,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 974f16489d9d43c40bda4c2d629d07ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  buttonsDouble: {fileID: 425348325}
-  buttonsTriple: {fileID: 1775608351}
+  buttonsDouble: {fileID: 425348323}
+  buttonsTriple: {fileID: 1775608349}
 --- !u!224 &1084159668
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1952,7 +1936,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1416394784
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2017,8 +2001,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 425348325}
-        m_TargetAssemblyTypeName: ButtonsBundle, Assembly-CSharp
+      - m_Target: {fileID: 1084159667}
+        m_TargetAssemblyTypeName: ChoicesController, Assembly-CSharp
         m_MethodName: ChooseFirst
         m_Mode: 1
         m_Arguments:
@@ -2346,14 +2330,13 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1775608350}
-  - component: {fileID: 1775608351}
   m_Layer: 5
   m_Name: ButtonsTriple
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1775608350
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2376,21 +2359,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1775608351
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1775608349}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 283ec836ebb6ee84c8a8d14707e2493d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  button1: {fileID: 294591548}
-  button2: {fileID: 1045922689}
-  button3: {fileID: 1965191363}
 --- !u!1 &1795225221
 GameObject:
   m_ObjectHideFlags: 0
@@ -2818,7 +2786,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1965191364
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2883,8 +2851,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1775608351}
-        m_TargetAssemblyTypeName: ButtonsBundle, Assembly-CSharp
+      - m_Target: {fileID: 1084159667}
+        m_TargetAssemblyTypeName: ChoicesController, Assembly-CSharp
         m_MethodName: ChooseThird
         m_Mode: 1
         m_Arguments:

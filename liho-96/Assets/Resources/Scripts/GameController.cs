@@ -75,7 +75,7 @@ public class GameController : MonoBehaviour
         var choicesList = currentFrame.Choices;
         if (choicesList != null)
         {
-            choices.NewChoices(currentFrame.Choices);
+            choices.NewChoices(ChoicesFilter.FilterChoices(currentFrame.Choices));
         }
     }
 }
