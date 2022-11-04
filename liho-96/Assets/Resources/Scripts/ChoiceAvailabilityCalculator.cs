@@ -12,7 +12,20 @@ public static class ChoiceAvailabilityCalculator
 
     private static bool predicateResult(VisibilityPredicate predicate)
     {
-        // TODO
-        return true;
+        var result = predicate.Type == VisibilityPredicateType.And;
+        
+        foreach (var flag in predicate.Flags)
+        {
+            var newAspect = GameStateHolder.Flags.Contains(flag);
+            if (predicate.Type == VisibilityPredicateType.And)
+            {
+                result = result && newAspect;
+            }
+            else
+            {
+                result = result || newAspect;
+            }
+        }
+        return result;
     }
 }
