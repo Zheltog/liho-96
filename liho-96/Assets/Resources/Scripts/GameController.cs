@@ -7,6 +7,7 @@ public class GameController : MonoBehaviour
 {
 
     public FrameTextController text;
+    public ImageController image;
 
     private void Start()
     {
@@ -58,5 +59,6 @@ public class GameController : MonoBehaviour
     private void UpdateFrame()
     {
         text.NewText();
+        image.NewImage();
     }
 }

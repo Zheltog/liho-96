@@ -6,7 +6,7 @@
   ],
   "Frames": {
     "start": {
-      "Picture": "rainy_road.png",
+      "Picture": "rainy_road",
       "Text": "По заказу кинокомпании FITFIJA Pictures\n34мб Productions и Noormak Studios представляют...",
       "Type": "Simple",
       "Transition": {
@@ -25,7 +25,7 @@
       }
     },
     "start_2": {
-      "Picture": "car_driving_on_a_rainy_road.png",
+      "Picture": "car_driving_on_a_rainy_road",
       "Text": "Ноябрь, 1996 год. Дорога к небольшому провинциальному городу ведет через лес. Одинокая машина едет под проливным дождём.",
       "TextDelay": 0.1,
       "Type": "Simple",
@@ -35,7 +35,7 @@
       }
     },
     "start_3": {
-      "Picture": "courier_in_a_car.png",
+      "Picture": "courier_in_a_car",
       "Text": "Молчаливый курьер везёт груз. Он никогда не спрашивает, что и кому он доставляет. За это его и ценят - и, возможно, лишь поэтому он до сих пор не получил пулю в лоб.",
       "Type": "Simple",
       "Transition": {
@@ -44,7 +44,7 @@
       }
     },
     "start_4": {
-      "Picture": "courier_in_a_car.png",
+      "Picture": "courier_in_a_car",
       "Text": "Его имя? Райан Гослинг.",
       "TextSound": "honk.mp3",
       "Type": "Simple",

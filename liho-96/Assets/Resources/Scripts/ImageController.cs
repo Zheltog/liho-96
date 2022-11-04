@@ -1,5 +1,5 @@
 ﻿using UnityEngine;
-using UnityEngine.UIElements;
+using UnityEngine.UI;
 
 public class ImageController : MonoBehaviour
 {
@@ -7,13 +7,18 @@ public class ImageController : MonoBehaviour
 
     private void Start()
     {
-        _image = GetComponent<Image>();
-        SetImage("car_driving_on_a_rainy_road");
+        _image  = gameObject.GetComponent<Image>();
     }
     
-    public void SetImage(string imageName)
+    public void NewImage()
     {
-        var sprite = Resources.Load<Texture2D>("Images/" + imageName);
-        _image.image = sprite;
+        var nextImage = GameStateHolder.CurrentFrame.Picture;
+        if (nextImage == null)
+        {
+            return;
+        }
+        
+        var sprite = Resources.Load<Sprite>("Images/" + nextImage);
+        _image.sprite = sprite;
     }
 }
