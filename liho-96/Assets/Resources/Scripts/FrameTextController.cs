@@ -27,12 +27,9 @@ public class FrameTextController : MonoBehaviour
         _gameController = GameObject.FindWithTag("GameController").GetComponent<GameController>();
     }
 
-    private void Update()
+    public void OnClick()
     {
-        if (Input.GetMouseButtonDown(0))
-        {
-            UpdateText();
-        }
+        UpdateText();
     }
 
     private void UpdateText()
