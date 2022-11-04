@@ -4,10 +4,11 @@ using UnityEngine.UI;
 
 public class ImageController : MonoBehaviour
 {
-    public float darkingSeconds = 1f;
+    public float darkingSeconds = 0.5f;
     
     private Image _image;
     private Animator _animator;
+    private string _lastImageName;
 
     private void Start()
     {
@@ -17,7 +18,10 @@ public class ImageController : MonoBehaviour
     
     public void NewImage(string imageName)
     {
-        if (imageName == null) return;
+        if (imageName == null || imageName == _lastImageName)
+        {
+            return;
+        }
         
         _animator.SetBool("lighting", false);
         _animator.SetBool("darking", true);
@@ -29,6 +33,7 @@ public class ImageController : MonoBehaviour
         yield return new WaitForSeconds(darkingSeconds);
         var sprite = Resources.Load<Sprite>("Images/" + imageName);
         _image.sprite = sprite;
+        _lastImageName = imageName;
         _animator.SetBool("darking", false);
         _animator.SetBool("lighting", true);
     }
