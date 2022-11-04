@@ -40,7 +40,7 @@ public class FrameTextController : MonoBehaviour
         // Запускает переход, если у кадра не было вариантов выбора
         if (GameStateHolder.CurrentFrame.Type != FrameType.Choice)
         {
-            _gameController.SimpleTransition();
+            _gameController.Transition();
         }
     }
 

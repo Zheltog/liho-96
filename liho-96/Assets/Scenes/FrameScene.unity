@@ -482,14 +482,14 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 425348323}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1416394784}
   - {fileID: 508957525}
-  m_Father: {fileID: 1795225222}
-  m_RootOrder: 2
+  m_Father: {fileID: 1084159668}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -678,7 +678,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 508957527}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1084159667}
+        m_TargetAssemblyTypeName: ChoicesController, Assembly-CSharp
+        m_MethodName: ChooseSecond
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &508957527
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1300,6 +1312,58 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1045922689}
   m_CullTransparentMesh: 1
+--- !u!1 &1084159666
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1084159668}
+  - component: {fileID: 1084159667}
+  m_Layer: 5
+  m_Name: Choices
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1084159667
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1084159666}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 974f16489d9d43c40bda4c2d629d07ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buttonsDouble: {fileID: 425348323}
+  buttonsTriple: {fileID: 1775608349}
+--- !u!224 &1084159668
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1084159666}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 425348324}
+  - {fileID: 1775608350}
+  m_Father: {fileID: 1795225222}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1098723468
 GameObject:
   m_ObjectHideFlags: 0
@@ -1641,7 +1705,7 @@ RectTransform:
   m_Children:
   - {fileID: 1533400846}
   m_Father: {fileID: 1795225222}
-  m_RootOrder: 4
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -1836,7 +1900,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1416394786}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1084159667}
+        m_TargetAssemblyTypeName: ChoicesController, Assembly-CSharp
+        m_MethodName: ChooseFirst
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1416394786
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2168,15 +2244,15 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1775608349}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1045922690}
   - {fileID: 1965191364}
   - {fileID: 294591549}
-  m_Father: {fileID: 1795225222}
-  m_RootOrder: 3
+  m_Father: {fileID: 1084159668}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -2214,9 +2290,8 @@ RectTransform:
   m_Children:
   - {fileID: 391043316}
   - {fileID: 568267674}
-  - {fileID: 425348324}
-  - {fileID: 1775608350}
   - {fileID: 1399712632}
+  - {fileID: 1084159668}
   m_Father: {fileID: 470071711}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2564,6 +2639,7 @@ MonoBehaviour:
   text: {fileID: 568267677}
   image: {fileID: 391043319}
   player: {fileID: 1098723470}
+  choices: {fileID: 1084159667}
 --- !u!4 &1963841119
 Transform:
   m_ObjectHideFlags: 0

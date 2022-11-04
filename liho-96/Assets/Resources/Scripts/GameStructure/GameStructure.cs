@@ -72,7 +72,7 @@ public class Frame
     /// <summary>
     /// Список вариантов выбора. Только для кадра типа Choice.
     /// </summary>
-    public List<Choice> Choises { get; set; }
+    public List<Choice> Choices { get; set; }
 }
 
 public enum FrameType
