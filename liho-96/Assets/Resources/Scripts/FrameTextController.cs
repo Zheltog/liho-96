@@ -4,10 +4,15 @@ using UnityEngine;
 
 public class FrameTextController : MonoBehaviour
 {
-
+    public float defaultSecondsBeforeNextSymbol = 0.075f;
+    
     public float secondsBeforeNextSymbol = 0.075f;
 
     public float delayMultiplier = 5;
+
+    public float pitchRangeMin = 0.7f;
+
+    public float pitchRangeMax = 0.8f;
 
     private char[] _currentPhraseChars;
 
@@ -19,12 +24,13 @@ public class FrameTextController : MonoBehaviour
 
     private TextMeshProUGUI _textBox;
 
-    private GameController _gameController;
+    public GameController _gameController;
+
+    public AudioController _audioController;
 
     private void Start()
     {
         _textBox = GetComponent<TextMeshProUGUI>();
-        _gameController = GameObject.FindWithTag("GameController").GetComponent<GameController>();
     }
 
     public void OnClick()
@@ -60,10 +66,13 @@ public class FrameTextController : MonoBehaviour
         foreach (var currentChar in _currentPhraseChars)
         {
             yield return new WaitForSeconds(GetDelay(prevChar, currentChar));
+            _audioController.PlayTextSound(pitchRangeMin, pitchRangeMax);
+
             if (!_isPrinting)
             {
                 yield break;
             }
+            
             _currentPhrase += currentChar;
             _textBox.text = _currentPhrase;
             prevChar = currentChar;

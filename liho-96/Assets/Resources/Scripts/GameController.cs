@@ -70,7 +70,10 @@ public class GameController : MonoBehaviour
         var currentFrame = GameStateHolder.CurrentFrame;
         
         text.NewText(currentFrame.Text);
+        text.secondsBeforeNextSymbol = currentFrame.TextDelay ?? text.defaultSecondsBeforeNextSymbol;
+            
         image.NewImage(currentFrame.Picture);
+        
         player.NewMusic(currentFrame.Music);
         player.NewSound(currentFrame.Sound);
 

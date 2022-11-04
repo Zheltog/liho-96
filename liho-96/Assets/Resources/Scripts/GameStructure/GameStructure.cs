@@ -52,7 +52,7 @@ public class Frame
     /// <summary>
     /// Задержка появления символов на экране.
     /// </summary>
-    public float TextDelay { get; set; }
+    public float? TextDelay { get; set; }
 
     /// <summary>
     /// Название файла со звуком, который проигрывается на каждый символ.
