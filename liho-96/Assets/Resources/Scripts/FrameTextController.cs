@@ -29,11 +29,6 @@ public class FrameTextController : MonoBehaviour
 
     public void OnClick()
     {
-        UpdateText();
-    }
-
-    private void UpdateText()
-    {
         // Печатает весь текст, если он ещё не был отображен полностью.
         if (_isPrinting)
         {
@@ -43,23 +38,20 @@ public class FrameTextController : MonoBehaviour
         }
 
         // Запускает переход, если у кадра не было вариантов выбора
-        if (GameStateHolder.State == State.Start ||
-            GameStateHolder.CurrentFrame.Type != FrameType.Choice)
+        if (GameStateHolder.CurrentFrame.Type != FrameType.Choice)
         {
             _gameController.SimpleTransition();
         }
+    }
 
-        // Если после перехода попали на новый кадр - запускает показ нового текста
-        if (GameStateHolder.State == State.Frame)
-        {
-            _currentPhraseFinal = GameStateHolder.CurrentFrame.Text;
-            Debug.Log(_currentPhraseFinal);
-
-            _currentPhraseChars = _currentPhraseFinal.ToCharArray();
-            _currentPhrase = "";
-            _isPrinting = true;
-            StartCoroutine(PrintNextPhrase());
-        }
+    // Установка нового текста. Вызывается из игрового контроллера
+    public void NewText()
+    {
+        _currentPhraseFinal = GameStateHolder.CurrentFrame.Text;
+        _currentPhraseChars = _currentPhraseFinal.ToCharArray();
+        _currentPhrase = "";
+        _isPrinting = true;
+        StartCoroutine(PrintNextPhrase());
     }
 
     private IEnumerator PrintNextPhrase()
