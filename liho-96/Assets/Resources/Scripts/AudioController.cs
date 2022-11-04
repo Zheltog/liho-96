@@ -18,7 +18,7 @@ public class AudioController : MonoBehaviour
         
         if (nextSound != null)
         {
-            // TODO
+            PlaySound(nextSound);
         }
     }
 
@@ -28,5 +28,13 @@ public class AudioController : MonoBehaviour
         musicSource.Stop();
         musicSource.clip = clip;
         musicSource.Play();
+    }
+    
+    public void PlaySound(string clipName)
+    {
+        var clip = Resources.Load<AudioClip>("Audio/" + clipName);
+        soundsSource.Stop();
+        soundsSource.clip = clip;
+        soundsSource.Play();
     }
 }
