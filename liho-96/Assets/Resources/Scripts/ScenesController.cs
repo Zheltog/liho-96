@@ -6,7 +6,7 @@ public class ScenesController : MonoBehaviour
 
     public void LoadAuthorsScene()
     {
-        SceneManager.LoadScene("Authors", LoadSceneMode.Single);
+        SceneManager.LoadScene("AuthorsScene", LoadSceneMode.Single);
     }
 
     public void Exit()
