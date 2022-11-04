@@ -33,6 +33,11 @@ public class GameStateHolder
 
     public static void UpdateFlags(List<FlagAction> actions)
     {
+        if (actions == null)
+        {
+            return;
+        }
+        
         foreach (var action in actions)
         {
             switch (action.Type)
