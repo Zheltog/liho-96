@@ -17,7 +17,6 @@
     "start_1": {
       "Animation": "driving_car",
       "Text": "...",
-      "Music": "music.mp3",
       "Type": "Simple",
       "Transition": {
         "Type": "Frame",
@@ -27,6 +26,7 @@
     "start_2": {
       "Picture": "car_driving_on_a_rainy_road",
       "Text": "Ноябрь, 1996 год. Дорога к небольшому провинциальному городу ведет через лес. Одинокая машина едет под проливным дождём.",
+      "Music": "Bram Stoker's Dracula - Unknown Song 2",
       "TextDelay": 0.1,
       "Type": "Simple",
       "Transition": {

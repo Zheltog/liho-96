@@ -8,6 +8,7 @@ public class GameController : MonoBehaviour
 
     public FrameTextController text;
     public ImageController image;
+    public AudioController player;
 
     private void Start()
     {
@@ -60,5 +61,6 @@ public class GameController : MonoBehaviour
     {
         text.NewText();
         image.NewImage();
+        player.NewAudio();
     }
 }
