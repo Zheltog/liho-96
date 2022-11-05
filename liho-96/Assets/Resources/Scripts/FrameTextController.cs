@@ -33,6 +33,11 @@ public class FrameTextController : MonoBehaviour
         _textBox = GetComponent<TextMeshProUGUI>();
     }
 
+    public bool IsPrinting()
+    {
+        return _isPrinting;
+    }
+
     public void OnClick()
     {
         // Печатает весь текст, если он ещё не был отображен полностью.
@@ -53,10 +58,10 @@ public class FrameTextController : MonoBehaviour
     // Установка нового текста. Вызывается из игрового контроллера
     public void NewText(string text)
     {
+        _isPrinting = true;
         _currentPhraseFinal = text;
         _currentPhraseChars = _currentPhraseFinal.ToCharArray();
         _currentPhrase = "";
-        _isPrinting = true;
         StartCoroutine(PrintNextPhrase());
     }
 

@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections;
+using System.Collections.Generic;
 using Newtonsoft.Json;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -88,11 +90,13 @@ public class GameController : MonoBehaviour
         var choicesList = currentFrame.Choices;
         if (choicesList != null)
         {
-            choices.NewChoices(ChoicesFilter.FilterChoices(currentFrame.Choices));
+            StartCoroutine(UpdateChoices(choicesList));
         }
-        else
-        {
-            choices.SetActiveForButtons(false);
-        }
+    }
+
+    private IEnumerator UpdateChoices(List<Choice> choicesList)
+    {
+        yield return new WaitUntil(() => !text.IsPrinting());
+        choices.NewChoices(ChoicesFilter.FilterChoices(choicesList));
     }
 }
