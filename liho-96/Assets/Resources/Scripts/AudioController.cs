@@ -17,12 +17,19 @@ public class AudioController : MonoBehaviour
     public void NewMusic(string musicName)
     {
         if (musicName == null) return;
+
+        if (musicName == "")
+        {
+            musicSource.Stop();
+            return;
+        }
+        
         var clip = Resources.Load<AudioClip>("Audio/" + musicName);
         musicSource.Stop();
         musicSource.clip = clip;
         musicSource.Play();
     }
-    
+
     public void NewSound(string soundName)
     {
         if (soundName == null) return;

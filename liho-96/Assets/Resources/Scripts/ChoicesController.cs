@@ -34,22 +34,19 @@ public class ChoicesController : MonoBehaviour
     public void ChooseFirst()
     {
         _gameController.Transition(_currentChoices[0].Transition);
-        SetActiveForButtons(false);
     }
     
     public void ChooseSecond()
     {
         _gameController.Transition(_currentChoices[1].Transition);
-        SetActiveForButtons(false);
     }
 
     public void ChooseThird()
     {
         _gameController.Transition(_currentChoices[2].Transition);
-        SetActiveForButtons(false);
     }
 
-    private void SetActiveForButtons(bool isActive)
+    public void SetActiveForButtons(bool isActive)
     {
         switch (_currentType)
         {
