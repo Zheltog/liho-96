@@ -1,23 +1,24 @@
-using System;
 using Common;
-using TMPro;
 using UnityEngine;
 
 namespace Boss
 {
     public class MainController : MonoBehaviour
     {
-        public float fightSeconds = 120;
+        public float fightSeconds = 30;
         public float activePhaseSeconds = 10;
         public Courier courier;
+        public GameObject dynamicStuff;
+        public GameObject gameOverImage;
         public GameObject actionsButtons;
+        public AudioController player;
         public TimerController timer;
         public TextBoxController text;
         public ItemsChoicesController itemsChoicesController;
         
         private float _timeRemainingBeforeEnd;
         private float _timeRemainingBeforeNextRest;
-        private bool _isRest;
+        private RoundState _currentRoundState = RoundState.Attack;
 
         private void Start()
         {
@@ -27,6 +28,11 @@ namespace Boss
 
         private void Update()
         {
+            if (_currentRoundState == RoundState.GameOver)
+            {
+                return;
+            }
+            
             UpdateTimeRemainingBeforeNextRest();
             UpdateTimeRemainingBeforeEnd();
         }
@@ -37,7 +43,7 @@ namespace Boss
             itemsChoicesController.DisableButtons();
         }
 
-        public void FinishPrintingOrStopRest()
+        public void FinishPrintingOrUpdateRoundState()
         {
             if (text.IsPrinting)
             {
@@ -45,7 +51,15 @@ namespace Boss
             }
             else
             {
-                ReturnToActivePhase();
+                switch (_currentRoundState)
+                {
+                    case RoundState.ItemChoice:
+                        ReturnToActivePhase();
+                        break;
+                    case RoundState.GameOver:
+                        Application.Quit();
+                        break;
+                }
             }
         }
 
@@ -59,26 +73,28 @@ namespace Boss
         {
             if (!itemsChoicesController.ItemsChoiceAvailable()) return;
             
+            _currentRoundState = RoundState.ItemChoice;
             actionsButtons.SetActive(false);
             itemsChoicesController.NewChoices();
         }
 
         public void Surrender()
         {
-            try
-            {
-                throw new Exception("");
-            }
-            catch (Exception e)
-            {
-                actionsButtons.SetActive(false);
-                text.NewText(e.StackTrace);
-            }
+            GameOver("Курьер сдался. Pathetic.");
+        }
+        
+        public void GameOver(string comment)
+        {
+            _currentRoundState = RoundState.GameOver;
+            dynamicStuff.SetActive(false);
+            gameOverImage.SetActive(true);
+            text.NewText(comment);
+            player.NewMusic("game_over");
         }
 
         private void UpdateTimeRemainingBeforeNextRest()
         {
-            if (_isRest)
+            if (_currentRoundState != RoundState.Attack)
             {
                 return;
             }
@@ -95,29 +111,33 @@ namespace Boss
 
         private void UpdateTimeRemainingBeforeEnd()
         {
-            if (_timeRemainingBeforeEnd > 0)
+            if (_timeRemainingBeforeEnd <= 0)
             {
-                _timeRemainingBeforeEnd -= Time.deltaTime;
-                timer.SetTimeRemaining(_timeRemainingBeforeEnd);
+                GameOver("Коммунисты завели жигу и уехали в рассвет. С ЛИХО...");
+                return;
             }
-            else
-            {
-                Debug.Log("TIME RAN OUT!");
-            }
+            
+            _timeRemainingBeforeEnd -= Time.deltaTime;
+            timer.SetTimeRemaining(_timeRemainingBeforeEnd);
         }
 
         private void Rest()
         {
-            _isRest = true;
+            _currentRoundState = RoundState.ActionChoice;
             courier.Rest();
             actionsButtons.SetActive(true);
         }
 
         private void ReturnToActivePhase()
         {
-            _isRest = false;
+            _currentRoundState = RoundState.Attack;
             text.NewText(" ");
             courier.ReturnToActivePhase();
+        }
+
+        private enum RoundState
+        {
+            Attack, ActionChoice, ItemChoice, GameOver
         }
     }
 }
