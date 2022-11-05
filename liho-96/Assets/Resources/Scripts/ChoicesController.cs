@@ -59,7 +59,7 @@ public class ChoicesController : MonoBehaviour
                 break;
             case ChoiceType.TRIPLE:
                 buttonsTriple.SetActive(isActive);
-                buttonsDouble.SetTexts(_currentChoices[0].Text, _currentChoices[1].Text, _currentChoices[2].Text);
+                buttonsTriple.SetTexts(_currentChoices[0].Text, _currentChoices[1].Text, _currentChoices[2].Text);
                 break;
         }
     }
