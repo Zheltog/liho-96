@@ -11,7 +11,7 @@ namespace Boss
         public float activePhaseSeconds = 10;
         public Courier courier;
         public GameObject actionsButtons;
-        public TextMeshProUGUI timer;
+        public TimerController timer;
         public TextBoxController text;
         public ItemsChoicesController itemsChoicesController;
         
@@ -98,9 +98,7 @@ namespace Boss
             if (_timeRemainingBeforeEnd > 0)
             {
                 _timeRemainingBeforeEnd -= Time.deltaTime;
-                float minutes = Mathf.FloorToInt(_timeRemainingBeforeEnd / 60);
-                float seconds = Mathf.FloorToInt(_timeRemainingBeforeEnd % 60);
-                timer.text = $"{minutes:00}:{seconds:00}";
+                timer.SetTimeRemaining(_timeRemainingBeforeEnd);
             }
             else
             {

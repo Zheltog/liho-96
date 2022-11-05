@@ -620,7 +620,7 @@ MonoBehaviour:
   activePhaseSeconds: 10
   courier: {fileID: 584745251}
   actionsButtons: {fileID: 1424040546}
-  timer: {fileID: 1107313588}
+  timer: {fileID: 1107313590}
   text: {fileID: 2095290560}
   itemsChoicesController: {fileID: 476675593}
 --- !u!4 &248021002
@@ -3538,6 +3538,7 @@ GameObject:
   - component: {fileID: 1107313587}
   - component: {fileID: 1107313589}
   - component: {fileID: 1107313588}
+  - component: {fileID: 1107313590}
   m_Layer: 5
   m_Name: FinishTimer
   m_TagString: Untagged
@@ -3661,6 +3662,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1107313586}
   m_CullTransparentMesh: 1
+--- !u!114 &1107313590
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1107313586}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d393628453c64815997efd941f802cab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1110258747
 GameObject:
   m_ObjectHideFlags: 0
