@@ -2233,6 +2233,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hpBar: {fileID: 86713064}
+  targetPoint: {x: 0, y: 5, z: -10}
   hp: 50
   damage: 5
   secondsBeforeNextShot: 2
@@ -2631,6 +2632,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hpBar: {fileID: 86713064}
+  targetPoint: {x: 0, y: 5, z: -10}
   hp: 50
   damage: 5
   secondsBeforeNextShot: 2
