@@ -17,9 +17,10 @@ public class GameController : MonoBehaviour
         var gameStructure = JsonConvert.DeserializeObject<GameStructure>(jsonString);
 
         GameStateHolder.Init(gameStructure);
-        GameStateHolder.CurrentFrame = GameStateHolder.StartFrame;
+        GameStateHolder.SetFrame(gameStructure.StartingFrame);
         GameStateHolder.State = State.Frame;
         UpdateFrame();
+        LogState();
     }
 
     public void Transition()
@@ -47,7 +48,7 @@ public class GameController : MonoBehaviour
             case TransitionType.Frame:
             {
                 var nextFrameName = transition.Next;
-                GameStateHolder.CurrentFrame = GameStateHolder.Frames[nextFrameName];
+                GameStateHolder.SetFrame(nextFrameName);
                 UpdateFrame();
                 break;
             }
@@ -63,6 +64,13 @@ public class GameController : MonoBehaviour
             default:
                 throw new ArgumentOutOfRangeException();
         }
+
+        LogState();
+    }
+
+    private void LogState()
+    {
+        Debug.Log($"Frame: {GameStateHolder.CurrentFrameName}\nFlags: {string.Join(", ", GameStateHolder.Flags)}");
     }
 
     private void UpdateFrame()

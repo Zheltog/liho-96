@@ -48,14 +48,21 @@ public class ChoicesController : MonoBehaviour
 
     public void SetActiveForButtons(bool isActive)
     {
+        if (!isActive)
+        {
+            buttonsDouble.SetActive(false);
+            buttonsTriple.SetActive(false);
+            return;
+        }
+        
         switch (_currentType)
         {
             case ChoiceType.DOUBLE:
-                buttonsDouble.SetActive(isActive);
+                buttonsDouble.SetActive(true);
                 buttonsDouble.SetTexts(_currentChoices[0].Text, _currentChoices[1].Text);
                 break;
             case ChoiceType.TRIPLE:
-                buttonsTriple.SetActive(isActive);
+                buttonsTriple.SetActive(true);
                 buttonsTriple.SetTexts(_currentChoices[0].Text, _currentChoices[1].Text, _currentChoices[2].Text);
                 break;
         }

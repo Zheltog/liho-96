@@ -2,21 +2,11 @@
 
 public class GameStateHolder
 {
-    public static Dictionary<string, Frame> Frames { get; set; }
+    private static Dictionary<string, Frame> Frames { get; set; }
 
-    public static Frame StartFrame { get; set; }
-
-    public static Frame CurrentFrame { get; set; }
-
-    public static Frame NextFrame()
-    {
-        if (CurrentFrame == null)
-        {
-            return StartFrame;
-        }
-
-        return Frames[CurrentFrame.Transition.Next];
-    }
+    public static Frame CurrentFrame { get; private set; }
+    
+    public static string CurrentFrameName { get; private set; }
 
     public static HashSet<string> Flags { get; set; }
     
@@ -25,10 +15,15 @@ public class GameStateHolder
     public static void Init(GameStructure gameStructure)
     {
         Frames = gameStructure.Frames;
-        StartFrame = gameStructure.Frames[gameStructure.StartingFrame];
         Flags = new HashSet<string>(gameStructure.StartingFlags);
 
         State = State.Start;
+    }
+
+    public static void SetFrame(string frameName)
+    {
+        CurrentFrame = Frames[frameName];
+        CurrentFrameName = frameName;
     }
 
     public static void UpdateFlags(List<FlagAction> actions)
