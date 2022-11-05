@@ -8,6 +8,12 @@ public class CameraMovement : MonoBehaviour
 
     private float speed = 10f;
 
+    private Camera _camera;
+
+    private void Start() {
+        _camera = GetComponent<Camera>();
+    }
+    
     private void Update() {
         var deltaY = Input.GetAxis("Vertical") * speed;
         var movement = transform.TransformDirection(
@@ -27,5 +33,21 @@ public class CameraMovement : MonoBehaviour
         }
 
         transform.position = new Vector3(transform.position.x, newY, transform.position.z);
+        
+        ShootDetection();
+    }
+
+    private void ShootDetection()
+    {
+        if (Input.GetMouseButtonDown(0))
+        {
+            Vector3 mousePosition = Input.mousePosition;
+            Ray ray = _camera.ScreenPointToRay(mousePosition);
+            RaycastHit hit;
+            if (Physics.Raycast(ray, out hit))
+            {
+                Debug.Log("Hit " + hit.collider.gameObject.name);
+            }
+        }
     }
 }
