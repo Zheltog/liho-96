@@ -13,11 +13,15 @@ namespace Boss
         public float maxXPoint = -10f;
         public float minHeight = 2;
         public float maxHeight = 5;
+        public float goingVerticalSpeed = 10f;
 
         private float _currentTime;
+        private VerticalMovement _currentMovement = VerticalMovement.None;
 
         private void Update()
         {
+            GoVerticalIfShould();
+            
             _currentTime += Time.deltaTime;
             if (!(_currentTime >= secondsBeforeNextShot)) return;
             _currentTime -= secondsBeforeNextShot;
@@ -34,11 +38,13 @@ namespace Boss
 
         private IEnumerator HideAndMove()
         {
-            var positionBefore = transform.position;
-            transform.position = new Vector3(positionBefore.x, minHeight, positionBefore.z);
+            _currentMovement = VerticalMovement.Down;
+            yield return new WaitUntil(() => _currentMovement != VerticalMovement.None);
             yield return new WaitForSeconds(RandomHidingTime());
-            var positionAfter = transform.position;
-            transform.position = new Vector3(RandomXPosition(), maxHeight, positionAfter.z);
+            var positionWhenHidden = transform.position;
+            transform.position = new Vector3(RandomXPosition(), positionWhenHidden.y, positionWhenHidden.z);
+            _currentMovement = VerticalMovement.Up;
+            yield return new WaitUntil(() => _currentMovement != VerticalMovement.None);
         }
 
         private float RandomHidingTime()
@@ -49,6 +55,40 @@ namespace Boss
         private float RandomXPosition()
         {
             return Random.Range(minXPoint, maxXPoint);
+        }
+
+        private void GoVerticalIfShould()
+        {
+            if (_currentMovement == VerticalMovement.None)
+            {
+                return;
+            }
+
+            var currentPosition = transform.position;
+            float newY = currentPosition.y;
+
+            switch (_currentMovement)
+            {
+                case VerticalMovement.Up:
+                    newY += Time.deltaTime * goingVerticalSpeed;
+                    break;
+                case VerticalMovement.Down:
+                    newY -=  Time.deltaTime * goingVerticalSpeed;
+                    break;
+            }
+
+            if (newY <= minHeight)
+            {
+                newY = minHeight;
+                _currentMovement = VerticalMovement.None;
+            }
+            else if (newY >= maxHeight)
+            {
+                newY = maxHeight;
+                _currentMovement = VerticalMovement.None;
+            }
+
+            transform.position = new Vector3(currentPosition.x, newY, currentPosition.z);
         }
 
         protected override bool ShouldTakeDamage()
@@ -64,6 +104,11 @@ namespace Boss
         protected override void OnDamage()
         {
             StartCoroutine(HideAndMove());
+        }
+
+        private enum VerticalMovement
+        {
+            Up, Down, None
         }
     }
 }
