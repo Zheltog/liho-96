@@ -3,13 +3,10 @@ using UnityEngine;
 
 namespace Boss
 {
-    public class Courier : MonoBehaviour
+    public class Courier : CharacterBehindBench
     {
-        public HealthBar hpBar;
         public GameObject redPanel;
         public MainController mainController;
-        public float hp = 100;
-        public float damage = 5;
         public float maxCameraHeight = 5f;
         public float minCameraHeight = 2f;
         public float cameraSpeed = 10f;
@@ -43,27 +40,6 @@ namespace Boss
             transform.position = new Vector3(transform.position.x, minCameraHeight, transform.position.z);
         }
 
-        public void Hit(float damageTaken)
-        {
-            if (!IsActivePhase())
-            {
-                return;
-            }
-            
-            var hpDamage = damageTaken;
-
-            hp -= damageTaken;
-
-            if (hp <= 0)
-            {
-                hpDamage = damageTaken + hp;
-                mainController.GameOver("Райан Гослинг умер...");
-            }
-
-            hpBar.Damage(hpDamage);
-            StartCoroutine(ShowHitAnimation());
-        }
-
         private void UpdateCamera()
         {
             var deltaY = Input.GetAxis("Vertical") * cameraSpeed;
@@ -88,17 +64,9 @@ namespace Boss
 
         private void Shoot()
         {
-            Vector3 mousePosition = Input.mousePosition;
-            Ray ray = _camera.ScreenPointToRay(mousePosition);
-            RaycastHit hit;
-            if (Physics.Raycast(ray, out hit))
-            {
-                var enemy = hit.collider.gameObject.GetComponent<Enemy>();
-                if (enemy != null)
-                {
-                    enemy.Hit(damage);
-                }
-            }
+            var mousePosition = Input.mousePosition;
+            var ray = _camera.ScreenPointToRay(mousePosition);
+            Shoot(ray);
         }
 
         private IEnumerator ShowHitAnimation()
@@ -117,6 +85,21 @@ namespace Boss
         private bool IsActivePhase()
         {
             return mainController.CurrentRoundState == MainController.RoundState.Attack;
+        }
+
+        protected override bool ShouldTakeDamage()
+        {
+            return IsActivePhase();
+        }
+        
+        protected override void Die()
+        {
+            mainController.GameOver("Райан Гослинг умер...");
+        }
+
+        protected override void OnDamage()
+        {
+            StartCoroutine(ShowHitAnimation());
         }
     }
 }

@@ -3,12 +3,9 @@ using UnityEngine;
 
 namespace Boss
 {
-    public class Enemy : MonoBehaviour
+    public class Enemy : CharacterBehindBench
     {
-        public HealthBar hpBar;
         public Vector3 targetPoint = new Vector3(0f, 5f, -10f);
-        public float hp = 50;
-        public float damage = 5;
         public float secondsBeforeNextShot = 2f;
         public float maxHidingSeconds = 3f;
         public float minHidingSeconds = 0.5f;
@@ -22,27 +19,9 @@ namespace Boss
         private void Update()
         {
             _currentTime += Time.deltaTime;
-
             if (!(_currentTime >= secondsBeforeNextShot)) return;
-            
             _currentTime -= secondsBeforeNextShot;
             Shoot();
-        }
-
-        public void Hit(float damage)
-        {
-            var hpDamage = damage;
-
-            hp -= damage;
-
-            if (hp <= 0)
-            {
-                hpDamage = damage + hp;
-                Destroy(gameObject);
-            }
-
-            hpBar.Damage(hpDamage);
-            StartCoroutine(HideAndMove());
         }
 
         private void Shoot()
@@ -50,13 +29,7 @@ namespace Boss
             var fromPosition = transform.position;
             var direction = targetPoint - fromPosition;
             var ray = new Ray(transform.position, direction);
-            if (!Physics.Raycast(ray, out var hit)) return;
-            
-            var courier = hit.collider.gameObject.GetComponent<Courier>();
-            if (courier != null)
-            {
-                courier.Hit(damage);
-            }
+            Shoot(ray);
         }
 
         private IEnumerator HideAndMove()
@@ -76,6 +49,21 @@ namespace Boss
         private float RandomXPosition()
         {
             return Random.Range(minXPoint, maxXPoint);
+        }
+
+        protected override bool ShouldTakeDamage()
+        {
+            return true;
+        }
+
+        protected override void Die()
+        {
+            Destroy(gameObject);
+        }
+
+        protected override void OnDamage()
+        {
+            StartCoroutine(HideAndMove());
         }
     }
 }
