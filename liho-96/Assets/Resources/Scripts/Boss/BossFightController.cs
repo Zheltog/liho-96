@@ -1,3 +1,4 @@
+using System;
 using TMPro;
 using UnityEngine;
 
@@ -8,6 +9,7 @@ public class BossFightController : MonoBehaviour
     public TextMeshProUGUI timer;
     public Courier courier;
     public BossFightItemsChoicesController itemsChoicesController;
+    public GameObject actionsButtons;
 
     public TextBoxController text;
 
@@ -29,6 +31,8 @@ public class BossFightController : MonoBehaviour
 
     public void ReturnToActivePhase()
     {
+        _isRest = false;
+        text.NewText(" ");
         courier.ReturnToActivePhase();
     }
 
@@ -69,16 +73,52 @@ public class BossFightController : MonoBehaviour
     {
         _isRest = true;
         courier.Rest();
-        if (itemsChoicesController.ItemsChoiceAvailable())
-        {
-            text.NewText(" ");
-            itemsChoicesController.NewChoices();
-        }
+        actionsButtons.SetActive(true);
     }
 
     public void ChooseItem(Item item)
     {
         text.NewText(item.UseText);
         itemsChoicesController.DisableButtons();
+    }
+
+    public void FinishPrintingOrStopRest()
+    {
+        if (text.IsPrinting)
+        {
+            text.FinishPrinting();
+        }
+        else
+        {
+            ReturnToActivePhase();
+        }
+    }
+
+    public void Attack()
+    {
+        actionsButtons.SetActive(false);
+        ReturnToActivePhase();
+    }
+
+    public void Inventory()
+    {
+        if (itemsChoicesController.ItemsChoiceAvailable())
+        {
+            actionsButtons.SetActive(false);
+            itemsChoicesController.NewChoices();
+        }
+    }
+
+    public void Surrender()
+    {
+        try
+        {
+            throw new Exception("");
+        }
+        catch (Exception e)
+        {
+            actionsButtons.SetActive(false);
+            text.NewText(e.StackTrace);
+        }
     }
 }
