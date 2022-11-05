@@ -86,7 +86,34 @@
     },
     "start_note": {
       "Picture": "courier_in_a_car_holding_a_note",
-      "Text": "В кармане курьера – записка:\n\"Полночь. Старый. Клумба.\"",
+      "Text": "В кармане курьера записка:\n\"Полночь. Старый. Клумба.\"",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "start_note_1"
+      }
+    },
+    "start_note_1": {
+      "Picture": "courier_in_a_car_holding_a_note",
+      "Text": "Курьер раньше не был в этом городе.\nВозможно, стоит аккуратно расспросить местных о городских \"достопримечательностях\".",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "start_gun"
+      }
+    },
+    "start_gun": {
+      "Picture": "courier_in_a_car_holding_a_gun",
+      "Text": "В другом кармане курьер всегда держит пистолет. Работа опасная, и в этот день у него было плохое предчувствие.",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "start_town"
+      }
+    },
+    "start_town": {
+      "Picture": "courier_in_a_car_town",
+      "Text": "Дождь прекратился. За стеклом начинают появляться невысокие панельные дома.\nТусклый свет фонарей и редких вывесок. Кажется, что город уже засыпает.",
       "Type": "Simple",
       "Transition": {
         "Type": "Frame",
@@ -94,12 +121,12 @@
       }
     },
     "start_time": {
-      "Picture": "courier_in_a_car_forest",
+      "Picture": "courier_in_a_car_town",
       "Text": "На часах – 21:30. Достаточно времени, чтобы со всем разобраться на месте.",
       "Type": "Simple",
       "Transition": {
         "Type": "Frame",
-        "Next": "start_time"
+        "Next": "start"
       }
     }
   }
