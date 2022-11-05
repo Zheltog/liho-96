@@ -629,6 +629,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 425348324}
+  - component: {fileID: 425348325}
   m_Layer: 5
   m_Name: ButtonsDouble
   m_TagString: Untagged
@@ -657,6 +658,21 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &425348325
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 425348323}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 351600b3846ceb44e928375f4734bd43, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textOnButton1: {fileID: 749773713}
+  textOnButton2: {fileID: 1758509283}
+  textOnButton3: {fileID: 0}
 --- !u!1 &470071707
 GameObject:
   m_ObjectHideFlags: 0
@@ -1594,8 +1610,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 974f16489d9d43c40bda4c2d629d07ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  buttonsDouble: {fileID: 425348323}
-  buttonsTriple: {fileID: 1775608349}
+  buttonsDouble: {fileID: 425348325}
+  buttonsTriple: {fileID: 1775608351}
 --- !u!224 &1084159668
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2485,6 +2501,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1775608350}
+  - component: {fileID: 1775608351}
   m_Layer: 5
   m_Name: ButtonsTriple
   m_TagString: Untagged
@@ -2514,6 +2531,21 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1775608351
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1775608349}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 351600b3846ceb44e928375f4734bd43, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textOnButton1: {fileID: 1799902955}
+  textOnButton2: {fileID: 1804581145}
+  textOnButton3: {fileID: 1131783578}
 --- !u!1 &1795225221
 GameObject:
   m_ObjectHideFlags: 0

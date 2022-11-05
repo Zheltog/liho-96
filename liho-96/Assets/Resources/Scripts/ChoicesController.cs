@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class ChoicesController : MonoBehaviour
 {
-    public GameObject buttonsDouble;
-    public GameObject buttonsTriple;
+    public ButtonsBundle buttonsDouble;
+    public ButtonsBundle buttonsTriple;
 
     private List<Choice> _currentChoices;
     private ChoiceType _currentType;
@@ -55,9 +55,11 @@ public class ChoicesController : MonoBehaviour
         {
             case ChoiceType.DOUBLE:
                 buttonsDouble.SetActive(isActive);
+                buttonsDouble.SetTexts(_currentChoices[0].Text, _currentChoices[1].Text);
                 break;
             case ChoiceType.TRIPLE:
                 buttonsTriple.SetActive(isActive);
+                buttonsDouble.SetTexts(_currentChoices[0].Text, _currentChoices[1].Text, _currentChoices[2].Text);
                 break;
         }
     }
