@@ -570,7 +570,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: df278e273a6ec8c458d802145f92b448, type: 3}
+  m_Sprite: {fileID: 21300000, guid: f9785071e6db1284da5a561a6129a5e6, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1196,8 +1196,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a5ca0b7e7a41c748b4043ebd70d4ca7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  defaultSecondsBeforeNextSymbol: 0.075
   secondsBeforeNextSymbol: 0.075
   delayMultiplier: 5
+  pitchRangeMin: 0.7
+  pitchRangeMax: 0.8
   _gameController: {fileID: 1963841118}
   _audioController: {fileID: 1098723470}
 --- !u!114 &568267678

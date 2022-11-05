@@ -46,7 +46,7 @@
       }
     },
     "start_3": {
-      "Picture": "courier_in_a_car",
+      "Picture": "courier_in_a_car_forest",
       "Text": "Молчаливый курьер везёт груз. Он никогда не спрашивает, что и кому он доставляет. За это его и ценят – и, возможно, лишь поэтому он до сих пор не получил пулю в лоб.",
       "TextDelay": 0.09,
       "Sound": "car_interior",
@@ -57,7 +57,7 @@
       }
     },
     "start_name": {
-      "Picture": "courier_in_a_car",
+      "Picture": "courier_in_a_car_forest",
       "Text": "Его имя? Райан Гослинг.",
       "TextDelay": 0.09,
       "Type": "Simple",
@@ -90,16 +90,16 @@
       "Type": "Simple",
       "Transition": {
         "Type": "Frame",
-        "Next": "start_liho"
+        "Next": "start_time"
       }
     },
     "start_time": {
-      "Picture": "courier_in_a_car",
+      "Picture": "courier_in_a_car_forest",
       "Text": "На часах – 21:30. Достаточно времени, чтобы со всем разобраться на месте.",
       "Type": "Simple",
       "Transition": {
         "Type": "Frame",
-        "Next": "start_5"
+        "Next": "start_time"
       }
     }
   }
