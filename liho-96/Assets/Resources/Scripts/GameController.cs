@@ -24,6 +24,8 @@ public class GameController : MonoBehaviour
             GameStateHolder.SetFrame(gameStructure.StartingFrame);
             GameStateHolder.State = State.Frame;
         }
+
+        player.NewMusic(GameStateHolder.LastMusic);
         
         UpdateFrame();
         LogState();
@@ -111,8 +113,15 @@ public class GameController : MonoBehaviour
         text.secondsBeforeNextSymbol = currentFrame.TextDelay ?? text.defaultSecondsBeforeNextSymbol;
             
         image.NewImage(currentFrame.Picture);
-        
-        player.NewMusic(currentFrame.Music);
+
+        var music = currentFrame.Music;
+
+        if (music != null)
+        {
+            GameStateHolder.LastMusic = music;
+        }
+
+        player.NewMusic(music);
         player.NewSound(currentFrame.Sound);
 
         var choicesList = currentFrame.Choices;

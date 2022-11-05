@@ -13,6 +13,8 @@ public class GameStateHolder
     public static State State { get; set; }
     
     public static bool Initialized { get; private set; }
+    
+    public static string LastMusic { get; set;  }
 
     public static void Init(GameStructure gameStructure)
     {
