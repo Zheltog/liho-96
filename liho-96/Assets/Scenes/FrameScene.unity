@@ -523,6 +523,7 @@ GameObject:
   - component: {fileID: 391043317}
   - component: {fileID: 391043319}
   - component: {fileID: 391043320}
+  - component: {fileID: 391043321}
   m_Layer: 5
   m_Name: Image
   m_TagString: Untagged
@@ -620,6 +621,35 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &391043321
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 391043315}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 4
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1963841118}
+          m_TargetAssemblyTypeName: GameController, Assembly-CSharp
+          m_MethodName: NextFrame
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &425348323
 GameObject:
   m_ObjectHideFlags: 0
@@ -1236,9 +1266,9 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 568267677}
-          m_TargetAssemblyTypeName: FrameTextController, Assembly-CSharp
-          m_MethodName: OnClick
+        - m_Target: {fileID: 1963841118}
+          m_TargetAssemblyTypeName: GameController, Assembly-CSharp
+          m_MethodName: NextFrame
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}

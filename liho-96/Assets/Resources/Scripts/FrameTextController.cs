@@ -20,7 +20,7 @@ public class FrameTextController : MonoBehaviour
 
     private string _currentPhraseFinal;
 
-    private bool _isPrinting;
+    public bool IsPrinting { get; private set; }
 
     private TextMeshProUGUI _textBox;
 
@@ -33,32 +33,16 @@ public class FrameTextController : MonoBehaviour
         _textBox = GetComponent<TextMeshProUGUI>();
     }
 
-    public bool IsPrinting()
+    public void FinishPrinting()
     {
-        return _isPrinting;
-    }
-
-    public void OnClick()
-    {
-        // Печатает весь текст, если он ещё не был отображен полностью.
-        if (_isPrinting)
-        {
-            _textBox.text = _currentPhraseFinal;
-            _isPrinting = false;
-            return;
-        }
-
-        // Запускает переход, если у кадра не было вариантов выбора
-        if (GameStateHolder.CurrentFrame.Type != FrameType.Choice)
-        {
-            _gameController.Transition();
-        }
+        _textBox.text = _currentPhraseFinal;
+        IsPrinting = false;
     }
 
     // Установка нового текста. Вызывается из игрового контроллера
     public void NewText(string text)
     {
-        _isPrinting = true;
+        IsPrinting = true;
         _currentPhraseFinal = text;
         _currentPhraseChars = _currentPhraseFinal.ToCharArray();
         _currentPhrase = "";
@@ -77,7 +61,7 @@ public class FrameTextController : MonoBehaviour
                 _audioController.PlayTextSound(pitchRangeMin, pitchRangeMax);
             }
 
-            if (!_isPrinting)
+            if (!IsPrinting)
             {
                 yield break;
             }
@@ -87,7 +71,7 @@ public class FrameTextController : MonoBehaviour
             prevChar = currentChar;
         }
 
-        _isPrinting = false;
+        IsPrinting = false;
     }
 
     // Возвращает значение задержки между печатью двух символов.

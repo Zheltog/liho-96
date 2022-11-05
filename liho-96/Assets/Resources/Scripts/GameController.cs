@@ -25,6 +25,30 @@ public class GameController : MonoBehaviour
         LogState();
     }
 
+    private void Update()
+    {
+        if (AnyKeyIgnoreMouse() && !choices.WaitingForChoice)
+        {
+            NextFrame();
+        }
+    }
+
+    public void NextFrame()
+    {
+        // Печатает весь текст, если он ещё не был отображен полностью.
+        if (text.IsPrinting)
+        {
+            text.FinishPrinting();
+            return;
+        }
+            
+        // Запускает переход, если у кадра не было вариантов выбора
+        if (GameStateHolder.CurrentFrame.Type != FrameType.Choice)
+        {
+            Transition();
+        }
+    }
+
     public void Transition()
     {
         if (GameStateHolder.State == State.Frame)
@@ -96,7 +120,15 @@ public class GameController : MonoBehaviour
 
     private IEnumerator UpdateChoices(List<Choice> choicesList)
     {
-        yield return new WaitUntil(() => !text.IsPrinting());
+        yield return new WaitUntil(() => !text.IsPrinting);
         choices.NewChoices(ChoicesFilter.FilterChoices(choicesList));
+    }
+    
+    private static bool AnyKeyIgnoreMouse()
+    {
+        return Input.anyKeyDown
+               && !Input.GetMouseButtonDown(0)
+               && !Input.GetMouseButtonDown(1)
+               && !Input.GetMouseButtonDown(2);
     }
 }

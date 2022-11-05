@@ -6,6 +6,8 @@ public class ChoicesController : MonoBehaviour
 {
     public ButtonsBundle buttonsDouble;
     public ButtonsBundle buttonsTriple;
+    
+    public bool WaitingForChoice { get; private set; }
 
     private List<Choice> _currentChoices;
     private ChoiceType _currentType;
@@ -49,8 +51,10 @@ public class ChoicesController : MonoBehaviour
         _gameController.Transition(_currentChoices[2].Transition);
     }
 
-    public void SetActiveForButtons(bool isActive)
+    private void SetActiveForButtons(bool isActive)
     {
+        WaitingForChoice = isActive;
+        
         if (!isActive)
         {
             buttonsDouble.SetActive(false);
