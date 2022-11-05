@@ -82,5 +82,9 @@ public class GameController : MonoBehaviour
         {
             choices.NewChoices(ChoicesFilter.FilterChoices(currentFrame.Choices));
         }
+        else
+        {
+            choices.SetActiveForButtons(false);
+        }
     }
 }

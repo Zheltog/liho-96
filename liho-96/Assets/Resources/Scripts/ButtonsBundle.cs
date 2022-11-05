@@ -14,8 +14,8 @@ public class ButtonsBundle : MonoBehaviour
 
     public void SetTexts(string text1, string text2)
     {
-        textOnButton1.text = text1;
-        textOnButton2.text = text2;
+        textOnButton1.text = FormattedText(text1);
+        textOnButton2.text = FormattedText(text2);
     }
     
     public void SetTexts(string text1, string text2, string text3)
