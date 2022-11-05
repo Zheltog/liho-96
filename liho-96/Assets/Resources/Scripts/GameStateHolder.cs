@@ -11,6 +11,8 @@ public class GameStateHolder
     public static HashSet<string> Flags { get; set; }
     
     public static State State { get; set; }
+    
+    public static bool Initialized { get; private set; }
 
     public static void Init(GameStructure gameStructure)
     {
@@ -18,6 +20,8 @@ public class GameStateHolder
         Flags = new HashSet<string>(gameStructure.StartingFlags);
 
         State = State.Start;
+
+        Initialized = true;
     }
 
     public static void SetFrame(string frameName)

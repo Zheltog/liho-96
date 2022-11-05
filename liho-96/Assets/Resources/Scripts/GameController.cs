@@ -15,12 +15,16 @@ public class GameController : MonoBehaviour
 
     private void Start()
     {
-        var jsonString = Resources.Load<TextAsset>("Text/gameStructure").text;
-        var gameStructure = JsonConvert.DeserializeObject<GameStructure>(jsonString);
+        if (!GameStateHolder.Initialized)
+        {
+            var jsonString = Resources.Load<TextAsset>("Text/gameStructure").text;
+            var gameStructure = JsonConvert.DeserializeObject<GameStructure>(jsonString);
 
-        GameStateHolder.Init(gameStructure);
-        GameStateHolder.SetFrame(gameStructure.StartingFrame);
-        GameStateHolder.State = State.Frame;
+            GameStateHolder.Init(gameStructure);
+            GameStateHolder.SetFrame(gameStructure.StartingFrame);
+            GameStateHolder.State = State.Frame;
+        }
+        
         UpdateFrame();
         LogState();
     }
