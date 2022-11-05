@@ -1639,8 +1639,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 974f16489d9d43c40bda4c2d629d07ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  framesButtonsDouble: {fileID: 425348325}
-  framesButtonsTriple: {fileID: 1775608351}
+  buttonsDouble: {fileID: 425348325}
+  buttonsTriple: {fileID: 1775608351}
+  mainController: {fileID: 1963841118}
 --- !u!224 &1084159668
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2934,8 +2935,8 @@ GameObject:
   - component: {fileID: 1963841120}
   - component: {fileID: 1963841118}
   m_Layer: 0
-  m_Name: Controller
-  m_TagString: GameController
+  m_Name: MainController
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2955,7 +2956,7 @@ MonoBehaviour:
   textBox: {fileID: 568267677}
   image: {fileID: 391043319}
   player: {fileID: 1098723470}
-  framesChoices: {fileID: 1084159667}
+  choices: {fileID: 1084159667}
 --- !u!4 &1963841119
 Transform:
   m_ObjectHideFlags: 0
