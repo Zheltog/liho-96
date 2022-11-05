@@ -3,8 +3,8 @@ using UnityEngine;
 public class CameraMovement : MonoBehaviour
 {
 
-    private float max = 3f;
-    private float min = 1;
+    private float max = 5f;
+    private float min = 2f;
 
     private float speed = 10f;
 
