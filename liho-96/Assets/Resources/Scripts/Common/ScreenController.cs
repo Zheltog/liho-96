@@ -1,12 +1,15 @@
 using UnityEngine;
 
-public class ScreenController : MonoBehaviour
+namespace Common
 {
-    public int resolutionX = 640;
-    public int resolutionY = 480;
-    
-    private void Start()
+    public class ScreenController : MonoBehaviour
     {
-        Screen.SetResolution(resolutionX, resolutionY, true);
+        public int resolutionX = 640;
+        public int resolutionY = 480;
+
+        private void Start()
+        {
+            Screen.SetResolution(resolutionX, resolutionY, true);
+        }
     }
 }

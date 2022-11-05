@@ -1,49 +1,53 @@
 using UnityEngine;
 
-public class AudioController : MonoBehaviour
+namespace Common
 {
 
-    public AudioSource soundsSource;
-    public AudioSource musicSource;
-    public AudioSource textSoundSource;
-
-    private AudioClip _textSoundClip;
-
-    private void Start()
+    public class AudioController : MonoBehaviour
     {
-        _textSoundClip = Resources.Load<AudioClip>("Audio/typewriter_key_press");
-    }
 
-    public void NewMusic(string musicName)
-    {
-        if (musicName == null) return;
+        public AudioSource soundsSource;
+        public AudioSource musicSource;
+        public AudioSource textSoundSource;
 
-        if (musicName == "")
+        private AudioClip _textSoundClip;
+
+        private void Start()
         {
-            musicSource.Stop();
-            return;
+            _textSoundClip = Resources.Load<AudioClip>("Audio/typewriter_key_press");
         }
-        
-        var clip = Resources.Load<AudioClip>("Audio/" + musicName);
-        musicSource.Stop();
-        musicSource.clip = clip;
-        musicSource.Play();
-    }
 
-    public void NewSound(string soundName)
-    {
-        if (soundName == null) return;
-        var clip = Resources.Load<AudioClip>("Audio/" + soundName);
-        soundsSource.Stop();
-        soundsSource.clip = clip;
-        soundsSource.Play();
-    }
+        public void NewMusic(string musicName)
+        {
+            if (musicName == null) return;
 
-    public void PlayTextSound(float pitchRangeMin, float pitchRangeMax)
-    {
-        textSoundSource.Stop();
-        textSoundSource.clip = _textSoundClip;
-        textSoundSource.pitch = Random.Range(pitchRangeMin, pitchRangeMax);
-        textSoundSource.Play();
+            if (musicName == "")
+            {
+                musicSource.Stop();
+                return;
+            }
+
+            var clip = Resources.Load<AudioClip>("Audio/" + musicName);
+            musicSource.Stop();
+            musicSource.clip = clip;
+            musicSource.Play();
+        }
+
+        public void NewSound(string soundName)
+        {
+            if (soundName == null) return;
+            var clip = Resources.Load<AudioClip>("Audio/" + soundName);
+            soundsSource.Stop();
+            soundsSource.clip = clip;
+            soundsSource.Play();
+        }
+
+        public void PlayTextSound(float pitchRangeMin, float pitchRangeMax)
+        {
+            textSoundSource.Stop();
+            textSoundSource.clip = _textSoundClip;
+            textSoundSource.pitch = Random.Range(pitchRangeMin, pitchRangeMax);
+            textSoundSource.Play();
+        }
     }
 }

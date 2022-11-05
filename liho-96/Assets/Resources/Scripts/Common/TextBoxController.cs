@@ -2,85 +2,79 @@ using System.Collections;
 using TMPro;
 using UnityEngine;
 
-public class TextBoxController : MonoBehaviour
+namespace Common
 {
-    public float defaultSecondsBeforeNextSymbol = 0.075f;
-    
-    public float secondsBeforeNextSymbol = 0.075f;
-
-    public float delayMultiplier = 5;
-
-    public float pitchRangeMin = 0.7f;
-
-    public float pitchRangeMax = 0.8f;
-
-    private char[] _currentPhraseChars;
-
-    private string _currentPhrase;
-
-    private string _currentPhraseFinal;
-
-    public bool IsPrinting { get; private set; }
-
-    private TextMeshProUGUI _textBox;
-
-    public AudioController _audioController;
-
-    private void Start()
+    public class TextBoxController : MonoBehaviour
     {
-        _textBox = GetComponent<TextMeshProUGUI>();
-    }
+        public float defaultSecondsBeforeNextSymbol = 0.075f;
+        public float secondsBeforeNextSymbol = 0.075f;
+        public float delayMultiplier = 5;
+        public float pitchRangeMin = 0.7f;
+        public float pitchRangeMax = 0.8f;
+        public bool IsPrinting { get; private set; }
+        public AudioController audioController;
 
-    public void FinishPrinting()
-    {
-        _textBox.text = _currentPhraseFinal;
-        IsPrinting = false;
-    }
+        private char[] _currentPhraseChars;
+        private string _currentPhrase;
+        private string _currentPhraseFinal;
+        private TextMeshProUGUI _textBox;
 
-    // Установка нового текста. Вызывается из игрового контроллера
-    public void NewText(string text)
-    {
-        IsPrinting = true;
-        _currentPhraseFinal = text;
-        _currentPhraseChars = _currentPhraseFinal.ToCharArray();
-        _currentPhrase = "";
-        StartCoroutine(PrintNextPhrase());
-    }
-
-    private IEnumerator PrintNextPhrase()
-    {
-        var prevChar = ' ';
-        foreach (var currentChar in _currentPhraseChars)
+        private void Start()
         {
-            yield return new WaitForSeconds(GetDelay(prevChar, currentChar));
-
-            if (!char.IsWhiteSpace(currentChar))
-            {
-                _audioController.PlayTextSound(pitchRangeMin, pitchRangeMax);
-            }
-
-            if (!IsPrinting)
-            {
-                yield break;
-            }
-            
-            _currentPhrase += currentChar;
-            _textBox.text = _currentPhrase;
-            prevChar = currentChar;
+            _textBox = GetComponent<TextMeshProUGUI>();
         }
 
-        IsPrinting = false;
-    }
-
-    // Возвращает значение задержки между печатью двух символов.
-    // Задержка увеличена, если предыдущий символ - знак пунктуации или переход на новую строку.
-    private float GetDelay(char prevChar, char nextChar)
-    {
-        if (char.IsPunctuation(prevChar) || nextChar == '\n')
+        public void FinishPrinting()
         {
-            return secondsBeforeNextSymbol * delayMultiplier;
+            _textBox.text = _currentPhraseFinal;
+            IsPrinting = false;
         }
 
-        return secondsBeforeNextSymbol;
+        // Установка нового текста. Вызывается из игрового контроллера
+        public void NewText(string text)
+        {
+            IsPrinting = true;
+            _currentPhraseFinal = text;
+            _currentPhraseChars = _currentPhraseFinal.ToCharArray();
+            _currentPhrase = "";
+            StartCoroutine(PrintNextPhrase());
+        }
+
+        private IEnumerator PrintNextPhrase()
+        {
+            var prevChar = ' ';
+            foreach (var currentChar in _currentPhraseChars)
+            {
+                yield return new WaitForSeconds(GetDelay(prevChar, currentChar));
+
+                if (!char.IsWhiteSpace(currentChar))
+                {
+                    audioController.PlayTextSound(pitchRangeMin, pitchRangeMax);
+                }
+
+                if (!IsPrinting)
+                {
+                    yield break;
+                }
+
+                _currentPhrase += currentChar;
+                _textBox.text = _currentPhrase;
+                prevChar = currentChar;
+            }
+
+            IsPrinting = false;
+        }
+
+        // Возвращает значение задержки между печатью двух символов.
+        // Задержка увеличена, если предыдущий символ - знак пунктуации или переход на новую строку.
+        private float GetDelay(char prevChar, char nextChar)
+        {
+            if (char.IsPunctuation(prevChar) || nextChar == '\n')
+            {
+                return secondsBeforeNextSymbol * delayMultiplier;
+            }
+
+            return secondsBeforeNextSymbol;
+        }
     }
 }

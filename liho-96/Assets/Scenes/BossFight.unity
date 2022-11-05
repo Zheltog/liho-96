@@ -618,11 +618,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fightSeconds: 120
   activePhaseSeconds: 10
-  timer: {fileID: 1107313588}
   courier: {fileID: 584745251}
-  itemsChoicesController: {fileID: 476675593}
   actionsButtons: {fileID: 1424040546}
+  timer: {fileID: 1107313588}
   text: {fileID: 2095290560}
+  itemsChoicesController: {fileID: 476675593}
 --- !u!4 &248021002
 Transform:
   m_ObjectHideFlags: 0
@@ -1032,7 +1032,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ddeba5ee014140ab82749dd2c880e787, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _bossFightController: {fileID: 248021001}
+  mainController: {fileID: 248021001}
   textOnButton1: {fileID: 259673715}
   textOnButton2: {fileID: 112377067}
   textOnButton3: {fileID: 1305817601}
@@ -1375,6 +1375,11 @@ MonoBehaviour:
   grayPanel: {fileID: 860493342}
   hp: 100
   damage: 5
+  maxCameraHeight: 5
+  minCameraHeight: 2
+  cameraSpeed: 10
+  hitAnimationSeconds: 0.1
+  shake: 0.2
 --- !u!1 &639793503
 GameObject:
   m_ObjectHideFlags: 0
@@ -3114,6 +3119,8 @@ MonoBehaviour:
   minHidingSeconds: 0.5
   minXPoint: 20
   maxXPoint: 10
+  minHeight: 2
+  maxHeight: 5
 --- !u!136 &964093231
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -3518,6 +3525,8 @@ MonoBehaviour:
   minHidingSeconds: 0.5
   minXPoint: -20
   maxXPoint: -10
+  minHeight: 2
+  maxHeight: 5
 --- !u!1 &1107313586
 GameObject:
   m_ObjectHideFlags: 0
@@ -5775,7 +5784,7 @@ MonoBehaviour:
   delayMultiplier: 5
   pitchRangeMin: 0.7
   pitchRangeMax: 0.8
-  _audioController: {fileID: 644187130}
+  audioController: {fileID: 644187130}
 --- !u!114 &2095290561
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using Common;
 using Newtonsoft.Json;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -49,9 +50,7 @@ namespace Frames
                 textBox.FinishPrinting();
                 return;
             }
-                
-            Debug.Log("CURRENT TYPE - " + StateHolder.CurrentFrame.Type);
-            
+
             // Запускает переход, если у кадра не было вариантов выбора
             if (StateHolder.CurrentFrame.Type != FrameType.Choice)
             {
