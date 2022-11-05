@@ -5,6 +5,19 @@ public class Enemy : MonoBehaviour
     public EnemiesHealthBar hpBar;
 
     public float hp = 50;
+    public float secondsBeforeNextShot = 2f;
+
+    private float _currentTime;
+    
+    private void Update()
+    {
+        _currentTime += Time.deltaTime;
+ 
+        if (_currentTime >= secondsBeforeNextShot) {
+            _currentTime -= secondsBeforeNextShot;
+            Shoot();
+        }
+    }
     
     public void Hit(float damage)
     {
@@ -19,5 +32,19 @@ public class Enemy : MonoBehaviour
         }
         
         hpBar.Damage(hpDamage);
+    }
+
+    private void Shoot()
+    {
+        Ray ray = new Ray(transform.position, transform.forward);
+        RaycastHit hit;
+        if (Physics.Raycast(ray, out hit))
+        {
+            var damaged = hit.collider.gameObject;
+            if (damaged != null)
+            {
+                Debug.Log(gameObject.name + " - HIT: " + damaged.name);
+            }
+        }
     }
 }
