@@ -8,6 +8,7 @@ namespace Boss
         public float fightSeconds = 30;
         public float activePhaseSeconds = 10;
         public Courier courier;
+        public GameObject grayPanel;
         public GameObject dynamicStuff;
         public GameObject gameOverImage;
         public GameObject actionsButtons;
@@ -15,20 +16,21 @@ namespace Boss
         public TimerController timer;
         public TextBoxController text;
         public ItemsChoicesController itemsChoicesController;
+        public RoundState CurrentRoundState { get; private set; }
         
         private float _timeRemainingBeforeEnd;
         private float _timeRemainingBeforeNextRest;
-        private RoundState _currentRoundState = RoundState.Attack;
 
         private void Start()
         {
+            CurrentRoundState = RoundState.Attack;
             _timeRemainingBeforeEnd = fightSeconds;
             _timeRemainingBeforeNextRest = activePhaseSeconds;
         }
 
         private void Update()
         {
-            if (_currentRoundState == RoundState.GameOver)
+            if (CurrentRoundState == RoundState.GameOver)
             {
                 return;
             }
@@ -51,7 +53,7 @@ namespace Boss
             }
             else
             {
-                switch (_currentRoundState)
+                switch (CurrentRoundState)
                 {
                     case RoundState.ItemChoice:
                         ReturnToActivePhase();
@@ -73,7 +75,7 @@ namespace Boss
         {
             if (!itemsChoicesController.ItemsChoiceAvailable()) return;
             
-            _currentRoundState = RoundState.ItemChoice;
+            CurrentRoundState = RoundState.ItemChoice;
             actionsButtons.SetActive(false);
             itemsChoicesController.NewChoices();
         }
@@ -85,7 +87,7 @@ namespace Boss
         
         public void GameOver(string comment)
         {
-            _currentRoundState = RoundState.GameOver;
+            CurrentRoundState = RoundState.GameOver;
             dynamicStuff.SetActive(false);
             gameOverImage.SetActive(true);
             text.NewText(comment);
@@ -94,7 +96,7 @@ namespace Boss
 
         private void UpdateTimeRemainingBeforeNextRest()
         {
-            if (_currentRoundState != RoundState.Attack)
+            if (CurrentRoundState != RoundState.Attack)
             {
                 return;
             }
@@ -123,19 +125,20 @@ namespace Boss
 
         private void Rest()
         {
-            _currentRoundState = RoundState.ActionChoice;
+            CurrentRoundState = RoundState.ActionChoice;
             courier.Rest();
             actionsButtons.SetActive(true);
+            grayPanel.SetActive(true);
         }
 
         private void ReturnToActivePhase()
         {
-            _currentRoundState = RoundState.Attack;
+            CurrentRoundState = RoundState.Attack;
             text.NewText(" ");
-            courier.ReturnToActivePhase();
+            grayPanel.SetActive(false);
         }
 
-        private enum RoundState
+        public enum RoundState
         {
             Attack, ActionChoice, ItemChoice, GameOver
         }

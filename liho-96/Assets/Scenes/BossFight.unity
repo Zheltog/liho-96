@@ -673,7 +673,7 @@ GameObject:
   - component: {fileID: 248021002}
   - component: {fileID: 248021001}
   m_Layer: 0
-  m_Name: Controller
+  m_Name: MainController
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -694,6 +694,7 @@ MonoBehaviour:
   fightSeconds: 30
   activePhaseSeconds: 10
   courier: {fileID: 584745251}
+  grayPanel: {fileID: 860493342}
   dynamicStuff: {fileID: 401678784}
   gameOverImage: {fileID: 179393097}
   actionsButtons: {fileID: 1424040546}
@@ -1487,7 +1488,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hpBar: {fileID: 1267802827}
   redPanel: {fileID: 1037149491}
-  grayPanel: {fileID: 860493342}
+  mainController: {fileID: 248021001}
   hp: 100
   damage: 5
   maxCameraHeight: 5

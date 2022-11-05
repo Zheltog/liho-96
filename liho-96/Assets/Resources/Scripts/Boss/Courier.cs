@@ -3,12 +3,11 @@ using UnityEngine;
 
 namespace Boss
 {
-
     public class Courier : MonoBehaviour
     {
         public HealthBar hpBar;
         public GameObject redPanel;
-        public GameObject grayPanel;
+        public MainController mainController;
         public float hp = 100;
         public float damage = 5;
         public float maxCameraHeight = 5f;
@@ -17,7 +16,6 @@ namespace Boss
         public float hitAnimationSeconds = 0.1f;
         public float shake = 0.2f;
         
-        private bool _isRest;
         private Camera _camera;
 
         private void Start()
@@ -27,7 +25,7 @@ namespace Boss
 
         private void Update()
         {
-            if (_isRest)
+            if (!IsActivePhase())
             {
                 return;
             }
@@ -43,26 +41,23 @@ namespace Boss
         public void Rest()
         {
             transform.position = new Vector3(transform.position.x, minCameraHeight, transform.position.z);
-            grayPanel.SetActive(true);
-            _isRest = true;
         }
 
-        public void ReturnToActivePhase()
+        public void Hit(float damageTaken)
         {
-            grayPanel.SetActive(false);
-            _isRest = false;
-        }
+            if (!IsActivePhase())
+            {
+                return;
+            }
+            
+            var hpDamage = damageTaken;
 
-        public void Hit(float damage)
-        {
-            var hpDamage = damage;
-
-            hp -= damage;
+            hp -= damageTaken;
 
             if (hp <= 0)
             {
-                hpDamage = damage + hp;
-                Debug.Log("GAME OVER!!!");
+                hpDamage = damageTaken + hp;
+                mainController.GameOver("Райан Гослинг умер...");
             }
 
             hpBar.Damage(hpDamage);
@@ -117,6 +112,11 @@ namespace Boss
             var positionAfter = transform.position;
             transform.position = new Vector3(positionAfter.x, positionAfter.y, positionAfter.z + shake);
             redPanel.SetActive(false);
+        }
+
+        private bool IsActivePhase()
+        {
+            return mainController.CurrentRoundState == MainController.RoundState.Attack;
         }
     }
 }
