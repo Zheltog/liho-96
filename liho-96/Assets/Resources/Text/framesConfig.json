@@ -1,8 +1,7 @@
 {
-  "StartingFrame": "casino_entrance",
+  "StartingFrame": "casino_boss_9",
   "StartingFlags": [
-    "test_var",
-    "aaa"
+    "Pistol"
   ],
   "Frames": {
     "start": {
@@ -129,9 +128,9 @@
         "Next": "start"
       }
     },
-
     "casino_entrance": {
       "Picture": "casino_entrance",
+      "Music": "city_ambience",
       "Text": "Неприметный дом на краю города. Никаких вывесок, металлическая дверь и кнопка звонка. Несколько дорогих машин у входа.",
       "Type": "Simple",
       "Transition": {
@@ -141,7 +140,8 @@
     },
     "casino_entrance_1": {
       "Picture": "casino_entrance",
-      "Text": "Учёный несколько раз стучит в дверь с особым ритмом.\nУчёный: \"Тут кодовая комбинация, хех-хе... Но я свой, меня тут з-знают. Проблем не будет.\"",
+      "Sound": "doorbell",
+      "Text": "Учёный несколько раз нажимает на звонок.\nУчёный: \"Это секретный сигнал, хех-хе... Но я свой, меня тут з-знают. Проблем не будет.\"",
       "Type": "Simple",
       "Transition": {
         "Type": "Frame",
@@ -280,7 +280,7 @@
     },
     "casino_slots": {
       "Picture": "casino_slots",
-      "Text": "Курьер садится за «однорукого бандита».\nУчёный: \"Всё просто, это же м-математика. Нужна лишь п-правильная стратегия, и мы с тобой станем немного богаче...\"",
+      "Text": "Курьер садится за однорукого бандита.\nУчёный: \"Всё просто, это же м-математика. Нужна лишь п-правильная стратегия, и мы с тобой станем немного богаче...\"",
       "Type": "Simple",
       "Transition": {
         "Type": "Frame",
@@ -289,6 +289,7 @@
     },
     "casino_slots_1": {
       "Picture": "casino_slots",
+      "Sound": "slot_playing",
       "Text": "Курьер вставляет монеты и дергает рычаг. Барабан вращается...",
       "Type": "Simple",
       "Transition": {
@@ -307,6 +308,7 @@
     },
     "casino_slots_3": {
       "Picture": "casino_slots",
+      "Sound": "slot_cash_out",
       "Text": "7! Из автомата высыпаются монеты.\n<В инвентарь добавлено: \"Много монет\">",
       "Type": "Simple",
       "Transition": {
@@ -343,7 +345,8 @@
     },
     "casino_slots_5": {
       "Picture": "casino_slots",
-      "Text": "Курьер снова дергает рычаг. Но в этот раз ему не везёт.\nУчёный: \"Всё нормально, так бывает, всё по п-плану. Просто в следующий раз нужно поставить в два раза больше!\"",
+      "Sound": "slot_playing",
+      "Text": "Курьер снова дергает рычаг. Но в этот раз ему не везёт.\nУчёный: \"Всё нормально, так бывает, всё п-под контролем. Просто в следующий раз нужно поставить в два раза больше!\"",
       "Type": "Choice",
       "Choices": [
         {
@@ -364,6 +367,7 @@
     },
     "casino_slots_6": {
       "Picture": "casino_slots",
+      "Sound": "slot_playing",
       "Text": "Снова и снова Курьер и Учёный вставляют монеты и дергают рычаг.\nИногда им везет, и азарт толкает их к продолжению игры.",
       "Type": "Simple",
       "Transition": {
@@ -373,7 +377,7 @@
     },
     "casino_slots_7": {
       "Picture": "casino_slots",
-      "Text": "Всю ночь они проводят за слот-машинами, потеряв под утро практически все свои деньги.\nУчёный: \"С-слушай, а мы ведь сюда з-зачем-то шли, да? Н-не помню...\"",
+      "Text": "Всю ночь они проводят за слот-машинами, потеряв под утро практически все свои деньги.\nУчёный: \"С-слушай, а мы ведь з-зачем-то ещё сюда шли, да? Н-не помню...\"",
       "Type": "Simple",
       "Transition": {
         "Type": "Frame",
@@ -399,7 +403,6 @@
         "Next": "casino_boss"
       }
     },
-    
     "casino_couch": {
       "Picture": "casino_hall",
       "Text": "Учёный: \"Не хочешь играть? Н-ну ладно, давай посидим... подождём...\"",
@@ -411,7 +414,7 @@
     },
     "casino_couch_1": {
       "Picture": "casino_hall",
-      "Text": "Учёный: \"...\"",
+      "Text": "Учёный: \"Так...Хм...\"",
       "Type": "Simple",
       "Transition": {
         "Type": "Frame",
@@ -459,6 +462,7 @@
     },
     "casino_couch_magazines": {
       "Picture": "casino_hall",
+      "Sound": "flipping_pages",
       "Text": "Учёный протягивает Курьеру пачку журналов со столика.\nЭротика, всё о звёздах...",
       "Type": "Simple",
       "Transition": {
@@ -468,7 +472,7 @@
     },
     "casino_couch_magazines_1": {
       "Picture": "casino_hall",
-      "Text": "Курьера заинтересовал затерявшийся внизу стопки \"Юный техник\".\nВнимательно пролистав страницы, Курьер чувствует, что узнал что-то новое. Осталось понять, как это знание применить...\n<Новый рецепт: \"Коктейль молотова\">",
+      "Text": "Курьера заинтересовал затерявшийся внизу стопки \"Юный техник\".\nВнимательно пролистав страницы, Курьер чувствует, что узнал что-то новое. Осталось понять, как это знание применить...\n\n<Новый рецепт: \"Коктейль молотова\">",
       "Type": "Simple",
       "Transition": {
         "Type": "Frame",
@@ -483,11 +487,690 @@
     },
     "casino_boss": {
       "Picture": "casino_hall",
-      "Text": "boss",
+      "Text": "Через какое-то время к Курьеру и Учёному подходит браток.\nБраток: \"Пойдёмте, пацаны. Начальник с вами поболтает.\"",
       "Type": "Simple",
       "Transition": {
         "Type": "Frame",
-        "Next": "casino_hall_7"
+        "Next": "casino_boss_1"
+      }
+    },
+    "casino_boss_1": {
+      "Picture": "casino_hall",
+      "Text": "Браток сопровождает Курьера и Учёного в VIP-зону, где их ожидает владелец казино.",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "casino_boss_1_1"
+      }
+    },
+    "casino_boss_1_1": {
+      "Picture": "casino_hall",
+      "Text": "Курьер: \"...\"",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "casino_boss_2"
+      }
+    },
+    "casino_boss_2": {
+      "Picture": "casino_hall",
+      "Text": "Владелец казино: \"Приветствую, парни! Я – владелец этого заведения Георгий Контрабасов, хотя вы меня и так должны знать. Чем могу быть полезен?\"",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "casino_boss_3"
+      }
+    },
+    "casino_boss_3": {
+      "Picture": "casino_hall",
+      "Text": "Учёный: \"Д-добрый вечер... Нам очень н-нужно узнать...\"",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "casino_boss_3_1"
+      }
+    },
+    "casino_boss_3_1": {
+      "Picture": "casino_hall",
+      "Music": "",
+      "Text": "Учёный: \"Где обычно можно найти банду Т-т-тумана?\"",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "casino_boss_4"
+      }
+    },
+    "casino_boss_4": {
+      "Picture": "casino_hall",
+      "Music": "Bram Stoker's Dracula - Unknown Song 2",
+      "Text": "Владелец казино хмурится.",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "casino_boss_4_1"
+      }
+    },
+    "casino_boss_4_1": {
+      "Picture": "casino_hall",
+      "Text": "Владелец казино: \"Банду Тумана? Это ребята серьёзные. Подмяли под себя почти весь город. Ни на чём не остановятся, отморозки.\"",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "casino_boss_5"
+      }
+    },
+    "casino_boss_5": {
+      "Picture": "casino_hall",
+      "Text": "Владелец казино: \"У меня с ними бывало всякое. Грабили мой склад когда-то – всё вынесли, вплоть до сухарей на кухне, каждую крошку.\"",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "casino_boss_6"
+      }
+    },
+    "casino_boss_6": {
+      "Picture": "casino_hall",
+      "Text": "Владелец казино: \"Пока что у меня с ними уговор: они не трогают мой бизнес, а я не лезу в их дела. Всё просто. Пока.\"",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "casino_boss_7"
+      }
+    },
+    "casino_boss_7": {
+      "Picture": "casino_hall",
+      "Text": "Курьер: \"...\"",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "casino_boss_8"
+      }
+    },
+    "casino_boss_8": {
+      "Picture": "casino_hall",
+      "Music": "",
+      "Text": "Улыбка снова появляется на лице владельца казино.",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "casino_boss_8_1"
+      }
+    },
+    "casino_boss_8_1": {
+      "Picture": "casino_hall",
+      "Text": "Владелец казино: \"Но где они сидят каждый вечер – это не секрет, ха!\"",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "casino_boss_9"
+      }
+    },
+    "casino_boss_9": {
+      "Picture": "casino_hall",
+      "Music": "Barbie Super Model - Riding in Hollywood, CA",
+      "Text": "Владелец казино: \"Я вам расскажу, но давайте так: я человек азартный. Выиграйте меня в «очко», и тогда информация ваша.\"",
+      "Type": "Choice",
+      "Choices": [
+        {
+          "Text": "\"У меня нет времени на игры\"",
+          "Transition": {
+            "Type": "Frame",
+            "Next": "casino_boss_no_time"
+          }
+        },
+        {
+          "Text": "\"...\"",
+          "Transition": {
+            "Type": "Frame",
+            "Next": "casino_boss_cards"
+          }
+        }
+      ]
+    },
+    "casino_boss_no_time": {
+      "Picture": "casino_hall",
+      "Text": "Владелец казино: \"Ты в моём заведении, парень. Думай, что и кому говоришь, deficiente.\"",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "casino_boss_no_time_1"
+      }
+    },
+    "casino_boss_no_time_1": {
+      "Picture": "casino_hall",
+      "Text": "Владелец казино: \"Но тебе повезло, я всё ещё в хорошем настроении!\nТак уж и быть, парни, пойду вам на встречу.\"",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "casino_game"
+      }
+    },
+    "casino_boss_cards": {
+      "Picture": "casino_hall",
+      "Text": "Владелец казино: \"Дилер! Где этот чёртов дилер?\"",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "casino_boss_cards_1"
+      }
+    },
+    "casino_boss_cards_1": {
+      "Picture": "casino_hall",
+      "Text": "Владелец казино: \"Что это за казино! Почему карты на столе в другом порядке разложены? В ВИПе! Кретины!\"",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "casino_boss_cards_2"
+      }
+    },
+    "casino_boss_cards_2": {
+      "Picture": "casino_hall",
+      "Text": "Владелец казино: \"Прошу меня простить, что-то сегодня мои ребята расслабились. Но мы можем решить проблему по-другому.\"",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "casino_game"
+      }
+    },
+    "casino_game": {
+      "Picture": "casino_hall",
+      "Text": "Владелец казино: \"Я подкину монету. Угадаешь, какой стороной она выпала – и я тебе всё расскажу. Не угадаешь – и вы оба покидаете моё казино.\"",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "casino_game_1"
+      }
+    },
+    "casino_game_1": {
+      "Picture": "casino_hall",
+      "Text": "Курьер: \"...\"",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "casino_game_2"
+      }
+    },
+    "casino_game_2": {
+      "Picture": "casino_hall",
+      "Text": "Владелец казино: \"Значит, договорились!\"",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "casino_game_2_2"
+      }
+    },
+    "casino_game_2_2": {
+      "Picture": "casino_hall",
+      "Text": "Владелец казино достаёт из кармана монету и подбрасывает её.",
+      "Sound": "coin_flip",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "casino_game_3"
+      }
+    },
+    "casino_game_3": {
+      "Picture": "casino_hall",
+      "Text": "Владелец казино: \"Орёл или решка?\"",
+      "Choices": [
+        {
+          "Text": "\"Орёл\"",
+          "Transition": {
+            "Type": "Frame",
+            "Next": "casino_game_win"
+          }
+        },
+        {
+          "Text": "\"Решка\"",
+          "Transition": {
+            "Type": "Frame",
+            "Next": "casino_game_loss"
+          }
+        },
+        {
+          "Text": "\"...\"",
+          "Transition": {
+            "Type": "Frame",
+            "Next": "casino_game_4"
+          }
+        }
+      ]
+    },
+    "casino_game_4": {
+      "Picture": "casino_hall",
+      "Text": "Владелец казино: \"Что думаешь?\"",
+      "Choices": [
+        {
+          "Text": "\"Орёл\"",
+          "Transition": {
+            "Type": "Frame",
+            "Next": "casino_game_win"
+          }
+        },
+        {
+          "Text": "\"Решка\"",
+          "Transition": {
+            "Type": "Frame",
+            "Next": "casino_game_loss"
+          }
+        },
+        {
+          "Text": "\"...\"",
+          "Transition": {
+            "Type": "Frame",
+            "Next": "casino_game_5"
+          }
+        }
+      ]
+    },
+    "casino_game_5": {
+      "Picture": "casino_hall",
+      "Text": "Владелец казино: \"Ну, чего ждёшь?\"",
+      "Choices": [
+        {
+          "Text": "\"Орёл\"",
+          "Transition": {
+            "Type": "Frame",
+            "Next": "casino_game_win"
+          }
+        },
+        {
+          "Text": "\"Решка\"",
+          "Transition": {
+            "Type": "Frame",
+            "Next": "casino_game_loss"
+          }
+        },
+        {
+          "Text": "\"...\"",
+          "Transition": {
+            "Type": "Frame",
+            "Next": "casino_game_6"
+          }
+        }
+      ]
+    },
+    "casino_game_6": {
+      "Picture": "casino_hall",
+      "Text": "Владелец казино: \"...\"",
+      "Choices": [
+        {
+          "Text": "\"Орёл\"",
+          "Transition": {
+            "Type": "Frame",
+            "Next": "casino_game_win"
+          }
+        },
+        {
+          "Text": "\"Решка\"",
+          "Transition": {
+            "Type": "Frame",
+            "Next": "casino_game_loss"
+          }
+        },
+        {
+          "Text": "\"...\"",
+          "Transition": {
+            "Type": "Frame",
+            "Next": "casino_game_7"
+          }
+        }
+      ]
+    },
+    "casino_game_7": {
+      "Picture": "casino_hall",
+      "Music": "",
+      "TextDelay": 0.2,
+      "Text": "\"Как же ты меня достал.\"",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "casino_game_8"
+      }
+    },
+    "casino_game_8": {
+      "Picture": "casino_hall",
+      "Music": "Barbie Super Model - Riding in Hollywood, CA",
+      "TextDelay": 0.06,
+      "Text": "Владелец казино: \"Тумановы каждый вечер сидят на сраной клумбе!\nВот и вали к ним, чтобы они прострелили тебе башку, кретин!\"",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "casino_game_9"
+      }
+    },
+    "casino_game_9": {
+      "Picture": "casino_hall",
+      "Text": "Курьер: \"...\"",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "casino_game_9_1"
+      }
+    },
+    "casino_game_9_1": {
+      "Picture": "casino_hall",
+      "Text": "Братки выводят Курьера и Учёного из казино.",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "after_casino_to_klumba"
+      }
+    },
+    
+    "casino_game_win": {
+      "Picture": "casino_hall",
+      "Text": "Владелец казино: \"Посмотрим...\"",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "casino_game_win_1"
+      }
+    },
+    "casino_game_win_1": {
+      "Picture": "casino_hall",
+      "Text": "Владелец казино: \"Ты угадал, орёл!\nЯ всё расскажу, как и обещал.\"",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "casino_game_win_2"
+      }
+    },
+    "casino_game_win_2": {
+      "Picture": "casino_hall",
+      "Text": "Владелец казино: \"Тумановские парни по вечерам обычно собираются на клумбе. Это на юге, за старым заброшенным зданием университета.\"",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "casino_game_win_3"
+      }
+    },
+    "casino_game_win_3": {
+      "Picture": "casino_hall",
+      "Text": "Владелец казино: \"Они там пьют, курят, веселятся. Делят награбленное. Менты в этот район не заглядывают, так что они там делают всё, что пожелают.\"",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "casino_game_win_4"
+      }
+    },
+    "casino_game_win_4": {
+      "Picture": "casino_hall",
+      "Text": "Владелец казино: \"Не знаю, что вам там нужно, но будьте осторожны. Удачи, парни.\"",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "casino_game_win_5"
+      }
+    },
+    "casino_game_win_5": {
+      "Picture": "casino_hall",
+      "Text": "Учёный: \"Спасибо.\"",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "casino_game_win_6"
+      }
+    },
+    "casino_game_win_6": {
+      "Picture": "casino_hall",
+      "Text": "Курьер: \"...\"",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "casino_game_win_7"
+      }
+    },
+    "casino_game_win_7": {
+      "Picture": "casino_hall",
+      "Text": "Получив нужную информацию, Курьер и Учёный выходит из казино.",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "after_casino_to_klumba"
+      }
+    },
+    
+    "casino_game_loss": {
+      "Picture": "casino_hall",
+      "Text": "Владелец казино: \"Посмотрим...\"",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "casino_game_loss_1"
+      }
+    },
+    "casino_game_loss_1": {
+      "Picture": "casino_hall",
+      "Text": "Владелец казино: \"Орёл, ты не угадал!\"",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "casino_game_loss_2"
+      }
+    },
+    "casino_game_loss_2": {
+      "Picture": "casino_hall",
+      "Text": "Владелец казино: \"Уговор есть уговор. Так что на этом нам придётся с вами распрощаться.\"",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "casino_game_loss_3"
+      }
+    },
+    "casino_game_loss_3": {
+      "Picture": "casino_hall",
+      "Text": "Братки выводят Курьера и Учёного из казино.",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "after_casino_bratki"
+      }
+    },
+
+    "after_casino_bratki": {
+      "Picture": "casino_entrance",
+      "Music": "city_ambience",
+      "Text": "Учёный: \"Не т-трогайте меня! Сволочи, увальни! Н-негодяи!\nЯ-я уважаемый н-научный сотрудник!\"",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "after_casino_bratki_1"
+      }
+    },
+    "after_casino_bratki_1": {
+      "Picture": "casino_entrance",
+      "Text": "Браток: \"Валите отсюда, оба! Не слышали, че начальник сказал?\"",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "after_casino_bratki_2"
+      }
+    },
+    "after_casino_bratki_2": {
+      "Picture": "casino_entrance",
+      "Text": "Другой браток: \"Да! Он сказал, чтоб с вами эээ... чтоб не было вас тут больше!\"",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "after_casino_bratki_3"
+      }
+    },
+    "after_casino_bratki_3": {
+      "Picture": "casino_entrance",
+      "Text": "Курьер: \"...\"",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "after_casino_bratki_4"
+      }
+    },
+    "after_casino_bratki_4": {
+      "Picture": "casino_entrance",
+      "Text": "Браток: \"Чего уставился? Я повторять два раза не буду!\"",
+      "Type": "Choice",
+      "Choices": [
+        {
+          "Text": "\"Мы уходим\"",
+          "Transition": {
+            "Type": "Frame",
+            "Next": "after_casino_city"
+          }
+        },
+        {
+          "Text": "\"...\"",
+          "Transition": {
+            "Type": "Frame",
+            "Next": "after_casino_bratki_game_over"
+          }
+        },
+        {
+          "Text": "Достать пистолет",
+          "Visibility": [
+            {
+              "Type": "And",
+              "Flags": [
+                "Pistol"
+              ]
+            }
+          ],
+          "Transition": {
+            "Type": "Frame",
+            "Next": "after_casino_bratki_gun"
+          }
+        }
+      ]
+    },
+    "after_casino_bratki_fight": {
+      "Picture": "casino_entrance",
+      "Text": "Браток: \"Ах ты гнида! Получай!\"",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "after_casino_bratki_game_over"
+      }
+    },
+    "after_casino_bratki_game_over": {
+      "Picture": "game_over",
+      "Music": "",
+      "Sound": "game_over",
+      "Text": "Игра окончена!\nБратки избили Курьера и Учёного у входа в казино.\nКурьер не смог вернуть ЛИХО.",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Exit"
+      }
+    },
+
+    "after_casino_city": {
+      "Picture": "casino_entrance",
+      "Text": "Браток: \"Давайте, и пошевеливайтесь!\"",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "after_casino_city_1"
+      }
+    },
+    "after_casino_city_1": {
+      "Picture": "blank",
+      "Text": ". . . . .",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "after_casino_city_1_1"
+      }
+    },
+    "after_casino_city_1_1": {
+      "Picture": "blank",
+      "Text": "Курьер и Учёный бесцельно идут по ночным улицам города.",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "after_casino_city_2"
+      }
+    },
+    "after_casino_city_2": {
+      "Picture": "blank",
+      "Text": "Учёный: \"Я не знаю, я н-не знаю... Я не знаю, что делать!\"",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "after_casino_city_3"
+      }
+    },
+    "after_casino_city_3": {
+      "Picture": "blank",
+      "Music": "Earthbound Mother 2 (SNES) - Dr. Andonuts' Lab",
+      "Text": "Учёный: \"Мы можем ходить по городу сколько угодно, но как мы п-поймём, где ЛИХО? Может, его уже вовсе вывезли из города?\"",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "after_casino_city_4"
+      }
+    },
+    "after_casino_city_4": {
+      "Picture": "blank",
+      "Text": "Курьер: \"...\"",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "after_casino_city_5"
+      }
+    },
+    "after_casino_city_5": {
+      "Picture": "blank",
+      "Text": "Учёный: \"Ради чего вообще всё это... Решил раз в жизни п-поиграть в героя... Ага, герой, конечно...\"",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "after_casino_city_6"
+      }
+    },
+    "after_casino_city_6": {
+      "Picture": "blank",
+      "Text": "Учёный: \"Может, чёрт с ним? Напплевать на это ЛИХО. Н-н-на твоих заказчиков т-тоже. Просто гулять по городу, и дышать этим воздухом...\"",
+      "Type": "Choice",
+      "Choices": [
+        {
+          "Text": "\"...\"",
+          "Transition": {
+            "Type": "Frame",
+            "Next": "after_casino_city_7"
+          }
+        },
+        {
+          "Text": "\"Нужно пойти на место встречи\"",
+          "Transition": {
+            "Type": "Frame",
+            "Next": "after_casino_city_go_to_klumba"
+          }
+        }
+      ]
+    },
+    "after_casino_city_7": {
+      "Picture": "blank",
+      "Text": "Учёный: \"Да... Можешь не говорить, но я знаю, что ты меня понимаешь...\"",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "after_casino_city_game_over"
+      }
+    },
+    "after_casino_city_game_over": {
+      "Picture": "game_over",
+      "Text": "Игра окончена!\nВместо поисков ЛИХО Курьер и Учёный пошли гулять по городу.\nМожет, оно и правда того не стоило?",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Exit"
+      }
+    },
+
+    "after_casino_to_klumba": {
+      "Picture": "casino_entrance",
+      "Text": "after casino know about klumba",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "after_casino_to_klumba"
       }
     }
   }
