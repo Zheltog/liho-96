@@ -4856,7 +4856,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2095290556}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 045fad5b1e364dabb8d25762eac4944a, type: 3}
+  m_Script: {fileID: 11500000, guid: 7a5ca0b7e7a41c748b4043ebd70d4ca7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   defaultSecondsBeforeNextSymbol: 0.075
@@ -4864,7 +4864,6 @@ MonoBehaviour:
   delayMultiplier: 5
   pitchRangeMin: 0.7
   pitchRangeMax: 0.8
-  _gameController: {fileID: 248021001}
   _audioController: {fileID: 644187130}
 --- !u!1 &2114482717
 GameObject:
