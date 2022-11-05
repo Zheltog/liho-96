@@ -5,6 +5,7 @@ public class Courier : MonoBehaviour
 {
     public HealthBar hpBar;
     public GameObject redPanel;
+    public GameObject grayPanel;
 
     public float hp = 100;
     public float damage = 5;
@@ -14,6 +15,7 @@ public class Courier : MonoBehaviour
     private float _cameraSpeed = 10f;
     private float _hitAnimationSeconds = 0.1f;
     private float _shake = 0.2f;
+    private bool isRest;
 
     private Camera _camera;
 
@@ -22,12 +24,30 @@ public class Courier : MonoBehaviour
     }
     
     private void Update() {
+        if (isRest)
+        {
+            return;
+        }
+        
         UpdateCamera();
         
         if (Input.GetMouseButtonDown(0))
         {
             Shoot();
         }
+    }
+
+    public void Rest()
+    {
+        transform.position = new Vector3(transform.position.x, _minCameraHeight, transform.position.z);
+        grayPanel.SetActive(true);
+        isRest = true;
+    }
+
+    public void ReturnToActivePhase()
+    {
+        grayPanel.SetActive(false);
+        isRest = false;
     }
     
     public void Hit(float damage)
