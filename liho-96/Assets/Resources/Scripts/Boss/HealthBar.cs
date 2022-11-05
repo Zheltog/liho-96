@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public class EnemiesHealthBar : MonoBehaviour
+public class HealthBar : MonoBehaviour
 {
     public float maxHealth = 100f;
 

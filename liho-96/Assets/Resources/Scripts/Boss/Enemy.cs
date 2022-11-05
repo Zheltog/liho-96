@@ -2,9 +2,10 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    public EnemiesHealthBar hpBar;
+    public HealthBar hpBar;
 
     public float hp = 50;
+    public float damage = 5;
     public float secondsBeforeNextShot = 2f;
 
     private float _currentTime;
@@ -40,10 +41,10 @@ public class Enemy : MonoBehaviour
         RaycastHit hit;
         if (Physics.Raycast(ray, out hit))
         {
-            var damaged = hit.collider.gameObject;
-            if (damaged != null)
+            var courier = hit.collider.gameObject.GetComponent<Courier>();
+            if (courier != null)
             {
-                Debug.Log(gameObject.name + " - HIT: " + damaged.name);
+                courier.Hit(damage);
             }
         }
     }

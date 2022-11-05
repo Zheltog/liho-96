@@ -2,7 +2,9 @@ using UnityEngine;
 
 public class Courier : MonoBehaviour
 {
+    public HealthBar hpBar;
 
+    public float hp = 100;
     public float damage = 5;
 
     private float maxCameraHeight = 5f;
@@ -12,7 +14,7 @@ public class Courier : MonoBehaviour
     private Camera _camera;
 
     private void Start() {
-        _camera = GetComponent<Camera>();
+        _camera = GetComponentInChildren<Camera>();
     }
     
     private void Update() {
@@ -22,6 +24,21 @@ public class Courier : MonoBehaviour
         {
             Shoot();
         }
+    }
+    
+    public void Hit(float damage)
+    {
+        var hpDamage = damage;
+        
+        hp -= damage;
+
+        if (hp <= 0)
+        {
+            hpDamage = damage + hp;
+            Debug.Log("GAME OVER!!!");
+        }
+        
+        hpBar.Damage(hpDamage);
     }
 
     private void UpdateCamera()
