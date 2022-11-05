@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class FramesChoicesController : MonoBehaviour
 {
-    public ButtonsBundle buttonsDouble;
-    public ButtonsBundle buttonsTriple;
+    public FramesButtonsBundle framesButtonsDouble;
+    public FramesButtonsBundle framesButtonsTriple;
     
     public bool WaitingForChoice { get; private set; }
 
@@ -57,20 +57,20 @@ public class FramesChoicesController : MonoBehaviour
         
         if (!isActive)
         {
-            buttonsDouble.SetActive(false);
-            buttonsTriple.SetActive(false);
+            framesButtonsDouble.SetActive(false);
+            framesButtonsTriple.SetActive(false);
             return;
         }
         
         switch (_currentType)
         {
             case ChoiceType.DOUBLE:
-                buttonsDouble.SetActive(true);
-                buttonsDouble.SetTexts(_currentChoices[0].Text, _currentChoices[1].Text);
+                framesButtonsDouble.SetActive(true);
+                framesButtonsDouble.SetTexts(_currentChoices[0].Text, _currentChoices[1].Text);
                 break;
             case ChoiceType.TRIPLE:
-                buttonsTriple.SetActive(true);
-                buttonsTriple.SetTexts(_currentChoices[0].Text, _currentChoices[1].Text, _currentChoices[2].Text);
+                framesButtonsTriple.SetActive(true);
+                framesButtonsTriple.SetTexts(_currentChoices[0].Text, _currentChoices[1].Text, _currentChoices[2].Text);
                 break;
         }
     }

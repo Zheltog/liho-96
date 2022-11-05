@@ -1639,8 +1639,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 974f16489d9d43c40bda4c2d629d07ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  buttonsDouble: {fileID: 425348325}
-  buttonsTriple: {fileID: 1775608351}
+  framesButtonsDouble: {fileID: 425348325}
+  framesButtonsTriple: {fileID: 1775608351}
 --- !u!224 &1084159668
 RectTransform:
   m_ObjectHideFlags: 0

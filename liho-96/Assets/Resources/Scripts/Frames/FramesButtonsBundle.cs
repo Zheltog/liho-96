@@ -1,7 +1,7 @@
 using TMPro;
 using UnityEngine;
 
-public class ButtonsBundle : MonoBehaviour
+public class FramesButtonsBundle : MonoBehaviour
 {
     public TextMeshProUGUI textOnButton1;
     public TextMeshProUGUI textOnButton2;

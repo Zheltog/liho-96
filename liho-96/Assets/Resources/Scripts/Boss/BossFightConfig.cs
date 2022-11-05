@@ -24,6 +24,13 @@ public class Effect
 {
     public EffectType Type { get; set; }
     public float Value { get; set; }
+
+    // TODO: удалить, нужен для тестирования
+    public Effect(EffectType type, float value)
+    {
+        Type = type;
+        Value = value;
+    }
 }
 
 public enum EffectType
@@ -47,4 +54,13 @@ public class Item
     public string UseText { get; set; }
     public string Flag { get; set; }
     public Effect Effect { get; set; }
+
+    // TODO: удалить, нужен для тестирования
+    public Item(string name, string useText, string flag, Effect effect)
+    {
+        Name = name;
+        UseText = useText;
+        Flag = flag;
+        Effect = effect;
+    }
 }

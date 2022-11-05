@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
@@ -7,6 +8,7 @@ public class BossFightController : MonoBehaviour
     public float activePhaseSeconds = 10;
     public TextMeshProUGUI timer;
     public Courier courier;
+    public BossFightItemsChoicesController itemsChoicesController;
 
     public TextBoxController text;
 
@@ -61,7 +63,14 @@ public class BossFightController : MonoBehaviour
     private void Rest()
     {
         courier.Rest();
-        text.NewText("Отдыхаем, мужики");
-        // TODO: choice
+        if (itemsChoicesController.ItemsChoiceAvailable())
+        {
+            itemsChoicesController.NewChoices();
+        }
+    }
+
+    public void ChooseItem(Item item)
+    {
+        
     }
 }
