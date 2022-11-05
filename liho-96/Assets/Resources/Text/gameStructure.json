@@ -1,5 +1,5 @@
 {
-  "StartingFrame": "start",
+  "StartingFrame": "casino_slots_4",
   "StartingFlags": [
     "test_var",
     "aaa"
@@ -95,7 +95,7 @@
     },
     "start_note_1": {
       "Picture": "courier_in_a_car_holding_a_note",
-      "Text": "Курьер раньше не был в этом городе.\nВозможно, стоит аккуратно расспросить местных о городских \"достопримечательностях\".",
+      "Text": "Курьер раньше не был в этом городе.\nВозможно, стоит аккуратно расспросить местных о городских\n\"достопримечательностях\".",
       "Type": "Simple",
       "Transition": {
         "Type": "Frame",
@@ -104,7 +104,7 @@
     },
     "start_gun": {
       "Picture": "courier_in_a_car_holding_a_gun",
-      "Text": "В другом кармане курьер всегда держит пистолет. Работа опасная, и в этот день у него было плохое предчувствие.",
+      "Text": "В другом кармане курьер всегда держит пистолет. Работа опасная.\nВ этот день у него было особенно плохое предчувствие.",
       "Type": "Simple",
       "Transition": {
         "Type": "Frame",
@@ -113,7 +113,7 @@
     },
     "start_town": {
       "Picture": "courier_in_a_car_town",
-      "Text": "Дождь прекратился. За стеклом начинают появляться невысокие панельные дома.\nТусклый свет фонарей и редких вывесок. Кажется, что город уже засыпает.",
+      "Text": "Дождь прекратился. За стеклом начинают появляться невысокие панельные дома.\nТусклый свет фонарей и редких вывесок. Несколько машин проезжают мимо, и дорога снова становится пустой. Кажется, что город уже засыпает.",
       "Type": "Simple",
       "Transition": {
         "Type": "Frame",
@@ -127,6 +127,309 @@
       "Transition": {
         "Type": "Frame",
         "Next": "start"
+      }
+    },
+
+    "casino_entrance": {
+      "Picture": "blank",
+      "Text": "Неприметный дом на краю города. Никаких вывесок, металлическая дверь и кнопка звонка. Несколько дорогих машин у входа.",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "casino_entrance_1"
+      }
+    },
+    "casino_entrance_1": {
+      "Picture": "blank",
+      "Text": "Учёный несколько раз стучит в дверь с особым ритмом.\nУчёный: \"Тут кодовая комбинация, хех-хе... Но я свой, меня тут з-знают. Проблем не будет.\"",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "casino_entrance_2"
+      }
+    },
+    "casino_entrance_2": {
+      "Picture": "blank",
+      "Text": "Через минуту дверь открывается. Браток оглядывает Учёного и Курьера, затем обращается к Учёному.\nБраток: \"Опа, опять ты. Че, не всё вчера проиграл, агроном?\"",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "casino_entrance_3"
+      }
+    },
+    "casino_entrance_3": {
+      "Picture": "blank",
+      "Text": "Учёный: \"...\"",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "casino_entrance_4"
+      }
+    },
+    "casino_entrance_4": {
+      "Picture": "blank",
+      "Text": "Браток: \"Ха-ха-ха, шучу! А этот че, с тобой? Оружие, колюще-режущие предметы есть?\"\nБраток пристально смотрит на Курьера.",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "casino_entrance_5"
+      }
+    },
+    "casino_entrance_5": {
+      "Picture": "blank",
+      "Text": "Учёный: \"Д-да, он со мной, я з-за него р-ручаюсь.\"",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "casino_entrance_6"
+      }
+    },
+    "casino_entrance_6": {
+      "Picture": "blank",
+      "Text": "Браток: \"Хер с тобой, проходи тоже.\"\nБраток запускает Учёного и Курьера внутрь.",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "casino_hall"
+      }
+    },
+    "casino_hall": {
+      "Picture": "blank",
+      "Text": "Спустившись по лестнице вниз Учёный и Курьер оказываются в игорном зале. У входа стоят ряды игровых автоматов. Чуть дальше - три стола для карточных игр и большой кожаный диван.",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "casino_hall_1"
+      }
+    },
+    "casino_hall_1": {
+      "Picture": "blank",
+      "Text": "Браток: \"Ну чё, располагайтесь. Че-то сегодня народу мало, так что вы никому не помешаете. Но если вдруг че-то удумаете...\"\nБраток хрустит костяшками пальцев.",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "casino_hall_2"
+      }
+    },
+    "casino_hall_2": {
+      "Picture": "blank",
+      "Text": "Учёный: \"Вообще-то, м-мы пришли, эээ... У нас д-дело с б-б-боссом.\"",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "casino_hall_3"
+      }
+    },
+    "casino_hall_3": {
+      "Picture": "blank",
+      "Text": "Браток пару секунд смотрит на Учёного, затем смеется.\nБраток: \"Ха-ха-ха, че, сегодня всё серьёзно у тебя? Дела пришёл обсуждать? Ну-ка погоди...\"",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "casino_hall_4"
+      }
+    },
+    "casino_hall_4": {
+      "Picture": "blank",
+      "Text": "Он отходит в сторону, к другому братку. Что-то обсуждает, смеется. Затем возвращается.",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "casino_hall_5"
+      }
+    },
+    "casino_hall_5": {
+      "Picture": "blank",
+      "Text": "Браток: \"Ну че, агроном, тебе повезло сегодня. У начальника настроение хорошее. Может, ещё с тебя сегодня посмеётся. Жди.\"",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "casino_hall_6"
+      }
+    },
+    "casino_hall_6": {
+      "Picture": "blank",
+      "Text": "Браток уходит.\nУчёный: \"Отлично! Поверь, м-мы найдём с ним общий язык. Он человек п-практичный, не то что эти... увальни.\"",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "casino_hall_7"
+      }
+    },
+    "casino_hall_7": {
+      "Picture": "blank",
+      "Text": "Учёный: \"А пока, может, сыграем? Я тут всё знаю, давай покажу...\"",
+      "Type": "Choice",
+      "Choices": [
+        {
+          "Text": "К игровым автоматам",
+          "Transition": {
+            "Type": "Frame",
+            "Next": "casino_slots"
+          }
+        },
+        {
+          "Text": "Присесть на диван",
+          "Transition": {
+            "Type": "Frame",
+            "Next": "casino_couch"
+          }
+        },
+        {
+          "Text": "Присесть на диван плотно",
+          "Visibility": [
+            {
+              "Type": "And",
+              "Flags": [
+                "Coins"
+              ]
+            }
+          ],
+          "Transition": {
+            "Type": "Frame",
+            "Next": "casino_couch"
+          }
+        }
+      ]
+    },
+    "casino_slots": {
+      "Picture": "blank",
+      "Text": "Курьер садится за «однорукого бандита».\nУчёный: \"Всё просто, это же м-математика. Нужна лишь п-правильная стратегия, и мы с тобой станем немного богаче...\"",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "casino_slots_1"
+      }
+    },
+    "casino_slots_1": {
+      "Picture": "blank",
+      "Text": "Курьер вставляет монеты и дергает рычаг. Барабан вращается...",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "casino_slots_2"
+      }
+    },
+    "casino_slots_2": {
+      "Picture": "blank",
+      "Text": "7... 7...",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "casino_slots_3"
+      }
+    },
+    "casino_slots_3": {
+      "Picture": "blank",
+      "Text": "7! Из автомата высыпаются монеты.\n<В инвентарь добавлено: \"Много монет\">",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "casino_slots_4",
+        "Actions": [
+          {
+            "Type": "Add",
+            "Name": "Coins"
+          }
+        ]
+      }
+    },
+    "casino_slots_4": {
+      "Picture": "blank",
+      "Text": "Учёный: \"Да! Вот о чём я говорил! Давай ещё, ещё!\"",
+      "Type": "Choice",
+      "Choices": [
+        {
+          "Text": "Продолжить играть",
+          "Transition": {
+            "Type": "Frame",
+            "Next": "casino_slots_5"
+          }
+        },
+        {
+          "Text": "Остановиться",
+          "Transition": {
+            "Type": "Frame",
+            "Next": "casino_slots_exit"
+          }
+        }
+      ]
+    },
+    "casino_slots_5": {
+      "Picture": "blank",
+      "Text": "Курьер снова дергает рычаг. Но в этот раз ему не везёт.\nУчёный: \"Всё нормально, так бывает, всё по п-плану. Просто в следующий раз нужно поставить в два раза больше!\"",
+      "Type": "Choice",
+      "Choices": [
+        {
+          "Text": "Продолжить играть",
+          "Transition": {
+            "Type": "Frame",
+            "Next": "casino_slots_6"
+          }
+        },
+        {
+          "Text": "Остановиться",
+          "Transition": {
+            "Type": "Frame",
+            "Next": "casino_slots_exit"
+          }
+        }
+      ]
+    },
+    "casino_slots_6": {
+      "Picture": "blank",
+      "Text": "Снова и снова Курьер и Учёный вставляют монеты и дергают рычаг.\nИногда им везет, и азарт толкает их к продолжению игры.",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "casino_slots_7"
+      }
+    },
+    "casino_slots_7": {
+      "Picture": "blank",
+      "Text": "Всю ночь они проводят за слот-машинами, потеряв под утро все свои деньги.\nУчёный: \"С-слушай, а мы ведь сюда з-зачем-то шли, да? Н-не помню...\"",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "casino_slots_game_over"
+      }
+    },
+    "casino_slots_game_over": {
+      "Picture": "game_over",
+      "Music": "",
+      "Sound": "game_over",
+      "Text": "Игра окончена!\nКурьер всю ночь просидел в казино и не забрал ЛИХО у бандитов.",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Exit"
+      }
+    },
+    "casino_slots_exit": {
+      "Picture": "blank",
+      "Text": "Учёный: \"Ну... Как знаешь.....\"",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "casino_boss"
+      }
+    },
+    
+    "casino_couch": {
+      "Picture": "blank",
+      "Text": "couch",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "casino_hall_7"
+      }
+    },
+    "casino_boss": {
+      "Picture": "blank",
+      "Text": "boss",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "casino_hall_7"
       }
     }
   }
