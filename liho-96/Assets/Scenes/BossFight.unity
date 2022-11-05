@@ -2888,7 +2888,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 928323478}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 476675593}
+        m_TargetAssemblyTypeName: BossFightItemsChoicesController, Assembly-CSharp
+        m_MethodName: ChooseThird
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &928323478
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3973,7 +3985,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1397362627}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 476675593}
+        m_TargetAssemblyTypeName: BossFightItemsChoicesController, Assembly-CSharp
+        m_MethodName: ChooseFirst
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1397362627
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4094,7 +4118,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1457360265}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 476675593}
+        m_TargetAssemblyTypeName: BossFightItemsChoicesController, Assembly-CSharp
+        m_MethodName: ChooseSecond
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1457360265
 MonoBehaviour:
   m_ObjectHideFlags: 0

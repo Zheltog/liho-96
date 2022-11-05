@@ -62,12 +62,45 @@ public class BossFightItemsChoicesController : MonoBehaviour
             textOnButton6.transform.parent.gameObject.SetActive(true);
         }
     }
+
+    public void DisableButtons()
+    {
+        textOnButton1.transform.parent.gameObject.SetActive(false);
+        textOnButton2.transform.parent.gameObject.SetActive(false);
+        textOnButton3.transform.parent.gameObject.SetActive(false);
+        textOnButton4.transform.parent.gameObject.SetActive(false);
+        textOnButton5.transform.parent.gameObject.SetActive(false);
+        textOnButton6.transform.parent.gameObject.SetActive(false);
+    }
+
+    public void ChooseFirst()
+    {
+        ChooseItem(0);
+    }
+    
+    public void ChooseSecond()
+    {
+        ChooseItem(1);
+    }
+    
+    public void ChooseThird()
+    {
+        ChooseItem(2);
+    }
+
+    private void ChooseItem(int index)
+    {
+        var chosenItem = _currentItems[index];
+        _bossFightController.ChooseItem(chosenItem);
+        _currentItems.Remove(chosenItem);
+    }
     
     // TODO: удалить, нужен для тестирования
     private void InitHolder()
     {
         var items = new List<Item>();
-        items.Add(new Item("жопа", "кияяя", "флаг", new Effect(EffectType.Heal, 10f)));
+        items.Add(new Item("Вейп", "<Курьер оформляет плотнейшего пыха и восстанавливает 10 очков здоровья>", "флаг", new Effect(EffectType.Heal, 10f)));
+        items.Add(new Item("Журнал \"Playboy\"", "<Курьер пристально всматривается в обложку журнала. Вспомнив, за что должно сражать настоящему мужчине, он издаёт свирепый рык, нанося противникам 10 очков урона>", "флаг", new Effect(EffectType.Damage, 10f)));
         BossFightStateHolder.Init(items, null);
     }
     

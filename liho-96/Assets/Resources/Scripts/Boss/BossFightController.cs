@@ -1,4 +1,3 @@
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
@@ -14,6 +13,7 @@ public class BossFightController : MonoBehaviour
 
     private float _timeRemainingBeforeEnd;
     private float _timeRemainingBeforeNextRest;
+    private bool _isRest;
 
     private void Start()
     {
@@ -34,6 +34,11 @@ public class BossFightController : MonoBehaviour
 
     private void UpdateTimeRemainingBeforeNextRest()
     {
+        if (_isRest)
+        {
+            return;
+        }
+        
         if (_timeRemainingBeforeNextRest > 0)
         {
             _timeRemainingBeforeNextRest -= Time.deltaTime;
@@ -62,15 +67,18 @@ public class BossFightController : MonoBehaviour
 
     private void Rest()
     {
+        _isRest = true;
         courier.Rest();
         if (itemsChoicesController.ItemsChoiceAvailable())
         {
+            text.NewText(" ");
             itemsChoicesController.NewChoices();
         }
     }
 
     public void ChooseItem(Item item)
     {
-        
+        text.NewText(item.UseText);
+        itemsChoicesController.DisableButtons();
     }
 }
