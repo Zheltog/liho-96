@@ -12,8 +12,10 @@ namespace Boss
         public float cameraSpeed = 10f;
         public float hitAnimationSeconds = 0.1f;
         public float shake = 0.2f;
-        
+        public float goingDownSpeed = 10f;
+
         private Camera _camera;
+        private bool _isGoingDown;
 
         private void Start()
         {
@@ -24,6 +26,11 @@ namespace Boss
         {
             if (!IsActivePhase())
             {
+                if (_isGoingDown)
+                {
+                    GoDown();
+                }
+                
                 return;
             }
 
@@ -37,7 +44,21 @@ namespace Boss
 
         public void Rest()
         {
-            transform.position = new Vector3(transform.position.x, minCameraHeight, transform.position.z);
+            _isGoingDown = true;
+        }
+
+        private void GoDown()
+        {
+            var currentPosition = transform.position;
+            var newY = currentPosition.y - goingDownSpeed * Time.deltaTime;
+
+            if (newY <= minCameraHeight)
+            {
+                newY = minCameraHeight;
+                _isGoingDown = false;
+            }
+            
+            transform.position = new Vector3(currentPosition.x, newY, currentPosition.z);
         }
 
         private void UpdateCamera()
