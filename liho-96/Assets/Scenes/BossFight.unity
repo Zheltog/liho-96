@@ -691,7 +691,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d80c797172886049a59607c451ae987, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fightSeconds: 30
   activePhaseSeconds: 10
   courier: {fileID: 584745251}
   grayPanel: {fileID: 860493342}
@@ -699,7 +698,6 @@ MonoBehaviour:
   gameOverImage: {fileID: 179393097}
   actionsButtons: {fileID: 1424040546}
   player: {fileID: 644187130}
-  timer: {fileID: 1107313590}
   text: {fileID: 2095290560}
   itemsChoicesController: {fileID: 476675593}
 --- !u!4 &248021002
@@ -3828,6 +3826,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d393628453c64815997efd941f802cab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mainController: {fileID: 248021001}
+  fightSeconds: 30
+  redAlertSeconds: 10
 --- !u!1 &1110258747
 GameObject:
   m_ObjectHideFlags: 0

@@ -5,7 +5,6 @@ namespace Boss
 {
     public class MainController : MonoBehaviour
     {
-        public float fightSeconds = 30;
         public float activePhaseSeconds = 10;
         public Courier courier;
         public GameObject grayPanel;
@@ -13,18 +12,15 @@ namespace Boss
         public GameObject gameOverImage;
         public GameObject actionsButtons;
         public AudioController player;
-        public TimerController timer;
         public TextBoxController text;
         public ItemsChoicesController itemsChoicesController;
         public RoundState CurrentRoundState { get; private set; }
         
-        private float _timeRemainingBeforeEnd;
         private float _timeRemainingBeforeNextRest;
 
         private void Start()
         {
             CurrentRoundState = RoundState.Attack;
-            _timeRemainingBeforeEnd = fightSeconds;
             _timeRemainingBeforeNextRest = activePhaseSeconds;
         }
 
@@ -36,7 +32,6 @@ namespace Boss
             }
             
             UpdateTimeRemainingBeforeNextRest();
-            UpdateTimeRemainingBeforeEnd();
         }
         
         public void ChooseItem(Item item)
@@ -109,18 +104,6 @@ namespace Boss
 
             Rest();
             _timeRemainingBeforeNextRest = activePhaseSeconds;
-        }
-
-        private void UpdateTimeRemainingBeforeEnd()
-        {
-            if (_timeRemainingBeforeEnd <= 0)
-            {
-                GameOver("Коммунисты завели жигу и уехали в рассвет. С ЛИХО...");
-                return;
-            }
-            
-            _timeRemainingBeforeEnd -= Time.deltaTime;
-            timer.SetTimeRemaining(_timeRemainingBeforeEnd);
         }
 
         private void Rest()
