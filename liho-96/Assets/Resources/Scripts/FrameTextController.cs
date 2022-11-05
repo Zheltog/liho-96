@@ -66,7 +66,11 @@ public class FrameTextController : MonoBehaviour
         foreach (var currentChar in _currentPhraseChars)
         {
             yield return new WaitForSeconds(GetDelay(prevChar, currentChar));
-            _audioController.PlayTextSound(pitchRangeMin, pitchRangeMax);
+
+            if (!char.IsWhiteSpace(currentChar))
+            {
+                _audioController.PlayTextSound(pitchRangeMin, pitchRangeMax);
+            }
 
             if (!_isPrinting)
             {
