@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 
 
-public class GameStructure
+public class FramesConfig
 {
     /// <summary>
     /// Название кадра, с которого начинается игра.

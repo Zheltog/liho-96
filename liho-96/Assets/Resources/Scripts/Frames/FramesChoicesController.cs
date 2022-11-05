@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ChoicesController : MonoBehaviour
+public class FramesChoicesController : MonoBehaviour
 {
     public ButtonsBundle buttonsDouble;
     public ButtonsBundle buttonsTriple;
@@ -12,11 +12,11 @@ public class ChoicesController : MonoBehaviour
     private List<Choice> _currentChoices;
     private ChoiceType _currentType;
     
-    private GameController _gameController;
+    private FramesController _framesController;
 
     private void Start()
     {
-        _gameController = GameObject.FindWithTag("GameController").GetComponent<GameController>();
+        _framesController = GameObject.FindWithTag("GameController").GetComponent<FramesController>();
     }
 
     public void NewChoices(List<Choice> choices)
@@ -36,19 +36,19 @@ public class ChoicesController : MonoBehaviour
     public void ChooseFirst()
     {
         SetActiveForButtons(false);
-        _gameController.Transition(_currentChoices[0].Transition);
+        _framesController.Transition(_currentChoices[0].Transition);
     }
     
     public void ChooseSecond()
     {
         SetActiveForButtons(false);
-        _gameController.Transition(_currentChoices[1].Transition);
+        _framesController.Transition(_currentChoices[1].Transition);
     }
 
     public void ChooseThird()
     {
         SetActiveForButtons(false);
-        _gameController.Transition(_currentChoices[2].Transition);
+        _framesController.Transition(_currentChoices[2].Transition);
     }
 
     private void SetActiveForButtons(bool isActive)

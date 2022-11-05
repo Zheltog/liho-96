@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-public static class ChoicesFilter
+public static class FramesChoicesFilter
 {
     public static List<Choice> FilterChoices(List<Choice> choices)
     {
@@ -32,7 +32,7 @@ public static class ChoicesFilter
         
         foreach (var flag in predicate.Flags)
         {
-            var newAspect = GameStateHolder.Flags.Contains(flag);
+            var newAspect = FramesStateHolder.Flags.Contains(flag);
             if (predicate.Type == VisibilityPredicateType.And)
             {
                 result = result && newAspect;

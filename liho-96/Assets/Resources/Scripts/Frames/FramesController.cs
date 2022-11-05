@@ -5,27 +5,27 @@ using Newtonsoft.Json;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class GameController : MonoBehaviour
+public class FramesController : MonoBehaviour
 {
 
-    public FrameTextController text;
+    public TextBoxController textBox;
     public ImageController image;
     public AudioController player;
-    public ChoicesController choices;
+    public FramesChoicesController framesChoices;
 
     private void Start()
     {
-        if (!GameStateHolder.Initialized)
+        if (!FramesStateHolder.Initialized)
         {
-            var jsonString = Resources.Load<TextAsset>("Text/gameStructure").text;
-            var gameStructure = JsonConvert.DeserializeObject<GameStructure>(jsonString);
+            var jsonString = Resources.Load<TextAsset>("Text/framesConfig").text;
+            var framesConfig = JsonConvert.DeserializeObject<FramesConfig>(jsonString);
 
-            GameStateHolder.Init(gameStructure);
-            GameStateHolder.SetFrame(gameStructure.StartingFrame);
-            GameStateHolder.State = State.Frame;
+            FramesStateHolder.Init(framesConfig);
+            FramesStateHolder.SetFrame(framesConfig.StartingFrame);
+            FramesStateHolder.State = State.Frame;
         }
 
-        player.NewMusic(GameStateHolder.LastMusic);
+        player.NewMusic(FramesStateHolder.LastMusic);
         
         UpdateFrame();
         LogState();
@@ -33,7 +33,7 @@ public class GameController : MonoBehaviour
 
     private void Update()
     {
-        if (AnyKeyIgnoreMouse() && !choices.WaitingForChoice)
+        if (AnyKeyIgnoreMouse() && !framesChoices.WaitingForChoice)
         {
             NextFrame();
         }
@@ -42,14 +42,14 @@ public class GameController : MonoBehaviour
     public void NextFrame()
     {
         // Печатает весь текст, если он ещё не был отображен полностью.
-        if (text.IsPrinting)
+        if (textBox.IsPrinting)
         {
-            text.FinishPrinting();
+            textBox.FinishPrinting();
             return;
         }
             
         // Запускает переход, если у кадра не было вариантов выбора
-        if (GameStateHolder.CurrentFrame.Type != FrameType.Choice)
+        if (FramesStateHolder.CurrentFrame.Type != FrameType.Choice)
         {
             Transition();
         }
@@ -57,9 +57,9 @@ public class GameController : MonoBehaviour
 
     public void Transition()
     {
-        if (GameStateHolder.State == State.Frame)
+        if (FramesStateHolder.State == State.Frame)
         {
-            var currentFrame = GameStateHolder.CurrentFrame;
+            var currentFrame = FramesStateHolder.CurrentFrame;
 
             if (currentFrame.Type != FrameType.Simple)
             {
@@ -73,14 +73,14 @@ public class GameController : MonoBehaviour
 
     public void Transition(Transition transition)
     {
-        GameStateHolder.UpdateFlags(transition.Actions);
+        FramesStateHolder.UpdateFlags(transition.Actions);
         
         switch (transition.Type)
         {
             case TransitionType.Frame:
             {
                 var nextFrameName = transition.Next;
-                GameStateHolder.SetFrame(nextFrameName);
+                FramesStateHolder.SetFrame(nextFrameName);
                 UpdateFrame();
                 break;
             }
@@ -102,15 +102,15 @@ public class GameController : MonoBehaviour
 
     private void LogState()
     {
-        Debug.Log($"Frame: {GameStateHolder.CurrentFrameName}\nFlags: {string.Join(", ", GameStateHolder.Flags)}");
+        Debug.Log($"Frame: {FramesStateHolder.CurrentFrameName}\nFlags: {string.Join(", ", FramesStateHolder.Flags)}");
     }
 
     private void UpdateFrame()
     {
-        var currentFrame = GameStateHolder.CurrentFrame;
+        var currentFrame = FramesStateHolder.CurrentFrame;
         
-        text.NewText(currentFrame.Text);
-        text.secondsBeforeNextSymbol = currentFrame.TextDelay ?? text.defaultSecondsBeforeNextSymbol;
+        textBox.NewText(currentFrame.Text);
+        textBox.secondsBeforeNextSymbol = currentFrame.TextDelay ?? textBox.defaultSecondsBeforeNextSymbol;
             
         image.NewImage(currentFrame.Picture);
 
@@ -118,7 +118,7 @@ public class GameController : MonoBehaviour
 
         if (music != null)
         {
-            GameStateHolder.LastMusic = music;
+            FramesStateHolder.LastMusic = music;
         }
 
         player.NewMusic(music);
@@ -133,8 +133,8 @@ public class GameController : MonoBehaviour
 
     private IEnumerator UpdateChoices(List<Choice> choicesList)
     {
-        yield return new WaitUntil(() => !text.IsPrinting);
-        choices.NewChoices(ChoicesFilter.FilterChoices(choicesList));
+        yield return new WaitUntil(() => !textBox.IsPrinting);
+        framesChoices.NewChoices(FramesChoicesFilter.FilterChoices(choicesList));
     }
     
     private static bool AnyKeyIgnoreMouse()

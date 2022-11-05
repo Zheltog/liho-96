@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-public class GameStateHolder
+public class FramesStateHolder
 {
     private static Dictionary<string, Frame> Frames { get; set; }
 
@@ -16,10 +16,10 @@ public class GameStateHolder
     
     public static string LastMusic { get; set;  }
 
-    public static void Init(GameStructure gameStructure)
+    public static void Init(FramesConfig framesConfig)
     {
-        Frames = gameStructure.Frames;
-        Flags = new HashSet<string>(gameStructure.StartingFlags);
+        Frames = framesConfig.Frames;
+        Flags = new HashSet<string>(framesConfig.StartingFlags);
 
         State = State.Start;
 

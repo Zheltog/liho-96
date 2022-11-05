@@ -10,10 +10,13 @@ public class ImageController : MonoBehaviour
     private Animator _animator;
     private string _lastImageName;
 
+    private bool _initialized;
+
     private void Start()
     {
         _image  = GetComponent<Image>();
         _animator = GetComponent<Animator>();
+        _initialized = true;
     }
     
     public void NewImage(string imageName)
@@ -21,6 +24,12 @@ public class ImageController : MonoBehaviour
         if (imageName == null || imageName == _lastImageName)
         {
             return;
+        }
+
+        if (!_initialized)
+        {
+            Start();
+            // TODO: почему
         }
         
         _animator.SetBool("lighting", false);

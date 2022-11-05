@@ -2,7 +2,7 @@ using System.Collections;
 using TMPro;
 using UnityEngine;
 
-public class BossFightFrameTextController : MonoBehaviour
+public class TextBoxController : MonoBehaviour
 {
     public float defaultSecondsBeforeNextSymbol = 0.075f;
     
@@ -20,11 +20,9 @@ public class BossFightFrameTextController : MonoBehaviour
 
     private string _currentPhraseFinal;
 
-    private bool _isPrinting;
+    public bool IsPrinting { get; private set; }
 
     private TextMeshProUGUI _textBox;
-
-    public BossFightController _gameController;
 
     public AudioController _audioController;
 
@@ -33,30 +31,19 @@ public class BossFightFrameTextController : MonoBehaviour
         _textBox = GetComponent<TextMeshProUGUI>();
     }
 
-    public void OnClick()
+    public void FinishPrinting()
     {
-        // Печатает весь текст, если он ещё не был отображен полностью.
-        if (_isPrinting)
-        {
-            _textBox.text = _currentPhraseFinal;
-            _isPrinting = false;
-            return;
-        }
-
-        // // Запускает переход, если у кадра не было вариантов выбора
-        // if (GameStateHolder.CurrentFrame.Type != FrameType.Choice)
-        // {
-        //     _gameController.Transition();
-        // }
+        _textBox.text = _currentPhraseFinal;
+        IsPrinting = false;
     }
 
     // Установка нового текста. Вызывается из игрового контроллера
     public void NewText(string text)
     {
+        IsPrinting = true;
         _currentPhraseFinal = text;
         _currentPhraseChars = _currentPhraseFinal.ToCharArray();
         _currentPhrase = "";
-        _isPrinting = true;
         StartCoroutine(PrintNextPhrase());
     }
 
@@ -72,7 +59,7 @@ public class BossFightFrameTextController : MonoBehaviour
                 _audioController.PlayTextSound(pitchRangeMin, pitchRangeMax);
             }
 
-            if (!_isPrinting)
+            if (!IsPrinting)
             {
                 yield break;
             }
@@ -82,7 +69,7 @@ public class BossFightFrameTextController : MonoBehaviour
             prevChar = currentChar;
         }
 
-        _isPrinting = false;
+        IsPrinting = false;
     }
 
     // Возвращает значение задержки между печатью двух символов.

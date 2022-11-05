@@ -8,7 +8,7 @@ public class BossFightController : MonoBehaviour
     public TextMeshProUGUI timer;
     public Courier courier;
 
-    public BossFightFrameTextController text;
+    public TextBoxController text;
 
     private float _timeRemainingBeforeEnd;
     private float _timeRemainingBeforeNextRest;
