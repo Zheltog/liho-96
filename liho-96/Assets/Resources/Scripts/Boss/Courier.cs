@@ -1,15 +1,19 @@
+using System.Collections;
 using UnityEngine;
 
 public class Courier : MonoBehaviour
 {
     public HealthBar hpBar;
+    public GameObject redPanel;
 
     public float hp = 100;
     public float damage = 5;
 
-    private float maxCameraHeight = 5f;
-    private float minCameraHeight = 2f;
-    private float cameraSpeed = 10f;
+    private float _maxCameraHeight = 5f;
+    private float _minCameraHeight = 2f;
+    private float _cameraSpeed = 10f;
+    private float _hitAnimationSeconds = 0.1f;
+    private float _shake = 0.2f;
 
     private Camera _camera;
 
@@ -39,25 +43,26 @@ public class Courier : MonoBehaviour
         }
         
         hpBar.Damage(hpDamage);
+        StartCoroutine(ShowHitAnimation());
     }
 
     private void UpdateCamera()
     {
-        var deltaY = Input.GetAxis("Vertical") * cameraSpeed;
+        var deltaY = Input.GetAxis("Vertical") * _cameraSpeed;
         var movement = transform.TransformDirection(
-            Vector3.ClampMagnitude(new Vector3(0f, deltaY, 0f), cameraSpeed) * Time.deltaTime
+            Vector3.ClampMagnitude(new Vector3(0f, deltaY, 0f), _cameraSpeed) * Time.deltaTime
         );
         
         var newY = transform.position.y + movement.y;
         
-        if (newY > maxCameraHeight)
+        if (newY > _maxCameraHeight)
         {
-            newY = maxCameraHeight;
+            newY = _maxCameraHeight;
         }
         
-        if (newY < minCameraHeight)
+        if (newY < _minCameraHeight)
         {
-            newY = minCameraHeight;
+            newY = _minCameraHeight;
         }
 
         transform.position = new Vector3(transform.position.x, newY, transform.position.z);
@@ -76,5 +81,16 @@ public class Courier : MonoBehaviour
                 enemy.Hit(damage);
             }
         }
+    }
+
+    private IEnumerator ShowHitAnimation()
+    {
+        redPanel.SetActive(true);
+        var positionBefore = transform.position;
+        transform.position = new Vector3(positionBefore.x, positionBefore.y, positionBefore.z - _shake);
+        yield return new WaitForSeconds(_hitAnimationSeconds);
+        var positionAfter = transform.position;
+        transform.position = new Vector3(positionAfter.x, positionAfter.y, positionAfter.z + _shake);
+        redPanel.SetActive(false);
     }
 }
