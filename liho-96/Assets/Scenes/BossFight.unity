@@ -2235,8 +2235,12 @@ MonoBehaviour:
   hpBar: {fileID: 86713064}
   targetPoint: {x: 0, y: 5, z: -10}
   hp: 50
-  damage: 5
-  secondsBeforeNextShot: 2
+  damage: 4
+  secondsBeforeNextShot: 1.5
+  maxHidingSeconds: 3
+  minHidingSeconds: 0.5
+  minXPoint: 20
+  maxXPoint: 10
 --- !u!136 &964093231
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -2636,6 +2640,10 @@ MonoBehaviour:
   hp: 50
   damage: 5
   secondsBeforeNextShot: 2
+  maxHidingSeconds: 3
+  minHidingSeconds: 0.5
+  minXPoint: -20
+  maxXPoint: -10
 --- !u!1 &1107313586
 GameObject:
   m_ObjectHideFlags: 0

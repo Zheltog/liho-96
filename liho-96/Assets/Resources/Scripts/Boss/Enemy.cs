@@ -11,6 +11,8 @@ public class Enemy : MonoBehaviour
     public float secondsBeforeNextShot = 2f;
     public float maxHidingSeconds = 3f;
     public float minHidingSeconds = 0.5f;
+    public float minXPoint = -20f;
+    public float maxXPoint = -10f;
 
     private float _currentTime;
     private float _minY = 2;
@@ -39,7 +41,7 @@ public class Enemy : MonoBehaviour
         }
         
         hpBar.Damage(hpDamage);
-        StartCoroutine(Hide());
+        StartCoroutine(HideAndMove());
     }
 
     private void Shoot()
@@ -58,17 +60,22 @@ public class Enemy : MonoBehaviour
         }
     }
     
-    private IEnumerator Hide()
+    private IEnumerator HideAndMove()
     {
         var positionBefore = transform.position;
         transform.position = new Vector3(positionBefore.x, _minY, positionBefore.z);
         yield return new WaitForSeconds(RandomHidingTime());
         var positionAfter = transform.position;
-        transform.position = new Vector3(positionAfter.x, _maxY, positionAfter.z);
+        transform.position = new Vector3(RandomXPosition(), _maxY, positionAfter.z);
     }
 
     private float RandomHidingTime()
     {
         return Random.Range(minHidingSeconds, maxHidingSeconds);
+    }
+
+    private float RandomXPosition()
+    {
+        return Random.Range(minXPoint, maxXPoint);
     }
 }
