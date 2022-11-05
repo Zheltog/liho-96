@@ -10,7 +10,17 @@ public static class ChoicesFilter
     
     private static bool IsAvailable(Choice choice)
     {
-        return choice != null && choice.Visibility.Aggregate(
+        if (choice == null)
+        {
+            return false;
+        }
+
+        if (choice.Visibility == null || choice.Visibility.Count == 0)
+        {
+            return true;
+        }
+        
+        return choice.Visibility.Aggregate(
             true,
             (current, predicate) => current && PredicateResult(predicate)
         );
