@@ -1297,59 +1297,12 @@
       "Type": "Choice",
       "Choices": [
         {
-          "Text": "\"Пушки нет и денег нет!\"",
-          "Visibility": [
-            {
-              "Type": "AndNot",
-              "Flags": [
-                "Money",
-                "Pistol"
-              ]
-            }
-          ],
-          "Transition": {
-            "Type": "Frame",
-            "Next": "choice_test",
-            "Actions": [
-              {
-                "Type": "Add",
-                "Name": "Money"
-              },
-              {
-                "Type": "Add",
-                "Name": "Pistol"
-              }
-            ]
-          }
-        },
-        {
           "Text": "\"Пушка есть!\"",
           "Visibility": [
             {
               "Type": "And",
               "Flags": [
                 "Pistol"
-              ]
-            }
-          ],
-          "Transition": {
-            "Type": "Frame",
-            "Next": "choice_test",
-            "Actions": [
-              {
-                "Type": "Remove",
-                "Name": "Pistol"
-              }
-            ]
-          }
-        },
-        {
-          "Text": "\"Денег нет!\"",
-          "Visibility": [
-            {
-              "Type": "AndNot",
-              "Flags": [
-                "Money"
               ]
             }
           ],

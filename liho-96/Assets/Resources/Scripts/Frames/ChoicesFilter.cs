@@ -7,7 +7,7 @@ namespace Frames
     {
         public static List<Choice> FilterChoices(List<Choice> choices)
         {
-            return choices.Where(IsAvailable).ToList();
+            return choices?.Where(IsAvailable).ToList();
         }
 
         private static bool IsAvailable(Choice choice)
