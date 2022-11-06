@@ -10,12 +10,14 @@ namespace Boss
         public float redAlertSeconds = 10;
         
         private TextMeshProUGUI _text;
+        private Animator _animator;
         private float _timeRemainingBeforeEnd;
         private bool _redAlert;
 
         private void Start()
         {
             _text = GetComponent<TextMeshProUGUI>();
+            _animator = GetComponent<Animator>();
             _timeRemainingBeforeEnd = fightSeconds;
         }
 
@@ -35,6 +37,7 @@ namespace Boss
         {
             _timeRemainingBeforeEnd += seconds;
             SetTimeRemaining(_timeRemainingBeforeEnd);
+            Pulse();
         }
 
         private void SetTimeRemaining(float secondsRemaining)
@@ -47,6 +50,7 @@ namespace Boss
             {
                 _redAlert = true;
                 _text.color = new Color(1f, 0f, 0f);
+                Pulse();
             }
 
             if (_redAlert && secondsRemaining > redAlertSeconds)
@@ -54,6 +58,11 @@ namespace Boss
                 _redAlert = true;
                 _text.color = new Color(1f, 1f, 1f);
             }
+        }
+
+        private void Pulse()
+        {
+            _animator.Play("TimerPulse");
         }
     }
 }

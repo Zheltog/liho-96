@@ -46,7 +46,7 @@ namespace Boss
                 case EffectType.Damage:
                     break;
                 case EffectType.Heal:
-                    courier.AddHp(effectValue);
+                    courier.AddHp(effectValue, true);
                     break;
                 case EffectType.Timer:
                     timer.AddTime(effectValue);

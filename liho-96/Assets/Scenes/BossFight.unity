@@ -226,6 +226,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 100
+  pulseAnimationName: 
 --- !u!1 &112377065
 GameObject:
   m_ObjectHideFlags: 0
@@ -918,10 +919,10 @@ RectTransform:
   m_Father: {fileID: 1267802825}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 170, y: 20}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &338570909
 MonoBehaviour:
@@ -1186,10 +1187,10 @@ RectTransform:
   m_Father: {fileID: 86713062}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 170, y: 20}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &520746242
 MonoBehaviour:
@@ -3695,6 +3696,7 @@ GameObject:
   - component: {fileID: 1107313589}
   - component: {fileID: 1107313588}
   - component: {fileID: 1107313590}
+  - component: {fileID: 1107313591}
   m_Layer: 5
   m_Name: FinishTimer
   m_TagString: Untagged
@@ -3833,6 +3835,25 @@ MonoBehaviour:
   mainController: {fileID: 248021001}
   fightSeconds: 60
   redAlertSeconds: 30
+--- !u!95 &1107313591
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1107313586}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 030404ef34964b24d90f4054dd6286a5, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1110258747
 GameObject:
   m_ObjectHideFlags: 0
@@ -4127,6 +4148,7 @@ GameObject:
   - component: {fileID: 1267802825}
   - component: {fileID: 1267802826}
   - component: {fileID: 1267802827}
+  - component: {fileID: 1267802828}
   m_Layer: 5
   m_Name: HealthBar
   m_TagString: Untagged
@@ -4219,6 +4241,26 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 100
+  pulseAnimationName: CourierHealthBarPulse
+--- !u!95 &1267802828
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1267802824}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: a30cd37f1769fab47b0479c5547b6917, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1305817599
 GameObject:
   m_ObjectHideFlags: 0
