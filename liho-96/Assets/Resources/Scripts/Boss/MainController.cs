@@ -20,11 +20,13 @@ namespace Boss
         public RoundState CurrentRoundState { get; private set; }
         
         private float _timeRemainingBeforeNextRest;
+        private PhaseConfigurator _phaseConfig;
 
         private void Start()
         {
             InitHolder();
             _timeRemainingBeforeNextRest = phaseSeconds;
+            _phaseConfig = GetComponent<PhaseConfigurator>();
             NextPhase();
         }
 
@@ -42,9 +44,19 @@ namespace Boss
         {
             text.NewText(item.UseText);
             itemsChoicesController.DisableButtons();
+            ApplyEffect(item.Effect);
+            CurrentRoundState = RoundState.ItemChosen;
+        }
+
+        public void ApplyEffect(Effect effect)
+        {
+            if (effect == null)
+            {
+                return;
+            }
             
-            var effectValue = item.Effect.Value;
-            switch (item.Effect.Type)
+            var effectValue = effect.Value;
+            switch (effect.Type)
             {
                 case EffectType.Damage:
                     enemiesHealthBar.AddHp(-1 * effectValue, true);
@@ -56,8 +68,6 @@ namespace Boss
                     timer.AddTime(effectValue);
                     break;
             }
-
-            CurrentRoundState = RoundState.ItemChosen;
         }
 
         public void FinishPrintingOrUpdateRoundState()
@@ -154,15 +164,7 @@ namespace Boss
         private void NextPhase()
         {
             CurrentRoundState = RoundState.NewPhase;
-            var phase = StateHolder.NextPhase();
-
-            if (phase == null)
-            {
-                GameOver("Фазы кончились (жесть)");
-                return;
-            }
-            
-            text.NewText(phase.StartText);
+            _phaseConfig.NewPhase();
         }
         
         private void NextAttack()
@@ -199,13 +201,13 @@ namespace Boss
             phases.Add(new Phase(
                 PhaseType.Shooting,
                 "Фаза1. Ну всё пиздец...",
-                new Effect(EffectType.Heal, 10f),
+                null,
                 enemies,
                 new List<Modifier>()
             ));
             phases.Add(new Phase(
                 PhaseType.Shooting,
-                "Фаза2. Ахуеть не встать (а если встать, то ахуеть...)",
+                "Фаза2. Ахуеть не встать (а если встать, то ахуеть)... Игрок немного подлечился",
                 new Effect(EffectType.Heal, 10f),
                 enemies,
                 new List<Modifier>()

@@ -14,12 +14,17 @@ namespace Boss
         {
             AvailableItems = items;
             Phases = phases ?? new List<Phase>();
-            _currentPhaseIndex = 0;
+            _currentPhaseIndex = -1;
         }
 
         public static Phase NextPhase()
         {
-            return _currentPhaseIndex == Phases.Count ? null : Phases[_currentPhaseIndex++];
+            if (_currentPhaseIndex < Phases.Count - 1)
+            {
+                _currentPhaseIndex++;
+            }
+
+            return Phases[_currentPhaseIndex];
         }
     }
 }
