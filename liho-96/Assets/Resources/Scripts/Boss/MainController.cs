@@ -203,7 +203,6 @@ namespace Boss
 
             var phases = new List<Phase>();
             var enemies1 = new List<EnemyType>();
-            enemies1.Add(EnemyType.BenchLeft);
             var enemies23 = new List<EnemyType>();
             enemies23.Add(EnemyType.BenchLeft);
             enemies23.Add(EnemyType.BenchRight);
