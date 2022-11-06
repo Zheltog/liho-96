@@ -225,6 +225,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54fa78906a916314aaa5ee90a05aee25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  type: 0
+  maincontroller: {fileID: 248021001}
   maxHealth: 100
   pulseAnimationName: 
 --- !u!1 &112377065
@@ -1405,7 +1407,7 @@ Transform:
   m_GameObject: {fileID: 584745246}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 2, z: -10}
-  m_LocalScale: {x: 2, y: 2, z: 1}
+  m_LocalScale: {x: 2, y: 1, z: 1}
   m_Children:
   - {fileID: 884715015}
   m_Father: {fileID: 0}
@@ -1486,11 +1488,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6367fad50cf2a49409c09e6ffd63cd5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hp: 100
-  damage: 5
   hpBar: {fileID: 1267802827}
   redPanel: {fileID: 1037149491}
   mainController: {fileID: 248021001}
+  damage: 5
   maxCameraHeight: 5
   minCameraHeight: 2
   cameraSpeed: 10
@@ -3265,10 +3266,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab19d9de69499f545be413ba4b053d8c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hp: 50
-  damage: 4
   hpBar: {fileID: 86713064}
   targetPoint: {x: 0, y: 5, z: -10}
+  hp: 50
+  damage: 4
   secondsBeforeNextShot: 1.5
   maxHidingSeconds: 3
   minHidingSeconds: 0.5
@@ -3672,10 +3673,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab19d9de69499f545be413ba4b053d8c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hp: 50
-  damage: 5
   hpBar: {fileID: 86713064}
   targetPoint: {x: 0, y: 5, z: -10}
+  hp: 50
+  damage: 5
   secondsBeforeNextShot: 2
   maxHidingSeconds: 3
   minHidingSeconds: 0.5
@@ -4240,6 +4241,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54fa78906a916314aaa5ee90a05aee25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  type: 0
+  maincontroller: {fileID: 248021001}
   maxHealth: 100
   pulseAnimationName: CourierHealthBarPulse
 --- !u!95 &1267802828

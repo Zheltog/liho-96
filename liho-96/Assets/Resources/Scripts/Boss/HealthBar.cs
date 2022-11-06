@@ -5,6 +5,8 @@ namespace Boss
 {
     public class HealthBar : MonoBehaviour
     {
+        public HealthBarType type;
+        public MainController maincontroller;
         public float maxHealth = 100f;
         public string pulseAnimationName = "";
 
@@ -28,11 +30,26 @@ namespace Boss
             {
                 Pulse();
             }
+            
+            if (_currentHealth <= 0)
+            {
+                Empty();
+            }
+        }
+
+        private void Empty()
+        {
+            maincontroller.HealthBarEmpty(type);
         }
         
         private void Pulse()
         {
             _animator.Play(pulseAnimationName);
         }
+    }
+
+    public enum HealthBarType
+    {
+        Courier, Enemies
     }
 }

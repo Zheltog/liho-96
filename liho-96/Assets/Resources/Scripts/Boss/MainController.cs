@@ -46,12 +46,14 @@ namespace Boss
                 case EffectType.Damage:
                     break;
                 case EffectType.Heal:
-                    courier.AddHp(effectValue, true);
+                    courier.hpBar.AddHp(effectValue, true);
                     break;
                 case EffectType.Timer:
                     timer.AddTime(effectValue);
                     break;
             }
+
+            CurrentRoundState = RoundState.ItemChosen;
         }
 
         public void FinishPrintingOrUpdateRoundState()
@@ -64,7 +66,7 @@ namespace Boss
             {
                 switch (CurrentRoundState)
                 {
-                    case RoundState.ItemChoice:
+                    case RoundState.ItemChosen:
                         ReturnToActivePhase();
                         break;
                     case RoundState.GameOver:
@@ -84,7 +86,7 @@ namespace Boss
         {
             if (!itemsChoicesController.ItemsChoiceAvailable()) return;
             
-            CurrentRoundState = RoundState.ItemChoice;
+            CurrentRoundState = RoundState.ItemChoosing;
             actionsButtons.SetActive(false);
             itemsChoicesController.NewChoices();
         }
@@ -92,6 +94,18 @@ namespace Boss
         public void Surrender()
         {
             GameOver("Курьер сдался. Pathetic.");
+        }
+
+        public void HealthBarEmpty(HealthBarType type)
+        {
+            switch (type)
+            {
+                case HealthBarType.Courier:
+                    GameOver("Райан Гослинг умер...");
+                    break;
+                case HealthBarType.Enemies:
+                    break;
+            }
         }
         
         public void GameOver(string comment)
@@ -137,7 +151,7 @@ namespace Boss
 
         public enum RoundState
         {
-            Attack, ActionChoice, ItemChoice, GameOver
+            Attack, ActionChoice, ItemChoosing, ItemChosen, GameOver
         }
     }
 }

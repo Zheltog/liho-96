@@ -3,10 +3,12 @@ using UnityEngine;
 
 namespace Boss
 {
-    public class Courier : CharacterBehindBench
+    public class Courier : MonoBehaviour
     {
+        public HealthBar hpBar;
         public GameObject redPanel;
         public MainController mainController;
+        public float damage;
         public float maxCameraHeight = 5f;
         public float minCameraHeight = 2f;
         public float cameraSpeed = 10f;
@@ -45,6 +47,17 @@ namespace Boss
         public void Rest()
         {
             _isGoingDown = true;
+        }
+        
+        public void Hit(float damageTaken)
+        {
+            if (!IsActivePhase())
+            {
+                return;
+            }
+
+            hpBar.AddHp(-1 * damageTaken, false);
+            StartCoroutine(ShowHitAnimation());
         }
 
         private void GoDown()
@@ -87,7 +100,12 @@ namespace Boss
         {
             var mousePosition = Input.mousePosition;
             var ray = _camera.ScreenPointToRay(mousePosition);
-            Shoot(ray);
+            if (!Physics.Raycast(ray, out var hit)) return;
+            var enemy = hit.collider.gameObject.GetComponent<Enemy>();
+            if (enemy != null)
+            {
+                enemy.Hit(damage);
+            }
         }
 
         private IEnumerator ShowHitAnimation()
@@ -106,21 +124,6 @@ namespace Boss
         private bool IsActivePhase()
         {
             return mainController.CurrentRoundState == MainController.RoundState.Attack;
-        }
-
-        protected override bool ShouldTakeDamage()
-        {
-            return IsActivePhase();
-        }
-        
-        protected override void Die()
-        {
-            mainController.GameOver("Райан Гослинг умер...");
-        }
-
-        protected override void OnDamage()
-        {
-            StartCoroutine(ShowHitAnimation());
         }
     }
 }

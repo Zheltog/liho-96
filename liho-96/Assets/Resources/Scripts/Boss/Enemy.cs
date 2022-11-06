@@ -3,9 +3,12 @@ using UnityEngine;
 
 namespace Boss
 {
-    public class Enemy : CharacterBehindBench
+    public class Enemy : MonoBehaviour
     {
+        public HealthBar hpBar;
         public Vector3 targetPoint = new Vector3(0f, 5f, -10f);
+        public float hp = 50;
+        public float damage;
         public float secondsBeforeNextShot = 2f;
         public float maxHidingSeconds = 3f;
         public float minHidingSeconds = 0.5f;
@@ -27,13 +30,31 @@ namespace Boss
             _currentTime -= secondsBeforeNextShot;
             Shoot();
         }
+        
+        public void Hit(float damageTaken)
+        {
+            hp -= damageTaken;
+
+            if (hp <= 0)
+            {
+                Destroy(gameObject);
+            }
+
+            hpBar.AddHp(-1 * damageTaken, false);
+            StartCoroutine(HideAndMove());
+        }
 
         private void Shoot()
         {
             var fromPosition = transform.position;
             var direction = targetPoint - fromPosition;
             var ray = new Ray(transform.position, direction);
-            Shoot(ray);
+            if (!Physics.Raycast(ray, out var hit)) return;
+            var courier = hit.collider.gameObject.GetComponent<Courier>();
+            if (courier != null)
+            {
+                courier.Hit(damage);
+            }
         }
 
         private IEnumerator HideAndMove()
@@ -89,21 +110,6 @@ namespace Boss
             }
 
             transform.position = new Vector3(currentPosition.x, newY, currentPosition.z);
-        }
-
-        protected override bool ShouldTakeDamage()
-        {
-            return true;
-        }
-
-        protected override void Die()
-        {
-            Destroy(gameObject);
-        }
-
-        protected override void OnDamage()
-        {
-            StartCoroutine(HideAndMove());
         }
 
         private enum VerticalMovement
