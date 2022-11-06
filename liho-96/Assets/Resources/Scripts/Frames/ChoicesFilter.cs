@@ -30,19 +30,19 @@ namespace Frames
 
         private static bool PredicateResult(VisibilityPredicate predicate)
         {
-            var result = predicate.Type == VisibilityPredicateType.And;
+            // это всё костыли... так не должно быть...
+            var result = predicate.Type != VisibilityPredicateType.Or;
 
             foreach (var flag in predicate.Flags)
             {
                 var newAspect = StateHolder.Flags.Contains(flag);
-                if (predicate.Type == VisibilityPredicateType.And)
+                result = predicate.Type switch
                 {
-                    result = result && newAspect;
-                }
-                else
-                {
-                    result = result || newAspect;
-                }
+                    VisibilityPredicateType.And => result && newAspect,
+                    VisibilityPredicateType.AndNot => result && !newAspect,
+                    VisibilityPredicateType.Or => result || newAspect,
+                    _ => result
+                };
             }
 
             return result;

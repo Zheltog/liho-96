@@ -1,7 +1,8 @@
 {
-  "StartingFrame": "casino_boss_9",
+  "StartingFrame": "choice_test",
   "StartingFlags": [
-    "Pistol"
+    "Pistol",
+    "SmallMoney"
   ],
   "Frames": {
     "start": {
@@ -67,7 +68,7 @@
     },
     "start_liho": {
       "Picture": "liho_in_the_backseat",
-      "Text": "Груз лежит на заднем сидении. Чёрный металлический ящик, размером с аккумулятор автомобиля. Тяжелый, но легче, чем кажется.\n\nСбоку гладкая металлическая поверхность прерывается лишь двумя отверстиями. Над ними надпись – \"ЛИХО-96\".",
+      "Text": "Груз лежит на заднем сидении. Чёрный металлический ящик, размером с аккумулятор автомобиля. Тяжелый, но легче, чем кажется.\n\nНа металлической поверхности надпись: \"ЛИХО-96\".",
       "Type": "Simple",
       "Transition": {
         "Type": "Frame",
@@ -76,7 +77,7 @@
     },
     "start_liho_2": {
       "Picture": "liho_in_the_backseat",
-      "Text": "С каждой неровностью на дороге машину заметно трясет. Курьер оглядывается на заднее сидение, чтобы проверить целостность незакрепленного груза.",
+      "Text": "С каждой неровностью на дороге машину заметно трясет.\nКурьер время от времени оглядывается на заднее сидение.",
       "Type": "Simple",
       "Transition": {
         "Type": "Frame",
@@ -85,7 +86,7 @@
     },
     "start_note": {
       "Picture": "courier_in_a_car_holding_a_note",
-      "Text": "В кармане курьера записка:\n\"Полночь. Старый. Клумба.\"",
+      "Text": "В кармане его поношенной куртки – записка:\n\"Полночь. Старый. Клумба.\"",
       "Type": "Simple",
       "Transition": {
         "Type": "Frame",
@@ -103,7 +104,7 @@
     },
     "start_gun": {
       "Picture": "courier_in_a_car_holding_a_gun",
-      "Text": "В другом кармане курьер всегда держит пистолет. Работа опасная.\nВ этот день у него было особенно плохое предчувствие.",
+      "Text": "В другом кармане он всегда держит пистолет. Работа опасная.\nИ в этот день у Курьера было особенно плохое предчувствие.",
       "Type": "Simple",
       "Transition": {
         "Type": "Frame",
@@ -112,7 +113,7 @@
     },
     "start_town": {
       "Picture": "courier_in_a_car_town",
-      "Text": "Дождь прекратился. За стеклом начинают появляться невысокие панельные дома.\nТусклый свет фонарей и редких вывесок. Несколько машин проезжают мимо, и дорога снова становится пустой. Кажется, что город уже засыпает.",
+      "Text": "Дождь прекратился. За стеклом начинают появляться невысокие панельные дома.\nТусклый свет фонарей и редких вывесок. Несколько машин проезжают мимо, и дорога снова становится пустой.\nКажется, город уже засыпает.",
       "Type": "Simple",
       "Transition": {
         "Type": "Frame",
@@ -121,11 +122,104 @@
     },
     "start_time": {
       "Picture": "courier_in_a_car_town",
-      "Text": "На часах – 21:30. Достаточно времени, чтобы со всем разобраться на месте.",
+      "Text": "На часах – 21:30.\nДостаточно времени, чтобы со всем разобраться на месте.",
       "Type": "Simple",
       "Transition": {
         "Type": "Frame",
-        "Next": "start"
+        "Next": "cafe_entrance"
+      }
+    },
+
+    "cafe_entrance": {
+      "Picture": "blank",
+      "Text": "TODO курьер заходит в кафе",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "cafe_after"
+      }
+    },
+
+    "cafe_after": {
+      "Picture": "blank",
+      "Text": "TODO машину угнали, курьер выбежал из кафе",
+      "Type": "Choice",
+      "Choices": [
+        {
+          "Text": "Осмотреть гаражи",
+          "Transition": {
+            "Type": "Frame",
+            "Next": "garage"
+          }
+        },
+        {
+          "Text": "Зайти на рынок",
+          "Transition": {
+            "Type": "Frame",
+            "Next": "market"
+          }
+        },
+        {
+          "Text": "Пройти к лесу",
+          "Transition": {
+            "Type": "Frame",
+            "Next": "forest"
+          }
+        }
+      ]
+    },
+
+    "garage": {
+      "Picture": "blank",
+      "Text": "TODO курьер осматривает открытый гараж, на него нападают, он вынужден бежать",
+      "Type": "Choice",
+      "Choices": [
+        {
+          "Text": "На рынок",
+          "Transition": {
+            "Type": "Frame",
+            "Next": "market"
+          }
+        },
+        {
+          "Text": "В лес",
+          "Transition": {
+            "Type": "Frame",
+            "Next": "forest"
+          }
+        }
+      ]
+    },
+
+    "market": {
+      "Picture": "blank",
+      "Text": "TODO курьер приходит на рынок, может что-то купить у уличной торговки",
+      "Type": "Choice",
+      "Choices": [
+        {
+          "Text": "Осмотреть гаражи",
+          "Transition": {
+            "Type": "Frame",
+            "Next": "garage"
+          }
+        },
+        {
+          "Text": "Пройти к лесу",
+          "Transition": {
+            "Type": "Frame",
+            "Next": "forest"
+          }
+        }
+      ]
+    },
+
+    "forest": {
+      "Picture": "blank",
+      "Text": "TODO курьер идёт к лесу, видит следы шин на дороге. Подходит, видит свою машину и мёртвых угонщиков. ЛИХО украдено бандитами. Знакомится с Учёным. Тот предлагает спросить у владельца казино о местоположении бандитов.",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "casino_entrance"
       }
     },
     
@@ -150,8 +244,17 @@
       }
     },
     "casino_entrance_2": {
-      "Picture": "casino_entrance",
-      "Text": "Через минуту дверь открывается. Браток оглядывает Учёного и Курьера, затем обращается к Учёному.\nБраток: \"Опа, опять ты. Че, не всё вчера проиграл, агроном?\"",
+      "Picture": "casino_entrance_bratok_1",
+      "Text": "Через минуту дверь открывается. Браток оглядывает Учёного и Курьера, затем обращается к Учёному.",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "casino_entrance_2_1"
+      }
+    },
+    "casino_entrance_2_1": {
+      "Picture": "casino_entrance_bratok_1",
+      "Text": "Браток: \"Опа, опять ты. Че, не всё вчера проиграл, агроном?\"",
       "Type": "Simple",
       "Transition": {
         "Type": "Frame",
@@ -159,7 +262,7 @@
       }
     },
     "casino_entrance_3": {
-      "Picture": "casino_entrance",
+      "Picture": "casino_entrance_bratok_1",
       "Text": "Учёный: \"...\"",
       "Type": "Simple",
       "Transition": {
@@ -168,7 +271,7 @@
       }
     },
     "casino_entrance_4": {
-      "Picture": "casino_entrance",
+      "Picture": "casino_entrance_bratok_1",
       "Text": "Браток: \"Ха-ха-ха, шучу! А этот че, с тобой? Оружие, колюще-режущие предметы есть?\"\nБраток пристально смотрит на Курьера.",
       "Type": "Simple",
       "Transition": {
@@ -177,7 +280,7 @@
       }
     },
     "casino_entrance_5": {
-      "Picture": "casino_entrance",
+      "Picture": "casino_entrance_bratok_1",
       "Text": "Учёный: \"Д-да, он со мной, я з-за него р-ручаюсь.\"",
       "Type": "Simple",
       "Transition": {
@@ -186,7 +289,7 @@
       }
     },
     "casino_entrance_6": {
-      "Picture": "casino_entrance",
+      "Picture": "casino_entrance_bratok_1",
       "Text": "Браток: \"Хер с тобой, проходи тоже.\"\nБраток запускает Учёного и Курьера внутрь.",
       "Type": "Simple",
       "Transition": {
@@ -205,7 +308,7 @@
       }
     },
     "casino_hall_1": {
-      "Picture": "casino_hall",
+      "Picture": "casino_hall_bratok_1",
       "Text": "Браток: \"Ну чё, располагайтесь. Чето сегодня народу мало, так что вы никому не помешаете. Но если вдруг чето удумаете...\"\nБраток хрустит костяшками пальцев.",
       "Type": "Simple",
       "Transition": {
@@ -214,7 +317,7 @@
       }
     },
     "casino_hall_2": {
-      "Picture": "casino_hall",
+      "Picture": "casino_hall_bratok_1",
       "Text": "Учёный: \"Вообще-то, м-мы пришли, эээ... У нас д-дело с б-б-боссом.\"",
       "Type": "Simple",
       "Transition": {
@@ -223,7 +326,7 @@
       }
     },
     "casino_hall_3": {
-      "Picture": "casino_hall",
+      "Picture": "casino_hall_bratok_1",
       "Text": "Браток пару секунд смотрит на Учёного, затем смеется.\nБраток: \"Ха-ха-ха, че, сегодня всё серьёзно у тебя? Дела пришёл обсуждать? Ну-ка погоди...\"",
       "Type": "Simple",
       "Transition": {
@@ -241,7 +344,7 @@
       }
     },
     "casino_hall_5": {
-      "Picture": "casino_hall",
+      "Picture": "casino_hall_bratok_1",
       "Text": "Браток: \"Ну че, агроном, тебе повезло! Сегодня у начальника настроение хорошее. Глядь, ещё с тебя посмеётся. Жди.\"",
       "Type": "Simple",
       "Transition": {
@@ -379,6 +482,15 @@
     "casino_slots_7": {
       "Picture": "casino_slots",
       "Text": "Всю ночь они проводят за слот-машинами, потеряв под утро практически все свои деньги.\nУчёный: \"С-слушай, а мы ведь з-зачем-то ещё сюда шли, да? Н-не помню...\"",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "casino_slots_8"
+      }
+    },
+    "casino_slots_8": {
+      "Picture": "casino_slots",
+      "Text": "Учёный: \"С-слушай, а мы ведь з-зачем-то ещё сюда шли, да? Н-не помню...\"",
       "Type": "Simple",
       "Transition": {
         "Type": "Frame",
@@ -1146,7 +1258,7 @@
           "Text": "\"Нужно пойти на место встречи\"",
           "Transition": {
             "Type": "Frame",
-            "Next": "after_casino_city_go_to_klumba"
+            "Next": "after_casino_city_go_to_klumba_TODO"
           }
         }
       ]
@@ -1171,12 +1283,109 @@
 
     "after_casino_to_klumba": {
       "Picture": "casino_entrance",
-      "Text": "after casino know about klumba",
+      "Text": "TODO Кадр после казино, если персонажи знают, что Туман на клумбе.",
       "Type": "Simple",
       "Transition": {
         "Type": "Frame",
         "Next": "after_casino_to_klumba"
       }
+    },
+
+    "choice_test": {
+      "Picture": "blank",
+      "Text": "Тест выборов, действий и видимости!",
+      "Type": "Choice",
+      "Choices": [
+        {
+          "Text": "\"Пушки нет и денег нет!\"",
+          "Visibility": [
+            {
+              "Type": "AndNot",
+              "Flags": [
+                "Money",
+                "Pistol"
+              ]
+            }
+          ],
+          "Transition": {
+            "Type": "Frame",
+            "Next": "choice_test",
+            "Actions": [
+              {
+                "Type": "Add",
+                "Name": "Money"
+              },
+              {
+                "Type": "Add",
+                "Name": "Pistol"
+              }
+            ]
+          }
+        },
+        {
+          "Text": "\"Пушка есть!\"",
+          "Visibility": [
+            {
+              "Type": "And",
+              "Flags": [
+                "Pistol"
+              ]
+            }
+          ],
+          "Transition": {
+            "Type": "Frame",
+            "Next": "choice_test",
+            "Actions": [
+              {
+                "Type": "Remove",
+                "Name": "Pistol"
+              }
+            ]
+          }
+        },
+        {
+          "Text": "\"Денег нет!\"",
+          "Visibility": [
+            {
+              "Type": "AndNot",
+              "Flags": [
+                "Money"
+              ]
+            }
+          ],
+          "Transition": {
+            "Type": "Frame",
+            "Next": "choice_test",
+            "Actions": [
+              {
+                "Type": "Add",
+                "Name": "Money"
+              }
+            ]
+          }
+        },
+        {
+          "Text": "\"Деньги есть!\"",
+          "Visibility": [
+            {
+              "Type": "And",
+              "Flags": [
+                "Money"
+              ]
+            }
+          ],
+          "Transition": {
+            "Type": "Frame",
+            "Next": "choice_test",
+            "Actions": [
+              {
+                "Type": "Remove",
+                "Name": "Money"
+              }
+            ]
+          }
+        }
+      ]
     }
   }
 }
