@@ -8,12 +8,18 @@ namespace Boss
 
         public static List<Phase> Phases { get; set; }
 
-        public static Phase CurrentPhase;
+        private static int _currentPhaseIndex;
 
         public static void Init(List<Item> items, List<Phase> phases)
         {
             AvailableItems = items;
-            Phases = phases;
+            Phases = phases ?? new List<Phase>();
+            _currentPhaseIndex = 0;
+        }
+
+        public static Phase NextPhase()
+        {
+            return _currentPhaseIndex == Phases.Count ? null : Phases[_currentPhaseIndex++];
         }
     }
 }

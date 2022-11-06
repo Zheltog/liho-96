@@ -15,6 +15,16 @@ namespace Boss
         public Effect Effect { get; set; }
         public List<EnemyType> Enemies { get; set; }
         public List<Modifier> Modifiers { get; set; }
+
+        // TODO: удалить, нужен для тестирования
+        public Phase(PhaseType type, string startText, Effect effect, List<EnemyType> enemies, List<Modifier> modifiers)
+        {
+            Type = type;
+            StartText = startText;
+            Effect = effect;
+            Enemies = enemies;
+            Modifiers = modifiers;
+        }
     }
 
     public enum PhaseType

@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using Common;
 using UnityEngine;
 
@@ -5,7 +6,7 @@ namespace Boss
 {
     public class MainController : MonoBehaviour
     {
-        public float activePhaseSeconds = 10;
+        public float phaseSeconds = 10;
         public Courier courier;
         public HealthBar enemiesHealthBar;
         public GameObject grayPanel;
@@ -22,8 +23,9 @@ namespace Boss
 
         private void Start()
         {
-            CurrentRoundState = RoundState.Attack;
-            _timeRemainingBeforeNextRest = activePhaseSeconds;
+            InitHolder();
+            _timeRemainingBeforeNextRest = phaseSeconds;
+            NextPhase();
         }
 
         private void Update()
@@ -68,8 +70,11 @@ namespace Boss
             {
                 switch (CurrentRoundState)
                 {
+                    case RoundState.NewPhase:
+                        NextAttack();
+                        break;
                     case RoundState.ItemChosen:
-                        ReturnToActivePhase();
+                        NextPhase();
                         break;
                     case RoundState.GameOver:
                         Application.Quit();
@@ -81,7 +86,7 @@ namespace Boss
         public void Attack()
         {
             actionsButtons.SetActive(false);
-            ReturnToActivePhase();
+            NextPhase();
         }
 
         public void Inventory()
@@ -135,7 +140,7 @@ namespace Boss
             }
 
             Rest();
-            _timeRemainingBeforeNextRest = activePhaseSeconds;
+            _timeRemainingBeforeNextRest = phaseSeconds;
         }
 
         private void Rest()
@@ -146,7 +151,21 @@ namespace Boss
             grayPanel.SetActive(true);
         }
 
-        private void ReturnToActivePhase()
+        private void NextPhase()
+        {
+            CurrentRoundState = RoundState.NewPhase;
+            var phase = StateHolder.NextPhase();
+
+            if (phase == null)
+            {
+                GameOver("Фазы кончились (жесть)");
+                return;
+            }
+            
+            text.NewText(phase.StartText);
+        }
+        
+        private void NextAttack()
         {
             CurrentRoundState = RoundState.Attack;
             text.NewText(" ");
@@ -155,7 +174,44 @@ namespace Boss
 
         public enum RoundState
         {
-            Attack, ActionChoice, ItemChoosing, ItemChosen, GameOver
+            NewPhase, Attack, ActionChoice, ItemChoosing, ItemChosen, GameOver
+        }
+        
+        //
+        
+        // TODO: удалить, нужен для тестирования
+        private void InitHolder()
+        {
+            var items = new List<Item>();
+            items.Add(new Item("Вейп", "<Курьер оформляет плотнейшего пыха и восстанавливает 10 очков здоровья>",
+                "флаг", new Effect(EffectType.Heal, 10f)));
+            items.Add(new Item("Журнал \"Playboy\"",
+                "<Курьер пристально всматривается в обложку журнала. Вспомнив, за что должно сражать настоящему мужчине, он издаёт свирепый рык, нанося противникам 10 очков урона>",
+                "флаг", new Effect(EffectType.Damage, 10f)));
+            items.Add(new Item("Папка со сценарием фильма \"Довод\"",
+                "<Пробежав сценарий глазами, курьер осознаёт гениальность Нолана и теперь умеет влиять на ход времени. +10 секунд к заводу жиги!>",
+                "флаг", new Effect(EffectType.Timer, 10f)));
+
+            var phases = new List<Phase>();
+            var enemies = new List<EnemyType>();
+            enemies.Add(EnemyType.BenchLeft);
+            enemies.Add(EnemyType.BenchRight);
+            phases.Add(new Phase(
+                PhaseType.Shooting,
+                "Фаза1. Ну всё пиздец...",
+                new Effect(EffectType.Heal, 10f),
+                enemies,
+                new List<Modifier>()
+            ));
+            phases.Add(new Phase(
+                PhaseType.Shooting,
+                "Фаза2. Ахуеть не встать (а если встать, то ахуеть...)",
+                new Effect(EffectType.Heal, 10f),
+                enemies,
+                new List<Modifier>()
+            ));
+            
+            StateHolder.Init(items, phases);
         }
     }
 }

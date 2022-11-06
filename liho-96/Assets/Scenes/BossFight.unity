@@ -713,7 +713,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d80c797172886049a59607c451ae987, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  activePhaseSeconds: 10
+  phaseSeconds: 10
   courier: {fileID: 584745251}
   enemiesHealthBar: {fileID: 86713064}
   grayPanel: {fileID: 860493342}
@@ -2980,7 +2980,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &860493343
 MonoBehaviour:
   m_ObjectHideFlags: 0

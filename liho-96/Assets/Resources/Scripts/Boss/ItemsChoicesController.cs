@@ -19,7 +19,6 @@ namespace Boss
 
         private void Start()
         {
-            InitHolder();
             _currentItems = StateHolder.AvailableItems;
         }
         
@@ -98,21 +97,6 @@ namespace Boss
             var chosenItem = _currentItems[index];
             mainController.ChooseItem(chosenItem);
             _currentItems.Remove(chosenItem);
-        }
-
-        // TODO: удалить, нужен для тестирования
-        private void InitHolder()
-        {
-            var items = new List<Item>();
-            items.Add(new Item("Вейп", "<Курьер оформляет плотнейшего пыха и восстанавливает 10 очков здоровья>",
-                "флаг", new Effect(EffectType.Heal, 10f)));
-            items.Add(new Item("Журнал \"Playboy\"",
-                "<Курьер пристально всматривается в обложку журнала. Вспомнив, за что должно сражать настоящему мужчине, он издаёт свирепый рык, нанося противникам 10 очков урона>",
-                "флаг", new Effect(EffectType.Damage, 10f)));
-            items.Add(new Item("Папка со сценарием фильма \"Довод\"",
-                "<Пробежав сценарий глазами, курьер осознаёт гениальность Нолана и теперь умеет влиять на ход времени. +10 секунд к заводу жиги!>",
-                "флаг", new Effect(EffectType.Timer, 10f)));
-            StateHolder.Init(items, null);
         }
     }
 }
