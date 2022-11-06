@@ -1247,7 +1247,7 @@ MonoBehaviour:
   delayMultiplier: 5
   pitchRangeMin: 0.7
   pitchRangeMax: 0.8
-  _audioController: {fileID: 1098723470}
+  audioController: {fileID: 1098723470}
 --- !u!114 &568267678
 MonoBehaviour:
   m_ObjectHideFlags: 0

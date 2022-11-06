@@ -135,8 +135,24 @@ namespace Frames
 
         private IEnumerator UpdateChoices(List<Choice> choicesList)
         {
-            yield return new WaitUntil(() => !textBox.IsPrinting);
-            choices.NewChoices(ChoicesFilter.FilterChoices(choicesList));
+            var availableChoices = ChoicesFilter.FilterChoices(choicesList);
+            
+            // если выбор только один - делаем кадр обычным, будет простой переход без кнопок
+            if (availableChoices.Count == 1)
+            {
+                StateHolder.CurrentFrame.Type = FrameType.Simple;
+                StateHolder.CurrentFrame.Transition = availableChoices[0].Transition;
+            }
+            else
+            {
+                // на всякий случай? чтобы точно не было перехода
+                StateHolder.CurrentFrame.Type = FrameType.Choice;
+                StateHolder.CurrentFrame.Transition = null;
+                
+                // показываем кнопки только после того, как текст напечатается
+                yield return new WaitUntil(() => !textBox.IsPrinting);
+                choices.NewChoices(availableChoices);
+            }
         }
         
         private static bool AnyKeyIgnoreMouse()
