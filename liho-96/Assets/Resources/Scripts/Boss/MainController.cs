@@ -200,6 +200,8 @@ namespace Boss
             var enemies2 = new List<EnemyType>();
             enemies2.Add(EnemyType.BenchLeft);
             enemies2.Add(EnemyType.BenchRight);
+            var modifiers = new List<Modifier>();
+            modifiers.Add(Modifier.Dark);
             phases.Add(new Phase(
                 PhaseType.Shooting,
                 "Фаза1. Ну всё пиздец...",
@@ -209,10 +211,10 @@ namespace Boss
             ));
             phases.Add(new Phase(
                 PhaseType.Shooting,
-                "Фаза2. Ахуеть не встать (а если встать, то ахуеть)... Игрок немного подлечился",
+                "Фаза2. Ахуеть не встать (а если встать, то ахуеть)... Игрок немного подлечился, но темно пиздец",
                 new Effect(EffectType.Heal, 10f),
                 enemies2,
-                new List<Modifier>()
+                modifiers
             ));
             
             StateHolder.Init(items, phases);

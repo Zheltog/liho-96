@@ -9,6 +9,8 @@ namespace Boss
         public TextBoxController text;
         public GameObject enemyBenchLeft;
         public GameObject enemyBenchRight;
+        public Light enemiesLight;
+        public float minLight = 0.1f;
 
         private MainController _mainController;
 
@@ -45,9 +47,17 @@ namespace Boss
             }
         }
 
+        private void ResetModifiers()
+        {
+            enemiesLight.intensity = 1f;
+        }
+
         private void ApplyModifiers(List<Modifier> modifiers)
         {
-            // TODO
+            if (modifiers.Contains(Modifier.Dark))
+            {
+                enemiesLight.intensity = minLight;
+            }
         }
     }
 }

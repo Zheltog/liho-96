@@ -37,7 +37,7 @@ namespace Boss
 
             if (hp <= 0)
             {
-                Destroy(gameObject);
+                gameObject.SetActive(false);
             }
 
             hpBar.AddHp(-1 * damageTaken, false);
