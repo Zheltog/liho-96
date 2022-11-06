@@ -8,7 +8,6 @@ namespace Boss
         public HealthBarType type;
         public MainController maincontroller;
         public float maxHealth = 100f;
-        public string pulseAnimationName = "";
 
         private float _currentHealth;
         private Slider _bar;
@@ -44,7 +43,7 @@ namespace Boss
         
         private void Pulse()
         {
-            _animator.Play(pulseAnimationName);
+            _animator.Play(type + "HealthBarPulse");
         }
     }
 

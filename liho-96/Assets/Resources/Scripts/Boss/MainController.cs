@@ -7,6 +7,7 @@ namespace Boss
     {
         public float activePhaseSeconds = 10;
         public Courier courier;
+        public HealthBar enemiesHealthBar;
         public GameObject grayPanel;
         public GameObject dynamicStuff;
         public GameObject gameOverImage;
@@ -44,6 +45,7 @@ namespace Boss
             switch (item.Effect.Type)
             {
                 case EffectType.Damage:
+                    enemiesHealthBar.AddHp(-1 * effectValue, true);
                     break;
                 case EffectType.Heal:
                     courier.hpBar.AddHp(effectValue, true);
@@ -104,6 +106,7 @@ namespace Boss
                     GameOver("Райан Гослинг умер...");
                     break;
                 case HealthBarType.Enemies:
+                    GameOver("Райан Гослинг убил всех и стал плохим, а Райан Гослинг не может быть плохим... пиздец...");
                     break;
             }
         }
@@ -114,7 +117,8 @@ namespace Boss
             dynamicStuff.SetActive(false);
             gameOverImage.SetActive(true);
             text.NewText(comment);
-            player.NewMusic("game_over");
+            player.NewMusic("");
+            player.NewSound("game_over");
         }
 
         private void UpdateTimeRemainingBeforeNextRest()

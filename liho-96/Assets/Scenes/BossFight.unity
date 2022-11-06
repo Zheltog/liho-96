@@ -134,6 +134,7 @@ GameObject:
   - component: {fileID: 86713062}
   - component: {fileID: 86713063}
   - component: {fileID: 86713064}
+  - component: {fileID: 86713065}
   m_Layer: 5
   m_Name: HealthBar
   m_TagString: Untagged
@@ -225,10 +226,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54fa78906a916314aaa5ee90a05aee25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 0
+  type: 1
   maincontroller: {fileID: 248021001}
   maxHealth: 100
-  pulseAnimationName: 
+--- !u!95 &86713065
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 86713061}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: e660cac726a231046b2dea475aa15687, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &112377065
 GameObject:
   m_ObjectHideFlags: 0
@@ -696,6 +715,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   activePhaseSeconds: 10
   courier: {fileID: 584745251}
+  enemiesHealthBar: {fileID: 86713064}
   grayPanel: {fileID: 860493342}
   dynamicStuff: {fileID: 401678784}
   gameOverImage: {fileID: 179393097}
@@ -1491,7 +1511,7 @@ MonoBehaviour:
   hpBar: {fileID: 1267802827}
   redPanel: {fileID: 1037149491}
   mainController: {fileID: 248021001}
-  damage: 5
+  damage: 10
   maxCameraHeight: 5
   minCameraHeight: 2
   cameraSpeed: 10
@@ -4244,7 +4264,6 @@ MonoBehaviour:
   type: 0
   maincontroller: {fileID: 248021001}
   maxHealth: 100
-  pulseAnimationName: CourierHealthBarPulse
 --- !u!95 &1267802828
 Animator:
   serializedVersion: 3

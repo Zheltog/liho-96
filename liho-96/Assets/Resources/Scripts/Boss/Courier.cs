@@ -8,7 +8,7 @@ namespace Boss
         public HealthBar hpBar;
         public GameObject redPanel;
         public MainController mainController;
-        public float damage;
+        public float damage = 10f;
         public float maxCameraHeight = 5f;
         public float minCameraHeight = 2f;
         public float cameraSpeed = 10f;
