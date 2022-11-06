@@ -11,6 +11,7 @@ namespace Boss
         public GameObject dynamicStuff;
         public GameObject gameOverImage;
         public GameObject actionsButtons;
+        public TimerController timer;
         public AudioController player;
         public TextBoxController text;
         public ItemsChoicesController itemsChoicesController;
@@ -38,6 +39,19 @@ namespace Boss
         {
             text.NewText(item.UseText);
             itemsChoicesController.DisableButtons();
+            
+            var effectValue = item.Effect.Value;
+            switch (item.Effect.Type)
+            {
+                case EffectType.Damage:
+                    break;
+                case EffectType.Heal:
+                    courier.AddHp(effectValue);
+                    break;
+                case EffectType.Timer:
+                    timer.AddTime(effectValue);
+                    break;
+            }
         }
 
         public void FinishPrintingOrUpdateRoundState()

@@ -697,6 +697,7 @@ MonoBehaviour:
   dynamicStuff: {fileID: 401678784}
   gameOverImage: {fileID: 179393097}
   actionsButtons: {fileID: 1424040546}
+  timer: {fileID: 1107313590}
   player: {fileID: 644187130}
   text: {fileID: 2095290560}
   itemsChoicesController: {fileID: 476675593}
@@ -1484,16 +1485,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6367fad50cf2a49409c09e6ffd63cd5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hp: 100
+  damage: 5
   hpBar: {fileID: 1267802827}
   redPanel: {fileID: 1037149491}
   mainController: {fileID: 248021001}
-  hp: 100
-  damage: 5
   maxCameraHeight: 5
   minCameraHeight: 2
   cameraSpeed: 10
   hitAnimationSeconds: 0.1
   shake: 0.2
+  goingDownSpeed: 10
 --- !u!1 &639793503
 GameObject:
   m_ObjectHideFlags: 0
@@ -3262,10 +3264,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab19d9de69499f545be413ba4b053d8c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hpBar: {fileID: 86713064}
-  targetPoint: {x: 0, y: 5, z: -10}
   hp: 50
   damage: 4
+  hpBar: {fileID: 86713064}
+  targetPoint: {x: 0, y: 5, z: -10}
   secondsBeforeNextShot: 1.5
   maxHidingSeconds: 3
   minHidingSeconds: 0.5
@@ -3273,6 +3275,7 @@ MonoBehaviour:
   maxXPoint: 10
   minHeight: 2
   maxHeight: 5
+  goingVerticalSpeed: 10
 --- !u!136 &964093231
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -3668,10 +3671,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab19d9de69499f545be413ba4b053d8c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hpBar: {fileID: 86713064}
-  targetPoint: {x: 0, y: 5, z: -10}
   hp: 50
   damage: 5
+  hpBar: {fileID: 86713064}
+  targetPoint: {x: 0, y: 5, z: -10}
   secondsBeforeNextShot: 2
   maxHidingSeconds: 3
   minHidingSeconds: 0.5
@@ -3679,6 +3682,7 @@ MonoBehaviour:
   maxXPoint: -10
   minHeight: 2
   maxHeight: 5
+  goingVerticalSpeed: 10
 --- !u!1 &1107313586
 GameObject:
   m_ObjectHideFlags: 0
@@ -3827,8 +3831,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainController: {fileID: 248021001}
-  fightSeconds: 30
-  redAlertSeconds: 10
+  fightSeconds: 60
+  redAlertSeconds: 30
 --- !u!1 &1110258747
 GameObject:
   m_ObjectHideFlags: 0

@@ -16,9 +16,9 @@ namespace Boss
             _currentHealth = maxHealth;
         }
 
-        public void Damage(float damage)
+        public void AddHp(float hp)
         {
-            _currentHealth -= damage;
+            _currentHealth += hp;
             _bar.value = _currentHealth / maxHealth;
         }
     }

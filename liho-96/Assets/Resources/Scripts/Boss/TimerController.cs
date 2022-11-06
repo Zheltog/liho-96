@@ -31,6 +31,12 @@ namespace Boss
             SetTimeRemaining(_timeRemainingBeforeEnd);
         }
 
+        public void AddTime(float seconds)
+        {
+            _timeRemainingBeforeEnd += seconds;
+            SetTimeRemaining(_timeRemainingBeforeEnd);
+        }
+
         private void SetTimeRemaining(float secondsRemaining)
         {
             float minutes = Mathf.FloorToInt(secondsRemaining / 60);
@@ -41,6 +47,12 @@ namespace Boss
             {
                 _redAlert = true;
                 _text.color = new Color(1f, 0f, 0f);
+            }
+
+            if (_redAlert && secondsRemaining > redAlertSeconds)
+            {
+                _redAlert = true;
+                _text.color = new Color(1f, 1f, 1f);
             }
         }
     }

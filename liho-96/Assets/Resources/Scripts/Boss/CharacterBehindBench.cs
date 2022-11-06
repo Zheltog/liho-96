@@ -8,6 +8,12 @@ namespace Boss
         public float damage;
         public HealthBar hpBar;
 
+        public void AddHp(float newHp)
+        {
+            hp += newHp;
+            hpBar.AddHp(newHp);
+        }
+        
         protected void Shoot(Ray ray)
         {
             if (!Physics.Raycast(ray, out var hit)) return;
@@ -24,8 +30,6 @@ namespace Boss
             {
                 return;
             }
-            
-            var hpDamage = damageTaken;
 
             hp -= damageTaken;
 
@@ -34,7 +38,7 @@ namespace Boss
                 Die();
             }
 
-            hpBar.Damage(hpDamage);
+            hpBar.AddHp(-1 * damageTaken);
             OnDamage();
         }
 
