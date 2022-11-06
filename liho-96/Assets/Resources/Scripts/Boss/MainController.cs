@@ -226,7 +226,7 @@ namespace Boss
                 PhaseType.Shooting,
                 "Фаза1. Ну всё пиздец...",
                 null,
-                enemies1,
+                enemies3,
                 new List<Modifier>()
             ));
             phases.Add(new Phase(

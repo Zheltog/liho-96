@@ -1587,7 +1587,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 610508892}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 22, y: 4, z: 25}
+  m_LocalPosition: {x: 22, y: 4, z: 20}
   m_LocalScale: {x: 2, y: 4, z: 1}
   m_Children: []
   m_Father: {fileID: 2114482718}
@@ -1673,6 +1673,10 @@ MonoBehaviour:
   hp: 50
   damage: 0
   secondsBeforeNextShooting: 2
+  startDirection: 0
+  minX: -22
+  maxX: 22
+  speed: 20
 --- !u!1 &639793503
 GameObject:
   m_ObjectHideFlags: 0
@@ -3645,7 +3649,7 @@ MonoBehaviour:
   damage: 1
   secondsBeforeNextShooting: 5
   secondsBeforeNextBullet: 0.2
-  bulletsStoreSize: 10
+  bulletsMagazineSize: 10
 --- !u!1 &1002367494
 GameObject:
   m_ObjectHideFlags: 0
@@ -5954,6 +5958,10 @@ MonoBehaviour:
   hp: 50
   damage: 0
   secondsBeforeNextShooting: 2
+  startDirection: 1
+  minX: -22
+  maxX: 22
+  speed: 30
 --- !u!1 &1921453313
 GameObject:
   m_ObjectHideFlags: 0
