@@ -1,5 +1,5 @@
 {
-  "StartingFrame": "choice_test",
+  "StartingFrame": "after_casino_bratki_4",
   "StartingFlags": [
     "Pistol",
     "SmallMoney"
@@ -1178,6 +1178,115 @@
       }
     },
 
+    "after_casino_bratki_gun": {
+      "Picture": "casino_entrance",
+      "Text": "Курьер достает пистолет и направляет его на братков.",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "after_casino_bratki_gun_1"
+      }
+    },
+    "after_casino_bratki_gun_1": {
+      "Picture": "casino_entrance",
+      "Text": "Браток: \"Эй, эй, ты чего, брат! Брат!\"",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "after_casino_bratki_gun_2"
+      }
+    },
+    "after_casino_bratki_gun_2": {
+      "Picture": "casino_entrance",
+      "Text": "Другой браток: \"Давай нормально с тобой поговорим, чего ты сразу за пушкой лезешь?\"",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "after_casino_bratki_gun_3"
+      }
+    },
+    "after_casino_bratki_gun_3": {
+      "Picture": "casino_entrance",
+      "Text": "Курьер: \"...\"",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "after_casino_bratki_gun_4"
+      }
+    },
+    "after_casino_bratki_gun_4": {
+      "Picture": "casino_entrance",
+      "Text": "Другой браток: \"Че, хочешь знать, где Туман? Да ты тупее, чем наш начальник! Он вас развёл, будто он крутой, и один всё знает.\"",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "after_casino_bratki_gun_5"
+      }
+    },
+    "after_casino_bratki_gun_5": {
+      "Picture": "casino_entrance",
+      "Text": "Браток: \"Все знают, где он сидит. Это вообще не тайна.\"",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "after_casino_bratki_gun_6"
+      }
+    },
+    "after_casino_bratki_gun_6": {
+      "Picture": "casino_entrance",
+      "Text": "Другой браток: \"Он со своими чертилами на клумбе ошивается. На юге, где универ заброшенный. Их там каждый вечер найти можно.\"",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "after_casino_bratki_gun_7"
+      }
+    },
+    "after_casino_bratki_gun_7": {
+      "Picture": "casino_entrance",
+      "Text": "Курьер: \"...\"",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "after_casino_bratki_gun_8"
+      }
+    },
+    "after_casino_bratki_gun_8": {
+      "Picture": "casino_entrance",
+      "Text": "Браток: \"Ну, получил, че хотел? Опусти пушку, брат...\"",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "after_casino_bratki_gun_9"
+      }
+    },
+    "after_casino_bratki_gun_9": {
+      "Picture": "casino_entrance",
+      "Text": "Учёный: \"П-пойдём, мы же узнали в-всё, что нужно...\"",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "after_casino_bratki_gun_10"
+      }
+    },
+    "after_casino_bratki_gun_10": {
+      "Picture": "casino_entrance",
+      "Text": "Курьер: \"...\"\nКурьер медленно отходит назад, опуская пистолет. Братки также медленно возвращаются в казино.",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "after_casino_bratki_gun_11"
+      }
+    },
+    "after_casino_bratki_gun_11": {
+      "Picture": "casino_entrance",
+      "Text": "Браток: \"Вот поехавший...\"\nДругой браток: \"Придурки сраные.\"",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "after_casino_to_klumba"
+      }
+    },
+
     "after_casino_city": {
       "Picture": "casino_entrance",
       "Text": "Браток: \"Давайте, и пошевеливайтесь!\"",
@@ -1290,6 +1399,10 @@
         "Next": "after_casino_to_klumba"
       }
     },
+    
+    
+    
+    
 
     "choice_test": {
       "Picture": "blank",
