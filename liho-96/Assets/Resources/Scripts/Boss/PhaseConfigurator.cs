@@ -9,6 +9,7 @@ namespace Boss
         public TextBoxController text;
         public GameObject enemyBenchLeft;
         public GameObject enemyBenchRight;
+        public Courier courier;
         public Light enemiesLight;
         public float minLight = 0.1f;
 
@@ -50,6 +51,7 @@ namespace Boss
         private void ResetModifiers()
         {
             enemiesLight.intensity = 1f;
+            courier.CameraShake(false);
         }
 
         private void ApplyModifiers(List<Modifier> modifiers)
@@ -57,6 +59,11 @@ namespace Boss
             if (modifiers.Contains(Modifier.Dark))
             {
                 enemiesLight.intensity = minLight;
+            }
+
+            if (modifiers.Contains(Modifier.Shake))
+            {
+                courier.CameraShake(true);
             }
         }
     }

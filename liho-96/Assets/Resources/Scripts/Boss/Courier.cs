@@ -16,11 +16,13 @@ namespace Boss
         public float shake = 0.2f;
         public float goingDownSpeed = 10f;
 
+        private Animator _animator;
         private Camera _camera;
         private bool _isGoingDown;
 
         private void Start()
         {
+            _animator = GetComponent<Animator>();
             _camera = GetComponentInChildren<Camera>();
         }
 
@@ -41,6 +43,19 @@ namespace Boss
             if (Input.GetMouseButtonDown(0))
             {
                 Shoot();
+            }
+        }
+
+        public void CameraShake(bool isShaking)
+        {
+            if (isShaking)
+            {
+                _animator.Play("CameraShake");
+            }
+            else
+            {
+                _animator.Rebind();
+                _animator.Update(0f);
             }
         }
 

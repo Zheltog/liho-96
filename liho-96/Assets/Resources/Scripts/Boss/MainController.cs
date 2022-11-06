@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using Common;
 using UnityEngine;
@@ -27,7 +28,7 @@ namespace Boss
             InitHolder();
             _timeRemainingBeforeNextRest = phaseSeconds;
             _phaseConfig = GetComponent<PhaseConfigurator>();
-            NextPhase();
+            StartCoroutine(NextPhaseWithDelay());
         }
 
         private void Update()
@@ -161,6 +162,12 @@ namespace Boss
             grayPanel.SetActive(true);
         }
 
+        private IEnumerator NextPhaseWithDelay()
+        {
+            yield return new WaitForSeconds(1);
+            NextPhase();
+        }
+
         private void NextPhase()
         {
             CurrentRoundState = RoundState.NewPhase;
@@ -197,11 +204,14 @@ namespace Boss
             var phases = new List<Phase>();
             var enemies1 = new List<EnemyType>();
             enemies1.Add(EnemyType.BenchLeft);
-            var enemies2 = new List<EnemyType>();
-            enemies2.Add(EnemyType.BenchLeft);
-            enemies2.Add(EnemyType.BenchRight);
-            var modifiers = new List<Modifier>();
-            modifiers.Add(Modifier.Dark);
+            var enemies23 = new List<EnemyType>();
+            enemies23.Add(EnemyType.BenchLeft);
+            enemies23.Add(EnemyType.BenchRight);
+            var modifiers2 = new List<Modifier>();
+            modifiers2.Add(Modifier.Dark);
+            var modifiers3 = new List<Modifier>();
+            modifiers3.Add(Modifier.Dark);
+            modifiers3.Add(Modifier.Shake);
             phases.Add(new Phase(
                 PhaseType.Shooting,
                 "Фаза1. Ну всё пиздец...",
@@ -213,8 +223,15 @@ namespace Boss
                 PhaseType.Shooting,
                 "Фаза2. Ахуеть не встать (а если встать, то ахуеть)... Игрок немного подлечился, но темно пиздец",
                 new Effect(EffectType.Heal, 10f),
-                enemies2,
-                modifiers
+                enemies23,
+                modifiers2
+            ));
+            phases.Add(new Phase(
+                PhaseType.Shooting,
+                "Фаза3. Ебать копать темно пизды ещё и трясёт как блять",
+                new Effect(EffectType.Heal, 10f),
+                enemies23,
+                modifiers3
             ));
             
             StateHolder.Init(items, phases);

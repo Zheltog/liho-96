@@ -41,7 +41,11 @@ namespace Boss
             }
 
             hpBar.AddHp(-1 * damageTaken, false);
-            StartCoroutine(HideAndMove());
+
+            if (gameObject.activeSelf)
+            {
+                StartCoroutine(HideAndMove());
+            }
         }
 
         private void Shoot()
