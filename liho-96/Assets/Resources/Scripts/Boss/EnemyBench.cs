@@ -12,13 +12,18 @@ namespace Boss
         public float minHeight = 2;
         public float maxHeight = 5;
         public float goingVerticalSpeed = 10f;
-
-
+        
+                
+        private float _currentTime;
         private VerticalMovement _currentMovement = VerticalMovement.None;
 
         private void Update()
         {
             GoVerticalIfShould();
+            
+            _currentTime += Time.deltaTime;
+            if (!(_currentTime >= secondsBeforeNextShooting)) return;
+            _currentTime -= secondsBeforeNextShooting;
             Shoot();
         }
 

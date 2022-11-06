@@ -8,9 +8,7 @@ namespace Boss
         public Vector3 targetPoint = new Vector3(0f, 5f, -10f);
         public float hp = 50;
         public float damage;
-        public float secondsBeforeNextShot = 2f;
-        
-        private float _currentTime;
+        public float secondsBeforeNextShooting = 2f;
         
         public void Hit(float damageTaken)
         {
@@ -28,10 +26,6 @@ namespace Boss
         
         protected void Shoot()
         {
-            _currentTime += Time.deltaTime;
-            if (!(_currentTime >= secondsBeforeNextShot)) return;
-            _currentTime -= secondsBeforeNextShot;
-            
             var fromPosition = transform.position;
             var direction = targetPoint - fromPosition;
             var ray = new Ray(transform.position, direction);

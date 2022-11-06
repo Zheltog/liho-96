@@ -714,7 +714,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d80c797172886049a59607c451ae987, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  phaseSeconds: 10
+  phaseSeconds: 60
   courier: {fileID: 584745251}
   enemiesHealthBar: {fileID: 86713064}
   grayPanel: {fileID: 860493342}
@@ -1672,7 +1672,7 @@ MonoBehaviour:
   targetPoint: {x: 0, y: 5, z: -10}
   hp: 50
   damage: 0
-  secondsBeforeNextShot: 2
+  secondsBeforeNextShooting: 2
 --- !u!1 &639793503
 GameObject:
   m_ObjectHideFlags: 0
@@ -3445,7 +3445,7 @@ MonoBehaviour:
   targetPoint: {x: 0, y: 5, z: -10}
   hp: 50
   damage: 4
-  secondsBeforeNextShot: 1.5
+  secondsBeforeNextShooting: 2
   maxHidingSeconds: 3
   minHidingSeconds: 0.5
   minXPoint: 20
@@ -3643,7 +3643,9 @@ MonoBehaviour:
   targetPoint: {x: 0, y: 5, z: -10}
   hp: 1000
   damage: 1
-  secondsBeforeNextShot: 2
+  secondsBeforeNextShooting: 5
+  secondsBeforeNextBullet: 0.2
+  bulletsStoreSize: 10
 --- !u!1 &1002367494
 GameObject:
   m_ObjectHideFlags: 0
@@ -3966,7 +3968,7 @@ MonoBehaviour:
   targetPoint: {x: 0, y: 5, z: -10}
   hp: 50
   damage: 5
-  secondsBeforeNextShot: 2
+  secondsBeforeNextShooting: 2
   maxHidingSeconds: 3
   minHidingSeconds: 0.5
   minXPoint: -20
@@ -5951,7 +5953,7 @@ MonoBehaviour:
   targetPoint: {x: 0, y: 5, z: -10}
   hp: 50
   damage: 0
-  secondsBeforeNextShot: 2
+  secondsBeforeNextShooting: 2
 --- !u!1 &1921453313
 GameObject:
   m_ObjectHideFlags: 0
