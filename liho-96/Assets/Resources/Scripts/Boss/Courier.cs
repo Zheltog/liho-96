@@ -138,7 +138,7 @@ namespace Boss
 
         private bool IsActivePhase()
         {
-            return mainController.CurrentRoundState == MainController.RoundState.Attack;
+            return mainController.CurrentFightState == MainController.FightState.Attack;
         }
     }
 }

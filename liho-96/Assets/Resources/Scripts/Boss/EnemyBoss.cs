@@ -7,8 +7,7 @@ namespace Boss
         public float secondsBeforeNextBullet = 0.2f;
         public float bulletsMagazineSize = 10;
         
-        private float _timeForNextMagazine;
-        private float _timeForNextBullet;
+        private float _currentTime;
         private bool _isShooting;
         private int _currentBulletNumber = 1;
         
@@ -16,16 +15,16 @@ namespace Boss
         {
             if (_isShooting)
             {
-                _timeForNextBullet += Time.deltaTime;
-                if (!(_timeForNextBullet >= secondsBeforeNextBullet)) return;
-                _timeForNextBullet -= secondsBeforeNextBullet;
+                _currentTime += Time.deltaTime;
+                if (!(_currentTime >= secondsBeforeNextBullet)) return;
+                _currentTime -= secondsBeforeNextBullet;
                 ShootNextBullet();
                 return;   
             }
             
-            _timeForNextMagazine += Time.deltaTime;
-            if (!(_timeForNextMagazine >= secondsBeforeNextShooting)) return;
-            _timeForNextMagazine -= secondsBeforeNextShooting;
+            _currentTime += Time.deltaTime;
+            if (!(_currentTime >= secondsBeforeNextShooting)) return;
+            _currentTime -= secondsBeforeNextShooting;
             _isShooting = true;
         }
 

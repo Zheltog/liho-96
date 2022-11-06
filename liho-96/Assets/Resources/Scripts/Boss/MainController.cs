@@ -18,13 +18,14 @@ namespace Boss
         public AudioController player;
         public TextBoxController text;
         public ItemsChoicesController itemsChoicesController;
-        public RoundState CurrentRoundState { get; private set; }
+        public FightState CurrentFightState { get; private set; }
         
         private float _timeRemainingBeforeNextRest;
         private PhaseConfigurator _phaseConfig;
 
         private void Start()
         {
+            CurrentFightState = FightState.Initializing;
             InitHolder();
             _timeRemainingBeforeNextRest = phaseSeconds;
             _phaseConfig = GetComponent<PhaseConfigurator>();
@@ -33,7 +34,7 @@ namespace Boss
 
         private void Update()
         {
-            if (CurrentRoundState == RoundState.GameOver)
+            if (CurrentFightState == FightState.GameOver)
             {
                 return;
             }
@@ -46,7 +47,7 @@ namespace Boss
             text.NewText(item.UseText);
             itemsChoicesController.DisableButtons();
             ApplyEffect(item.Effect);
-            CurrentRoundState = RoundState.ItemChosen;
+            CurrentFightState = FightState.ItemChosen;
         }
 
         public void ApplyEffect(Effect effect)
@@ -73,21 +74,26 @@ namespace Boss
 
         public void FinishPrintingOrUpdateRoundState()
         {
+            if (CurrentFightState == FightState.Initializing)
+            {
+                return; // TODO починить как-нибудь, убрать Initializing
+            }
+            
             if (text.IsPrinting)
             {
                 text.FinishPrinting();
             }
             else
             {
-                switch (CurrentRoundState)
+                switch (CurrentFightState)
                 {
-                    case RoundState.NewPhase:
+                    case FightState.NewPhase:
                         NextAttack();
                         break;
-                    case RoundState.ItemChosen:
+                    case FightState.ItemChosen:
                         NextPhase();
                         break;
-                    case RoundState.GameOver:
+                    case FightState.GameOver:
                         Application.Quit();
                         break;
                 }
@@ -104,7 +110,7 @@ namespace Boss
         {
             if (!itemsChoicesController.ItemsChoiceAvailable()) return;
             
-            CurrentRoundState = RoundState.ItemChoosing;
+            CurrentFightState = FightState.ItemChoosing;
             actionsButtons.SetActive(false);
             itemsChoicesController.NewChoices();
         }
@@ -129,7 +135,7 @@ namespace Boss
         
         public void GameOver(string comment)
         {
-            CurrentRoundState = RoundState.GameOver;
+            CurrentFightState = FightState.GameOver;
             dynamicStuff.SetActive(false);
             gameOverImage.SetActive(true);
             text.NewText(comment);
@@ -139,7 +145,7 @@ namespace Boss
 
         private void UpdateTimeRemainingBeforeNextRest()
         {
-            if (CurrentRoundState != RoundState.Attack)
+            if (CurrentFightState != FightState.Attack)
             {
                 return;
             }
@@ -156,7 +162,7 @@ namespace Boss
 
         private void Rest()
         {
-            CurrentRoundState = RoundState.ActionChoice;
+            CurrentFightState = FightState.ActionChoice;
             courier.Rest();
             actionsButtons.SetActive(true);
             grayPanel.SetActive(true);
@@ -170,20 +176,20 @@ namespace Boss
 
         private void NextPhase()
         {
-            CurrentRoundState = RoundState.NewPhase;
+            CurrentFightState = FightState.NewPhase;
             _phaseConfig.NewPhase();
         }
         
         private void NextAttack()
         {
-            CurrentRoundState = RoundState.Attack;
+            CurrentFightState = FightState.Attack;
             text.NewText(" ");
             grayPanel.SetActive(false);
         }
 
-        public enum RoundState
+        public enum FightState
         {
-            NewPhase, Attack, ActionChoice, ItemChoosing, ItemChosen, GameOver
+            Initializing, NewPhase, Attack, ActionChoice, ItemChoosing, ItemChosen, GameOver
         }
         
         //
