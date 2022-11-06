@@ -1,13 +1,16 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 
 namespace Boss
 {
     public abstract class Enemy : MonoBehaviour
     {
+        public GameObject shotLight;
         public HealthBar hpBar;
         public Vector3 targetPoint = new Vector3(0f, 5f, -10f);
         public float hp = 50;
         public float damage;
+        public float shotLightSeconds = 0.5f;
         public float secondsBeforeNextShooting = 2f;
         
         public void Hit(float damageTaken)
@@ -35,6 +38,15 @@ namespace Boss
             {
                 courier.Hit(damage);
             }
+
+            StartCoroutine(ShowShotLight());
+        }
+
+        private IEnumerator ShowShotLight()
+        {
+            shotLight.SetActive(true);
+            yield return new WaitForSeconds(shotLightSeconds);
+            shotLight.SetActive(false);
         }
 
         protected abstract void OnDamage();
