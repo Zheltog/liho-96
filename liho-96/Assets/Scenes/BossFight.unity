@@ -752,6 +752,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   text: {fileID: 2095290560}
+  enemyBenchLeft: {fileID: 1102382248}
+  enemyBenchRight: {fileID: 964093229}
 --- !u!1 &259673713
 GameObject:
   m_ObjectHideFlags: 0
@@ -2657,7 +2659,7 @@ GameObject:
   - component: {fileID: 836734073}
   - component: {fileID: 836734072}
   m_Layer: 0
-  m_Name: BenchEnemy2
+  m_Name: BenchRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3282,7 +3284,7 @@ GameObject:
   - component: {fileID: 964093231}
   - component: {fileID: 964093230}
   m_Layer: 0
-  m_Name: Enemy2
+  m_Name: EnemyBenchRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3612,7 +3614,7 @@ GameObject:
   - component: {fileID: 1102382249}
   - component: {fileID: 1102382253}
   m_Layer: 0
-  m_Name: Enemy1
+  m_Name: EnemyBenchLeft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4747,7 +4749,7 @@ GameObject:
   - component: {fileID: 1459028811}
   - component: {fileID: 1459028813}
   m_Layer: 0
-  m_Name: BenchEnemy1
+  m_Name: BenchLeft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5595,7 +5597,7 @@ GameObject:
   - component: {fileID: 1921453315}
   - component: {fileID: 1921453314}
   m_Layer: 0
-  m_Name: BenchMC
+  m_Name: BenchCourier
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

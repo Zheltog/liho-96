@@ -195,21 +195,23 @@ namespace Boss
                 "флаг", new Effect(EffectType.Timer, 10f)));
 
             var phases = new List<Phase>();
-            var enemies = new List<EnemyType>();
-            enemies.Add(EnemyType.BenchLeft);
-            enemies.Add(EnemyType.BenchRight);
+            var enemies1 = new List<EnemyType>();
+            enemies1.Add(EnemyType.BenchLeft);
+            var enemies2 = new List<EnemyType>();
+            enemies2.Add(EnemyType.BenchLeft);
+            enemies2.Add(EnemyType.BenchRight);
             phases.Add(new Phase(
                 PhaseType.Shooting,
                 "Фаза1. Ну всё пиздец...",
                 null,
-                enemies,
+                enemies1,
                 new List<Modifier>()
             ));
             phases.Add(new Phase(
                 PhaseType.Shooting,
                 "Фаза2. Ахуеть не встать (а если встать, то ахуеть)... Игрок немного подлечился",
                 new Effect(EffectType.Heal, 10f),
-                enemies,
+                enemies2,
                 new List<Modifier>()
             ));
             
