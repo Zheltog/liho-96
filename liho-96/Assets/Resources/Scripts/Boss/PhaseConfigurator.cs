@@ -9,6 +9,8 @@ namespace Boss
         public TextBoxController text;
         public GameObject enemyBenchLeft;
         public GameObject enemyBenchRight;
+        public GameObject enemyRunningLeft;
+        public GameObject enemyRunningRight;
         public Courier courier;
         public Light enemiesLight;
         public float minLight = 0.1f;
@@ -34,6 +36,8 @@ namespace Boss
         {
             enemyBenchLeft.SetActive(false);
             enemyBenchRight.SetActive(false);
+            enemyRunningLeft.SetActive(false);
+            enemyRunningRight.SetActive(false);
         }
         
         private void SetEnemies(List<EnemyType> enemies)
@@ -45,6 +49,14 @@ namespace Boss
             if (enemies.Contains(EnemyType.BenchRight))
             {
                 enemyBenchRight.SetActive(true);
+            }
+            if (enemies.Contains(EnemyType.RunningLeft))
+            {
+                enemyRunningLeft.SetActive(true);
+            }
+            if (enemies.Contains(EnemyType.RunningRight))
+            {
+                enemyRunningRight.SetActive(true);
             }
         }
 

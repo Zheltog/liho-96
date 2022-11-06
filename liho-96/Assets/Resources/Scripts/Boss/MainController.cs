@@ -203,9 +203,15 @@ namespace Boss
 
             var phases = new List<Phase>();
             var enemies1 = new List<EnemyType>();
-            var enemies23 = new List<EnemyType>();
-            enemies23.Add(EnemyType.BenchLeft);
-            enemies23.Add(EnemyType.BenchRight);
+            enemies1.Add(EnemyType.BenchLeft);
+            var enemies2 = new List<EnemyType>();
+            enemies2.Add(EnemyType.BenchLeft);
+            enemies2.Add(EnemyType.BenchRight);
+            var enemies3 = new List<EnemyType>();
+            enemies3.Add(EnemyType.BenchLeft);
+            enemies3.Add(EnemyType.BenchRight);
+            enemies3.Add(EnemyType.RunningLeft);
+            enemies3.Add(EnemyType.RunningRight);
             var modifiers2 = new List<Modifier>();
             modifiers2.Add(Modifier.Dark);
             var modifiers3 = new List<Modifier>();
@@ -222,14 +228,14 @@ namespace Boss
                 PhaseType.Shooting,
                 "Фаза2. Ахуеть не встать (а если встать, то ахуеть)... Игрок немного подлечился, но темно пиздец",
                 new Effect(EffectType.Heal, 10f),
-                enemies23,
+                enemies2,
                 modifiers2
             ));
             phases.Add(new Phase(
                 PhaseType.Shooting,
                 "Фаза3. Ебать копать темно пизды ещё и трясёт как блять",
                 new Effect(EffectType.Heal, 10f),
-                enemies23,
+                enemies3,
                 modifiers3
             ));
             

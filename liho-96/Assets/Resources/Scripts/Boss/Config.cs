@@ -55,7 +55,9 @@ namespace Boss
     public enum EnemyType
     {
         BenchLeft,
-        BenchRight
+        BenchRight,
+        RunningLeft,
+        RunningRight
     }
 
     public enum Modifier
