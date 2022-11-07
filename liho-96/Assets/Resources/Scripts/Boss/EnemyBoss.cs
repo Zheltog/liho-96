@@ -26,6 +26,7 @@ namespace Boss
             if (!(_currentTime >= secondsBeforeNextShooting)) return;
             _currentTime -= secondsBeforeNextShooting;
             _isShooting = true;
+            StartCoroutine(ShowShotLight());
         }
 
         private void ShootNextBullet()

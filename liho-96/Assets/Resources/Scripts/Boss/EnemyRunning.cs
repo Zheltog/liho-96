@@ -25,6 +25,7 @@ namespace Boss
             if (!(_currentTime >= secondsBeforeNextShooting)) return;
             _currentTime -= secondsBeforeNextShooting;
             Shoot();
+            StartCoroutine(ShowShotLight());
         }
 
         private void Run()

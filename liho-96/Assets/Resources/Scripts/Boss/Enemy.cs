@@ -38,11 +38,9 @@ namespace Boss
             {
                 courier.Hit(damage);
             }
-
-            StartCoroutine(ShowShotLight());
         }
 
-        private IEnumerator ShowShotLight()
+        protected IEnumerator ShowShotLight()
         {
             shotLight.SetActive(true);
             yield return new WaitForSeconds(shotLightSeconds);
