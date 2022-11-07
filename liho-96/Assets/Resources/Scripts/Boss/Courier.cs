@@ -114,8 +114,8 @@ namespace Boss
         private void Shoot()
         {
             var mousePosition = Input.mousePosition;
-            var ray = _camera.ScreenPointToRay(mousePosition);
-            if (!Physics.Raycast(ray, out var hit)) return;
+            Ray ray = _camera.ScreenPointToRay (mousePosition);
+            RaycastHit2D hit = Physics2D.GetRayIntersection(ray);
             var enemy = hit.collider.gameObject.GetComponent<Enemy>();
             if (enemy != null)
             {

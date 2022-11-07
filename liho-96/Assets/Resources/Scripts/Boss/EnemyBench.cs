@@ -9,9 +9,9 @@ namespace Boss
         public float minHidingSeconds = 0.5f;
         public float minXPoint = -20f;
         public float maxXPoint = -10f;
-        public float minHeight = 2;
-        public float maxHeight = 5;
-        public float goingVerticalSpeed = 10f;
+        public float minHeight = -2;
+        public float maxHeight = 2;
+        public float goingVerticalSpeed = 20f;
         
                 
         private float _currentTime;
