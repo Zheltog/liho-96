@@ -1,8 +1,9 @@
 {
-  "StartingFrame": "after_casino_bratki_4",
+  "StartingFrame": "start",
   "StartingFlags": [
     "Pistol",
-    "SmallMoney"
+    "SmallMoney",
+    "Nokia1610"
   ],
   "Frames": {
     "start": {
@@ -16,7 +17,7 @@
     },
     "start_0": {
       "Picture": "blank",
-      "Text": "По заказу FITFIJA Entertainment\nNoormak Studios представляет...",
+      "Text": "По заказу FITFIJA Entertainment\nNurmak Studios представляет...",
       "TextDelay": 0.1,
       "Type": "Simple",
       "Transition": {
@@ -131,17 +132,68 @@
     },
 
     "cafe_entrance": {
-      "Picture": "blank",
-      "Text": "TODO курьер заходит в кафе",
+      "Picture": "cafe_entrance",
+      "Music": "",
+      "Sound": "car_arrives",
+      "Text": " . . . . .",
       "Type": "Simple",
       "Transition": {
         "Type": "Frame",
-        "Next": "cafe_after"
+        "Next": "cafe_entrance_1"
+      }
+    },
+    "cafe_entrance_1": {
+      "Picture": "cafe_entrance",
+      "Text": "Улица. Свежие лужи после дождя.",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "cafe_entrance_2"
+      }
+    },
+    "cafe_entrance_2": {
+      "Picture": "cafe_entrance",
+      "Text": "Вокруг никого, не считая трёх промокших подростков.\nЗавидев машину, они поворачивают и уходят во двор.",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "cafe_entrance_3"
+      }
+    },
+    "cafe_entrance_3": {
+      "Picture": "cafe_entrance_courier",
+      "Sound": "footsteps",
+      "Text": "Курьер останавливает машину у круглосуточной столовой.\nВозможно, здесь он сможет узнать, куда ему идти дальше.",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "cafe_inside"
+      }
+    },
+    "cafe_inside": {
+      "Picture": "cafe_inside",
+      "Sound": "door_open",
+      "Text": "Пустая столовая.",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "cafe_inside_1"
+      }
+    },
+    "cafe_inside_1": {
+      "Picture": "cafe_inside_worker",
+      "Music": "Eye of the Beholder - Birth of Heroes",
+      "Text": "...",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "cafe_entrance_1"
       }
     },
 
     "cafe_after": {
       "Picture": "blank",
+      "Music": "Clock Tower - Don't Cry, Jennifer",
       "Text": "TODO машину угнали, курьер выбежал из кафе",
       "Type": "Choice",
       "Choices": [
@@ -1307,6 +1359,7 @@
     },
     "after_casino_city_1_1": {
       "Picture": "blank",
+      "Sound": "footsteps",
       "Text": "Курьер и Учёный бесцельно идут по ночным улицам города.",
       "Type": "Simple",
       "Transition": {
