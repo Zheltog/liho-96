@@ -1,5 +1,5 @@
 {
-  "StartingFrame": "start",
+  "StartingFrame": "cafe_entrance",
   "StartingFlags": [
     "Pistol",
     "SmallMoney",
@@ -294,25 +294,6 @@
         ]
       }
     },
-    "cafe_inside_food_car_stolen": {
-      "Picture": "cafe_food",
-      "Sound": "broken_glass TODO",
-      "Text": " . . . . .",
-      "Type": "Simple",
-      "Transition": {
-        "Type": "Frame",
-        "Next": "cafe_inside_food_car_stolen_1"
-      }
-    },
-    "cafe_inside_food_car_stolen_1": {
-      "Picture": "cafe_food",
-      "Text": "С улицы слышен звук разбитого стекла, кто-то заводит машину и резко уезжает.\nКурьер выбегает наружу.",
-      "Type": "Simple",
-      "Transition": {
-        "Type": "Frame",
-        "Next": "cafe_outside_car_stolen"
-      }
-    },
 
     "cafe_inside_4": {
       "Picture": "cafe_inside_worker",
@@ -539,6 +520,7 @@
     
     "cafe_inside_car_stolen": {
       "Picture": "cafe_inside",
+      "Music": "",
       "Sound": "broken_glass TODO",
       "Text": " . . . . .",
       "Type": "Simple",
@@ -549,6 +531,29 @@
     },
     "cafe_inside_car_stolen_1": {
       "Picture": "cafe_inside",
+      "Music": "Clock Tower - Don't Cry, Jennifer",
+      "Text": "С улицы слышен звук разбитого стекла, кто-то заводит машину и резко уезжает.\nКурьер выбегает наружу.",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "cafe_outside_car_stolen"
+      }
+    },
+
+    "cafe_inside_food_car_stolen": {
+      "Picture": "cafe_food",
+      "Music": "",
+      "Sound": "broken_glass TODO",
+      "Text": " . . . . .",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "cafe_inside_food_car_stolen_1"
+      }
+    },
+    "cafe_inside_food_car_stolen_1": {
+      "Picture": "cafe_food",
+      "Music": "Clock Tower - Don't Cry, Jennifer",
       "Text": "С улицы слышен звук разбитого стекла, кто-то заводит машину и резко уезжает.\nКурьер выбегает наружу.",
       "Type": "Simple",
       "Transition": {
@@ -558,20 +563,37 @@
     },
 
     "cafe_outside_car_stolen": {
-      "Picture": "cafe_outside",
-      "Sound": "broken_glass TODO",
-      "Text": "Тачку блять угнали!!! ваз 2121 дедовский сука че делать.",
+      "Picture": "cafe_entrance",
+      "TextDelay": 0.1,
+      "Text": "Машины нет. На асфальте лежат осколки стекла.\nЛИХО похищено.",
       "Type": "Simple",
       "Transition": {
         "Type": "Frame",
-        "Next": "cafe_entrance"
+        "Next": "cafe_outside_car_stolen_1"
+      }
+    },
+    "cafe_outside_car_stolen_1": {
+      "Picture": "cafe_entrance",
+      "Text": "На часах – почти десять. Курьеру нужно срочно вернуть груз.\nПохитители не могли уехать далеко.",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "cafe_outside_car_stolen_choice"
+      }
+    },
+    "cafe_outside_car_stolen_2": {
+      "Picture": "cafe_entrance",
+      "Text": "Курьер вспоминает места, мимо которых проезжал.\nНедалеко от столовой находится гаражи, небольшой рынок и лес.",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "cafe_outside_car_stolen_choice"
       }
     },
 
-    "cafe_after": {
-      "Picture": "cafe_outside",
-      "Music": "Clock Tower - Don't Cry, Jennifer",
-      "Text": "TODO машину угнали, курьер выбежал из кафе",
+    "cafe_outside_car_stolen_choice": {
+      "Picture": "cafe_entrance",
+      "Text": "Угонщики могли увезти машину в одно из этих мест.\nНужно торопиться.",
       "Type": "Choice",
       "Choices": [
         {
@@ -600,11 +622,19 @@
 
     "garage": {
       "Picture": "blank",
-      "Text": "TODO курьер осматривает открытый гараж, на него нападают, он вынужден бежать",
+      "Text": "TODO курьер осматривает открытый гараж, на него нападает безумец, он вынужден бежать",
       "Type": "Choice",
       "Choices": [
         {
           "Text": "На рынок",
+          "Visibility": [
+            {
+              "Type": "AndNot",
+              "Flags": [
+                "VisitedMarket"
+              ]
+            }
+          ],
           "Transition": {
             "Type": "Frame",
             "Next": "market"
@@ -627,6 +657,14 @@
       "Choices": [
         {
           "Text": "Осмотреть гаражи",
+          "Visibility": [
+            {
+              "Type": "AndNot",
+              "Flags": [
+                "VisitedGarage"
+              ]
+            }
+          ],
           "Transition": {
             "Type": "Frame",
             "Next": "garage"
