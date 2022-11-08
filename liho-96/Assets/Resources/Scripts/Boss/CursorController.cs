@@ -15,7 +15,7 @@ namespace Boss
         private Texture2D _currentCursor;
         private Rect _aimRect;
 
-        public void Start() {
+        private void Start() {
             Cursor.visible = false;
             _currentCursor = cursorAim;
             _aimRect = new Rect(
@@ -26,19 +26,28 @@ namespace Boss
             );
         }
 
-        public void Update()
+        private void Update()
         {
             var mousePosition = Input.mousePosition;
             var mousePosition2D = new Vector2(mousePosition.x, mousePosition.y);
             _currentCursor = _aimRect.Contains(mousePosition2D) ? cursorAim : cursorDefault;
         }
 
-        public void OnGUI() {
-            var mousePosition = Event.current.mousePosition;
+        public void OnGUI()
+        {
+            var cursorPosition = CalculateCursorPosition();
             GUI.Label(
-                new Rect(mousePosition.x, mousePosition.y, cursorSize, cursorSize),
+                new Rect(cursorPosition.x, cursorPosition.y, cursorSize, cursorSize),
                 _currentCursor
             );
+        }
+
+        private Vector2 CalculateCursorPosition()
+        {
+            var mousePosition = Event.current.mousePosition;
+            return _currentCursor == cursorDefault ?
+                new Vector2(mousePosition.x, mousePosition.y) :
+                new Vector2(mousePosition.x - cursorSize / 2, mousePosition.y - cursorSize / 2);
         }
     }
 }

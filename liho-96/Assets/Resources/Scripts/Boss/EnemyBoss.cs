@@ -38,7 +38,7 @@ namespace Boss
                 return;
             }
 
-            Debug.Log("TA!");
+            // Debug.Log("TA!");
             Shoot();
             _currentBulletNumber++;
         }

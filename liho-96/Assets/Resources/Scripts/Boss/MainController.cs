@@ -185,6 +185,7 @@ namespace Boss
             CurrentFightState = FightState.Attack;
             text.NewText(" ");
             grayPanel.SetActive(false);
+            courier.StopRest();
         }
 
         public enum FightState
