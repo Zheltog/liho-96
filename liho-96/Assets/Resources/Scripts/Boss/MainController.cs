@@ -139,6 +139,8 @@ namespace Boss
             dynamicStuff.SetActive(false);
             gameOverImage.SetActive(true);
             text.NewText(comment);
+            courier.Rest();
+            _phaseConfig.DisableAllEnemies();
             player.NewMusic("");
             player.NewSound("game_over");
         }

@@ -32,7 +32,7 @@ namespace Boss
             SetEnemies(phase.Enemies);
         }
 
-        private void DisableAllEnemies()
+        public void DisableAllEnemies()
         {
             enemyBenchLeft.SetActive(false);
             enemyBenchRight.SetActive(false);

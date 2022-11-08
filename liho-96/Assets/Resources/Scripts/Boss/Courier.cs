@@ -73,14 +73,12 @@ namespace Boss
 
         public void StopRest()
         {
-            Debug.Log("STOP REST");
             _isRest = false;
             gun.SetActive(true);
         }
 
         public void Rest()
         {
-            Debug.Log("REST");
             _isRest = true;
             _isGoingDown = true;
             gun.SetActive(false);
