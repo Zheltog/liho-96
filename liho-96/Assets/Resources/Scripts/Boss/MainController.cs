@@ -14,6 +14,7 @@ namespace Boss
         public GameObject dynamicStuff;
         public GameObject gameOverImage;
         public GameObject actionsButtons;
+        public GameObject backButton;
         public TimerController timer;
         public AudioController player;
         public TextBoxController text;
@@ -42,6 +43,7 @@ namespace Boss
         
         public void ChooseItem(Item item)
         {
+            backButton.SetActive(false);
             text.NewText(item.UseText);
             itemsChoicesController.DisableButtons();
             ApplyEffect(item.Effect);
@@ -110,12 +112,21 @@ namespace Boss
             
             CurrentFightState = FightState.ItemChoosing;
             actionsButtons.SetActive(false);
+            backButton.SetActive(true);
             itemsChoicesController.NewChoices();
         }
 
         public void Surrender()
         {
             GameOver("Курьер сдался. Pathetic.");
+        }
+
+        public void Back()
+        {
+            itemsChoicesController.DisableButtons();
+            backButton.SetActive(false);
+            actionsButtons.SetActive(true);
+            CurrentFightState = FightState.ActionChoice;
         }
 
         public void HealthBarEmpty(HealthBarType type)
