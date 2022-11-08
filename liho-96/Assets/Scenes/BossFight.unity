@@ -1222,8 +1222,9 @@ GameObject:
   - component: {fileID: 248021002}
   - component: {fileID: 248021001}
   - component: {fileID: 248021003}
+  - component: {fileID: 248021004}
   m_Layer: 0
-  m_Name: MainController
+  m_Name: Controller
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1286,6 +1287,25 @@ MonoBehaviour:
   courier: {fileID: 584745251}
   enemiesLight: {fileID: 168910384}
   minLight: 0.1
+--- !u!114 &248021004
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 248021000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 08b4f87a2be007c45a1c0dbc723c635e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cursorDefault: {fileID: 2800000, guid: 63d65681c3745c9418dc9f80300050d6, type: 3}
+  cursorAim: {fileID: 2800000, guid: 640f67243ebdfd648833f2ebc525deab, type: 3}
+  aimAreaCenterX: 320
+  aimAreaCenterY: 320
+  aimAreaWith: 575
+  aimAreaHeight: 245
+  cursorSize: 20
 --- !u!1 &259673713
 GameObject:
   m_ObjectHideFlags: 0
