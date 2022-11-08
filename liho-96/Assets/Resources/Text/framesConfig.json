@@ -69,7 +69,7 @@
     },
     "start_liho": {
       "Picture": "liho_in_the_backseat",
-      "Text": "Груз лежит на заднем сидении. Чёрный металлический ящик, размером с аккумулятор автомобиля. Тяжелый, но легче, чем кажется.\n\nНа металлической поверхности надпись: \"ЛИХО-96\".",
+      "Text": "Груз лежит на заднем сидении. Чёрный металлический ящик,\nразмером с аккумулятор автомобиля. Тяжелый, но легче, чем кажется.\n\nНа металлической поверхности надпись: \"ЛИХО-96\".",
       "Type": "Simple",
       "Transition": {
         "Type": "Frame",
@@ -114,7 +114,16 @@
     },
     "start_town": {
       "Picture": "courier_in_a_car_town",
-      "Text": "Дождь прекратился. За стеклом начинают появляться невысокие панельные дома.\nТусклый свет фонарей и редких вывесок. Несколько машин проезжают мимо, и дорога снова становится пустой.\nКажется, город уже засыпает.",
+      "Text": "Дождь прекратился. За стеклом начинают появляться невысокие\nпанельные дома.",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "start_town_1"
+      }
+    },
+    "start_town_1": {
+      "Picture": "courier_in_a_car_town",
+      "Text": "Тусклый свет фонарей и редких вывесок. Несколько машин проезжают мимо, и дорога снова становится пустой.\nКажется, город уже засыпает.",
       "Type": "Simple",
       "Transition": {
         "Type": "Frame",
@@ -144,7 +153,8 @@
     },
     "cafe_entrance_1": {
       "Picture": "cafe_entrance",
-      "Text": "Улица. Свежие лужи после дождя.",
+      "TextDelay": 0.09,
+      "Text": "Улица. На старом асфальте свежие лужи после дождя.",
       "Type": "Simple",
       "Transition": {
         "Type": "Frame",
@@ -173,7 +183,7 @@
     "cafe_inside": {
       "Picture": "cafe_inside",
       "Sound": "door_open",
-      "Text": "Пустая столовая.",
+      "Text": "Круглосуточная кафе-столовая. Тихое жужжание ламп, источающих тусклый свет. Практически пустые полки и пыльные столы.",
       "Type": "Simple",
       "Transition": {
         "Type": "Frame",
@@ -181,18 +191,385 @@
       }
     },
     "cafe_inside_1": {
-      "Picture": "cafe_inside_worker",
+      "Picture": "cafe_inside",
       "Music": "Eye of the Beholder - Birth of Heroes",
-      "Text": "...",
+      "Text": "\"...да кому там дома не сидится?\"",
       "Type": "Simple",
       "Transition": {
         "Type": "Frame",
-        "Next": "cafe_entrance_1"
+        "Next": "cafe_inside_2"
+      }
+    },
+    "cafe_inside_2": {
+      "Picture": "cafe_inside_worker",
+      "Text": "Из кухни выходит молодая работница столовой.",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "cafe_inside_3"
+      }
+    },
+    "cafe_inside_3": {
+      "Picture": "cafe_inside_worker",
+      "Text": "Работница: \"Так, молодой человек, на горячее осталась только котлета с рисом, но она уже холодная. Ещё салат есть, за него вообще не ручаюсь. Брать будете?\"",
+      "Type": "Choice",
+      "Choices": [
+        {
+          "Text": "\"Мне нужно кое-что спросить\"",
+          "Transition": {
+            "Type": "Frame",
+            "Next": "cafe_inside_4"
+          }
+        },
+        {
+          "Text": "\"...\"",
+          "Transition": {
+            "Type": "Frame",
+            "Next": "cafe_inside_intimidation"
+          }
+        }
+      ]
+    },
+    "cafe_inside_intimidation": {
+      "Picture": "cafe_inside_worker",
+      "Text": "Работница: \"...немой что ли? Заказывать будете, молодой человек?\"",
+      "Type": "Choice",
+      "Choices": [
+        {
+          "Text": "\"Расскажи мне об этом городе\"",
+          "Transition": {
+            "Type": "Frame",
+            "Next": "cafe_inside_4"
+          }
+        },
+        {
+          "Text": "\"...\"",
+          "Transition": {
+            "Type": "Frame",
+            "Next": "cafe_inside_intimidation_1"
+          }
+        }
+      ]
+    },
+    "cafe_inside_intimidation_1": {
+      "Picture": "cafe_inside_worker",
+      "Text": "Курьер пристально смотрит в глаза работнице столовой.\nЕй становится некомфортно.\nОна опускает глаза и замечает очертания пистолета под курткой.",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "cafe_inside_intimidation_2"
+      }
+    },
+    "cafe_inside_intimidation_2": {
+      "Picture": "cafe_inside_worker",
+      "Music": "",
+      "Text": "Работница: \"Ладно... Ладно... Я поняла, сейчас всё сделаю...\"",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "cafe_inside_intimidation_3"
+      }
+    },
+    "cafe_inside_intimidation_3": {
+      "Picture": "cafe_inside_worker",
+      "Text": "Она быстро ставит тарелки с едой на поднос и ставит его перед Курьером, затем убегает на кухню.",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "cafe_inside_food"
+      }
+    },
+    "cafe_inside_food": {
+      "Picture": "cafe_food",
+      "Text": "Курьер садится за стол и пробует котлету. Холодная, но не такая плохая на вкус.",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "cafe_inside_food_car_stolen",
+        "Actions": [
+          {
+            "Type": "Add",
+            "Value": "NotHungry"
+          }
+        ]
+      }
+    },
+    "cafe_inside_food_car_stolen": {
+      "Picture": "cafe_food",
+      "Sound": "broken_glass TODO",
+      "Text": " . . . . .",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "cafe_inside_food_car_stolen_1"
+      }
+    },
+    "cafe_inside_food_car_stolen_1": {
+      "Picture": "cafe_food",
+      "Text": "С улицы слышен звук разбитого стекла, кто-то заводит машину и резко уезжает.\nКурьер выбегает наружу.",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "cafe_outside_car_stolen"
+      }
+    },
+
+    "cafe_inside_4": {
+      "Picture": "cafe_inside_worker",
+      "Text": "Работница: \"Ага, не местный вы, всё ясно. Кто ещё сюда зайдёт в такое время?.. кроме всякого сброда местного, конечно.\"",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "cafe_inside_5"
+      }
+    },
+    "cafe_inside_5": {
+      "Picture": "cafe_inside_worker",
+      "Text": "Работница: \"Смотреть у нас в городе нечего. Да и вообще на улицу лучше не выходить. Ужас, что творится тут.\"",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "cafe_inside_6"
+      }
+    },
+    "cafe_inside_6": {
+      "Picture": "cafe_inside_worker",
+      "Text": "Работница: \"Одни бандиты вокруг! Воры, хулиганы, алкаши... Хотя это ладно ещё. Но вот банды местные, вот это страшно... \"",
+      "Type": "Choice",
+      "Choices": [
+        {
+          "Text": "\"Где они обычно собираются?\"",
+          "Transition": {
+            "Type": "Frame",
+            "Next": "cafe_inside_7_a"
+          }
+        },
+        {
+          "Text": "\"Кого стоит опасаться?\"",
+          "Transition": {
+            "Type": "Frame",
+            "Next": "cafe_inside_7_b"
+          }
+        }
+      ]
+    },
+    "cafe_inside_7_a": {
+      "Picture": "cafe_inside_worker",
+      "Text": "Работница: \"Да везде! Не знаю, есть у них конечно места свои всякие, но никто нормальный туда не полезет. Заводы, целые районы заброшенные.\"",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "cafe_inside_8"
+      }
+    },
+    "cafe_inside_7_b": {
+      "Picture": "cafe_inside_worker",
+      "Text": "Работница: \"Самые страшные, говорят, Тумановские. Весь город держат, крышуют всё. И всё им мало, денег ещё хотят, власти.\"",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "cafe_inside_7_b_1"
+      }
+    },
+    "cafe_inside_7_b_1": {
+      "Picture": "cafe_inside_worker",
+      "Text": "Работница: \"Оружием торгуют, наркотиками, всё подряд скупают.\nЗа любую копейку готовы в лес везти и глотку резать – ну, я так слышала...\"",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "cafe_inside_8"
+      }
+    },
+    "cafe_inside_8": {
+      "Picture": "cafe_inside_worker",
+      "Text": "Работница: \"А ведь у нас раньше город какой был? Заводы военные были, весь город кормили. Да и не только заводы, институты тоже все на армию работали.\"",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "cafe_inside_9"
+      }
+    },
+    "cafe_inside_9": {
+      "Picture": "cafe_inside_worker",
+      "Text": "Работница: \"Ой, помню я тоже в институте училась нашем... И вот где я теперь? Зачем столько языков учила?..\"",
+      "Type": "Choice",
+      "Choices": [
+        {
+          "Text": "Спросить про военные разработки",
+          "Transition": {
+            "Type": "Frame",
+            "Next": "cafe_inside_10_a"
+          }
+        },
+        {
+          "Text": "\"...\"",
+          "Transition": {
+            "Type": "Frame",
+            "Next": "cafe_inside_10_b"
+          }
+        }
+      ]
+    },
+    "cafe_inside_10_a": {
+      "Picture": "cafe_inside_worker",
+      "Text": "Работница: \"Ой, лучше не спрашивайте. Слухи всякие ходят. Биологическое оружие, химическое, ядерное...\"",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "cafe_inside_10_a_1"
+      }
+    },
+    "cafe_inside_10_a_1": {
+      "Picture": "cafe_inside_worker",
+      "Text": "Работница: \"Страшнее всего, что сейчас ведь всё это разворовали. Бандиты эти только рады чего-нибудь такого найти. Кто знает, где, в каких оно всё руках сейчас...\"",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "cafe_inside_11"
+      }
+    },
+    "cafe_inside_10_b": {
+      "Picture": "cafe_inside_worker",
+      "Text": "Работница: \"Ой, что-то я заболталась, конечно... Вы про город спрашивали, да? Что ж тут ещё рассказать...\"",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "cafe_inside_10_b_1"
+      }
+    },
+    "cafe_inside_10_b_1": {
+      "Picture": "cafe_inside_worker",
+      "Text": "Работница: \"Вообще тут красиво бывает, конечно. Лес рядом. Где институты раньше были, там тоже красиво было, ой...\"",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "cafe_inside_11"
+      }
+    },
+    "cafe_inside_11": {
+      "Picture": "cafe_inside_worker",
+      "Text": "Работница: \"Институты лет пять как стоят закрытые. Сначала зарплату никому не платили, а потом и совсем закрылись.\"",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "cafe_inside_12"
+      }
+    },
+    "cafe_inside_12": {
+      "Picture": "cafe_inside_worker",
+      "Text": "Работница: \"Сотрудники эти научные – кто спился, кто пошёл другую работу искать... хотя и работы здесь нет толком.\"",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "cafe_inside_13"
+      }
+    },
+    "cafe_inside_13": {
+      "Picture": "cafe_inside_worker",
+      "Text": "Работница: \"...зря, в общем, вы сюда приехали, молодой человек.\nНечего вам здесь делать. Правда.\"",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "cafe_inside_14"
+      }
+    },
+    "cafe_inside_14": {
+      "Picture": "cafe_inside_worker",
+      "Text": "Курьер: \"...\"",
+      "Type": "Choice",
+      "Choices": [
+        {
+          "Text": "Спросить про \"клумбу\"",
+          "Transition": {
+            "Type": "Frame",
+            "Next": "cafe_inside_15"
+          }
+        },
+        {
+          "Text": "Попросить номер телефона",
+          "Transition": {
+            "Type": "Frame",
+            "Next": "cafe_inside_phone_number"
+          }
+        }
+      ]
+    },
+    "cafe_inside_15": {
+      "Picture": "cafe_inside_worker",
+      "Text": "Работница: \"Звучит знакомо... Но нет, не знаю. Хотя...\"",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "cafe_inside_car_stolen"
+      }
+    },
+    "cafe_inside_phone_number": {
+      "Picture": "cafe_inside_worker",
+      "Text": "Работница: \"Чего?.. Ой, ну... я...\"",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "cafe_inside_phone_number_1"
+      }
+    },
+    "cafe_inside_phone_number_1": {
+      "Picture": "cafe_inside_worker",
+      "Text": "Она достаёт из ящика бумажку и ручку, записывает номер телефона и протягивает Курьеру.\n<Добавлено в инвентарь: [Номер телефона]>",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "cafe_inside_phone_number_2",
+        "Actions": [
+          {
+            "Type": "Add",
+            "Value": "NoteWithAPhoneNumber"
+          }
+        ]
+      }
+    },
+    "cafe_inside_phone_number_2": {
+      "Picture": "cafe_inside_worker",
+      "Text": "Работница: \"У меня смена в 11 заканчивается, но лучше, к-конечно поздно не звонить... Родители дома, вдруг проснутся, возьмут трубку... М-можно на выходных...\"",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "cafe_inside_car_stolen"
+      }
+    },
+    
+    "cafe_inside_car_stolen": {
+      "Picture": "cafe_inside",
+      "Sound": "broken_glass TODO",
+      "Text": " . . . . .",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "cafe_inside_car_stolen_1"
+      }
+    },
+    "cafe_inside_car_stolen_1": {
+      "Picture": "cafe_inside",
+      "Text": "С улицы слышен звук разбитого стекла, кто-то заводит машину и резко уезжает.\nКурьер выбегает наружу.",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "cafe_outside_car_stolen"
+      }
+    },
+
+    "cafe_outside_car_stolen": {
+      "Picture": "cafe_outside",
+      "Sound": "broken_glass TODO",
+      "Text": "Тачку блять угнали!!! ваз 2121 дедовский сука че делать.",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "cafe_entrance"
       }
     },
 
     "cafe_after": {
-      "Picture": "blank",
+      "Picture": "cafe_outside",
       "Music": "Clock Tower - Don't Cry, Jennifer",
       "Text": "TODO машину угнали, курьер выбежал из кафе",
       "Type": "Choice",
@@ -465,7 +842,7 @@
     "casino_slots_3": {
       "Picture": "casino_slots",
       "Sound": "slot_cash_out",
-      "Text": "7! Из автомата высыпаются монеты.\n<В инвентарь добавлено: \"Много монет\">",
+      "Text": "7! Из автомата высыпаются монеты.\n<Добавлено в инвентарь: [Много монет]>",
       "Type": "Simple",
       "Transition": {
         "Type": "Frame",
@@ -637,7 +1014,7 @@
     },
     "casino_couch_magazines_1": {
       "Picture": "casino_hall",
-      "Text": "Курьера заинтересовал затерявшийся внизу стопки \"Юный техник\".\nВнимательно пролистав страницы, Курьер чувствует, что узнал что-то новое. Осталось понять, как это знание применить...\n\n<Новый рецепт: \"Коктейль молотова\">",
+      "Text": "Курьера заинтересовал затерявшийся внизу стопки \"Юный техник\".\nВнимательно пролистав страницы, Курьер чувствует, что узнал что-то новое. Осталось понять, как это знание применить...\n\n<Добавлено в инвентарь: рецепт \"Коктейль молотова\">",
       "Type": "Simple",
       "Transition": {
         "Type": "Frame",
