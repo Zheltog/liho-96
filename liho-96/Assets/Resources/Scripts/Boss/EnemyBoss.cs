@@ -5,7 +5,7 @@ namespace Boss
     public class EnemyBoss: Enemy
     {
         public float secondsBeforeNextBullet = 0.2f;
-        public float bulletsMagazineSize = 10;
+        public float magazineSize = 10;
         
         private float _currentTime;
         private bool _isShooting;
@@ -19,32 +19,32 @@ namespace Boss
                 if (!(_currentTime >= secondsBeforeNextBullet)) return;
                 _currentTime -= secondsBeforeNextBullet;
                 ShootNextBullet();
-                return;   
+                return;
             }
             
             _currentTime += Time.deltaTime;
             if (!(_currentTime >= secondsBeforeNextShooting)) return;
             _currentTime -= secondsBeforeNextShooting;
             _isShooting = true;
-            StartCoroutine(ShowShotLight());
         }
 
         private void ShootNextBullet()
         {
-            if (_currentBulletNumber > bulletsMagazineSize)
+            if (_currentBulletNumber > magazineSize)
             {
                 _currentBulletNumber = 1;
                 _isShooting = false;
                 return;
             }
 
-            // Debug.Log("TA!");
             Shoot();
+            StartCoroutine(ShowShotBang());
             _currentBulletNumber++;
         }
 
         protected override void OnDamage()
         {
+            // TODO
             Debug.Log("A!");
         }
     }

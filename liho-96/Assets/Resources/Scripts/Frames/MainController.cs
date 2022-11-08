@@ -58,7 +58,7 @@ namespace Frames
             }
         }
 
-        public void Transition()
+        private void Transition()
         {
             if (StateHolder.State != State.Frame) return;
             
@@ -114,7 +114,7 @@ namespace Frames
             
             textBox.NewText(currentFrame.Text);
             textBox.secondsBeforeNextSymbol = currentFrame.TextDelay ?? textBox.defaultSecondsBeforeNextSymbol;
-                
+            
             image.NewImage(currentFrame.Picture);
 
             var music = currentFrame.Music;

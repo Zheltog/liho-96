@@ -34,12 +34,10 @@ namespace Boss
 
         private void Update()
         {
-            if (CurrentFightState == FightState.GameOver)
+            if (CurrentFightState == FightState.Attack)
             {
-                return;
+                UpdateTimeRemainingBeforeNextRest();
             }
-            
-            UpdateTimeRemainingBeforeNextRest();
         }
         
         public void ChooseItem(Item item)
@@ -82,21 +80,20 @@ namespace Boss
             if (text.IsPrinting)
             {
                 text.FinishPrinting();
+                return;
             }
-            else
+
+            switch (CurrentFightState)
             {
-                switch (CurrentFightState)
-                {
-                    case FightState.NewPhase:
-                        NextAttack();
-                        break;
-                    case FightState.ItemChosen:
-                        NextPhase();
-                        break;
-                    case FightState.GameOver:
-                        Application.Quit();
-                        break;
-                }
+                case FightState.NewPhase:
+                    NextAttack();
+                    break;
+                case FightState.ItemChosen:
+                    NextPhase();
+                    break;
+                case FightState.GameOver:
+                    Application.Quit();
+                    break;
             }
         }
 
@@ -108,6 +105,7 @@ namespace Boss
 
         public void Inventory()
         {
+            // TODO: открыть, но дать возможность вернуться
             if (!itemsChoicesController.ItemsChoiceAvailable()) return;
             
             CurrentFightState = FightState.ItemChoosing;
@@ -136,22 +134,17 @@ namespace Boss
         public void GameOver(string comment)
         {
             CurrentFightState = FightState.GameOver;
+            courier.Rest();
+            _phaseConfig.DisableAllEnemies();   // TODO: вынести куда-то из фазоконфига?
             dynamicStuff.SetActive(false);
             gameOverImage.SetActive(true);
             text.NewText(comment);
-            courier.Rest();
-            _phaseConfig.DisableAllEnemies();
             player.NewMusic("");
             player.NewSound("game_over");
         }
 
         private void UpdateTimeRemainingBeforeNextRest()
         {
-            if (CurrentFightState != FightState.Attack)
-            {
-                return;
-            }
-
             if (_timeRemainingBeforeNextRest > 0)
             {
                 _timeRemainingBeforeNextRest -= Time.deltaTime;
@@ -170,6 +163,7 @@ namespace Boss
             grayPanel.SetActive(true);
         }
 
+        // TODO: починить и убрать?
         private IEnumerator NextPhaseWithDelay()
         {
             yield return new WaitForSeconds(1);
@@ -194,9 +188,7 @@ namespace Boss
         {
             Initializing, NewPhase, Attack, ActionChoice, ItemChoosing, ItemChosen, GameOver
         }
-        
-        //
-        
+
         // TODO: удалить, нужен для тестирования
         private void InitHolder()
         {

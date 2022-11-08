@@ -12,8 +12,9 @@ namespace Boss
         public GameObject enemyRunningLeft;
         public GameObject enemyRunningRight;
         public Courier courier;
-        public Light enemiesLight;
+        public Light sceneLight;
         public float minLight = 0.1f;
+        public float maxLight = 1f;
 
         private MainController _mainController;
 
@@ -27,6 +28,7 @@ namespace Boss
             var phase = StateHolder.NextPhase();
             text.NewText(phase.StartText);
             _mainController.ApplyEffect(phase.Effect);
+            ResetModifiers();
             ApplyModifiers(phase.Modifiers);
             DisableAllEnemies();
             SetEnemies(phase.Enemies);
@@ -62,7 +64,7 @@ namespace Boss
 
         private void ResetModifiers()
         {
-            enemiesLight.intensity = 1f;
+            sceneLight.intensity = maxLight;
             courier.CameraShake(false);
         }
 
@@ -70,7 +72,7 @@ namespace Boss
         {
             if (modifiers.Contains(Modifier.Dark))
             {
-                enemiesLight.intensity = minLight;
+                sceneLight.intensity = minLight;
             }
 
             if (modifiers.Contains(Modifier.Shake))

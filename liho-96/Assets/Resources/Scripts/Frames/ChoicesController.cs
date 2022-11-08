@@ -6,6 +6,7 @@ namespace Frames
 {
     public class ChoicesController : MonoBehaviour
     {
+        // TODO: менее хардкодово?
         public ButtonsBundle buttonsDouble;
         public ButtonsBundle buttonsTriple;
         public MainController mainController;
@@ -18,8 +19,8 @@ namespace Frames
         {
             _currentType = choices.Count switch
             {
-                2 => ChoiceType.DOUBLE,
-                3 => ChoiceType.TRIPLE,
+                2 => ChoiceType.Double,
+                3 => ChoiceType.Triple,
                 _ => throw new Exception("should be 2 or 3 choices")
             };
 
@@ -30,20 +31,23 @@ namespace Frames
 
         public void ChooseFirst()
         {
-            SetActiveForButtons(false);
-            mainController.Transition(_currentChoices[0].Transition);
+            Choose(0);
         }
 
         public void ChooseSecond()
         {
-            SetActiveForButtons(false);
-            mainController.Transition(_currentChoices[1].Transition);
+            Choose(1);
         }
 
         public void ChooseThird()
         {
+            Choose(2);
+        }
+
+        private void Choose(int choiceIndex)
+        {
             SetActiveForButtons(false);
-            mainController.Transition(_currentChoices[2].Transition);
+            mainController.Transition(_currentChoices[choiceIndex].Transition);
         }
 
         private void SetActiveForButtons(bool isActive)
@@ -59,11 +63,11 @@ namespace Frames
 
             switch (_currentType)
             {
-                case ChoiceType.DOUBLE:
+                case ChoiceType.Double:
                     buttonsDouble.SetActive(true);
                     buttonsDouble.SetTexts(_currentChoices[0].Text, _currentChoices[1].Text);
                     break;
-                case ChoiceType.TRIPLE:
+                case ChoiceType.Triple:
                     buttonsTriple.SetActive(true);
                     buttonsTriple.SetTexts(_currentChoices[0].Text, _currentChoices[1].Text,
                         _currentChoices[2].Text);
@@ -73,8 +77,8 @@ namespace Frames
 
         private enum ChoiceType
         {
-            DOUBLE,
-            TRIPLE
+            Double,
+            Triple
         }
     }
 }

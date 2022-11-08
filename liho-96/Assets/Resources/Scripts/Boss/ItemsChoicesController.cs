@@ -8,6 +8,7 @@ namespace Boss
     public class ItemsChoicesController : MonoBehaviour
     {
         public MainController mainController;
+        // TODO: сгенерировать кнопки по-человечески?
         public TextMeshProUGUI textOnButton1;
         public TextMeshProUGUI textOnButton2;
         public TextMeshProUGUI textOnButton3;
@@ -90,6 +91,21 @@ namespace Boss
         public void ChooseThird()
         {
             ChooseItem(2);
+        }
+        
+        public void ChooseFourth()
+        {
+            ChooseItem(3);
+        }
+        
+        public void ChooseFifth()
+        {
+            ChooseItem(4);
+        }
+        
+        public void ChooseSixth()
+        {
+            ChooseItem(5);
         }
 
         private void ChooseItem(int index)

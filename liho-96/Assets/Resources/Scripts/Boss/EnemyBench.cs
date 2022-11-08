@@ -11,9 +11,8 @@ namespace Boss
         public float maxXPoint = -10f;
         public float minHeight = -2;
         public float maxHeight = 2;
-        public float goingVerticalSpeed = 20f;
+        public float verticalSpeed = 20f;
         
-                
         private float _currentTime;
         private VerticalMovement _currentMovement = VerticalMovement.None;
 
@@ -22,10 +21,11 @@ namespace Boss
             GoVerticalIfShould();
             
             _currentTime += Time.deltaTime;
+            
             if (!(_currentTime >= secondsBeforeNextShooting)) return;
             _currentTime -= secondsBeforeNextShooting;
             Shoot();
-            StartCoroutine(ShowShotLight());
+            StartCoroutine(ShowShotBang());
         }
 
         protected override void OnDamage()
@@ -41,8 +41,9 @@ namespace Boss
             _currentMovement = VerticalMovement.Down;
             yield return new WaitUntil(() => _currentMovement != VerticalMovement.None);
             yield return new WaitForSeconds(RandomHidingTime());
-            var positionWhenHidden = transform.position;
-            transform.position = new Vector3(RandomXPosition(), positionWhenHidden.y, positionWhenHidden.z);
+            
+            var position = transform.position;
+            transform.position = new Vector3(RandomXPosition(), position.y, position.z);
             _currentMovement = VerticalMovement.Up;
             yield return new WaitUntil(() => _currentMovement != VerticalMovement.None);
         }
@@ -65,15 +66,15 @@ namespace Boss
             }
 
             var currentPosition = transform.position;
-            float newY = currentPosition.y;
+            var newY = currentPosition.y;
 
             switch (_currentMovement)
             {
                 case VerticalMovement.Up:
-                    newY += Time.deltaTime * goingVerticalSpeed;
+                    newY += Time.deltaTime * verticalSpeed;
                     break;
                 case VerticalMovement.Down:
-                    newY -=  Time.deltaTime * goingVerticalSpeed;
+                    newY -=  Time.deltaTime * verticalSpeed;
                     break;
             }
 

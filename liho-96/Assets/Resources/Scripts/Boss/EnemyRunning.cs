@@ -1,5 +1,4 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace Boss
 {
@@ -21,11 +20,12 @@ namespace Boss
         private void Update()
         {
             Run();
+            
             _currentTime += Time.deltaTime;
             if (!(_currentTime >= secondsBeforeNextShooting)) return;
             _currentTime -= secondsBeforeNextShooting;
             Shoot();
-            StartCoroutine(ShowShotLight());
+            StartCoroutine(ShowShotBang());
         }
 
         private void Run()
@@ -64,6 +64,7 @@ namespace Boss
 
         protected override void OnDamage()
         {
+            // TODO
             Debug.Log("A!");
         }
 

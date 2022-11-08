@@ -30,7 +30,7 @@ namespace Common
             IsPrinting = false;
         }
 
-        // Установка нового текста. Вызывается из игрового контроллера
+        // Установка нового текста
         public void NewText(string text)
         {
             IsPrinting = true;

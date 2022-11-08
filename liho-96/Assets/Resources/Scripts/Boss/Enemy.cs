@@ -7,12 +7,12 @@ namespace Boss
     public abstract class Enemy : MonoBehaviour
     {
         public AudioController player;
-        public GameObject shotLight;
+        public GameObject shotBang;
         public HealthBar hpBar;
         public Vector3 targetPoint = new Vector3(0f, 5f, -10f);
         public float hp = 50;
-        public float damage;
-        public float shotLightSeconds = 0.5f;
+        public float damage = 5;
+        public float shotBangSeconds = 0.5f;
         public float secondsBeforeNextShooting = 2f;
         
         public void Hit(float damageTaken)
@@ -33,7 +33,7 @@ namespace Boss
         {
             var fromPosition = transform.position;
             var direction = targetPoint - fromPosition;
-            var ray = new Ray(transform.position, direction);
+            var ray = new Ray(fromPosition, direction);
             if (!Physics.Raycast(ray, out var hit)) return;
             var courier = hit.collider.gameObject.GetComponent<Courier>();
             if (courier != null)
@@ -43,11 +43,11 @@ namespace Boss
             player.NewSound("shot");
         }
 
-        protected IEnumerator ShowShotLight()
+        protected IEnumerator ShowShotBang()
         {
-            shotLight.SetActive(true);
-            yield return new WaitForSeconds(shotLightSeconds);
-            shotLight.SetActive(false);
+            shotBang.SetActive(true);
+            yield return new WaitForSeconds(shotBangSeconds);
+            shotBang.SetActive(false);
         }
 
         protected abstract void OnDamage();

@@ -22,9 +22,7 @@ namespace Frames
         {
             Frames = config.Frames;
             Flags = new HashSet<string>(config.StartingFlags);
-    
             State = State.Start;
-    
             Initialized = true;
         }
     

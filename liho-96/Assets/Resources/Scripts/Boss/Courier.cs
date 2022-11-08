@@ -6,17 +6,17 @@ namespace Boss
 {
     public class Courier : MonoBehaviour
     {
+        public MainController mainController;
         public AudioController player;
         public HealthBar hpBar;
         public GameObject redPanel;
         public GameObject gun;
-        public MainController mainController;
         public float damage = 10f;
         public float maxCameraHeight = 5f;
         public float minCameraHeight = 2f;
         public float cameraSpeed = 10f;
         public float hitAnimationSeconds = 0.1f;
-        public float shake = 0.2f;
+        public float shakeOnHitDistance = 0.2f;
         public float goingDownSpeed = 10f;
         public float secondsBeforeNextShot = 0.5f;
 
@@ -49,13 +49,12 @@ namespace Boss
             UpdateCamera();
 
             _currentTime += Time.deltaTime;
+
+            if (!Input.GetMouseButtonDown(0)) return;
             
-            if (Input.GetMouseButtonDown(0))
-            {
-                if (!(_currentTime >= secondsBeforeNextShot)) return;
-                _currentTime -= secondsBeforeNextShot;
-                Shoot();
-            }
+            if (!(_currentTime >= secondsBeforeNextShot)) return;
+            _currentTime -= secondsBeforeNextShot;
+            Shoot();
         }
 
         public void CameraShake(bool isShaking)
@@ -74,6 +73,7 @@ namespace Boss
         public void StopRest()
         {
             _isRest = false;
+            _currentTime = 0f;
             gun.SetActive(true);
         }
 
@@ -116,7 +116,8 @@ namespace Boss
                 Vector3.ClampMagnitude(new Vector3(0f, deltaY, 0f), cameraSpeed) * Time.deltaTime
             );
 
-            var newY = transform.position.y + movement.y;
+            var currentPosition = transform.position;
+            var newY = currentPosition.y + movement.y;
 
             if (newY > maxCameraHeight)
             {
@@ -128,13 +129,14 @@ namespace Boss
                 newY = minCameraHeight;
             }
 
-            transform.position = new Vector3(transform.position.x, newY, transform.position.z);
+            transform.position = new Vector3(currentPosition.x, newY, currentPosition.z);
         }
 
         private void Shoot()
         {
             _gunAnimator.Rebind();
             _gunAnimator.Update(0f);
+            
             var mousePosition = Input.mousePosition;
             var ray = _camera.ScreenPointToRay (mousePosition);
             var hit = Physics2D.GetRayIntersection(ray);
@@ -143,23 +145,32 @@ namespace Boss
             {
                 enemy.Hit(damage);
             }
+            
             _gunAnimator.Play("GunShake");
             player.NewSound("shot");
         }
 
+        // TODO: нормальная анимация?
         private IEnumerator ShowHitAnimation()
         {
             redPanel.SetActive(true);
             
             var positionBefore = transform.position;
-            transform.position = new Vector3(positionBefore.x, positionBefore.y, positionBefore.z - shake);
+            transform.position = new Vector3(
+                positionBefore.x, positionBefore.y, positionBefore.z - shakeOnHitDistance
+            );
+            
             yield return new WaitForSeconds(hitAnimationSeconds);
             
             var positionAfter = transform.position;
-            transform.position = new Vector3(positionAfter.x, positionAfter.y, positionAfter.z + shake);
+            transform.position = new Vector3(
+                positionAfter.x, positionAfter.y, positionAfter.z + shakeOnHitDistance
+            );
+            
             redPanel.SetActive(false);
         }
 
+        // TODO: в ГГ не стреляют в других фазах - удалить?
         private bool IsActivePhase()
         {
             return mainController.CurrentFightState == MainController.FightState.Attack;

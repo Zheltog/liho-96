@@ -5,8 +5,8 @@ namespace Boss
 {
     public class HealthBar : MonoBehaviour
     {
+        public MainController mainController;
         public HealthBarType type;
-        public MainController maincontroller;
         public float maxHealth = 100f;
 
         private float _currentHealth;
@@ -20,12 +20,12 @@ namespace Boss
             _currentHealth = maxHealth;
         }
 
-        public void AddHp(float hp, bool pulse)
+        public void AddHp(float hp, bool shouldPulse)
         {
             _currentHealth += hp;
             _bar.value = _currentHealth / maxHealth;
 
-            if (pulse)
+            if (shouldPulse)
             {
                 Pulse();
             }
@@ -38,7 +38,7 @@ namespace Boss
 
         private void Empty()
         {
-            maincontroller.HealthBarEmpty(type);
+            mainController.HealthBarEmpty(type);
         }
         
         private void Pulse()

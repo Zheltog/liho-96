@@ -25,6 +25,7 @@ namespace Boss
         {
             if (_timeRemainingBeforeEnd <= 0)
             {
+                // TODO: нормальный текст
                 mainController.GameOver("Коммунисты завели жигу и уехали в рассвет. С ЛИХО...");
                 return;
             }
@@ -55,7 +56,7 @@ namespace Boss
 
             if (_redAlert && secondsRemaining > redAlertSeconds)
             {
-                _redAlert = true;
+                _redAlert = false;
                 _text.color = new Color(1f, 1f, 1f);
             }
         }

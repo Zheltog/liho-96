@@ -17,7 +17,7 @@ namespace Boss
 
         private void Start() {
             Cursor.visible = false;
-            _currentCursor = cursorAim;
+            _currentCursor = cursorDefault;
             _aimRect = new Rect(
                 aimAreaCenterX - aimAreaWith / 2,
                 aimAreaCenterY - aimAreaHeight / 2,

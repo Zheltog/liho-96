@@ -2,10 +2,8 @@ using UnityEngine;
 
 namespace Common
 {
-
     public class AudioController : MonoBehaviour
     {
-
         public AudioSource soundsSource;
         public AudioSource musicSource;
         public AudioSource textSoundSource;
@@ -36,6 +34,7 @@ namespace Common
         public void NewSound(string soundName)
         {
             if (soundName == null) return;
+            
             var clip = Resources.Load<AudioClip>("Audio/" + soundName);
             soundsSource.Stop();
             soundsSource.clip = clip;
