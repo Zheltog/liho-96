@@ -1,10 +1,12 @@
 ﻿using System.Collections;
+using Common;
 using UnityEngine;
 
 namespace Boss
 {
     public abstract class Enemy : MonoBehaviour
     {
+        public AudioController player;
         public GameObject shotLight;
         public HealthBar hpBar;
         public Vector3 targetPoint = new Vector3(0f, 5f, -10f);
@@ -38,6 +40,7 @@ namespace Boss
             {
                 courier.Hit(damage);
             }
+            player.NewSound("shot");
         }
 
         protected IEnumerator ShowShotLight()

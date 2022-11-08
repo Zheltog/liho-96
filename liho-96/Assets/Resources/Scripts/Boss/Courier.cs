@@ -1,10 +1,12 @@
 using System.Collections;
+using Common;
 using UnityEngine;
 
 namespace Boss
 {
     public class Courier : MonoBehaviour
     {
+        public AudioController player;
         public HealthBar hpBar;
         public GameObject redPanel;
         public GameObject gun;
@@ -144,6 +146,7 @@ namespace Boss
                 enemy.Hit(damage);
             }
             _gunAnimator.Play("GunShake");
+            player.NewSound("shot");
         }
 
         private IEnumerator ShowHitAnimation()
