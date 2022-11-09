@@ -1,0 +1,29 @@
+{
+  "Phases": [
+    {
+      "Type": "Shooting",
+      "StartText": "Это первая фаза",
+      "Effect": {
+        "Type": "Heal",
+        "Value": 10.0
+      },
+      "Enemies": [
+        "Vlada", "BenchLeft", "BenchRight"
+      ],
+      "Modifiers": [
+        "Blink"
+      ]
+    }
+  ],
+  "Items": [
+    {
+      "Name": "Предмет",
+      "UseText": "Использован предмет. Врагам нанесен урон",
+      "Flag": "Флаг",
+      "Effect": {
+        "Type": "Damage",
+        "Value": 10.0
+      }
+    }
+  ]
+}

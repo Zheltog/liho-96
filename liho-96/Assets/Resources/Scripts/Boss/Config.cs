@@ -15,16 +15,6 @@ namespace Boss
         public Effect Effect { get; set; }
         public List<EnemyType> Enemies { get; set; }
         public List<Modifier> Modifiers { get; set; }
-
-        // TODO: удалить, нужен для тестирования
-        public Phase(PhaseType type, string startText, Effect effect, List<EnemyType> enemies, List<Modifier> modifiers)
-        {
-            Type = type;
-            StartText = startText;
-            Effect = effect;
-            Enemies = enemies;
-            Modifiers = modifiers;
-        }
     }
 
     public enum PhaseType
@@ -36,13 +26,6 @@ namespace Boss
     {
         public EffectType Type { get; set; }
         public float Value { get; set; }
-
-        // TODO: удалить, нужен для тестирования
-        public Effect(EffectType type, float value)
-        {
-            Type = type;
-            Value = value;
-        }
     }
 
     public enum EffectType
@@ -74,14 +57,5 @@ namespace Boss
         public string UseText { get; set; }
         public string Flag { get; set; }
         public Effect Effect { get; set; }
-
-        // TODO: удалить, нужен для тестирования
-        public Item(string name, string useText, string flag, Effect effect)
-        {
-            Name = name;
-            UseText = useText;
-            Flag = flag;
-            Effect = effect;
-        }
     }
 }

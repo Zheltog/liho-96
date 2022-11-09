@@ -109,9 +109,6 @@ namespace Boss
 
         public void Inventory()
         {
-            // TODO: открыть, но дать возможность вернуться
-            if (!itemsChoicesController.ItemsChoiceAvailable()) return;
-            
             CurrentFightState = FightState.ItemChoosing;
             actionsButtons.SetActive(false);
             backButton.SetActive(true);
@@ -206,54 +203,9 @@ namespace Boss
         // TODO: удалить, нужен для тестирования
         private void InitHolder()
         {
-            var items = new List<Item>();
-            items.Add(new Item("Вейп", "<Курьер оформляет плотнейшего пыха и восстанавливает 10 очков здоровья>",
-                "флаг", new Effect(EffectType.Heal, 10f)));
-            items.Add(new Item("Журнал \"Playboy\"",
-                "<Курьер пристально всматривается в обложку журнала. Вспомнив, за что должно сражать настоящему мужчине, он издаёт свирепый рык, нанося противникам 10 очков урона>",
-                "флаг", new Effect(EffectType.Damage, 10f)));
-            items.Add(new Item("Папка со сценарием фильма \"Довод\"",
-                "<Пробежав сценарий глазами, курьер осознаёт гениальность Нолана и теперь умеет влиять на ход времени. +10 секунд к заводу жиги!>",
-                "флаг", new Effect(EffectType.Timer, 10f)));
-
-            var phases = new List<Phase>();
-            var enemies1 = new List<EnemyType>();
-            var enemies2 = new List<EnemyType>();
-            enemies2.Add(EnemyType.BenchLeft);
-            enemies2.Add(EnemyType.BenchRight);
-            var enemies3 = new List<EnemyType>();
-            enemies3.Add(EnemyType.BenchLeft);
-            enemies3.Add(EnemyType.BenchRight);
-            enemies3.Add(EnemyType.RunningLeft);
-            enemies3.Add(EnemyType.RunningRight);
-            var modifiers2 = new List<Modifier>();
-            // modifiers2.Add(Modifier.Blink);
-            var modifiers3 = new List<Modifier>();
-            modifiers3.Add(Modifier.Dark);
-            modifiers3.Add(Modifier.Shake);
-            phases.Add(new Phase(
-                PhaseType.Shooting,
-                "Фаза1. Ну всё пиздец...",
-                null,
-                enemies3,
-                new List<Modifier>()
-            ));
-            phases.Add(new Phase(
-                PhaseType.Shooting,
-                "Фаза2. Ахуеть не встать (а если встать, то ахуеть)... Игрок немного подлечился, но темно пиздец",
-                new Effect(EffectType.Heal, 10f),
-                enemies2,
-                modifiers2
-            ));
-            phases.Add(new Phase(
-                PhaseType.Shooting,
-                "Фаза3. Ебать копать темно пизды ещё и трясёт как блять",
-                new Effect(EffectType.Heal, 10f),
-                enemies3,
-                modifiers3
-            ));
-            
-            StateHolder.Init(items, phases);
+            var flags = new List<string>();
+            flags.Add("Флаг");
+            StateHolder.Init(flags);
         }
     }
 }

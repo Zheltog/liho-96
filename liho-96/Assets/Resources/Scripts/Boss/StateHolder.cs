@@ -1,4 +1,7 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
+using Newtonsoft.Json;
+using UnityEngine;
 
 namespace Boss
 {
@@ -10,10 +13,13 @@ namespace Boss
 
         private static int _currentPhaseIndex;
 
-        public static void Init(List<Item> items, List<Phase> phases)
+        public static void Init(List<string> flags)
         {
-            AvailableItems = items;
-            Phases = phases ?? new List<Phase>();
+            var jsonString = Resources.Load<TextAsset>("Text/bossFightConfig").text;
+            var config = JsonConvert.DeserializeObject<Config>(jsonString);
+
+            AvailableItems = FilterItems(config.Items, flags);
+            Phases = config.Phases;
             _currentPhaseIndex = -1;
         }
 
@@ -25,6 +31,11 @@ namespace Boss
             }
 
             return Phases[_currentPhaseIndex];
+        }
+
+        private static List<Item> FilterItems(List<Item> items, List<string> flags)
+        {
+            return items.Where(item => flags.Contains(item.Flag)).ToList();
         }
     }
 }
