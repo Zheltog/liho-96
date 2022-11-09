@@ -24,6 +24,8 @@ namespace Boss
             _sprite = GetComponent<SpriteRenderer>();
         }
 
+        public abstract void Reset();
+
         public void Hit(float damageTaken)
         {
             hp -= damageTaken;

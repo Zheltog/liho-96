@@ -64,6 +64,7 @@ namespace Boss
     public enum Modifier
     {
         Shake,
+        Blink,
         Dark
     }
 

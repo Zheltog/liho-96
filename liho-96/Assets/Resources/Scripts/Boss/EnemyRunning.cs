@@ -31,6 +31,7 @@ namespace Boss
             Shoot();
             StartCoroutine(ShowShotBang());
         }
+        public override void Reset() {}
 
         private void Run()
         {

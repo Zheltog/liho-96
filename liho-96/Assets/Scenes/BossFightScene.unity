@@ -1246,6 +1246,7 @@ GameObject:
   m_Component:
   - component: {fileID: 168910385}
   - component: {fileID: 168910384}
+  - component: {fileID: 168910386}
   m_Layer: 0
   m_Name: Light
   m_TagString: Untagged
@@ -1329,6 +1330,25 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 30, y: 0, z: 0}
+--- !u!95 &168910386
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 168910383}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 3337b1efc30995a4fbbe33d9af9cea2a, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &179393097
 GameObject:
   m_ObjectHideFlags: 0
@@ -1538,7 +1558,7 @@ MonoBehaviour:
   secondsBeforeNextShooting: 1.5
   redOnHitSeconds: 0.2
   maxHidingSeconds: 3
-  minHidingSeconds: 0.5
+  minHidingSeconds: 2
   minXPoint: 20
   maxXPoint: 30
   minHeight: -2
@@ -1955,11 +1975,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55e4f15961f04f9a92515fd4936956da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyBenchLeft: {fileID: 1925981329}
-  enemyBenchRight: {fileID: 181891090}
-  enemyRunningLeft: {fileID: 555209472}
-  enemyRunningRight: {fileID: 821919781}
-  vlada: {fileID: 1092920840}
+  enemyBenchLeft: {fileID: 1925981332}
+  enemyBenchRight: {fileID: 181891093}
+  enemyRunningLeft: {fileID: 555209474}
+  enemyRunningRight: {fileID: 821919782}
+  vlada: {fileID: 1092920842}
 --- !u!1 &259673713
 GameObject:
   m_ObjectHideFlags: 0
@@ -10612,7 +10632,7 @@ MonoBehaviour:
   shotBang: {fileID: 1537234325}
   hpBar: {fileID: 86713064}
   targetPoint: {x: 0, y: 5, z: -10}
-  hp: 50
+  hp: 10
   damage: 5
   shotBangSeconds: 0.5
   secondsBeforeNextShooting: 2

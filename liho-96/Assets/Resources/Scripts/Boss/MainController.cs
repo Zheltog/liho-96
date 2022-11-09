@@ -227,7 +227,7 @@ namespace Boss
             enemies3.Add(EnemyType.RunningLeft);
             enemies3.Add(EnemyType.RunningRight);
             var modifiers2 = new List<Modifier>();
-            modifiers2.Add(Modifier.Dark);
+            // modifiers2.Add(Modifier.Blink);
             var modifiers3 = new List<Modifier>();
             modifiers3.Add(Modifier.Dark);
             modifiers3.Add(Modifier.Shake);

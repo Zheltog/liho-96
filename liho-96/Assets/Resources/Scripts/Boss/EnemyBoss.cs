@@ -18,6 +18,8 @@ namespace Boss
             _animator = GetComponent<Animator>();
         }
         
+        public override void Reset() {}
+        
         private void Update()
         {
             if (_isShooting)

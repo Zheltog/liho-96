@@ -14,11 +14,13 @@ namespace Boss
 
         private MainController _mainController;
         private EnemiesController _enemies;
+        private Animator _lightAnimator;
 
         private void Start()
         {
             _mainController = GetComponent<MainController>();
             _enemies = GetComponent<EnemiesController>();
+            _lightAnimator = sceneLight.GetComponent<Animator>();
         }
 
         public void NewPhase()
@@ -33,8 +35,9 @@ namespace Boss
 
         private void ResetModifiers()
         {
-            sceneLight.intensity = maxLight;
             courier.CameraShake(false);
+            sceneLight.intensity = maxLight;
+            _lightAnimator.enabled = false;
         }
 
         private void ApplyModifiers(List<Modifier> modifiers)
@@ -42,6 +45,12 @@ namespace Boss
             if (modifiers.Contains(Modifier.Dark))
             {
                 sceneLight.intensity = minLight;
+            }
+            
+            if (modifiers.Contains(Modifier.Blink))
+            {
+                _lightAnimator.enabled = true;
+                _lightAnimator.Play("LightBlinks");
             }
 
             if (modifiers.Contains(Modifier.Shake))

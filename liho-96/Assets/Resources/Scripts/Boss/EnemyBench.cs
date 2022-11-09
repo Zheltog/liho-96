@@ -16,6 +16,18 @@ namespace Boss
         private float _currentTime;
         private VerticalMovement _currentMovement = VerticalMovement.None;
 
+        private new void Start()
+        {
+            Debug.Log("START");
+            base.Start();
+            ResetHeight();
+        }
+
+        public override void Reset()
+        {
+            ResetHeight();
+        }
+
         private void Update()
         {
             GoVerticalIfShould();
@@ -90,6 +102,15 @@ namespace Boss
             }
 
             transform.position = new Vector3(currentPosition.x, newY, currentPosition.z);
+        }
+
+        private void ResetHeight()
+        {
+            var currentPosition = transform.position;
+            if (transform.position.y != maxHeight)
+            {
+                transform.position = new Vector3(currentPosition.x, maxHeight, currentPosition.z);
+            }
         }
 
         private enum VerticalMovement
