@@ -13,6 +13,20 @@
       "Modifiers": [
         "Blink"
       ]
+    },
+    {
+      "Type": "Shooting",
+      "StartText": "Это вторая фаза",
+      "Effect": {
+        "Type": "Damage",
+        "Value": 5.0
+      },
+      "Enemies": [
+        "Vlada", "BenchLeft", "BenchRight", "RunningLeft", "RunningRight"
+      ],
+      "Modifiers": [
+        "Dark"
+      ]
     }
   ],
   "Items": [

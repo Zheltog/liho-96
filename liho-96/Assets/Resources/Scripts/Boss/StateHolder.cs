@@ -13,6 +13,8 @@ namespace Boss
 
         private static int _currentPhaseIndex;
 
+        private static bool _lastPhaseFinished;
+
         public static void Init(List<string> flags)
         {
             var jsonString = Resources.Load<TextAsset>("Text/bossFightConfig").text;
@@ -28,6 +30,16 @@ namespace Boss
             if (_currentPhaseIndex < Phases.Count - 1)
             {
                 _currentPhaseIndex++;
+            }
+            else if (Phases.Count >= 2 &&_lastPhaseFinished)
+            {
+                _currentPhaseIndex--;
+                _lastPhaseFinished = false;
+            }
+
+            if (_currentPhaseIndex == Phases.Count - 1)
+            {
+                _lastPhaseFinished = true;
             }
 
             return Phases[_currentPhaseIndex];

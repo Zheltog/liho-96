@@ -200,7 +200,7 @@ namespace Boss
             Initializing, NewPhase, Attack, ActionChoice, ItemChoosing, ItemChosen, GameOver
         }
 
-        // TODO: удалить, нужен для тестирования
+        // TODO: удалить, инициализация холдера будет в конце фрейм-сцены
         private void InitHolder()
         {
             var flags = new List<string>();
