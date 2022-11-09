@@ -8,14 +8,17 @@ namespace Boss
         public float minX = -22f;
         public float maxX = 22f;
         public float speed = 3f;
+        public float middleDelta = 0.3f;
 
         private float _currentTime;
+        private float _middleX;
         private RunningDirection _currentDirection;
 
         private void Start()
         {
             base.Start();
             _currentDirection = startDirection;
+            _middleX = (minX + maxX) / 2;
         }
 
         private void Update()
@@ -32,6 +35,9 @@ namespace Boss
         private void Run()
         {
             var currentPosition = transform.position;
+
+            RandomKeepDirection(currentPosition);
+            
             switch (_currentDirection)
             {
                 case RunningDirection.Left:
@@ -61,6 +67,24 @@ namespace Boss
                     );
                     break;
             }
+        }
+
+        private void RandomKeepDirection(Vector3 currentPosition)
+        {
+            if (currentPosition.x <= _middleX + middleDelta
+                && currentPosition.x >= _middleX - middleDelta)
+            {
+                if (Random.Range(0, 2) == 0)
+                {
+                    InvertDirection();
+                }
+            }
+        }
+
+        private void InvertDirection()
+        {
+            _currentDirection = _currentDirection == RunningDirection.Left ?
+                RunningDirection.Right : RunningDirection.Left;
         }
 
         protected override void OnDamage()
