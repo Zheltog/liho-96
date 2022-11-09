@@ -17,7 +17,7 @@
     },
     "start_0": {
       "Picture": "blank",
-      "Text": "По заказу FITFIJA Entertainment\nNurmak Studios представляет...",
+      "Text": "По заказу FITFIJA Entertainment.\nNurmak Studios представляет...",
       "TextDelay": 0.1,
       "Type": "Simple",
       "Transition": {
@@ -38,7 +38,7 @@
     },
     "start_2": {
       "Picture": "car_driving_on_a_rainy_road",
-      "Text": "Ноябрь, 1996 год. Дорога к небольшому провинциальному городу ведет через лес. Одинокая машина едет под проливным дождём.",
+      "Text": "Сентябрь, 1996 год. Дорога к небольшому провинциальному городу ведет через лес. Одинокая машина едет под проливным дождём.",
       "TextDelay": 0.09,
       "Type": "Simple",
       "Transition": {
@@ -132,7 +132,7 @@
     },
     "start_time": {
       "Picture": "courier_in_a_car_town",
-      "Text": "На часах – 21:30.\nДостаточно времени, чтобы со всем разобраться на месте.",
+      "Text": "На часах – 20:30.\nДостаточно времени, чтобы со всем разобраться на месте.",
       "Type": "Simple",
       "Transition": {
         "Type": "Frame",
@@ -183,6 +183,7 @@
     "cafe_inside": {
       "Picture": "cafe_inside",
       "Sound": "door_open",
+      "Music": "light_buzz",
       "Text": "Круглосуточная кафе-столовая. Тихое жужжание ламп, источающих тусклый свет. Практически пустые полки и пыльные столы.",
       "Type": "Simple",
       "Transition": {
@@ -262,7 +263,7 @@
     },
     "cafe_inside_intimidation_2": {
       "Picture": "cafe_inside_worker",
-      "Music": "",
+      "Music": "light_buzz",
       "Text": "Работница: \"Ладно... Ладно... Я поняла, сейчас всё сделаю...\"",
       "Type": "Simple",
       "Transition": {
@@ -281,6 +282,7 @@
     },
     "cafe_inside_food": {
       "Picture": "cafe_food",
+      "Sound": "spoon",
       "Text": "Курьер садится за стол и пробует котлету. Холодная, но не такая плохая на вкус.",
       "Type": "Simple",
       "Transition": {
@@ -495,7 +497,7 @@
     },
     "cafe_inside_phone_number_1": {
       "Picture": "cafe_inside_worker",
-      "Text": "Она достаёт из ящика бумажку и ручку, записывает номер телефона и протягивает Курьеру.\n<Добавлено в инвентарь: [Номер телефона]>",
+      "Text": "Она достаёт из ящика бумажку и ручку, записывает номер телефона и протягивает Курьеру.\n<Предмет добавлен: [Номер телефона]>",
       "Type": "Simple",
       "Transition": {
         "Type": "Frame",
@@ -574,16 +576,16 @@
     },
     "cafe_outside_car_stolen_1": {
       "Picture": "cafe_entrance",
-      "Text": "На часах – почти десять. Курьеру нужно срочно вернуть груз.\nПохитители не могли уехать далеко.",
+      "Text": "На часах – почти пол десятого. Курьеру нужно срочно вернуть груз.\nПохитители не могли уехать далеко.",
       "Type": "Simple",
       "Transition": {
         "Type": "Frame",
-        "Next": "cafe_outside_car_stolen_choice"
+        "Next": "cafe_outside_car_stolen_2"
       }
     },
     "cafe_outside_car_stolen_2": {
       "Picture": "cafe_entrance",
-      "Text": "Курьер вспоминает места, мимо которых проезжал.\nНедалеко от столовой находится гаражи, небольшой рынок и лес.",
+      "Text": "Курьер вспоминает места, мимо которых проезжал.\nНедалеко от столовой находятся гаражи, небольшой рынок и лес.",
       "Type": "Simple",
       "Transition": {
         "Type": "Frame",
@@ -600,14 +602,26 @@
           "Text": "Осмотреть гаражи",
           "Transition": {
             "Type": "Frame",
-            "Next": "garage"
+            "Next": "garage",
+            "Actions": [
+              {
+                "Type": "Add",
+                "Name": "VisitedGarage"
+              }
+            ]
           }
         },
         {
           "Text": "Зайти на рынок",
           "Transition": {
             "Type": "Frame",
-            "Next": "market"
+            "Next": "market",
+            "Actions": [
+              {
+                "Type": "Add",
+                "Name": "VisitedMarket"
+              }
+            ]
           }
         },
         {
@@ -637,7 +651,13 @@
           ],
           "Transition": {
             "Type": "Frame",
-            "Next": "market"
+            "Next": "market",
+            "Actions": [
+              {
+                "Type": "Add",
+                "Name": "VisitedMarket"
+              }
+            ]
           }
         },
         {
@@ -651,8 +671,489 @@
     },
 
     "market": {
-      "Picture": "blank",
-      "Text": "TODO курьер приходит на рынок, может что-то купить у уличной торговки",
+      "Picture": "market",
+      "TextDelay": 0.1,
+      "Text": " . . . . .",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "market_1"
+      }
+    },
+    "market_1": {
+      "Picture": "market",
+      "Text": "Центральный рынок. Главный вход закрыт, и Курьер проходит со стороны складов.",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "market_2"
+      }
+    },
+    "market_2": {
+      "Picture": "market",
+      "Text": "Торговля закончилась, палатки и киоски закрыты до утра.\nУ одной из палаток стоит женщина и собирает вещи с прилавка в большие сумки.",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "market_3"
+      }
+    },
+    "market_3": {
+      "Picture": "market",
+      "Text": "Курьер подходит к палатке. Женщина продолжает заниматься своими делами, но краем глаза смотрит на Курьера.",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "market_4"
+      }
+    },
+    "market_4": {
+      "Picture": "market_merchant",
+      "Music": "Chrono Trigger - Remains of the Factory",
+      "Text": "Торговка: \"Чего тебе?\"",
+      "Type": "Choice",
+      "Choices": [
+        {
+          "Text": "Спросить про машину",
+          "Transition": {
+            "Type": "Frame",
+            "Next": "market_car_rude"
+          }
+        },
+        {
+          "Text": "Осмотреть товары",
+          "Transition": {
+            "Type": "Frame",
+            "Next": "market_items"
+          }
+        }
+      ]
+    },
+
+    "market_car_rude": {
+      "Picture": "market_merchant",
+      "Text": "Торговка: \"Никто не проезжал. Не знаю ничего.\n... а если бы и знала, всё равно не сказала бы.\"",
+      "Type": "Choice",
+      "Choices": [
+        {
+          "Text": "\"...\"",
+          "Transition": {
+            "Type": "Frame",
+            "Next": "market_car_rude_1"
+          }
+        },
+        {
+          "Text": "Осмотреть товары",
+          "Transition": {
+            "Type": "Frame",
+            "Next": "market_items"
+          }
+        }
+      ]
+    },
+    "market_car_rude_1": {
+      "Picture": "market_merchant",
+      "Text": "Женщина не обращает внимания на Курьера. Собрав вещи в сумки, она закрывает палатку и уходит.",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "market_leave"
+      }
+    },
+    
+    "market_items": {
+      "Picture": "market_merchant",
+      "Text": "Торговка: \"Хочешь купить чего – поторапливайся. Я уже почти всё сложила.\"",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "market_items_1"
+      }
+    },
+    "market_items_1": {
+      "Picture": "market_merchant",
+      "Text": "На полупустом прилавке стоят различные товары. Кажется, женщина торгует всем, чем придётся.",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "market_items_list_page_1"
+      }
+    },
+    "market_items_list_page_1": {
+      "Picture": "market_merchant_hands",
+      "Text": "В бумажнике у Курьера есть немного денег.\nДолжно хватить на одну покупку.",
+      "Type": "Choice",
+      "Choices": [
+        {
+          "Text": "Батончик \"Сникерс\"",
+          "Transition": {
+            "Type": "Frame",
+            "Next": "market_items_snickers"
+          }
+        },
+        {
+          "Text": "Моток проводов",
+          "Transition": {
+            "Type": "Frame",
+            "Next": "market_items_wires"
+          }
+        },
+        {
+          "Text": "Далее",
+          "Transition": {
+            "Type": "Frame",
+            "Next": "market_items_list_page_2"
+          }
+        }
+      ]
+    },
+    "market_items_list_page_2": {
+      "Picture": "market_merchant_hands",
+      "Text": "Курьеру хватит денег на одну покупку.",
+      "Type": "Choice",
+      "Choices": [
+        {
+          "Text": "Гантеля",
+          "Transition": {
+            "Type": "Frame",
+            "Next": "market_items_dumbbell"
+          }
+        },
+        {
+          "Text": "Бутылка водки",
+          "Transition": {
+            "Type": "Frame",
+            "Next": "market_items_vodka"
+          }
+        },
+        {
+          "Text": "Далее",
+          "Transition": {
+            "Type": "Frame",
+            "Next": "market_items_list_page_3"
+          }
+        }
+      ]
+    },
+    "market_items_list_page_3": {
+      "Picture": "market_merchant_hands",
+      "Text": "Курьеру хватит денег на одну покупку.",
+      "Type": "Choice",
+      "Choices": [
+        {
+          "Text": "Коробка с жвачкой \"Лав из\"",
+          "Transition": {
+            "Type": "Frame",
+            "Next": "market_items_gum"
+          }
+        },
+        {
+          "Text": "Назад",
+          "Transition": {
+            "Type": "Frame",
+            "Next": "market_items_list_page_1"
+          }
+        },
+        {
+          "Text": "Ничего не покупать",
+          "Transition": {
+            "Type": "Frame",
+            "Next": "market_items_buy_nothing"
+          }
+        }
+      ]
+    },
+
+    "market_items_snickers": {
+      "Picture": "market_merchant_hands",
+      "Sound": "buy_item",
+      "Text": "Курьер покупает шоколадный батончик \"Сникерс\".\n<Предмет добавлен: [Батончик \"Сникерс\"]>",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "market_items_thank_you_for_your_purchase",
+        "Actions": [
+          {
+            "Type": "Add",
+            "Name": "Snickers"
+          },
+          {
+            "Type": "Remove",
+            "Name": "SmallMoney"
+          }
+        ]
+      }
+    },
+
+    "market_items_wires": {
+      "Picture": "market_merchant_hands",
+      "Sound": "buy_item",
+      "Text": "Курьер покупает кучу переплетенных проводов.\n<Предмет добавлен: [Провода]>",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "market_items_thank_you_for_your_purchase",
+        "Actions": [
+          {
+            "Type": "Add",
+            "Name": "Wires"
+          },
+          {
+            "Type": "Remove",
+            "Name": "SmallMoney"
+          }
+        ]
+      }
+    },
+
+    "market_items_dumbbell": {
+      "Picture": "market_merchant_hands",
+      "Sound": "buy_item",
+      "Text": "Курьер покупает чугунную гантель.\n<Предмет добавлен: [Гантель советская 2 КГ]>",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "market_items_thank_you_for_your_purchase",
+        "Actions": [
+          {
+            "Type": "Add",
+            "Name": "Dumbbell"
+          },
+          {
+            "Type": "Remove",
+            "Name": "SmallMoney"
+          }
+        ]
+      }
+    },
+
+    "market_items_vodka": {
+      "Picture": "market_merchant",
+      "Text": "Торговка: \"Не продаётся. Последняя осталась.\"",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "market_items_list_page_2"
+      }
+    },
+
+    "market_items_gum": {
+      "Picture": "market_merchant_hands",
+      "Sound": "buy_item",
+      "Text": "Курьер покупает коробку жвачки.\n<Предмет добавлен: [Коробка жвачки \"Лав из\"]>",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "market_items_thank_you_for_your_purchase",
+        "Actions": [
+          {
+            "Type": "Add",
+            "Name": "GumBox"
+          },
+          {
+            "Type": "Remove",
+            "Name": "SmallMoney"
+          }
+        ]
+      }
+    },
+
+    "market_items_thank_you_for_your_purchase": {
+      "Picture": "market_merchant",
+      "Text": "Торговка: \"Спасибо за покупку. Сдачи нет.\"\nКажется, женщина немного подобрела.",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "market_items_grenade"
+      }
+    },
+    "market_items_grenade": {
+      "Picture": "market_merchant",
+      "Text": "Курьер бросает взгляд на сумку, которую собирает женщина.\nВ темноте кажется, будто среди кучи вещей лежит боевая граната.",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "market_items_grenade_1"
+      }
+    },
+    "market_items_grenade_1": {
+      "Picture": "market_merchant",
+      "Text": "Женщина замечает взгляд Курьера.\nТорговка: \"Она настоящая. Где достала – не скажу. Но могу продать.\"",
+      "Type": "Choice",
+      "Choices": [
+        {
+          "Text": "Купить гранату",
+          "Transition": {
+            "Type": "Frame",
+            "Next": "market_items_grenade_2"
+          }
+        },
+        {
+          "Text": "\"...\"",
+          "Transition": {
+            "Type": "Frame",
+            "Next": "market_items_grenade_leave"
+          }
+        }
+      ]
+    },
+    "market_items_grenade_2": {
+      "Picture": "market_merchant",
+      "Text": "У Курьера не хватает средств.\nТорговка: \"Денег нет? Тогда и товара нет.\"",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "market_items_grenade_3"
+      }
+    },
+    "market_items_grenade_3": {
+      "Picture": "market_merchant",
+      "Text": "Торговка: \"Хотя... Меняю на твой пистолет. Если состояние хорошее.\"",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "market_items_grenade_4"
+      }
+    },
+    "market_items_grenade_4": {
+      "Picture": "market_merchant",
+      "Text": "Торговка: \"И не вздумай ничего устроить.\"\nЖестом она указывает на кобуру пистолета на своём бедре.",
+      "Type": "Choice",
+      "Choices": [
+        {
+          "Text": "Обменять пистолет на гранату",
+          "Transition": {
+            "Type": "Frame",
+            "Next": "market_items_grenade_barter"
+          }
+        },
+        {
+          "Text": "\"...\"",
+          "Transition": {
+            "Type": "Frame",
+            "Next": "market_items_grenade_leave"
+          }
+        }
+      ]
+    },
+    "market_items_grenade_barter": {
+      "Picture": "market_merchant",
+      "Sound": "buy_item",
+      "Text": "Курьер отдаёт женщине свой пистолет и получает гранату.\n<Предмет добавлен: [Граната РГД-5]>\n<Предмет удалён: [Пистолет]>",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "market_items_grenade_after",
+        "Actions": [
+          {
+            "Type": "Add",
+            "Name": "Grenade"
+          },
+          {
+            "Type": "Remove",
+            "Name": "Pistol"
+          }
+        ]
+      }
+    },
+    "market_items_grenade_after": {
+      "Picture": "market_merchant",
+      "Text": "Женщина осматривает пистолет. Торговка: \"Состояние... удовлетворительное. Давно не чищен...\"",
+      "Type": "Choice",
+      "Choices": [
+        {
+          "Text": "Спросить про машину",
+          "Transition": {
+            "Type": "Frame",
+            "Next": "market_car"
+          }
+        },
+        {
+          "Text": "Покинуть рынок",
+          "Transition": {
+            "Type": "Frame",
+            "Next": "market_leave"
+          }
+        }
+      ]
+    },
+    "market_items_grenade_leave": {
+      "Picture": "market_merchant",
+      "Text": "Торговка: \"Как знаешь. Моё дело – предложить.\"",
+      "Type": "Choice",
+      "Choices": [
+        {
+          "Text": "Спросить про машину",
+          "Transition": {
+            "Type": "Frame",
+            "Next": "market_car"
+          }
+        },
+        {
+          "Text": "Покинуть рынок",
+          "Transition": {
+            "Type": "Frame",
+            "Next": "market_leave"
+          }
+        }
+      ]
+    },
+    
+    "market_items_buy_nothing": {
+      "Picture": "market_merchant",
+      "Text": "Курьер: \"...\"",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "market_items_buy_nothing_1"
+      }
+    },
+    "market_items_buy_nothing_1": {
+      "Picture": "market_merchant",
+      "Text": "Торговка: \"...\"",
+      "Type": "Choice",
+      "Choices": [
+        {
+          "Text": "Спросить про машину",
+          "Transition": {
+            "Type": "Frame",
+            "Next": "market_car_rude_then_leave"
+          }
+        },
+        {
+          "Text": "Покинуть рынок",
+          "Transition": {
+            "Type": "Frame",
+            "Next": "market_leave"
+          }
+        }
+      ]
+    },
+
+    "market_car_rude_then_leave": {
+      "Picture": "market_merchant",
+      "Text": "Торговка: \"Никто не проезжал. Не знаю ничего.\n... а если бы и знала, всё равно не сказала бы.\"",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "market_car_rude_1"
+      }
+    },
+
+    "market_car": {
+      "Picture": "market_merchant",
+      "Text": "Женщина задумывается на секунду, затем отвечает.\nТорговка: \"Нет, последний час никаких машин не было. Как и людей.\"",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "market_leave"
+      }
+    },
+    
+    "market_leave": {
+      "Picture": "market",
+      "Music": "",
+      "Text": "Похоже, на рынке следов угонщиков нет. Курьеру нужно идти дальше.",
       "Type": "Choice",
       "Choices": [
         {
@@ -667,7 +1168,13 @@
           ],
           "Transition": {
             "Type": "Frame",
-            "Next": "garage"
+            "Next": "garage",
+            "Actions": [
+              {
+                "Type": "Add",
+                "Name": "VisitedGarage"
+              }
+            ]
           }
         },
         {
@@ -678,6 +1185,7 @@
           }
         }
       ]
+
     },
 
     "forest": {
@@ -880,7 +1388,7 @@
     "casino_slots_3": {
       "Picture": "casino_slots",
       "Sound": "slot_cash_out",
-      "Text": "7! Из автомата высыпаются монеты.\n<Добавлено в инвентарь: [Много монет]>",
+      "Text": "7! Из автомата высыпаются монеты.\n<Предмет добавлен: [Много монет]>",
       "Type": "Simple",
       "Transition": {
         "Type": "Frame",
@@ -1052,7 +1560,7 @@
     },
     "casino_couch_magazines_1": {
       "Picture": "casino_hall",
-      "Text": "Курьера заинтересовал затерявшийся внизу стопки \"Юный техник\".\nВнимательно пролистав страницы, Курьер чувствует, что узнал что-то новое. Осталось понять, как это знание применить...\n\n<Добавлено в инвентарь: рецепт \"Коктейль молотова\">",
+      "Text": "Курьера заинтересовал затерявшийся внизу стопки \"Юный техник\".\nВнимательно пролистав страницы, Курьер чувствует, что узнал что-то новое. Осталось понять, как это знание применить...\n\n<Предмет добавлен: рецепт \"Коктейль молотова\">",
       "Type": "Simple",
       "Transition": {
         "Type": "Frame",
