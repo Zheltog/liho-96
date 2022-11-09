@@ -1,5 +1,5 @@
 {
-  "StartingFrame": "cafe_entrance",
+  "StartingFrame": "garage_attack",
   "StartingFlags": [
     "Pistol",
     "SmallMoney",
@@ -273,7 +273,7 @@
     },
     "cafe_inside_intimidation_3": {
       "Picture": "cafe_inside_worker",
-      "Text": "Она быстро ставит тарелки с едой на поднос и ставит его перед Курьером, затем убегает на кухню.",
+      "Text": "Она быстро выставляет тарелки с едой на поднос и ставит его перед Курьером, затем убегает на кухню.",
       "Type": "Simple",
       "Transition": {
         "Type": "Frame",
@@ -487,7 +487,7 @@
       }
     },
     "cafe_inside_phone_number": {
-      "Picture": "cafe_inside_worker",
+      "Picture": "cafe_inside_worker_blush",
       "Text": "Работница: \"Чего?.. Ой, ну... я...\"",
       "Type": "Simple",
       "Transition": {
@@ -496,7 +496,7 @@
       }
     },
     "cafe_inside_phone_number_1": {
-      "Picture": "cafe_inside_worker",
+      "Picture": "cafe_inside_worker_blush",
       "Text": "Она достаёт из ящика бумажку и ручку, записывает номер телефона и протягивает Курьеру.\n<Предмет добавлен: [Номер телефона]>",
       "Type": "Simple",
       "Transition": {
@@ -511,8 +511,8 @@
       }
     },
     "cafe_inside_phone_number_2": {
-      "Picture": "cafe_inside_worker",
-      "Text": "Работница: \"У меня смена в 11 заканчивается, но лучше, к-конечно поздно не звонить... Родители дома, вдруг проснутся, возьмут трубку... М-можно на выходных...\"",
+      "Picture": "cafe_inside_worker_blush",
+      "Text": "Работница: \"У меня смена в 11 заканчивается, но лучше, конечно поздно не звонить... Родители дома, вдруг проснутся, возьмут трубку...\nМ-можно на выходных...\"",
       "Type": "Simple",
       "Transition": {
         "Type": "Frame",
@@ -523,8 +523,9 @@
     "cafe_inside_car_stolen": {
       "Picture": "cafe_inside",
       "Music": "",
-      "Sound": "broken_glass TODO",
-      "Text": " . . . . .",
+      "Sound": "car_got_stolen",
+      "TextDelay": 0.1,
+      "Text": " . . . . . . .",
       "Type": "Simple",
       "Transition": {
         "Type": "Frame",
@@ -545,8 +546,9 @@
     "cafe_inside_food_car_stolen": {
       "Picture": "cafe_food",
       "Music": "",
-      "Sound": "broken_glass TODO",
-      "Text": " . . . . .",
+      "Sound": "car_got_stolen",
+      "TextDelay": 0.1,
+      "Text": " . . . . . . .",
       "Type": "Simple",
       "Transition": {
         "Type": "Frame",
@@ -571,12 +573,22 @@
       "Type": "Simple",
       "Transition": {
         "Type": "Frame",
+        "Next": "cafe_outside_car_stolen_0"
+      }
+    },
+    "cafe_outside_car_stolen_0": {
+      "Picture": "cafe_entrance",
+      "TextDelay": 0.1,
+      "Text": " . . . . .",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
         "Next": "cafe_outside_car_stolen_1"
       }
     },
     "cafe_outside_car_stolen_1": {
       "Picture": "cafe_entrance",
-      "Text": "На часах – почти пол десятого. Курьеру нужно срочно вернуть груз.\nПохитители не могли уехать далеко.",
+      "Text": "На часах – почти пол десятого. Курьеру нужно срочно вернуть груз.\nПохитители не могли уехать далеко...",
       "Type": "Simple",
       "Transition": {
         "Type": "Frame",
@@ -635,8 +647,439 @@
     },
 
     "garage": {
-      "Picture": "blank",
-      "Text": "TODO курьер осматривает открытый гараж, на него нападает безумец, он вынужден бежать",
+      "Picture": "garage",
+      "TextDelay": 0.1,
+      "Text": " . . . . .",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "garage_0"
+      }
+    },
+    "garage_0": {
+      "Picture": "garage",
+      "Music": "",
+      "Text": "Гравийная дорога. Ряд гаражей. У одного из них приоткрыта дверь.",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "garage_1"
+      }
+    },
+    "garage_1": {
+      "Picture": "garage",
+      "Music": "Chrono Trigger - Confusing Melody",
+      "Text": "Курьер тихо подходит к гаражу и заглядывает внутрь.",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "garage_2"
+      }
+    },
+    "garage_2": {
+      "Picture": "garage",
+      "Text": " . . .",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "garage_3"
+      }
+    },
+    "garage_3": {
+      "Picture": "garage",
+      "Text": "В гараже пусто. Машины нет.\nТусклый свет лампы освещает лишь тёмную смотровую яму.\nКажется, будто из темноты доносятся шорохи.",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "garage_4"
+      }
+    },
+    "garage_4": {
+      "Picture": "garage",
+      "Text": "В конце помещения стоят стеллажи – похоже, пустые, но видно плохо.\nВозле входа находится большой железный шкаф.",
+      "Type": "Choice",
+      "Choices": [
+        {
+          "Text": "Осмотреть стеллаж",
+          "Transition": {
+            "Type": "Frame",
+            "Next": "garage_shelf"
+          }
+        },
+        {
+          "Text": "Осмотреть ящик",
+          "Transition": {
+            "Type": "Frame",
+            "Next": "garage_locker"
+          }
+        },
+        {
+          "Text": "Уйти",
+          "Transition": {
+            "Type": "Frame",
+            "Next": "garage_leave"
+          }
+        }
+      ]
+    },
+    "garage_shelf": {
+      "Picture": "garage",
+      "Text": "Курьер аккуратно проходит по краю, чтобы не упасть в яму...",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "garage_attack"
+      }
+    },
+    "garage_locker": {
+      "Picture": "garage",
+      "Sound": "metal_door_scary",
+      "Text": "Курьер решает обыскать ящики шкафа. К сожалению, практически все они пусты. ",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "garage_locker_1"
+      }
+    },
+    "garage_locker_1": {
+      "Picture": "garage",
+      "Text": "В нижнем ящике Курьер находит шило и рваную тряпку.",
+      "Type": "Choice",
+      "Choices": [
+        {
+          "Text": "Взять",
+          "Transition": {
+            "Type": "Frame",
+            "Next": "garage_locker_items"
+          }
+        },
+        {
+          "Text": "Не брать",
+          "Transition": {
+            "Type": "Frame",
+            "Next": "garage_attack"
+          }
+        }
+      ]
+    },
+    "garage_locker_items": {
+      "Picture": "garage",
+      "Text": "Курьер решает забрать вещи себе. Вдруг пригодятся?\n<Предмет добавлен: [Шило]>\n<Предмет добавлен: [Рваная тряпка]>",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "garage_attack",
+        "Actions": [
+          {
+            "Type": "Add",
+            "Name": "Awl"
+          },
+          {
+            "Type": "Add",
+            "Name": "Rag"
+          }
+        ]
+      }
+    },
+    "garage_attack": {
+      "Picture": "garage_screamer",
+      "Music": "",
+      "Sound": "madman_scream",
+      "TextDelay": 0.02,
+      "Text": " ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! !",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "garage_attack_1"
+      }
+    },
+    "garage_attack_1": {
+      "Picture": "garage_madman",
+      "Music": "Bram Stoker's Dracula - Demon Bat Attack!",
+      "Text": "Из темноты на Курьера нападает безумный человек в рваной одежде.\nОн валит Курьера на бетонный пол и пытается задушить.",
+      "Type": "Choice",
+      "Choices": [
+        {
+          "Text": "это костыль, этот текст не будет виден - вариант, если у курьера есть пистолет",
+          "Transition": {
+            "Type": "Frame",
+            "Next": "garage_attack_lost_gun"
+          },
+          "Visibility": [
+            {
+              "Type": "And",
+              "Flags": [
+                "Pistol"
+              ]
+            }
+          ]
+        },
+        {
+          "Text": "это костыль, этот текст не будет виден - вариант, если у курьера нет пистолета",
+          "Transition": {
+            "Type": "Frame",
+            "Next": "garage_attack_2"
+          },
+          "Visibility": [
+            {
+              "Type": "And",
+              "Flags": [
+                "Pistol"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "garage_attack_lost_gun": {
+      "Picture": "garage_madman",
+      "Text": "Курьер пытается достать пистолет из кармана, но безумец выворачивает ему руку.",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "garage_attack_lost_gun_1"
+      }
+    },
+    "garage_attack_lost_gun_1": {
+      "Picture": "garage_madman",
+      "Text": "Пистолет падает на дно смотровой ямы.\n<Предмет удалён: [Пистолет]>",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "garage_attack_2",
+        "Actions": [
+          {
+            "Type": "Remove",
+            "Name": "Pistol"
+          }
+        ]
+      }
+    },
+    "garage_attack_2": {
+      "Picture": "garage_madman",
+      "Text": "Безумец крепко держит Курьера за шею обеими руками. Курьер пытается отбиться.",
+      "Type": "Choice",
+      "Choices": [
+        {
+          "Text": "Ударить ногой",
+          "Transition": {
+            "Type": "Frame",
+            "Next": "garage_attack_foot"
+          }
+        },
+        {
+          "Text": "Ударить рукой",
+          "Transition": {
+            "Type": "Frame",
+            "Next": "garage_attack_hand"
+          }
+        },
+        {
+          "Text": "Закричать",
+          "Transition": {
+            "Type": "Frame",
+            "Next": "garage_attack_scream"
+          }
+        }
+      ]
+    },
+    "garage_attack_scream": {
+      "Picture": "garage_madman",
+      "Text": "Курьер хочет закричать, но ему не хватает воздуха.",
+      "Type": "Choice",
+      "Choices": [
+        {
+          "Text": "Ударить ногой",
+          "Transition": {
+            "Type": "Frame",
+            "Next": "garage_attack_foot"
+          }
+        },
+        {
+          "Text": "Поискать рукой оружие",
+          "Transition": {
+            "Type": "Frame",
+            "Next": "garage_attack_weapon_search"
+          }
+        }
+      ]
+    },
+    "garage_attack_weapon_search": {
+      "Picture": "garage_madman",
+      "Text": "Курьер пробует нащупать рукой какой-нибудь предмет на бетонном полу, чтобы ударить безумца по голове, но безуспешно.",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "garage_attack_weapon_search_1"
+      }
+    },
+    "garage_attack_weapon_search_1": {
+      "Picture": "garage_madman",
+      "Text": "Курьер чувствует, как силы покидают его...",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "garage_attack_game_over"
+      }
+    },
+    "garage_attack_game_over": {
+      "Picture": "garage_madman",
+      "Music": "",
+      "Sound": "game_over",
+      "Text": "Игра окончена!\nКурьер проиграл в схватке с безумцем из заброшенного гаража.",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Exit"
+      }
+    },
+    "garage_attack_hand": {
+      "Picture": "garage_madman",
+      "Text": "Курьер бьёт безумца кулаком по голове. Тот немного ослабляет хватку.",
+      "Type": "Choice",
+      "Choices": [
+        {
+          "Text": "Ударить двумя ногами",
+          "Transition": {
+            "Type": "Frame",
+            "Next": "garage_attack_double_foot"
+          }
+        },
+        {
+          "Text": "Начать душить в ответ",
+          "Transition": {
+            "Type": "Frame",
+            "Next": "garage_attack_choke"
+          }
+        }
+      ]
+    },
+    "garage_attack_foot": {
+      "Picture": "garage_madman",
+      "Text": "Курьер бьёт безумца ногой в живот. Тот пошатывается и ослабляет хватку.",
+      "Type": "Choice",
+      "Choices": [
+        {
+          "Text": "Ударить двумя ногами",
+          "Transition": {
+            "Type": "Frame",
+            "Next": "garage_attack_double_foot"
+          }
+        },
+        {
+          "Text": "Начать душить в ответ",
+          "Transition": {
+            "Type": "Frame",
+            "Next": "garage_attack_choke"
+          }
+        }
+      ]
+    },
+    "garage_attack_double_foot": {
+      "Picture": "garage_madman",
+      "Text": "Обеими ногами Курьер отталкивает безумного противника, и тот падает рядом с Курьером.",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "garage_attack_win"
+      }
+    },
+    "garage_attack_choke": {
+      "Picture": "garage_madman",
+      "Text": "Курьер изо всех сил обхватывает шею безумца. Безумец немного ослабляет хватку, и Курьер сталкивает его с себя, с размахов ударя головой об пол.",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "garage_attack_win"
+      }
+    },
+    "garage_attack_win": {
+      "Picture": "garage_madman",
+      "Text": "Безумец: \"...грррРРР!\"",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "garage_attack_win_1"
+      }
+    },
+    "garage_attack_win_1": {
+      "Picture": "garage_madman",
+      "Text": "Безумец поднимается и пытается снова схватить Курьера.\nНо Курьер успевает выбежать из гаража.",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "garage_attack_win_2"
+      }
+    },
+    "garage_attack_win_2": {
+      "Picture": "garage",
+      "Sound": "running",
+      "Text": " . . . . .",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "garage_attack_win_3"
+      }
+    },
+    "garage_attack_win_3": {
+      "Picture": "cafe_entrance",
+      "Music": "",
+      "Text": "Курьер бежит, не оглядываясь. Оказавшись на улице вдалеке от гаражей он переводит дух.",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "garage_attack_win_4"
+      }
+    },
+    "garage_attack_win_4": {
+      "Picture": "cafe_entrance",
+      "Music": "",
+      "Text": " . . . . .",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "garage_attack_win_5"
+      }
+    },
+    "garage_attack_win_5": {
+      "Picture": "cafe_entrance",
+      "Music": "",
+      "Text": "Нужно продолжить поиски пропавшего груза.",
+      "Type": "Choice",
+      "Choices": [
+        {
+          "Text": "На рынок",
+          "Visibility": [
+            {
+              "Type": "AndNot",
+              "Flags": [
+                "VisitedMarket"
+              ]
+            }
+          ],
+          "Transition": {
+            "Type": "Frame",
+            "Next": "market",
+            "Actions": [
+              {
+                "Type": "Add",
+                "Name": "VisitedMarket"
+              }
+            ]
+          }
+        },
+        {
+          "Text": "В лес",
+          "Transition": {
+            "Type": "Frame",
+            "Next": "forest"
+          }
+        }
+      ]
+    },
+
+    "garage_leave": {
+      "Picture": "garage",
+      "Text": "Курьер обходит ряд гаражей и решает пойти дальше.\nКажется, машины здесь нет.",
       "Type": "Choice",
       "Choices": [
         {
@@ -682,7 +1125,7 @@
     },
     "market_1": {
       "Picture": "market",
-      "Text": "Центральный рынок. Главный вход закрыт, и Курьер проходит со стороны складов.",
+      "Text": "Городской рынок. Главный вход закрыт, и Курьер проходит со стороны складов.",
       "Type": "Simple",
       "Transition": {
         "Type": "Frame",
