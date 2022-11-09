@@ -16,13 +16,6 @@ namespace Boss
         private float _currentTime;
         private VerticalMovement _currentMovement = VerticalMovement.None;
 
-        private new void Start()
-        {
-            Debug.Log("START");
-            base.Start();
-            ResetHeight();
-        }
-
         public override void Reset()
         {
             ResetHeight();

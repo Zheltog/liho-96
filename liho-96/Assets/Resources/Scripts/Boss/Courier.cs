@@ -25,7 +25,7 @@ namespace Boss
         private Camera _camera;
         private bool _isGoingDown;
         private bool _isRest = true;
-        private float _currentTime;
+        private bool _fireAllowed = true;
 
         private void Start()
         {
@@ -48,13 +48,10 @@ namespace Boss
 
             UpdateCamera();
 
-            _currentTime += Time.deltaTime;
-
-            if (!Input.GetMouseButtonDown(0)) return;
-            
-            if (!(_currentTime >= secondsBeforeNextShot)) return;
-            _currentTime -= secondsBeforeNextShot;
-            Shoot();
+            if (Input.GetMouseButtonDown(0) && _fireAllowed)
+            {
+                StartCoroutine(Shoot());
+            }
         }
 
         public void CameraShake(bool isShaking)
@@ -73,7 +70,6 @@ namespace Boss
         public void StopRest()
         {
             _isRest = false;
-            _currentTime = 0f;
             gun.SetActive(true);
         }
 
@@ -132,8 +128,10 @@ namespace Boss
             transform.position = new Vector3(currentPosition.x, newY, currentPosition.z);
         }
 
-        private void Shoot()
+        private IEnumerator Shoot()
         {
+            _fireAllowed = false;
+            
             _gunAnimator.Rebind();
             _gunAnimator.Update(0f);
             
@@ -148,6 +146,9 @@ namespace Boss
             
             _gunAnimator.Play("GunShake");
             player.NewSound("shot");
+
+            yield return new WaitForSeconds(secondsBeforeNextShot);
+            _fireAllowed = true;
         }
 
         // TODO: нормальная анимация?
