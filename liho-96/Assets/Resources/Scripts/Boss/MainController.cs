@@ -172,6 +172,7 @@ namespace Boss
             courier.Rest();
             actionsButtons.SetActive(true);
             grayPanel.SetActive(true);
+            _phaseConfig.DisableAllEnemies();   // TODO: вынести куда-то из фазоконфига?
         }
 
         // TODO: починить и убрать?

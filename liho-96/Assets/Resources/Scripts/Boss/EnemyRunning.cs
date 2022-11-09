@@ -14,7 +14,7 @@ namespace Boss
         private float _middleX;
         private RunningDirection _currentDirection;
 
-        private void Start()
+        private new void Start()
         {
             base.Start();
             _currentDirection = startDirection;

@@ -10,6 +10,13 @@ namespace Boss
         private float _currentTime;
         private bool _isShooting;
         private int _currentBulletNumber = 1;
+        private Animator _animator;
+
+        private new void Start()
+        {
+            base.Start();
+            _animator = GetComponent<Animator>();
+        }
         
         private void Update()
         {
@@ -26,6 +33,7 @@ namespace Boss
             if (!(_currentTime >= secondsBeforeNextShooting)) return;
             _currentTime -= secondsBeforeNextShooting;
             _isShooting = true;
+            _animator.enabled = false;
         }
 
         private void ShootNextBullet()
@@ -34,6 +42,7 @@ namespace Boss
             {
                 _currentBulletNumber = 1;
                 _isShooting = false;
+                _animator.enabled = true;
                 return;
             }
 

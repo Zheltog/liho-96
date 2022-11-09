@@ -30,7 +30,6 @@ namespace Boss
             _mainController.ApplyEffect(phase.Effect);
             ResetModifiers();
             ApplyModifiers(phase.Modifiers);
-            DisableAllEnemies();
             SetEnemies(phase.Enemies);
         }
 
