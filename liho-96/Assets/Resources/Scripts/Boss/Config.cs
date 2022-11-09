@@ -57,7 +57,8 @@ namespace Boss
         BenchLeft,
         BenchRight,
         RunningLeft,
-        RunningRight
+        RunningRight,
+        Vlada
     }
 
     public enum Modifier

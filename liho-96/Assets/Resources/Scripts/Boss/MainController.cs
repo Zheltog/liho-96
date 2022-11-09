@@ -23,6 +23,7 @@ namespace Boss
         
         private float _timeRemainingBeforeNextRest;
         private PhaseConfigurator _phaseConfig;
+        private EnemiesController _enemiesController;
 
         private void Start()
         {
@@ -30,6 +31,7 @@ namespace Boss
             InitHolder();
             _timeRemainingBeforeNextRest = phaseSeconds;
             _phaseConfig = GetComponent<PhaseConfigurator>();
+            _enemiesController = GetComponent<EnemiesController>();
             StartCoroutine(NextPhaseWithDelay());
         }
 
@@ -146,7 +148,7 @@ namespace Boss
         {
             CurrentFightState = FightState.GameOver;
             courier.Rest();
-            _phaseConfig.DisableAllEnemies();   // TODO: вынести куда-то из фазоконфига?
+            _enemiesController.DisableAllEnemies();   // TODO: вынести куда-то из фазоконфига?
             dynamicStuff.SetActive(false);
             gameOverImage.SetActive(true);
             text.NewText(comment);
@@ -172,7 +174,7 @@ namespace Boss
             courier.Rest();
             actionsButtons.SetActive(true);
             grayPanel.SetActive(true);
-            _phaseConfig.DisableAllEnemies();   // TODO: вынести куда-то из фазоконфига?
+            _enemiesController.DisableAllEnemies();   // TODO: вынести куда-то из фазоконфига?
         }
 
         // TODO: починить и убрать?

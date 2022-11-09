@@ -1422,7 +1422,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &181891091
 Transform:
   m_ObjectHideFlags: 0
@@ -1861,6 +1861,7 @@ GameObject:
   - component: {fileID: 248021001}
   - component: {fileID: 248021003}
   - component: {fileID: 248021004}
+  - component: {fileID: 248021005}
   m_Layer: 0
   m_Name: Controller
   m_TagString: Untagged
@@ -1919,10 +1920,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   text: {fileID: 2095290560}
-  enemyBenchLeft: {fileID: 1925981329}
-  enemyBenchRight: {fileID: 181891090}
-  enemyRunningLeft: {fileID: 555209472}
-  enemyRunningRight: {fileID: 821919781}
   courier: {fileID: 584745251}
   sceneLight: {fileID: 168910384}
   minLight: 0.1
@@ -1946,6 +1943,23 @@ MonoBehaviour:
   aimAreaWith: 575
   aimAreaHeight: 245
   cursorSize: 20
+--- !u!114 &248021005
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 248021000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 55e4f15961f04f9a92515fd4936956da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyBenchLeft: {fileID: 1925981329}
+  enemyBenchRight: {fileID: 181891090}
+  enemyRunningLeft: {fileID: 555209472}
+  enemyRunningRight: {fileID: 821919781}
+  vlada: {fileID: 1092920840}
 --- !u!1 &259673713
 GameObject:
   m_ObjectHideFlags: 0
@@ -3102,7 +3116,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &555209473
 Transform:
   m_ObjectHideFlags: 0
@@ -4762,7 +4776,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &821919782
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6215,12 +6229,12 @@ GameObject:
   - component: {fileID: 1092920842}
   - component: {fileID: 1092920845}
   m_Layer: 0
-  m_Name: Boss
+  m_Name: Vlada
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1092920841
 Transform:
   m_ObjectHideFlags: 0
@@ -10488,7 +10502,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1925981330
 Transform:
   m_ObjectHideFlags: 0
