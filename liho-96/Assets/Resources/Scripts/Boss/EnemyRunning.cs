@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 
 namespace Boss
 {
@@ -8,17 +9,19 @@ namespace Boss
         public float minX = -22f;
         public float maxX = 22f;
         public float speed = 3f;
-        public float middleDelta = 0.3f;
+        public float middleX;
+        public float middleDelta = 0.1f;
+        public float minStopSeconds = 1f;
+        public float maxStopSeconds = 2f;
 
+        private bool _ignoreMiddleDelta;
         private float _currentTime;
-        private float _middleX;
         private RunningDirection _currentDirection;
 
         private new void Start()
         {
             base.Start();
             _currentDirection = startDirection;
-            _middleX = (minX + maxX) / 2;
         }
 
         private void Update()
@@ -37,7 +40,12 @@ namespace Boss
         {
             var currentPosition = transform.position;
 
-            RandomKeepDirection(currentPosition);
+            if (currentPosition.x <= middleX + middleDelta
+                && currentPosition.x >= middleX - middleDelta
+                && !_ignoreMiddleDelta)
+            {
+                StartCoroutine(RandomStop());
+            }
             
             switch (_currentDirection)
             {
@@ -45,6 +53,7 @@ namespace Boss
                     if (currentPosition.x <= minX)
                     {
                         _currentDirection = RunningDirection.Right;
+                        _ignoreMiddleDelta = false;
                         break;
                     }
 
@@ -58,6 +67,7 @@ namespace Boss
                     if (currentPosition.x >= maxX)
                     {
                         _currentDirection = RunningDirection.Left;
+                        _ignoreMiddleDelta = false;
                         break;
                     }
 
@@ -70,22 +80,23 @@ namespace Boss
             }
         }
 
-        private void RandomKeepDirection(Vector3 currentPosition)
+        private IEnumerator RandomStop()
         {
-            if (currentPosition.x <= _middleX + middleDelta
-                && currentPosition.x >= _middleX - middleDelta)
-            {
-                if (Random.Range(0, 2) == 0)
-                {
-                    InvertDirection();
-                }
-            }
+            _currentDirection = RunningDirection.None;
+            _ignoreMiddleDelta = true;
+            yield return new WaitForSeconds(RandomStopTime());
+            SetRandomDirection();
         }
-
-        private void InvertDirection()
+        
+        private void SetRandomDirection()
         {
-            _currentDirection = _currentDirection == RunningDirection.Left ?
-                RunningDirection.Right : RunningDirection.Left;
+            _currentDirection = Random.Range(0, 2) == 0 ?
+                RunningDirection.Left : RunningDirection.Right;
+        }
+        
+        private float RandomStopTime()
+        {
+            return Random.Range(minStopSeconds, maxStopSeconds);
         }
 
         protected override void OnDamage()
@@ -96,7 +107,7 @@ namespace Boss
 
         public enum RunningDirection
         {
-            Left, Right
+            Left, Right, None
         }
     }
 }

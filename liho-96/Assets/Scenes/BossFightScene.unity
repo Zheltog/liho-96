@@ -3178,7 +3178,10 @@ MonoBehaviour:
   minX: -22
   maxX: 22
   speed: 30
-  middleDelta: 0.3
+  middleX: 10
+  middleDelta: 0.1
+  minStopSeconds: 1
+  maxStopSeconds: 2
 --- !u!60 &555209475
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -4822,7 +4825,10 @@ MonoBehaviour:
   minX: -22
   maxX: 22
   speed: 30
-  middleDelta: 0.3
+  middleX: -5
+  middleDelta: 0.1
+  minStopSeconds: 1
+  maxStopSeconds: 2
 --- !u!60 &821919783
 PolygonCollider2D:
   m_ObjectHideFlags: 0
