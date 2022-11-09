@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using Common;
 using UnityEngine;
 
@@ -14,7 +15,15 @@ namespace Boss
         public float damage = 5;
         public float shotBangSeconds = 0.5f;
         public float secondsBeforeNextShooting = 2f;
-        
+        public float redOnHitSeconds = 0.2f;
+
+        private SpriteRenderer _sprite;
+
+        protected void Start()
+        {
+            _sprite = GetComponent<SpriteRenderer>();
+        }
+
         public void Hit(float damageTaken)
         {
             hp -= damageTaken;
@@ -26,6 +35,7 @@ namespace Boss
 
             hpBar.AddHp(-1 * damageTaken, false);
 
+            StartCoroutine(RedOnHit());
             OnDamage();
         }
         
@@ -41,6 +51,13 @@ namespace Boss
                 courier.Hit(damage);
             }
             player.NewSound("shot");
+        }
+
+        private IEnumerator RedOnHit()
+        {
+            _sprite.color = Color.red;
+            yield return new WaitForSeconds(redOnHitSeconds);
+            _sprite.color = Color.white;
         }
 
         protected IEnumerator ShowShotBang()

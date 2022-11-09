@@ -14,6 +14,7 @@ namespace Boss
 
         private void Start()
         {
+            base.Start();
             _currentDirection = startDirection;
         }
 

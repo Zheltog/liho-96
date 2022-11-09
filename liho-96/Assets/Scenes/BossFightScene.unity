@@ -6249,7 +6249,7 @@ MonoBehaviour:
   targetPoint: {x: 0, y: 5, z: -10}
   hp: 1000
   damage: 1
-  shotBangSeconds: 0.5
+  shotBangSeconds: 0.1
   secondsBeforeNextShooting: 5
   secondsBeforeNextBullet: 0.2
   magazineSize: 10
