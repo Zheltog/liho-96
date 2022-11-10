@@ -1,7 +1,6 @@
 {
   "StartingFrame": "garage_attack",
   "StartingFlags": [
-    "Pistol",
     "SmallMoney",
     "Nokia1610"
   ],
@@ -707,7 +706,7 @@
           }
         },
         {
-          "Text": "Осмотреть ящик",
+          "Text": "Осмотреть шкаф",
           "Transition": {
             "Type": "Frame",
             "Next": "garage_locker"
@@ -734,7 +733,7 @@
     "garage_locker": {
       "Picture": "garage",
       "Sound": "metal_door_scary",
-      "Text": "Курьер решает обыскать ящики шкафа. К сожалению, практически все они пусты. ",
+      "Text": "Курьер решает обыскать ящики шкафа.\nК сожалению, практически все они пусты. ",
       "Type": "Simple",
       "Transition": {
         "Type": "Frame",
@@ -796,7 +795,7 @@
     "garage_attack_1": {
       "Picture": "garage_madman",
       "Music": "Bram Stoker's Dracula - Demon Bat Attack!",
-      "Text": "Из темноты на Курьера нападает безумный человек в рваной одежде.\nОн валит Курьера на бетонный пол и пытается задушить.",
+      "Text": "Из темноты на Курьера бросается безумный человек в рваной одежде.\nОн валит Курьера на бетонный пол и пытается задушить.",
       "Type": "Choice",
       "Choices": [
         {
@@ -822,7 +821,7 @@
           },
           "Visibility": [
             {
-              "Type": "And",
+              "Type": "AndNot",
               "Flags": [
                 "Pistol"
               ]
@@ -906,7 +905,7 @@
     },
     "garage_attack_weapon_search": {
       "Picture": "garage_madman",
-      "Text": "Курьер пробует нащупать рукой какой-нибудь предмет на бетонном полу, чтобы ударить безумца по голове, но безуспешно.",
+      "Text": "Курьер пробует нащупать рукой какой-нибудь предмет на полу, чтобы ударить безумца. Безуспешно.",
       "Type": "Simple",
       "Transition": {
         "Type": "Frame",
@@ -923,7 +922,7 @@
       }
     },
     "garage_attack_game_over": {
-      "Picture": "garage_madman",
+      "Picture": "game_over",
       "Music": "",
       "Sound": "game_over",
       "Text": "Игра окончена!\nКурьер проиграл в схватке с безумцем из заброшенного гаража.",
@@ -934,7 +933,7 @@
     },
     "garage_attack_hand": {
       "Picture": "garage_madman",
-      "Text": "Курьер бьёт безумца кулаком по голове. Тот немного ослабляет хватку.",
+      "Text": "Курьер бьёт безумца кулаком в подбородок. Тот немного ослабляет хватку.",
       "Type": "Choice",
       "Choices": [
         {
@@ -994,6 +993,7 @@
     },
     "garage_attack_win": {
       "Picture": "garage_madman",
+      "Sound": "madman_roar",
       "Text": "Безумец: \"...грррРРР!\"",
       "Type": "Simple",
       "Transition": {
@@ -1022,7 +1022,7 @@
     },
     "garage_attack_win_3": {
       "Picture": "cafe_entrance",
-      "Music": "",
+      "Music": "heavy_breathing",
       "Text": "Курьер бежит, не оглядываясь. Оказавшись на улице вдалеке от гаражей он переводит дух.",
       "Type": "Simple",
       "Transition": {
@@ -1032,7 +1032,6 @@
     },
     "garage_attack_win_4": {
       "Picture": "cafe_entrance",
-      "Music": "",
       "Text": " . . . . .",
       "Type": "Simple",
       "Transition": {
@@ -1042,7 +1041,6 @@
     },
     "garage_attack_win_5": {
       "Picture": "cafe_entrance",
-      "Music": "",
       "Text": "Нужно продолжить поиски пропавшего груза.",
       "Type": "Choice",
       "Choices": [
@@ -1143,6 +1141,7 @@
     },
     "market_3": {
       "Picture": "market",
+      "Music": "",
       "Text": "Курьер подходит к палатке. Женщина продолжает заниматься своими делами, но краем глаза смотрит на Курьера.",
       "Type": "Simple",
       "Transition": {
@@ -1372,7 +1371,7 @@
 
     "market_items_vodka": {
       "Picture": "market_merchant",
-      "Text": "Торговка: \"Не продаётся. Последняя осталась.\"",
+      "Text": "Торговка: \"Последняя осталась. Не продаётся.\"",
       "Type": "Simple",
       "Transition": {
         "Type": "Frame",
