@@ -9,8 +9,7 @@ namespace Final
         public GameObject cardFields;
         public Animator imageAnimator;
         public TextBoxController text;
-
-        private State _currentState = State.Auth;
+        
         private LeonidState _currentLeonidState = LeonidState.Norm;
         private AuthController _auth;
         private CardInfoController _card;
@@ -19,7 +18,18 @@ namespace Final
         {
             _auth = GetComponent<AuthController>();
             _card = GetComponent<CardInfoController>();
-            text.NewText("Давай давай вводи хорошего :)");
+
+            switch (StateHolder.CurrentState)
+            {
+                case State.Auth:
+                    text.NewText("Давай давай вводи хорошего :)");
+                    break;
+                case State.Card:
+                    OpenCardInfoForm();
+                    break;
+            }
+
+            SceneStateHolder.LastSavableSceneState = SceneState.Final;
         }
 
         public void OnButtonClick()
@@ -29,7 +39,7 @@ namespace Final
                 return;
             }
             
-            switch (_currentState)
+            switch (StateHolder.CurrentState)
             {
                 case State.Auth:
                     ProcessAuth();
@@ -45,7 +55,6 @@ namespace Final
             if (text.IsPrinting)
             {
                 text.FinishPrinting();
-                return;
             }
         }
         
@@ -59,12 +68,17 @@ namespace Final
                 LeonidAngry();
                 return;
             }
+            
+            OpenCardInfoForm();
+        }
 
+        private void OpenCardInfoForm()
+        {
             LeonidNorm();
             authFields.SetActive(false);
-            _currentState = State.Card;
             text.NewText("Нормально нормально. Раз такая тема пошла, мб и этого заполнишь? ;)))");
             cardFields.SetActive(true);
+            StateHolder.CurrentState = State.Card;
         }
 
         private void ProcessCard()
@@ -98,11 +112,6 @@ namespace Final
                 imageAnimator.Play("ToLeonidNorm");
                 _currentLeonidState = LeonidState.Norm;
             }
-        }
-        
-        private enum State
-        {
-            Auth, Card
         }
 
         private enum LeonidState

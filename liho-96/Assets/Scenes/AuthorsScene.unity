@@ -180,7 +180,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "> \u041D\u0443 \u0438 \u043F\u043E\u0436\u0430\u043B\u0443\u0439\u0441\u0442\u0430"
+  m_text: "> \u041F\u0440\u0438\u043D\u044F\u0442\u043E"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: f5e2f29014125154582b2f5e6e5b5577, type: 2}
   m_sharedMaterial: {fileID: 8484781638188740009, guid: f5e2f29014125154582b2f5e6e5b5577, type: 2}
@@ -488,7 +488,7 @@ GameObject:
   - component: {fileID: 698111771}
   - component: {fileID: 698111770}
   m_Layer: 5
-  m_Name: BackButton
+  m_Name: OkButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -559,8 +559,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1094797000}
-        m_TargetAssemblyTypeName: ScenesController, Assembly-CSharp
-        m_MethodName: LoadFrameScene
+        m_TargetAssemblyTypeName: Common.ScenesController, Assembly-CSharp
+        m_MethodName: LoadPreviousScene
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

@@ -5,9 +5,22 @@ namespace Common
 {
     public class ScenesController : MonoBehaviour
     {
-        public void LoadFrameScene()
+        public void LoadPreviousScene()
         {
-            SceneManager.LoadScene("FrameScene", LoadSceneMode.Single);
+            switch (SceneStateHolder.LastSavableSceneState)
+            {
+                case SceneState.Frame:
+                    SceneManager.LoadScene("FrameScene", LoadSceneMode.Single);
+                    break;
+                case SceneState.Final:
+                    SceneManager.LoadScene("FinalScene", LoadSceneMode.Single);
+                    break;
+            }
+        }
+
+        public void LoadBossFightScene()
+        {
+            // TODO
         }
 
         public void LoadAuthorsScene()
