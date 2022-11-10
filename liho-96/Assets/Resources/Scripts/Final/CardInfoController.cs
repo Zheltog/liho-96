@@ -9,8 +9,7 @@ namespace Final
         public TMP_InputField monthInput;
         public TMP_InputField yearInput;
         public TMP_InputField cvvInput;
-        public TextMeshProUGUI text;
-        
+
         public bool CheckInfo()
         {
             return false;

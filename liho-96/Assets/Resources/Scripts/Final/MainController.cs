@@ -8,8 +8,10 @@ namespace Final
         public GameObject authFields;
         public GameObject cardFields;
         public TextMeshProUGUI text;
+        public Animator imageAnimator;
 
         private State _currentState = State.Auth;
+        private LeonidState _currentLeonidState = LeonidState.Norm;
         private AuthController _auth;
         private CardInfoController _card;
 
@@ -34,15 +36,20 @@ namespace Final
         
         private void ProcessAuth()
         {
-            var authPassed = _auth.TryAuth();
+            var authError = _auth.TryAuthError();
 
-            if (authPassed)
+            if (authError != null)
             {
-                authFields.SetActive(false);
-                _currentState = State.Card;
-                text.text = "Нормально нормально. Раз такая тема пошла, мб и этого заполнишь? ;)))";
-                cardFields.SetActive(true);
+                text.text = authError;
+                LeonidAngry();
+                return;
             }
+
+            LeonidNorm();
+            authFields.SetActive(false);
+            _currentState = State.Card;
+            text.text = "Нормально нормально. Раз такая тема пошла, мб и этого заполнишь? ;)))";
+            cardFields.SetActive(true);
         }
 
         private void ProcessCard()
@@ -54,10 +61,33 @@ namespace Final
                 Application.Quit();
             }
         }
+
+        private void LeonidAngry()
+        {
+            if (_currentLeonidState != LeonidState.Angry)
+            {
+                imageAnimator.Play("ToLeonidAngry");
+                _currentLeonidState = LeonidState.Angry;
+            }
+        }
+        
+        private void LeonidNorm()
+        {
+            if (_currentLeonidState != LeonidState.Norm)
+            {
+                imageAnimator.Play("ToLeonidNorm");
+                _currentLeonidState = LeonidState.Norm;
+            }
+        }
         
         private enum State
         {
             Auth, Card
+        }
+
+        private enum LeonidState
+        {
+            Norm, Angry
         }
     }
 }

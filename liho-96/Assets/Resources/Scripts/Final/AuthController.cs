@@ -4,6 +4,7 @@ using JetBrains.Annotations;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Networking;
+using Object = UnityEngine.Object;
 
 namespace Final
 {
@@ -13,21 +14,14 @@ namespace Final
         public TMP_InputField passInput;
         public TextMeshProUGUI text;
 
-        public bool TryAuth()
+        [CanBeNull]
+        public string TryAuthError()
         {
             var login = loginInput.text;
             var pass = passInput.text;
-
-            var error = ErrorOfInput(login, pass);
-
-            if (error != null)
-            {
-                text.text = error;
-                return false;
-            }
-
-            text.text = "Отправлен запрос на авторизацию пользователя " + login;
-            return true;
+            var inputError = InputErrorOf(login, pass);
+            
+            return inputError;
         }
         
         private IEnumerator Login(string login, string password) {
@@ -46,16 +40,16 @@ namespace Final
         }
         
         [CanBeNull]
-        private string ErrorOfInput(string login, string pass)
+        private string InputErrorOf(string login, string pass)
         {
             if (string.IsNullOrEmpty(login))
             {
-                return "Друг, задай логин.";
+                return "Почту вписывай... <харчок> ...блядина!";
             }
             
             if (string.IsNullOrEmpty(pass))
             {
-                return "Друг, задай пароль.";
+                return "Пароль выкладывай... <харчок> ...блядина!";
             }
 
             return null;
