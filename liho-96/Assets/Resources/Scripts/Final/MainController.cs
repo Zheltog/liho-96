@@ -1,63 +1,63 @@
-using System.Collections;
-using System.Text;
-using JetBrains.Annotations;
 using TMPro;
 using UnityEngine;
-using UnityEngine.Networking;
 
 namespace Final
 {
     public class MainController : MonoBehaviour
     {
-        public TMP_InputField loginInput;
-        public TMP_InputField passInput;
+        public GameObject authFields;
+        public GameObject cardFields;
         public TextMeshProUGUI text;
+
+        private State _currentState = State.Auth;
+        private AuthController _auth;
+        private CardInfoController _card;
+
+        private void Start()
+        {
+            _auth = GetComponent<AuthController>();
+            _card = GetComponent<CardInfoController>();
+        }
 
         public void OnButtonClick()
         {
-            var login = loginInput.text;
-            var pass = passInput.text;
-
-            var error = ErrorOfInput(login, pass);
-
-            if (error != null)
+            switch (_currentState)
             {
-                text.text = error;
-                return;
+                case State.Auth:
+                    ProcessAuth();
+                    break;
+                case State.Card:
+                    ProcessCard();
+                    break;
             }
-
-            text.text = "Отправлен запрос на авторизацию пользователя " + login;
         }
         
-        private IEnumerator Login(string login, string password) {
-            var uwr = UnityWebRequest.Post("path...", "");
-            uwr.uploadHandler = new UploadHandlerRaw(Encoding.UTF8.GetBytes(
-                JsonUtility.ToJson(new Object()))   // dto
-            );
-            uwr.SetRequestHeader("Content-Type", "application/json");
-            yield return uwr.SendWebRequest();
+        private void ProcessAuth()
+        {
+            var authPassed = _auth.TryAuth();
 
-            if (uwr.result != UnityWebRequest.Result.Success) {
-                Debug.Log(uwr.error);
-            } else {
-                var token = uwr.downloadHandler.text;
+            if (authPassed)
+            {
+                authFields.SetActive(false);
+                _currentState = State.Card;
+                text.text = "Нормально нормально. Раз такая тема пошла, мб и этого заполнишь? ;)))";
+                cardFields.SetActive(true);
             }
         }
 
-        [CanBeNull]
-        private string ErrorOfInput(string login, string pass)
+        private void ProcessCard()
         {
-            if (string.IsNullOrEmpty(login))
-            {
-                return "Друг, задай логин.";
-            }
-            
-            if (string.IsNullOrEmpty(pass))
-            {
-                return "Друг, задай пароль.";
-            }
+            var cardInfoPassed = _card.CheckInfo();
 
-            return null;
+            if (cardInfoPassed)
+            {
+                Application.Quit();
+            }
+        }
+        
+        private enum State
+        {
+            Auth, Card
         }
     }
 }
