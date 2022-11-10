@@ -1,7 +1,6 @@
 {
-  "StartingFrame": "cafe_inside_car_stolen",
+  "StartingFrame": "forest_car_scientist_3",
   "StartingFlags": [
-    "Pistol",
     "SmallMoney",
     "Nokia1610"
   ],
@@ -568,7 +567,7 @@
 
     "cafe_outside_car_stolen": {
       "Picture": "cafe_entrance",
-      "TextDelay": 0.1,
+      "TextDelay": 0.15,
       "Text": "Машины нет. На асфальте лежат осколки стекла.\nЛИХО похищено.",
       "Type": "Simple",
       "Transition": {
@@ -578,7 +577,7 @@
     },
     "cafe_outside_car_stolen_0": {
       "Picture": "cafe_entrance",
-      "TextDelay": 0.1,
+      "TextDelay": 0.15,
       "Text": " . . . . .",
       "Type": "Simple",
       "Transition": {
@@ -588,6 +587,7 @@
     },
     "cafe_outside_car_stolen_1": {
       "Picture": "cafe_entrance",
+      "Sound": "",
       "Text": "На часах – почти пол десятого. Курьеру нужно срочно вернуть груз.\nПохитители не могли уехать далеко...",
       "Type": "Simple",
       "Transition": {
@@ -597,7 +597,7 @@
     },
     "cafe_outside_car_stolen_2": {
       "Picture": "cafe_entrance",
-      "Text": "Курьер вспоминает места, мимо которых проезжал.\nНедалеко от столовой находятся гаражи, небольшой рынок и лес.",
+      "Text": "Курьер вспоминает места, мимо которых он проезжал.\nНедалеко от столовой находятся гаражи, небольшой рынок и лес.",
       "Type": "Simple",
       "Transition": {
         "Type": "Frame",
@@ -607,7 +607,6 @@
 
     "cafe_outside_car_stolen_choice": {
       "Picture": "cafe_entrance",
-      "Sound": "",
       "Text": "Угонщики могли увезти машину в одно из этих мест.\nНужно торопиться.",
       "Type": "Choice",
       "Choices": [
@@ -1632,7 +1631,7 @@
 
     },
 
-    "forest": {
+    "forest_todo": {
       "Picture": "blank",
       "Music": "Clock Tower - Don't Cry, Jennifer",
       "Text": "TODO курьер идёт к лесу, видит следы шин на дороге. Подходит, видит свою машину и мёртвых угонщиков. ЛИХО украдено бандитами. Знакомится с Учёным. Тот предлагает спросить у владельца казино о местоположении бандитов.",
@@ -1643,14 +1642,605 @@
       }
     },
 
-    "forest_todo": {
-      "Picture": "blank",
+    "forest": {
+      "Picture": "forest_road",
+      "Sound": "footsteps",
       "Music": "Clock Tower - Don't Cry, Jennifer",
-      "Text": "TODO курьер идёт к лесу, видит следы шин на дороге. Подходит, видит свою машину и мёртвых угонщиков. ЛИХО украдено бандитами. Знакомится с Учёным. Тот предлагает спросить у владельца казино о местоположении бандитов.",
+      "TextDelay": 0.1,
+      "Text": " . . . . .",
       "Type": "Simple",
       "Transition": {
         "Type": "Frame",
-        "Next": "casino_entrance"
+        "Next": "forest_1"
+      }
+    },
+    "forest_1": {
+      "Picture": "forest_road",
+      "Text": "Курьер решил двигаться к лесу – в ту сторону, откуда он совсем недавно приехал в город.",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "forest_2"
+      }
+    },
+    "forest_1_1": {
+      "Picture": "forest_road",
+      "Text": "Пролетают птицы. Тихо гудят сверчки.\nГде-то вдали раздаются выстрелы.",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "forest_2"
+      }
+    },
+    "forest_2": {
+      "Picture": "forest_road",
+      "Sound": "footsteps",
+      "Text": " . . . . .",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "forest_3"
+      }
+    },
+    "forest_3": {
+      "Picture": "forest_road",
+      "Music": "Doom - Suspense",
+      "Text": "Улица на краю города. По одну сторону улицы – старые дома, по другую – лес.",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "forest_4"
+      }
+    },
+    "forest_4": {
+      "Picture": "forest_road",
+      "Text": "На дороге свежие следы от шин, заворачивают в лес.\nКурьер следует по ним.",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "forest_5"
+      }
+    },
+    "forest_5": {
+      "Picture": "forest_road",
+      "Sound": "footsteps",
+      "Text": " . . . . .",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "forest_car_found"
+      }
+    },
+    "forest_car_found": {
+      "Picture": "forest_car_found",
+      "Sound": "",
+      "Text": "В лесу Курьер видит свою машину. Кто-то не справился с управлением и врезался в дерево.\n\nКурьер подходит ближе...",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "forest_car_found_1"
+      }
+    },
+    "forest_car_found_1": {
+      "Picture": "forest_dead_body",
+      "Sound": "body_found",
+      "TextDelay": 0.02,
+      "Text": " ! ! ! ! ! ! ",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "forest_car_found_2"
+      }
+    },
+    "forest_car_found_2": {
+      "Picture": "forest_dead_body",
+      "Text": "Неподалеку от машины три тела. Пулевые ранения. Не двигаются, истекли кровью.",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "forest_car_found_3"
+      }
+    },
+    "forest_car_found_3": {
+      "Picture": "forest_car_found",
+      "Text": "На машине так же видны следы от пуль. Разбиты стёкла. Одно колесо спущено.",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "forest_car_found_4"
+      }
+    },
+    "forest_car_found_4": {
+      "Picture": "forest_car_found",
+      "Sound": "car_door",
+      "TextDelay": 0.15,
+      "Text": "Курьер открывает дверь машины и осматривает салон.\n. . . . .\nГруз исчез.",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "forest_car_scientist"
+      }
+    },
+    "forest_car_scientist": {
+      "Picture": "forest_car_found",
+      "Sound": "rustling",
+      "Text": " . . .",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "forest_car_scientist_1"
+      }
+    },
+    "forest_car_scientist_1": {
+      "Picture": "forest_car_found",
+      "Text": "За деревьями доносится шорох.\nКурьер здесь не один.",
+      "Type": "Choice",
+      "Choices": [
+        {
+          "Text": "костыль - есть пистолет",
+          "Transition": {
+            "Type": "Frame",
+            "Next": "forest_car_scientist_2_gun"
+          },
+          "Visibility": [
+            {
+              "Type": "And",
+              "Flags": [
+                "Pistol"
+              ]
+            }
+          ]
+        },
+        {
+          "Text": "костыль - нет пистолета",
+          "Transition": {
+            "Type": "Frame",
+            "Next": "forest_car_scientist_2_no_gun"
+          },
+          "Visibility": [
+            {
+              "Type": "AndNot",
+              "Flags": [
+                "Pistol"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "forest_car_scientist_2_gun": {
+      "Picture": "forest_car_found",
+      "Sound": "rustling",
+      "Text": "Курьер: \"...\"\nКурьер тянется за пистолетом.",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "forest_car_scientist_3"
+      }
+    },
+    "forest_car_scientist_2_no_gun": {
+      "Picture": "forest_car_found",
+      "Sound": "rustling",
+      "Text": "Курьер: \"...\"",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "forest_car_scientist_3"
+      }
+    },
+    "forest_car_scientist_3": {
+      "Picture": "forest_scientist",
+      "Music": "Bram Stoker's Dracula - Hillingham Estate (short)",
+      "Text": "Из кустов выходит худой мужчина. Он выглядит испуганным.",
+      "Type": "Choice",
+      "Choices": [
+        {
+          "Text": "костыль - есть пистолет",
+          "Transition": {
+            "Type": "Frame",
+            "Next": "forest_car_scientist_4_gun"
+          },
+          "Visibility": [
+            {
+              "Type": "And",
+              "Flags": [
+                "Pistol"
+              ]
+            }
+          ]
+        },
+        {
+          "Text": "костыль - нет пистолета",
+          "Transition": {
+            "Type": "Frame",
+            "Next": "forest_car_scientist_4_no_gun"
+          },
+          "Visibility": [
+            {
+              "Type": "AndNot",
+              "Flags": [
+                "Pistol"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "forest_car_scientist_4_gun": {
+      "Picture": "forest_scientist_hands_up",
+      "Text": "Курьер наставляет пистолет на мужчину.\nНезнакомец: \"Н-не стреляй! Не стреляй!\"",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "forest_car_scientist_5"
+      }
+    },
+    "forest_car_scientist_4_no_gun": {
+      "Picture": "forest_scientist_hands_up",
+      "Text": "Курьер хватает незнакомца за кофту и замахивается кулаком.\nНезнакомец: \"Н-не бей, нет!\"",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "forest_car_scientist_5"
+      }
+    },
+    "forest_car_scientist_5": {
+      "Picture": "forest_scientist_hands_up",
+      "Text": "Курьер: \"...\"",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "forest_car_scientist_6"
+      }
+    },
+    "forest_car_scientist_6": {
+      "Picture": "forest_scientist_hands_up",
+      "Text": "Незнакомец: \"Т-ты ведь н-не с ними, п-п-правда?\"",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "forest_car_scientist_7"
+      }
+    },
+    "forest_car_scientist_7": {
+      "Picture": "forest_scientist_hands_up",
+      "Text": "Курьер: \"...что здесь произошло?\"",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "forest_car_scientist_7_1"
+      }
+    },
+    "forest_car_scientist_7_1": {
+      "Picture": "forest_scientist_hands_up",
+      "Text": "Незнакомец: \"...\"",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "forest_car_scientist_8"
+      }
+    },
+    "forest_car_scientist_8": {
+      "Picture": "forest_scientist_hands_up",
+      "Text": "Незнакомец: \"Я г-гулял здесь, в-в лесу... Я здесь часто г-гуляю...\"",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "forest_car_scientist_9"
+      }
+    },
+    "forest_car_scientist_9": {
+      "Picture": "forest_scientist_hands_up",
+      "Text": "Незнакомец: \"И-и тут стреляют! Две машины, как б-будто п-погоня.\"",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "forest_car_scientist_10"
+      }
+    },
+    "forest_car_scientist_10": {
+      "Picture": "forest_scientist_hands_up",
+      "Text": "Незнакомец: \"Машина врезалась, а я т-тут стоял как раз. И тут т-те, другие, т-тоже остановились...\"",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "forest_car_scientist_11"
+      }
+    },
+    "forest_car_scientist_11": {
+      "Picture": "forest_scientist_hands_up",
+      "Text": "Незнакомец: \"Я спрятался тут, за д-деревом, пошевелиться н-не мог.\nН-но краем глаза смотрел...\"",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "forest_car_scientist_12"
+      }
+    },
+    "forest_car_scientist_12": {
+      "Picture": "forest_scientist_hands_up",
+      "Text": "Незнакомец: \"Они застрелили их! Всех, всех вытащили, всех пришибли!\"",
+      "Type": "Choice",
+      "Choices": [
+        {
+          "Text": "костыль - есть пистолет",
+          "Transition": {
+            "Type": "Frame",
+            "Next": "forest_car_scientist_13_gun"
+          },
+          "Visibility": [
+            {
+              "Type": "And",
+              "Flags": [
+                "Pistol"
+              ]
+            }
+          ]
+        },
+        {
+          "Text": "костыль - нет пистолета",
+          "Transition": {
+            "Type": "Frame",
+            "Next": "forest_car_scientist_13_no_gun"
+          },
+          "Visibility": [
+            {
+              "Type": "AndNot",
+              "Flags": [
+                "Pistol"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "forest_car_scientist_13_gun": {
+      "Picture": "forest_scientist_hands_up",
+      "Text": "Незнакомец кричит. Курьер жестом показывает, что нужно быть тише.\nТот замолкает, и Курьер опускает пистолет.",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "forest_car_scientist_14"
+      }
+    },
+    "forest_car_scientist_13_no_gun": {
+      "Picture": "forest_scientist_hands_up",
+      "Text": "Незнакомец кричит. Курьер жестом показывает, что нужно быть тише, и тот замолкает.",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "forest_car_scientist_14"
+      }
+    },
+    "forest_car_scientist_14": {
+      "Picture": "forest_scientist",
+      "Text": "Незнакомец молчит и смотрит на мёртвые тела.",
+      "Type": "Choice",
+      "Choices": [
+        {
+          "Text": "\"Они ещё здесь?\"",
+          "Transition": {
+            "Type": "Frame",
+            "Next": "forest_car_scientist_are_they_still_here"
+          }
+        },
+        {
+          "Text": "\"...\"",
+          "Transition": {
+            "Type": "Frame",
+            "Next": "forest_car_scientist_dead_kids"
+          }
+        }
+      ]
+    },
+    "forest_car_scientist_are_they_still_here": {
+      "Picture": "forest_scientist",
+      "Text": "Незнакомец несколько раз оглядывается по сторонам.",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "forest_car_scientist_are_they_still_here_1"
+      }
+    },
+    "forest_car_scientist_are_they_still_here_1": {
+      "Picture": "forest_scientist",
+      "Text": "Незнакомец: \"Нет, думаю, н-нет. Они сели в машину и уехали. Н-но перед этим...\"",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "forest_car_scientist_search"
+      }
+    },
+    "forest_car_scientist_dead_kids": {
+      "Picture": "forest_scientist",
+      "Text": "Незнакомец подходит к трупам и рассматривает их. Его тело заметно дрожит.",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "forest_car_scientist_dead_kids_1"
+      }
+    },
+    "forest_car_scientist_dead_kids_1": {
+      "Picture": "forest_scientist",
+      "Text": "Незнакомец: \"Совсем молодые п-пацаны... Д-дети... За что?\"",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "forest_car_scientist_dead_kids_2"
+      }
+    },
+    "forest_car_scientist_dead_kids_2": {
+      "Picture": "forest_scientist",
+      "Text": "Курьер: \"...\"",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "forest_car_scientist_dead_kids_3"
+      }
+    },
+    "forest_car_scientist_dead_kids_3": {
+      "Picture": "forest_scientist",
+      "Text": "Незнакомец поднимается и продолжает свой рассказ.",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "forest_car_scientist_search"
+      }
+    },
+    "forest_car_scientist_search": {
+      "Picture": "forest_scientist",
+      "Text": "Незнакомец: \"К-кажется, они искали что-то. Или п-просто ограбить п-пытались, я не знаю. Обшарили несколько раз этих пацанов, и машину тоже.\"",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "forest_car_scientist_search_1"
+      }
+    },
+    "forest_car_scientist_search_1": {
+      "Picture": "forest_scientist",
+      "Text": "Незнакомец: \"Потом уехали, минут п-п-пять назад. Н-но я всё боялся выйти... А потом т-ты пришёл.\"",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "forest_car_scientist_search_2"
+      }
+    },
+    "forest_car_scientist_search_2": {
+      "Picture": "forest_scientist",
+      "Text": "Незнакомец: \"И в-всё-таки... т-ты не с ними, верно?\"",
+      "Type": "Choice",
+      "Choices": [
+        {
+          "Text": "\"Нет\"",
+          "Transition": {
+            "Type": "Frame",
+            "Next": "forest_car_scientist_i_am_not_with_them"
+          }
+        },
+        {
+          "Text": "\"Это моя машина\"",
+          "Transition": {
+            "Type": "Frame",
+            "Next": "forest_car_scientist_my_car"
+          }
+        }
+      ]
+    },
+    "forest_car_scientist_i_am_not_with_them": {
+      "Picture": "forest_scientist",
+      "Text": "Незнакомец вздыхает с облегчением\nНезнакомец: \"Фух... А то я уж думал, что ты меня сейчас прикончишь...\"",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "forest_car_scientist_i_am_not_with_them_1"
+      }
+    },
+    "forest_car_scientist_i_am_not_with_them_1": {
+      "Picture": "forest_scientist",
+      "Text": "Незнакомец: \"Но если ты не с ними... Кто ты? Ты же явно не п-просто прохожий.\"",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "forest_car_scientist_i_am_courier"
+      }
+    },
+    "forest_car_scientist_my_car": {
+      "Picture": "forest_scientist",
+      "Text": "Незнакомец: \"Т-так это твоя машина? П-погоди, а эти пацаны за рулём?..\"",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "forest_car_scientist_my_car_1"
+      }
+    },
+    "forest_car_scientist_my_car_1": {
+      "Picture": "forest_scientist",
+      "Text": "Курьер: \"Угнали её.\"",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "forest_car_scientist_my_car_2"
+      }
+    },
+    "forest_car_scientist_my_car_2": {
+      "Picture": "forest_scientist",
+      "Text": "Незнакомец: \"Ох. Вот оно как...\"",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "forest_car_scientist_i_am_courier"
+      }
+    },
+    "forest_car_scientist_i_am_courier": {
+      "Picture": "forest_scientist",
+      "Text": "Курьер размышляет. Возможно, этот мужчина – единственный, кто всё ещё может помочь ему выполнить заказ. Придётся ему довериться.",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "forest_car_scientist_i_am_courier_1"
+      }
+    },
+    "forest_car_scientist_i_am_courier_1": {
+      "Picture": "forest_scientist",
+      "Text": "Курьер: \"Я – курьер. А в этой машине был мой груз.\"",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "forest_car_scientist_i_am_courier_2"
+      }
+    },
+    "forest_car_scientist_i_am_courier_2": {
+      "Picture": "forest_scientist",
+      "Text": "Незнакомец смотрит на него с удивлением, и в то же время и с какой-то радостью.",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "forest_car_scientist_i_am_courier_3"
+      }
+    },
+    "forest_car_scientist_i_am_courier_3": {
+      "Picture": "forest_scientist",
+      "Text": "Незнакомец: \"Да, теперь всё понятно! П-пазл складывается!\"",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "forest_car_scientist_i_am_courier_4"
+      }
+    },
+    "forest_car_scientist_i_am_courier_4": {
+      "Picture": "forest_scientist",
+      "Text": "Незнакомец: \"Бандиты искали твою машину, они знали про груз! Но они н-не ожидали, что в машине будут какие-то школьники...\"",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "forest_car_scientist_i_am_courier_5"
+      }
+    },
+    "forest_car_scientist_i_am_courier_5": {
+      "Picture": "forest_scientist",
+      "Text": "Незнакомец: \"Как думаешь, они искали что-то конкретное? Или они просто грабят курьеров? Т-такое у нас вполне возможно...\"",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "forest_car_scientist_liho"
+      }
+    },
+    "forest_car_scientist_liho": {
+      "Picture": "forest_scientist",
+      "Text": "Курьер: \"...\"",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "forest_car_scientist_liho_1"
+      }
+    },
+    "forest_car_scientist_liho_1": {
+      "Picture": "forest_scientist",
+      "TextDelay": 0.1,
+      "Text": "Курьер: \"ЛИХО.\"",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "forest_car_scientist_i_am_courier_7"
       }
     },
     
@@ -2831,7 +3421,7 @@
     },
     "after_casino_city_6": {
       "Picture": "city_walk_scientist",
-      "Text": "Учёный: \"Может, чёрт с ним? Напплевать на это ЛИХО. Н-н-на твоих заказчиков т-тоже. Просто гулять по городу, и дышать этим воздухом...\"",
+      "Text": "Учёный: \"Может, чёрт с ним? Наплевать на это ЛИХО. Н-н-на твоих заказчиков т-тоже. Просто гулять по городу, и дышать этим воздухом...\"",
       "Type": "Choice",
       "Choices": [
         {
