@@ -32,7 +32,8 @@ namespace Boss
     {
         Heal,
         Damage,
-        Timer
+        Timer,
+        Nothing
     }
 
     public enum EnemyType

@@ -31,12 +31,111 @@
   ],
   "Items": [
     {
-      "Name": "Предмет",
-      "UseText": "Использован предмет. Врагам нанесен урон",
-      "Flag": "Флаг",
+      "Name": "Бутылка водки",
+      "UseText": "Восстанавливает немного здоровья. Камера начинает трястись чуть сильнее (TODO даня можешь так сделать??).",
+      "Flag": "Vodka",
+      "Effect": {
+        "Type": "Heal",
+        "Value": 10.0
+      }
+    },
+    {
+      "Name": "Жвачка \"Лав из\"",
+      "UseText": "Восстанавливает малое кол-во здоровья.",
+      "Flag": "Gum",
+      "Effect": {
+        "Type": "Heal",
+        "Value": 10.0
+      }
+    },
+    {
+      "Name": "Батончик \"Сникерс\"",
+      "UseText": "Восстанавливает среднее кол-во здоровья.",
+      "Flag": "Snickers",
+      "Effect": {
+        "Type": "Heal",
+        "Value": 20.0
+      }
+    },
+    {
+      "Name": "Номер работницы кафе",
+      "UseText": "Восстанавливает большое кол-во здоровья.",
+      "Flag": "GirlPhoneNumber",
+      "Effect": {
+        "Type": "Heal",
+        "Value": 50.0
+      }
+    },
+    {
+      "Name": "Моток проводов",
+      "UseText": "Наносит малое кол-во урона.",
+      "Flag": "Wires",
       "Effect": {
         "Type": "Damage",
-        "Value": 10.0
+        "Value": 20.0
+      }
+    },
+    {
+      "Name": "Гантель 2КГ",
+      "UseText": "Наносит среднее кол-во урона.",
+      "Flag": "Dumbbell",
+      "Effect": {
+        "Type": "Damage",
+        "Value": 20.0
+      }
+    },
+    {
+      "Name": "Граната РГД-5",
+      "UseText": "Наносит большое кол-во урона.",
+      "Flag": "Grenade",
+      "Effect": {
+        "Type": "Damage",
+        "Value": 50.0
+      }
+    },
+    {
+      "Name": "Коктейль Молотова",
+      "UseText": "Наносит большое кол-во урона.",
+      "Flag": "Molotov",
+      "Effect": {
+        "Type": "Damage",
+        "Value": 50.0
+      }
+    },
+    {
+      "Name": "Шило",
+      "UseText": "Дает время.",
+      "Flag": "Awl",
+      "Effect": {
+        "Type": "Timer",
+        "Value": 30.0
+      }
+    },
+    {
+      "Name": "Номер тусовщиков",
+      "UseText": "Дает время.",
+      "Flag": "PartyPhoneNumber",
+      "Effect": {
+        "Type": "Timer",
+        "Value": 30.0
+      }
+    },
+    {
+      "Name": "Рваная тряпка",
+      "UseText": "Ничего не даёт.",
+      "Flag": "Rag",
+      "Effect": {
+        "Type": "Nothing",
+        "Value": 0.0
+      }
+    },
+    {
+      "Name": "Горсть монет",
+      "UseText": "Ничего не даёт.",
+      "Flag": "Coins",
+      "Effect": {
+        "Type": "Nothing",
+        "Value": 0.0
       }
     }
   ]
