@@ -1,4 +1,4 @@
-using TMPro;
+using Common;
 using UnityEngine;
 
 namespace Final
@@ -7,8 +7,8 @@ namespace Final
     {
         public GameObject authFields;
         public GameObject cardFields;
-        public TextMeshProUGUI text;
         public Animator imageAnimator;
+        public TextBoxController text;
 
         private State _currentState = State.Auth;
         private LeonidState _currentLeonidState = LeonidState.Norm;
@@ -19,10 +19,16 @@ namespace Final
         {
             _auth = GetComponent<AuthController>();
             _card = GetComponent<CardInfoController>();
+            text.NewText("Давай давай вводи хорошего :)");
         }
 
         public void OnButtonClick()
         {
+            if (text.IsPrinting)
+            {
+                return;
+            }
+            
             switch (_currentState)
             {
                 case State.Auth:
@@ -33,6 +39,15 @@ namespace Final
                     break;
             }
         }
+
+        public void ClickOnText()
+        {
+            if (text.IsPrinting)
+            {
+                text.FinishPrinting();
+                return;
+            }
+        }
         
         private void ProcessAuth()
         {
@@ -40,7 +55,7 @@ namespace Final
 
             if (authError != null)
             {
-                text.text = authError;
+                text.NewText(authError);
                 LeonidAngry();
                 return;
             }
@@ -48,18 +63,23 @@ namespace Final
             LeonidNorm();
             authFields.SetActive(false);
             _currentState = State.Card;
-            text.text = "Нормально нормально. Раз такая тема пошла, мб и этого заполнишь? ;)))";
+            text.NewText("Нормально нормально. Раз такая тема пошла, мб и этого заполнишь? ;)))");
             cardFields.SetActive(true);
         }
 
         private void ProcessCard()
         {
-            var cardInfoPassed = _card.CheckInfo();
+            var cardError = _card.CheckInfo();
 
-            if (cardInfoPassed)
+            if (cardError != null)
             {
-                Application.Quit();
+                text.NewText(cardError);
+                LeonidAngry();
+                return;
             }
+
+            Debug.Log("QUIT");
+            Application.Quit();
         }
 
         private void LeonidAngry()

@@ -981,8 +981,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   authFields: {fileID: 2076318945}
   cardFields: {fileID: 1248965131}
-  text: {fileID: 1804880757}
   imageAnimator: {fileID: 796043730}
+  text: {fileID: 1804880759}
 --- !u!114 &330855081
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1042,7 +1042,6 @@ MonoBehaviour:
   monthInput: {fileID: 861188640}
   yearInput: {fileID: 1794878504}
   cvvInput: {fileID: 2125827881}
-  text: {fileID: 1804880757}
 --- !u!1 &380389184
 GameObject:
   m_ObjectHideFlags: 0
@@ -4060,9 +4059,9 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 0}
-          m_TargetAssemblyTypeName: FramesController, Assembly-CSharp
-          m_MethodName: NextFrame
+        - m_Target: {fileID: 330855080}
+          m_TargetAssemblyTypeName: Final.MainController, Assembly-CSharp
+          m_MethodName: ClickOnText
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -4092,8 +4091,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u0414\u0430\u0432\u0430\u0439 \u0434\u0430\u0432\u0430\u0439 \u0432\u0432\u043E\u0434\u0438
-    \u0445\u043E\u0440\u043E\u0448\u0435\u0433\u043E"
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: f5e2f29014125154582b2f5e6e5b5577, type: 2}
   m_sharedMaterial: {fileID: 8484781638188740009, guid: f5e2f29014125154582b2f5e6e5b5577, type: 2}
