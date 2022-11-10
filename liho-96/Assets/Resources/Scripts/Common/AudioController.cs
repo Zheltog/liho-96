@@ -10,6 +10,9 @@ namespace Common
 
         private AudioClip _textSoundClip;
 
+        private string _currentSound;
+        private string _currentMusic;
+
         private void Start()
         {
             _textSoundClip = Resources.Load<AudioClip>("Audio/typewriter_key_press");
@@ -17,14 +20,18 @@ namespace Common
 
         public void NewMusic(string musicName)
         {
-            if (musicName == null) return;
-
+            if (musicName == null || musicName == _currentMusic)
+            {
+                return;
+            }
             if (musicName == "")
             {
                 musicSource.Stop();
                 return;
             }
 
+            _currentMusic = musicName;
+            
             var clip = Resources.Load<AudioClip>("Audio/" + musicName);
             musicSource.Stop();
             musicSource.clip = clip;
@@ -33,7 +40,17 @@ namespace Common
 
         public void NewSound(string soundName)
         {
-            if (soundName == null) return;
+            if (soundName == null)
+            {
+                return;
+            }
+            if (soundName == "")
+            {
+                soundsSource.Stop();
+                return;
+            }
+
+            _currentSound = soundName;
             
             var clip = Resources.Load<AudioClip>("Audio/" + soundName);
             soundsSource.Stop();
