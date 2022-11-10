@@ -960,6 +960,7 @@ GameObject:
   - component: {fileID: 330855080}
   - component: {fileID: 330855083}
   - component: {fileID: 330855084}
+  - component: {fileID: 330855085}
   m_Layer: 0
   m_Name: Controller
   m_TagString: Untagged
@@ -1042,6 +1043,18 @@ MonoBehaviour:
   monthInput: {fileID: 861188640}
   yearInput: {fileID: 1794878504}
   cvvInput: {fileID: 2125827881}
+--- !u!114 &330855085
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 330855079}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0963c1f87d6fc17409963d9b5e55a2cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &380389184
 GameObject:
   m_ObjectHideFlags: 0

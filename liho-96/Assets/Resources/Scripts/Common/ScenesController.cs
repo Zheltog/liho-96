@@ -1,3 +1,4 @@
+using Final;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -13,7 +14,15 @@ namespace Common
                     SceneManager.LoadScene("FrameScene", LoadSceneMode.Single);
                     break;
                 case SceneState.Final:
-                    SceneManager.LoadScene("FinalScene", LoadSceneMode.Single);
+                    if (Final.StateHolder.CurrentState == State.Final)
+                    {
+                        Debug.Log("QUIT");
+                        Application.Quit();
+                    }
+                    else
+                    {
+                        SceneManager.LoadScene("FinalScene", LoadSceneMode.Single);
+                    }
                     break;
             }
         }
