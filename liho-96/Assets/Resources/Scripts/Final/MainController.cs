@@ -13,11 +13,13 @@ namespace Final
         private LeonidState _currentLeonidState = LeonidState.Norm;
         private AuthController _auth;
         private CardInfoController _card;
+        private ScenesController _scenes;
 
         private void Start()
         {
             _auth = GetComponent<AuthController>();
             _card = GetComponent<CardInfoController>();
+            _scenes = GetComponent<ScenesController>();
 
             switch (StateHolder.CurrentState)
             {
@@ -92,8 +94,8 @@ namespace Final
                 return;
             }
 
-            Debug.Log("QUIT");
-            Application.Quit();
+            StateHolder.CurrentState = State.Final;
+            _scenes.LoadAuthorsScene();
         }
 
         private void LeonidAngry()

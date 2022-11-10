@@ -7,6 +7,6 @@
 
     public enum State
     {
-        Auth, Card
+        Auth, Card, Final
     }
 }
