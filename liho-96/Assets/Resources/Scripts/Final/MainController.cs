@@ -1,4 +1,5 @@
 using Common;
+using Frames;
 using UnityEngine;
 
 namespace Final
@@ -7,10 +8,9 @@ namespace Final
     {
         public GameObject authFields;
         public GameObject cardFields;
-        public Animator imageAnimator;
+        public ImageController image;
         public TextBoxController text;
         
-        private LeonidState _currentLeonidState = LeonidState.Norm;
         private AuthController _auth;
         private CardInfoController _card;
         private ScenesController _scenes;
@@ -31,6 +31,7 @@ namespace Final
                     break;
             }
 
+            LeonidNorm();
             SceneStateHolder.LastSavableSceneState = SceneState.Final;
         }
 
@@ -100,25 +101,12 @@ namespace Final
 
         private void LeonidAngry()
         {
-            if (_currentLeonidState != LeonidState.Angry)
-            {
-                imageAnimator.Play("ToLeonidAngry");
-                _currentLeonidState = LeonidState.Angry;
-            }
+            image.NewImage("Final/leonid_angry");
         }
         
         private void LeonidNorm()
         {
-            if (_currentLeonidState != LeonidState.Norm)
-            {
-                imageAnimator.Play("ToLeonidNorm");
-                _currentLeonidState = LeonidState.Norm;
-            }
-        }
-
-        private enum LeonidState
-        {
-            Norm, Angry
+            image.NewImage("Final/leonid_norm");
         }
     }
 }
