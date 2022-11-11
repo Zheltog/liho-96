@@ -145,7 +145,7 @@ namespace Boss
         {
             CurrentFightState = FightState.GameOver;
             courier.Rest();
-            _enemiesController.DisableAllEnemies();   // TODO: вынести куда-то из фазоконфига?
+            _enemiesController.DisableAllEnemies();
             dynamicStuff.SetActive(false);
             gameOverImage.SetActive(true);
             NewText(comment);
@@ -213,18 +213,18 @@ namespace Boss
         private void InitHolder()
         {
             var flags = new List<string>();
-            // flags.Add("Vodka");
-            // flags.Add("Gum");
-            // flags.Add("Snickers");
-            // flags.Add("GirlPhoneNumber");
-            // flags.Add("Wires");
-            // flags.Add("Dumbbell");
-            // flags.Add("Grenade");
+            flags.Add("Vodka");
+            flags.Add("Gum");
+            flags.Add("Snickers");
+            flags.Add("GirlPhoneNumber");
+            flags.Add("Wires");
+            flags.Add("Dumbbell");
+            flags.Add("Grenade");
             flags.Add("Molotov");
             flags.Add("Awl");
             flags.Add("PartyPhoneNumber");
-            flags.Add("Rag");
-            flags.Add("Coins");
+            // flags.Add("Rag");
+            // flags.Add("Coins");
             StateHolder.Init(flags);
         }
     }

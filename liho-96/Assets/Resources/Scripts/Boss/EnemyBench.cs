@@ -16,12 +16,6 @@ namespace Boss
         private float _currentTime;
         private VerticalMovement _currentMovement = VerticalMovement.None;
 
-        public override void Reset()
-        {
-            ResetHeight();
-            hp = maxHp;
-        }
-
         private void Update()
         {
             GoVerticalIfShould();
@@ -31,6 +25,11 @@ namespace Boss
             if (!(_currentTime >= secondsBeforeNextShooting)) return;
             _currentTime -= secondsBeforeNextShooting;
             Shoot();
+        }
+
+        protected override void OnReset()
+        {
+            ResetHeight();
         }
 
         protected override void OnDamage()
@@ -104,6 +103,8 @@ namespace Boss
             {
                 transform.position = new Vector3(currentPosition.x, maxHeight, currentPosition.z);
             }
+
+            _currentMovement = VerticalMovement.None;
         }
 
         private enum VerticalMovement

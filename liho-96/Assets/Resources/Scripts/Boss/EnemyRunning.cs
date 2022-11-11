@@ -34,11 +34,6 @@ namespace Boss
             Shoot();
         }
 
-        public override void Reset()
-        {
-            hp = maxHp;
-        }
-
         private void Run()
         {
             var currentPosition = transform.position;
@@ -100,6 +95,27 @@ namespace Boss
         private float RandomStopTime()
         {
             return Random.Range(minStopSeconds, maxStopSeconds);
+        }
+
+        protected override void OnReset()
+        {
+            _ignoreMiddleDelta = false;
+
+            var currentPosition = transform.position;
+            float newX = minX;
+
+            switch (startDirection)
+            {
+                case RunningDirection.Left:
+                    newX = maxX;
+                    break;
+                case RunningDirection.Right:
+                    newX = minX;
+                    break;
+            }
+
+            transform.position = new Vector3(newX, currentPosition.y, currentPosition.z);
+            _currentDirection = startDirection;
         }
 
         protected override void OnDamage()

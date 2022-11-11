@@ -19,6 +19,7 @@ namespace Boss
         public float shakeOnHitDistance = 0.2f;
         public float goingDownSpeed = 10f;
         public float secondsBeforeNextShot = 0.5f;
+        public float minShootingHeight = 3f;
 
         private Animator _animator;
         private Animator _gunAnimator;
@@ -48,7 +49,7 @@ namespace Boss
 
             UpdateCamera();
 
-            if (Input.GetMouseButtonDown(0) && _fireAllowed)
+            if (Input.GetMouseButtonDown(0) && ShootingAvailable())
             {
                 StartCoroutine(Shoot());
             }
@@ -82,11 +83,6 @@ namespace Boss
         
         public void Hit(float damageTaken)
         {
-            if (!IsActivePhase())
-            {
-                return;
-            }
-
             hpBar.AddHp(-1 * damageTaken, false);
             StartCoroutine(ShowHitAnimation());
         }
@@ -171,10 +167,9 @@ namespace Boss
             redPanel.SetActive(false);
         }
 
-        // TODO: в ГГ не стреляют в других фазах - удалить?
-        private bool IsActivePhase()
+        private bool ShootingAvailable()
         {
-            return mainController.CurrentFightState == MainController.FightState.Attack;
+            return transform.position.y >= minShootingHeight && _fireAllowed;
         }
     }
 }

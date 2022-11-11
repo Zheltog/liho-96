@@ -18,11 +18,6 @@ namespace Boss
             _animator = GetComponent<Animator>();
         }
 
-        public override void Reset()
-        {
-            hp = maxHp;
-        }
-        
         private void Update()
         {
             if (_isShooting)
@@ -54,6 +49,8 @@ namespace Boss
             Shoot();
             _currentBulletNumber++;
         }
+
+        protected override void OnReset() { }
 
         protected override void OnDamage()
         {

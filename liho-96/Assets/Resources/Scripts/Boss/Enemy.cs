@@ -15,18 +15,33 @@ namespace Boss
         public float shotBangSeconds = 0.5f;
         public float secondsBeforeNextShooting = 2f;
         public float redOnHitSeconds = 0.2f;
-
+        public bool shootOnlyIfCourierIsVisible = true;
+        
         protected float hp;
         
         private SpriteRenderer _sprite;
+        private bool initialized;   // TODO: обойтись без этого?
 
         protected void Start()
         {
             _sprite = GetComponent<SpriteRenderer>();
             hp = maxHp;
+            initialized = true;
         }
 
-        public abstract void Reset();
+        public void Reset()
+        {
+            if (!initialized)
+            {
+                Start();
+            }
+            
+            hp = maxHp;
+            _sprite.color = Color.white;
+            shotBang.SetActive(false);
+            
+            OnReset();
+        }
 
         public void Hit(float damageTaken)
         {
@@ -48,10 +63,22 @@ namespace Boss
             var fromPosition = transform.position;
             var direction = targetPoint - fromPosition;
             var ray = new Ray(fromPosition, direction);
-            if (!Physics.Raycast(ray, out var hit)) return;
+            if (!Physics.Raycast(ray, out var hit))
+            {
+                if (!shootOnlyIfCourierIsVisible)
+                {
+                    PlayShotEffect();
+                }
+                return;
+            }
             var courier = hit.collider.gameObject.GetComponent<Courier>();
             if (courier == null) return;
             courier.Hit(damage);
+            PlayShotEffect();
+        }
+
+        private void PlayShotEffect()
+        {
             player.NewSound("shot");
             StartCoroutine(ShowShotBang());
         }
@@ -69,6 +96,8 @@ namespace Boss
             yield return new WaitForSeconds(shotBangSeconds);
             shotBang.SetActive(false);
         }
+
+        protected abstract void OnReset();
 
         protected abstract void OnDamage();
     }

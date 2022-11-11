@@ -1552,11 +1552,12 @@ MonoBehaviour:
   shotBang: {fileID: 2080118329}
   hpBar: {fileID: 86713064}
   targetPoint: {x: 0, y: 5, z: -10}
-  maxHp: 60
-  damage: 1
+  maxHp: 30
+  damage: 1.5
   shotBangSeconds: 0.5
   secondsBeforeNextShooting: 1.5
   redOnHitSeconds: 0.2
+  shootOnlyIfCourierIsVisible: 1
   maxHidingSeconds: 3
   minHidingSeconds: 2
   minXPoint: 20
@@ -3023,11 +3024,12 @@ MonoBehaviour:
   shotBang: {fileID: 1729232494}
   hpBar: {fileID: 86713064}
   targetPoint: {x: 0, y: 5, z: -10}
-  maxHp: 25
+  maxHp: 40
   damage: 2
   shotBangSeconds: 0.5
   secondsBeforeNextShooting: 3
   redOnHitSeconds: 0.2
+  shootOnlyIfCourierIsVisible: 1
   startDirection: 1
   minX: -22
   maxX: 22
@@ -3289,6 +3291,7 @@ MonoBehaviour:
   shakeOnHitDistance: 0.2
   goingDownSpeed: 10
   secondsBeforeNextShot: 0.5
+  minShootingHeight: 4
 --- !u!95 &584745252
 Animator:
   serializedVersion: 3
@@ -4558,11 +4561,12 @@ MonoBehaviour:
   shotBang: {fileID: 1094967852}
   hpBar: {fileID: 86713064}
   targetPoint: {x: 0, y: 5, z: -10}
-  maxHp: 25
+  maxHp: 40
   damage: 2
   shotBangSeconds: 0.5
   secondsBeforeNextShooting: 2
   redOnHitSeconds: 0.2
+  shootOnlyIfCourierIsVisible: 1
   startDirection: 0
   minX: -22
   maxX: 22
@@ -6036,12 +6040,13 @@ MonoBehaviour:
   hpBar: {fileID: 86713064}
   targetPoint: {x: 0, y: 5, z: -10}
   maxHp: 1000
-  damage: 2
+  damage: 3
   shotBangSeconds: 0.1
   secondsBeforeNextShooting: 10
   redOnHitSeconds: 0.2
+  shootOnlyIfCourierIsVisible: 0
   secondsBeforeNextBullet: 0.2
-  magazineSize: 10
+  magazineSize: 20
 --- !u!60 &1092920843
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -10391,12 +10396,13 @@ MonoBehaviour:
   shotBang: {fileID: 1537234325}
   hpBar: {fileID: 86713064}
   targetPoint: {x: 0, y: 5, z: -10}
-  maxHp: 60
-  damage: 1
+  maxHp: 30
+  damage: 1.5
   shotBangSeconds: 0.5
   secondsBeforeNextShooting: 2
   redOnHitSeconds: 0.2
-  maxHidingSeconds: 3
+  shootOnlyIfCourierIsVisible: 1
+  maxHidingSeconds: 2
   minHidingSeconds: 0.5
   minXPoint: -30
   maxXPoint: -20

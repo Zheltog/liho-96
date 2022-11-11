@@ -34,13 +34,13 @@
     },
     {
       "Type": "Shooting",
-      "StartText": "Владилена активирует ЛИХО, нарушая работу фонарей. Курьер в это время переводит дух и восстанавливает немного здоровья",
+      "StartText": "Владилена активирует ЛИХО, нарушая работу фонарей, и отходит, вызывая подкрепление. Курьер в это время переводит дух и восстанавливает немного здоровья",
       "Effect": {
         "Type": "Heal",
-        "Value": 25.0
+        "Value": 30.0
       },
       "Enemies": [
-        "BenchLeft", "BenchRight", "Vlada"
+        "BenchLeft", "BenchRight", "RunningLeft", "RunningRight"
       ],
       "Modifiers": [
         "Blink"
@@ -48,7 +48,7 @@
     },
     {
       "Type": "Shooting",
-      "StartText": "Свет восстанавливается. Но Владилена снова активирует ЛИХО: у Курьера в кармане начинает мощно вибрировать Nokia 1610",
+      "StartText": "Часть противников отходит, свет восстанавливается. Но Владилена возвращается и снова активирует ЛИХО: у Курьера в кармане начинает мощно вибрировать Nokia 1610",
       "Enemies": [
         "BenchLeft", "BenchRight", "Vlada"
       ],
@@ -58,11 +58,7 @@
     },
     {
       "Type": "Shooting",
-      "StartText": "Эффект от ЛИХО спадает. Но противники получают подкрепление. Курьер теряет немного здоровья",
-      "Effect": {
-        "Type": "Heal",
-        "Value": -15.0
-      },
+      "StartText": "Эффект от ЛИХО спадает. Но противники получают подкрепление",
       "Enemies": [
         "BenchLeft", "BenchRight", "RunningLeft", "RunningRight", "Vlada"
       ],
@@ -70,11 +66,7 @@
     },
     {
       "Type": "Shooting",
-      "StartText": "Часть противников отступая, получая напоследок немного урона. Но Владилена снова активирует ЛИХО, включая вибрацию телефона и полностью выключая фонари",
-      "Effect": {
-        "Type": "Damage",
-        "Value": 20.0
-      },
+      "StartText": "Часть противников отступает. Но Владилена снова активирует ЛИХО, включая вибрацию телефона и полностью выключая фонари",
       "Enemies": [
         "BenchLeft", "BenchRight", "Vlada"
       ],
@@ -91,7 +83,7 @@
       "Flag": "Vodka",
       "Effect": {
         "Type": "Heal",
-        "Value": 10.0
+        "Value": 30.0
       }
     },
     {
@@ -100,7 +92,7 @@
       "Flag": "Gum",
       "Effect": {
         "Type": "Heal",
-        "Value": 10.0
+        "Value": 20.0
       }
     },
     {
@@ -109,7 +101,7 @@
       "Flag": "Snickers",
       "Effect": {
         "Type": "Heal",
-        "Value": 20.0
+        "Value": 50.0
       }
     },
     {
@@ -118,7 +110,7 @@
       "Flag": "GirlPhoneNumber",
       "Effect": {
         "Type": "Heal",
-        "Value": 50.0
+        "Value": 100.0
       }
     },
     {
@@ -136,7 +128,7 @@
       "Flag": "Dumbbell",
       "Effect": {
         "Type": "Damage",
-        "Value": 20.0
+        "Value": 50.0
       }
     },
     {
@@ -145,7 +137,7 @@
       "Flag": "Grenade",
       "Effect": {
         "Type": "Damage",
-        "Value": 50.0
+        "Value": 100.0
       }
     },
     {
@@ -154,7 +146,7 @@
       "Flag": "Molotov",
       "Effect": {
         "Type": "Damage",
-        "Value": 5000.0
+        "Value": 100.0
       }
     },
     {
