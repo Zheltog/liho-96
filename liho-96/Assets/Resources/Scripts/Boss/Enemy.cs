@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 using Common;
 using UnityEngine;
 
@@ -48,11 +47,10 @@ namespace Boss
             var ray = new Ray(fromPosition, direction);
             if (!Physics.Raycast(ray, out var hit)) return;
             var courier = hit.collider.gameObject.GetComponent<Courier>();
-            if (courier != null)
-            {
-                courier.Hit(damage);
-            }
+            if (courier == null) return;
+            courier.Hit(damage);
             player.NewSound("shot");
+            StartCoroutine(ShowShotBang());
         }
 
         private IEnumerator RedOnHit()
@@ -62,7 +60,7 @@ namespace Boss
             _sprite.color = Color.white;
         }
 
-        protected IEnumerator ShowShotBang()
+        private IEnumerator ShowShotBang()
         {
             shotBang.SetActive(true);
             yield return new WaitForSeconds(shotBangSeconds);

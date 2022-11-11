@@ -49,7 +49,6 @@ namespace Boss
             }
 
             Shoot();
-            StartCoroutine(ShowShotBang());
             _currentBulletNumber++;
         }
 

@@ -18,6 +18,7 @@ namespace Common
         private string _currentPhrase;
         private string _currentPhraseFinal;
         private TextMeshProUGUI _textBox;
+        private IEnumerator _currentPrinting;
 
         private void Start()
         {
@@ -26,6 +27,7 @@ namespace Common
 
         public void FinishPrinting()
         {
+            StopCoroutine(_currentPrinting);
             _textBox.text = _currentPhraseFinal;
             IsPrinting = false;
         }
@@ -37,7 +39,8 @@ namespace Common
             _currentPhraseFinal = text;
             _currentPhraseChars = _currentPhraseFinal.ToCharArray();
             _currentPhrase = "";
-            StartCoroutine(PrintNextPhrase());
+            _currentPrinting = PrintNextPhrase();
+            StartCoroutine(_currentPrinting);
         }
 
         private IEnumerator PrintNextPhrase()
@@ -54,6 +57,7 @@ namespace Common
 
                 if (!IsPrinting)
                 {
+                    // TODO: всегда останавливать извне через возвращаемое значение корутины, протестировать
                     yield break;
                 }
 

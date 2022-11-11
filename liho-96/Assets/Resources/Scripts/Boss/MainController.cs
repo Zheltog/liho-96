@@ -46,7 +46,7 @@ namespace Boss
         public void ChooseItem(Item item)
         {
             backButton.SetActive(false);
-            text.NewText(item.UseText);
+            NewText(item.UseText);
             itemsChoicesController.DisableButtons();
             ApplyEffect(item.Effect);
             CurrentFightState = FightState.ItemChosen;
@@ -148,7 +148,7 @@ namespace Boss
             _enemiesController.DisableAllEnemies();   // TODO: вынести куда-то из фазоконфига?
             dynamicStuff.SetActive(false);
             gameOverImage.SetActive(true);
-            text.NewText(comment);
+            NewText(comment);
             player.NewMusic("");
             player.NewSound("game_over");
         }
@@ -190,9 +190,20 @@ namespace Boss
         private void NextAttack()
         {
             CurrentFightState = FightState.Attack;
-            text.NewText(" ");
+            NewText(" ");
             grayPanel.SetActive(false);
             courier.StopRest();
+        }
+
+        private void NewText(string newText)
+        {
+            if (text.IsPrinting)
+            {
+                Debug.Log("FINISHING");
+                text.FinishPrinting();
+            }
+            Debug.Log(text.IsPrinting);
+            text.NewText(newText);
         }
 
         public enum FightState
@@ -204,7 +215,18 @@ namespace Boss
         private void InitHolder()
         {
             var flags = new List<string>();
-            flags.Add("Флаг");
+            // flags.Add("Vodka");
+            // flags.Add("Gum");
+            // flags.Add("Snickers");
+            // flags.Add("GirlPhoneNumber");
+            // flags.Add("Wires");
+            // flags.Add("Dumbbell");
+            // flags.Add("Grenade");
+            flags.Add("Molotov");
+            flags.Add("Awl");
+            flags.Add("PartyPhoneNumber");
+            flags.Add("Rag");
+            flags.Add("Coins");
             StateHolder.Init(flags);
         }
     }

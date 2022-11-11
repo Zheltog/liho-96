@@ -32,7 +32,6 @@ namespace Boss
             if (!(_currentTime >= secondsBeforeNextShooting)) return;
             _currentTime -= secondsBeforeNextShooting;
             Shoot();
-            StartCoroutine(ShowShotBang());
         }
         public override void Reset() {}
 

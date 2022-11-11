@@ -30,7 +30,6 @@ namespace Boss
             if (!(_currentTime >= secondsBeforeNextShooting)) return;
             _currentTime -= secondsBeforeNextShooting;
             Shoot();
-            StartCoroutine(ShowShotBang());
         }
 
         protected override void OnDamage()

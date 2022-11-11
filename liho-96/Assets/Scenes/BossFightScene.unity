@@ -3809,7 +3809,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 752911982}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 476675593}
+        m_TargetAssemblyTypeName: Boss.ItemsChoicesController, Assembly-CSharp
+        m_MethodName: ChooseSixth
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &752911982
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4460,7 +4472,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 811760989}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 476675593}
+        m_TargetAssemblyTypeName: Boss.ItemsChoicesController, Assembly-CSharp
+        m_MethodName: ChooseFifth
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &811760989
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8784,7 +8808,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1575120359}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 476675593}
+        m_TargetAssemblyTypeName: Boss.ItemsChoicesController, Assembly-CSharp
+        m_MethodName: ChooseFourth
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1575120359
 MonoBehaviour:
   m_ObjectHideFlags: 0
