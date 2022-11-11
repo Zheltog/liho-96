@@ -482,7 +482,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mainController: {fileID: 248021001}
   type: 1
-  maxHealth: 100
+  maxHealth: 1000
 --- !u!95 &86713065
 Animator:
   serializedVersion: 3
@@ -1552,8 +1552,8 @@ MonoBehaviour:
   shotBang: {fileID: 2080118329}
   hpBar: {fileID: 86713064}
   targetPoint: {x: 0, y: 5, z: -10}
-  hp: 50
-  damage: 5
+  maxHp: 60
+  damage: 1
   shotBangSeconds: 0.5
   secondsBeforeNextShooting: 1.5
   redOnHitSeconds: 0.2
@@ -1901,7 +1901,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d80c797172886049a59607c451ae987, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  phaseSeconds: 5
+  phaseSeconds: 30
   courier: {fileID: 584745251}
   enemiesHealthBar: {fileID: 86713064}
   grayPanel: {fileID: 860493342}
@@ -3023,8 +3023,8 @@ MonoBehaviour:
   shotBang: {fileID: 1729232494}
   hpBar: {fileID: 86713064}
   targetPoint: {x: 0, y: 5, z: -10}
-  hp: 50
-  damage: 0
+  maxHp: 25
+  damage: 2
   shotBangSeconds: 0.5
   secondsBeforeNextShooting: 3
   redOnHitSeconds: 0.2
@@ -3281,14 +3281,14 @@ MonoBehaviour:
   hpBar: {fileID: 1267802827}
   redPanel: {fileID: 1037149491}
   gun: {fileID: 1791811666}
-  damage: 10
+  damage: 2
   maxCameraHeight: 5
   minCameraHeight: 2
   cameraSpeed: 10
   hitAnimationSeconds: 0.1
   shakeOnHitDistance: 0.2
   goingDownSpeed: 10
-  secondsBeforeNextShot: 1
+  secondsBeforeNextShot: 0.5
 --- !u!95 &584745252
 Animator:
   serializedVersion: 3
@@ -4558,8 +4558,8 @@ MonoBehaviour:
   shotBang: {fileID: 1094967852}
   hpBar: {fileID: 86713064}
   targetPoint: {x: 0, y: 5, z: -10}
-  hp: 50
-  damage: 0
+  maxHp: 25
+  damage: 2
   shotBangSeconds: 0.5
   secondsBeforeNextShooting: 2
   redOnHitSeconds: 0.2
@@ -6035,10 +6035,10 @@ MonoBehaviour:
   shotBang: {fileID: 1269472456}
   hpBar: {fileID: 86713064}
   targetPoint: {x: 0, y: 5, z: -10}
-  hp: 1000
-  damage: 1
+  maxHp: 1000
+  damage: 2
   shotBangSeconds: 0.1
-  secondsBeforeNextShooting: 5
+  secondsBeforeNextShooting: 10
   redOnHitSeconds: 0.2
   secondsBeforeNextBullet: 0.2
   magazineSize: 10
@@ -6388,7 +6388,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 1:30
+  m_text: 00:00
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ed4e1291b97678349b35d914e99517a6, type: 2}
   m_sharedMaterial: {fileID: -7953744970066264230, guid: ed4e1291b97678349b35d914e99517a6, type: 2}
@@ -6478,7 +6478,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainController: {fileID: 248021001}
-  fightSeconds: 60
+  fightSeconds: 420
   redAlertSeconds: 30
 --- !u!95 &1107313591
 Animator:
@@ -10391,8 +10391,8 @@ MonoBehaviour:
   shotBang: {fileID: 1537234325}
   hpBar: {fileID: 86713064}
   targetPoint: {x: 0, y: 5, z: -10}
-  hp: 10
-  damage: 5
+  maxHp: 60
+  damage: 1
   shotBangSeconds: 0.5
   secondsBeforeNextShooting: 2
   redOnHitSeconds: 0.2

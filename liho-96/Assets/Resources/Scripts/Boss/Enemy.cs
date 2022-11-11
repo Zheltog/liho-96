@@ -10,17 +10,20 @@ namespace Boss
         public GameObject shotBang;
         public HealthBar hpBar;
         public Vector3 targetPoint = new Vector3(0f, 5f, -10f);
-        public float hp = 50;
+        public float maxHp = 50;
         public float damage = 5;
         public float shotBangSeconds = 0.5f;
         public float secondsBeforeNextShooting = 2f;
         public float redOnHitSeconds = 0.2f;
 
+        protected float hp;
+        
         private SpriteRenderer _sprite;
 
         protected void Start()
         {
             _sprite = GetComponent<SpriteRenderer>();
+            hp = maxHp;
         }
 
         public abstract void Reset();

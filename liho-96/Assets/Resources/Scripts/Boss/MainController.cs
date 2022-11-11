@@ -199,10 +199,8 @@ namespace Boss
         {
             if (text.IsPrinting)
             {
-                Debug.Log("FINISHING");
                 text.FinishPrinting();
             }
-            Debug.Log(text.IsPrinting);
             text.NewText(newText);
         }
 

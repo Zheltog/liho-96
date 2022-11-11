@@ -2,13 +2,45 @@
   "Phases": [
     {
       "Type": "Shooting",
-      "StartText": "Это первая фаза",
+      "StartText": "Используй W/S или вверх/вниз для движения и ЛКМ для стрельбы",
+      "Enemies": [
+        "BenchLeft", "BenchRight"
+      ],
+      "Modifiers": []
+    },
+    {
+      "Type": "Shooting",
+      "StartText": "Противники запрашивают подкрепление. Курьеру наносится дополнительный средний урон",
       "Effect": {
         "Type": "Heal",
-        "Value": 10.0
+        "Value": -40.0
       },
       "Enemies": [
-        "Vlada", "BenchLeft", "BenchRight"
+        "BenchLeft", "BenchRight", "RunningLeft", "RunningRight"
+      ],
+      "Modifiers": []
+    },
+    {
+      "Type": "Shooting",
+      "StartText": "Часть противников отступает, Курьер стреляет им вслед и наносит средний урон. Но на сцену выходит Владилена",
+      "Effect": {
+        "Type": "Damage",
+        "Value": 60.0
+      },
+      "Enemies": [
+        "BenchLeft", "BenchRight", "Vlada"
+      ],
+      "Modifiers": []
+    },
+    {
+      "Type": "Shooting",
+      "StartText": "Владилена активирует ЛИХО, нарушая работу фонарей. Курьер в это время переводит дух и восстанавливает немного здоровья",
+      "Effect": {
+        "Type": "Heal",
+        "Value": 25.0
+      },
+      "Enemies": [
+        "BenchLeft", "BenchRight", "Vlada"
       ],
       "Modifiers": [
         "Blink"
@@ -16,19 +48,42 @@
     },
     {
       "Type": "Shooting",
-      "StartText": "Это вторая фаза",
-      "Effect": {
-        "Type": "Damage",
-        "Value": 5.0
-      },
+      "StartText": "Свет восстанавливается. Но Владилена снова активирует ЛИХО: у Курьера в кармане начинает мощно вибрировать Nokia 1610",
       "Enemies": [
-        "Vlada", "BenchLeft", "BenchRight", "RunningLeft", "RunningRight"
+        "BenchLeft", "BenchRight", "Vlada"
       ],
       "Modifiers": [
-        "Dark"
+        "Shake"
+      ]
+    },
+    {
+      "Type": "Shooting",
+      "StartText": "Эффект от ЛИХО спадает. Но противники получают подкрепление. Курьер теряет немного здоровья",
+      "Effect": {
+        "Type": "Heal",
+        "Value": -15.0
+      },
+      "Enemies": [
+        "BenchLeft", "BenchRight", "RunningLeft", "RunningRight", "Vlada"
+      ],
+      "Modifiers": []
+    },
+    {
+      "Type": "Shooting",
+      "StartText": "Часть противников отступая, получая напоследок немного урона. Но Владилена снова активирует ЛИХО, включая вибрацию телефона и полностью выключая фонари",
+      "Effect": {
+        "Type": "Damage",
+        "Value": 20.0
+      },
+      "Enemies": [
+        "BenchLeft", "BenchRight", "Vlada"
+      ],
+      "Modifiers": [
+        "Shake", "Dark"
       ]
     }
   ],
+  
   "Items": [
     {
       "Name": "Бутылка водки",

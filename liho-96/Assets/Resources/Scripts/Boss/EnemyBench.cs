@@ -19,6 +19,7 @@ namespace Boss
         public override void Reset()
         {
             ResetHeight();
+            hp = maxHp;
         }
 
         private void Update()

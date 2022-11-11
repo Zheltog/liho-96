@@ -33,7 +33,11 @@ namespace Boss
             _currentTime -= secondsBeforeNextShooting;
             Shoot();
         }
-        public override void Reset() {}
+
+        public override void Reset()
+        {
+            hp = maxHp;
+        }
 
         private void Run()
         {

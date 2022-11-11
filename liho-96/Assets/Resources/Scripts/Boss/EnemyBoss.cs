@@ -17,8 +17,11 @@ namespace Boss
             base.Start();
             _animator = GetComponent<Animator>();
         }
-        
-        public override void Reset() {}
+
+        public override void Reset()
+        {
+            hp = maxHp;
+        }
         
         private void Update()
         {
