@@ -2,7 +2,7 @@
   "StartingFrame": "forest_car_scientist_3",
   "StartingFlags": [
     "SmallMoney",
-    "Nokia1610"
+    "Pistol"
   ],
   "Frames": {
     "start": {
@@ -1868,6 +1868,7 @@
     },
     "forest_car_scientist_4_gun": {
       "Picture": "forest_scientist_hands_up",
+      "Sound": "gasp_scared",
       "Text": "Курьер наставляет пистолет на мужчину.\nНезнакомец: \"Н-не стреляй! Не стреляй!\"",
       "Type": "Simple",
       "Transition": {
@@ -2051,8 +2052,8 @@
       }
     },
     "forest_car_scientist_dead_kids": {
-      "Picture": "forest_scientist",
-      "Text": "Незнакомец подходит к трупам и рассматривает их. Его тело заметно дрожит.",
+      "Picture": "forest_scientist_frightened",
+      "Text": "Незнакомец подходит к трупам и рассматривает их. Он заметно дрожит.",
       "Type": "Simple",
       "Transition": {
         "Type": "Frame",
@@ -2060,7 +2061,7 @@
       }
     },
     "forest_car_scientist_dead_kids_1": {
-      "Picture": "forest_scientist",
+      "Picture": "forest_scientist_frightened",
       "Text": "Незнакомец: \"Совсем молодые п-пацаны... Д-дети... За что?\"",
       "Type": "Simple",
       "Transition": {
@@ -2069,7 +2070,7 @@
       }
     },
     "forest_car_scientist_dead_kids_2": {
-      "Picture": "forest_scientist",
+      "Picture": "forest_scientist_frightened",
       "Text": "Курьер: \"...\"",
       "Type": "Simple",
       "Transition": {
@@ -2127,6 +2128,7 @@
     },
     "forest_car_scientist_i_am_not_with_them": {
       "Picture": "forest_scientist",
+      "Sound": "gasp_relief",
       "Text": "Незнакомец вздыхает с облегчением\nНезнакомец: \"Фух... А то я уж думал, что ты меня сейчас прикончишь...\"",
       "Type": "Simple",
       "Transition": {
@@ -2136,7 +2138,7 @@
     },
     "forest_car_scientist_i_am_not_with_them_1": {
       "Picture": "forest_scientist",
-      "Text": "Незнакомец: \"Но если ты не с ними... Кто ты? Ты же явно не п-просто прохожий.\"",
+      "Text": "Незнакомец: \"Но если ты не с ними... Кто ты? Ты же явно н-не просто прохожий.\"",
       "Type": "Simple",
       "Transition": {
         "Type": "Frame",
@@ -2144,7 +2146,8 @@
       }
     },
     "forest_car_scientist_my_car": {
-      "Picture": "forest_scientist",
+      "Picture": "forest_scientist_frightened",
+      "Sound": "gasp_relief",
       "Text": "Незнакомец: \"Т-так это твоя машина? П-погоди, а эти пацаны за рулём?..\"",
       "Type": "Simple",
       "Transition": {
@@ -2153,7 +2156,7 @@
       }
     },
     "forest_car_scientist_my_car_1": {
-      "Picture": "forest_scientist",
+      "Picture": "forest_scientist_frightened",
       "Text": "Курьер: \"Угнали её.\"",
       "Type": "Simple",
       "Transition": {
@@ -2162,7 +2165,7 @@
       }
     },
     "forest_car_scientist_my_car_2": {
-      "Picture": "forest_scientist",
+      "Picture": "forest_scientist_frightened",
       "Text": "Незнакомец: \"Ох. Вот оно как...\"",
       "Type": "Simple",
       "Transition": {
@@ -2189,7 +2192,7 @@
       }
     },
     "forest_car_scientist_i_am_courier_2": {
-      "Picture": "forest_scientist",
+      "Picture": "forest_scientist_frightened",
       "Text": "Незнакомец смотрит на него с удивлением, и в то же время и с какой-то радостью.",
       "Type": "Simple",
       "Transition": {
@@ -2198,7 +2201,7 @@
       }
     },
     "forest_car_scientist_i_am_courier_3": {
-      "Picture": "forest_scientist",
+      "Picture": "forest_scientist_happy",
       "Text": "Незнакомец: \"Да, теперь всё понятно! П-пазл складывается!\"",
       "Type": "Simple",
       "Transition": {
@@ -2208,7 +2211,7 @@
     },
     "forest_car_scientist_i_am_courier_4": {
       "Picture": "forest_scientist",
-      "Text": "Незнакомец: \"Бандиты искали твою машину, они знали про груз! Но они н-не ожидали, что в машине будут какие-то школьники...\"",
+      "Text": "Незнакомец: \"Значит, бандиты искали твою машину, хотели забрать груз! Но они н-не ожидали, что в машине будут какие-то школьники...\"",
       "Type": "Simple",
       "Transition": {
         "Type": "Frame",
@@ -2235,12 +2238,522 @@
     },
     "forest_car_scientist_liho_1": {
       "Picture": "forest_scientist",
-      "TextDelay": 0.1,
-      "Text": "Курьер: \"ЛИХО.\"",
+      "Text": "Курьер: \"Искали груз. Железный ящик.\"",
       "Type": "Simple",
       "Transition": {
         "Type": "Frame",
-        "Next": "forest_car_scientist_i_am_courier_7"
+        "Next": "forest_car_scientist_liho_1_1"
+      }
+    },
+    "forest_car_scientist_liho_1_1": {
+      "Picture": "forest_scientist",
+      "Text": "Незнакомец: \"И что за ящик? Н-ну т-то есть, можешь не говорить,\nн-но.. Может, я как-то смогу п-помочь.\"",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "forest_car_scientist_liho_1_2"
+      }
+    },
+    "forest_car_scientist_liho_1_2": {
+      "Picture": "forest_scientist",
+      "Text": "Курьер: \"На ящике ничего. Только надпись.\"",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "forest_car_scientist_liho_2"
+      }
+    },
+    "forest_car_scientist_liho_2": {
+      "Picture": "forest_scientist",
+      "Music": "",
+      "TextDelay": 0.15,
+      "Text": "Курьер: \"ЛИХО-96.\"",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "forest_car_scientist_liho_3"
+      }
+    },
+    "forest_car_scientist_liho_3": {
+      "Picture": "forest_scientist_frightened",
+      "Music": "Doom - Suspense",
+      "Sound": "gasp_surprised",
+      "TextDelay": 0.1,
+      "Text": "Незнакомец: \"...\"",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "forest_car_scientist_liho_4"
+      }
+    },
+    "forest_car_scientist_liho_4": {
+      "Picture": "forest_scientist_frightened",
+      "TextDelay": 0.1,
+      "Text": "Незнакомец: \"Нет... Н-нет-нет-нет, н-не может быть... Не бывает\nт-таких совпадений...\"",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "forest_car_scientist_liho_5"
+      }
+    },
+    "forest_car_scientist_liho_5": {
+      "Picture": "forest_scientist_frightened",
+      "Text": "Курьер: \"...?\"",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "forest_car_scientist_liho_6"
+      }
+    },
+    "forest_car_scientist_liho_6": {
+      "Picture": "forest_scientist",
+      "TextDelay": 0.1,
+      "Text": "Незнакомец: \"Я... создал ЛИХО.\"",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "forest_car_scientist_liho_7"
+      }
+    },
+    "forest_car_scientist_liho_7": {
+      "Picture": "forest_scientist",
+      "Text": "Незнакомец: \"Не один, конечно. У нас была лаборатория при институте.\"",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "forest_car_scientist_liho_8"
+      }
+    },
+    "forest_car_scientist_liho_8": {
+      "Picture": "forest_scientist_happy",
+      "Text": "Незнакомец: \"П-правда, я там был лишь ассистентом, н-но это не отменяет мой вклад!\"",
+      "Type": "Choice",
+      "Choices": [
+        {
+          "Text": "\"...\"",
+          "Transition": {
+            "Type": "Frame",
+            "Next": "forest_car_scientist_laboratory"
+          }
+        },
+        {
+          "Text": "\"Что такое ЛИХО?\"",
+          "Transition": {
+            "Type": "Frame",
+            "Next": "forest_car_scientist_what_is_liho"
+          }
+        }
+      ]
+    },
+    "forest_car_scientist_laboratory": {
+      "Picture": "forest_scientist",
+      "Text": "Учёный: \"Это всё было лет восемь назад. Сразу п-после университета меня распределили в эту лабораторию. Очень солидное место было, эксперименты, новые технологии, секретные разработки...\"",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "forest_car_scientist_laboratory_1"
+      }
+    },
+    "forest_car_scientist_laboratory_1": {
+      "Picture": "forest_scientist_happy",
+      "Text": "Учёный: \"Сейчас институты уже несколько лет как закрыты. А значит, и гостайны больше нет, в-верно?..\"",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "forest_car_scientist_what_is_liho_1"
+      }
+    },
+    "forest_car_scientist_what_is_liho": {
+      "Picture": "forest_scientist",
+      "Text": "Учёный: \"Это... Сложно объяснить. Давай попробую.\"",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "forest_car_scientist_what_is_liho_1"
+      }
+    },
+    "forest_car_scientist_what_is_liho_1": {
+      "Picture": "forest_scientist",
+      "Text": "Учёный: \"Мы пытались создать оружие нового образца. Что-то, чего никто в мире ещё не видел.\"",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "forest_car_scientist_what_is_liho_2"
+      }
+    },
+    "forest_car_scientist_what_is_liho_2": {
+      "Picture": "forest_scientist",
+      "TextDelay": 0.09,
+      "Text": "Учёный: \"Что-то, чем будут вестись войны будущего.\"",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "forest_car_scientist_what_is_liho_3"
+      }
+    },
+    "forest_car_scientist_what_is_liho_3": {
+      "Picture": "forest_scientist",
+      "Text": "Учёный: \"В будущем весь мир будет опутан невидимыми сетями. Все люди, все машины. Этот процесс уже начался, но нам нужно было думать на шаг вперёд.\"",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "forest_car_scientist_what_is_liho_4"
+      }
+    },
+    "forest_car_scientist_what_is_liho_4": {
+      "Picture": "forest_scientist",
+      "TextDelay": 0.065,
+      "Text": "Учёный: \"ЛИХО уничтожает любую инфраструктуру. Любую сеть, подсеть, любое соединение. Работает на уровне L5 и ниже. Отказ доступа, человек посередине, перехват и расшифровка данных...\"",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "forest_car_scientist_what_is_liho_5"
+      }
+    },
+    "forest_car_scientist_what_is_liho_5": {
+      "Picture": "forest_scientist",
+      "TextDelay": 0.06,
+      "Text": "Учёный: \"Т-ты этого не знаешь, но все базовые сетевые протоколы уже написаны. С ростом количества устройств в сети изменить их будет слишком сложно. ЛИХО использует все возможные бэкдоры, в том числе те, о которых никто даже не догадывается. А когда догадаются, будет уже поздно.\"",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "forest_car_scientist_what_is_liho_6"
+      }
+    },
+    "forest_car_scientist_what_is_liho_6": {
+      "Picture": "forest_scientist",
+      "TextDelay": 0.055,
+      "Text": "Учёный: \"На физическом уровне ЛИХО может разрушать пакеты испуская высокочастотные сигналы. Проводные сети, беспроводные, спутники - ЛИХО может уничтожить всё, что угодно.\"",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "forest_car_scientist_what_is_liho_7"
+      }
+    },
+    "forest_car_scientist_what_is_liho_7": {
+      "Picture": "forest_scientist_frightened",
+      "TextDelay": 0.05,
+      "Text": "Учёный: \"В будущем это будет крайне серьёзно. Автомобили потеряют контроль. Больницы не будут работать. Целые города, целые страны могут быть парализованы. ЛИХО не убьёт людей, но повергнет мир в хаос...\"",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "forest_car_scientist_what_is_liho_8"
+      }
+    },
+    "forest_car_scientist_what_is_liho_8": {
+      "Picture": "forest_scientist_frightened",
+      "Text": "Курьер: \"...\"",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "forest_car_scientist_what_is_liho_9"
+      }
+    },
+    "forest_car_scientist_what_is_liho_9": {
+      "Picture": "forest_scientist",
+      "Text": "Учёный: \"Тогда я об этом много не думал, был увечён лишь н-нашим\nп-прогрессом. Гордился даже.\"",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "forest_car_scientist_what_is_liho_10"
+      }
+    },
+    "forest_car_scientist_what_is_liho_10": {
+      "Picture": "forest_scientist_frightened",
+      "TextDelay": 0.09,
+      "Text": "Учёный: \"Но сейчас я понимаю... Всё это безумно опасно.\"",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "forest_car_scientist_what_is_liho_11"
+      }
+    },
+    "forest_car_scientist_what_is_liho_11": {
+      "Picture": "forest_scientist_frightened",
+      "Text": "Учёный затих. В его глазах снова виден страх – но уже не перед бандитами.",
+      "Type": "Choice",
+      "Choices": [
+        {
+          "Text": "\"ЛИХО всё ещё опасно?\"",
+          "Transition": {
+            "Type": "Frame",
+            "Next": "forest_car_scientist_danger"
+          }
+        },
+        {
+          "Text": "\"Почему ЛИХО?\"",
+          "Transition": {
+            "Type": "Frame",
+            "Next": "forest_car_scientist_why_liho"
+          }
+        }
+      ]
+    },
+    "forest_car_scientist_danger": {
+      "Picture": "forest_scientist_frightened",
+      "Text": "Учёный: \"Думаю, н-никто так и не успел его использовать. Но это делает всё только хуже.\"",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "forest_car_scientist_danger_1"
+      }
+    },
+    "forest_car_scientist_danger_1": {
+      "Picture": "forest_scientist_frightened",
+      "Text": "Учёный: \"С каждым днём в сети всё больше устройств. А значит, с каждым днём растёт и ущерб, который может причинить ЛИХО.\"",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "forest_car_scientist_why_liho_1"
+      }
+    },
+    "forest_car_scientist_why_liho": {
+      "Picture": "forest_scientist",
+      "Text": "Учёный: \"Н-название? Ну, не знаю. Н-но звучит солидно, согласись?\"",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "forest_car_scientist_why_liho_1"
+      }
+    },
+    "forest_car_scientist_why_liho_1": {
+      "Picture": "forest_scientist",
+      "Text": "Учёный: \"Мы создали около сотни образцов, большая часть ни к чему не пригодна. Н-но оставшиеся...\"",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "forest_car_scientist_why_liho_2"
+      }
+    },
+    "forest_car_scientist_why_liho_2": {
+      "Picture": "forest_scientist",
+      "Text": "Учёный: \"О них ходят только слухи. Н-но знающие люди сразу понимают, о чём речь, к-когда кто-то говорит ЛИХО.\"",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "forest_car_scientist_tuman"
+      }
+    },
+    "forest_car_scientist_tuman": {
+      "Picture": "forest_scientist",
+      "Text": "Курьер: \"...\"",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "forest_car_scientist_tuman_1"
+      }
+    },
+    "forest_car_scientist_tuman_1": {
+      "Picture": "forest_scientist",
+      "Text": "Учёный: \"...я догадываюсь, кто в этом г-городе может искать ЛИХО.\"",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "forest_car_scientist_tuman_2"
+      }
+    },
+    "forest_car_scientist_tuman_2": {
+      "Picture": "forest_scientist",
+      "Text": "Учёный: \"Есть только одна группировка, которой под силу п-провернуть такое. Кто п-повсюду ищет советские артефакты, и мог слышать в том числе и про ЛИХО.\"",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "forest_car_scientist_tuman_3"
+      }
+    },
+    "forest_car_scientist_tuman_3": {
+      "Picture": "forest_scientist",
+      "TextDelay": 0.1,
+      "Text": "Учёный: \"Туман. Это его банда.\"",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "forest_car_scientist_tuman_4"
+      }
+    },
+    "forest_car_scientist_tuman_4": {
+      "Picture": "forest_scientist",
+      "Text": "Курьер: \"Туман?\"",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "forest_car_scientist_tuman_5"
+      }
+    },
+    "forest_car_scientist_tuman_5": {
+      "Picture": "forest_scientist_frightened",
+      "Text": "Учёный: \"Это самый опасный авторитет в городе. Г-говорят, он и его люди появляются из ниоткуда, берут, что хотят, а потом растворяются как в т-т-тумане...\"",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "forest_car_scientist_tuman_6"
+      }
+    },
+    "forest_car_scientist_tuman_6": {
+      "Picture": "forest_scientist_frightened",
+      "Sound": "gasp_scared",
+      "Text": "Учёный: \"Он часто сам выезжает н-на дела, и, г-говорят, д-д-даже собственные бандиты его боятся... Он б-безумец...\"",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "forest_car_scientist_tuman_7"
+      }
+    },
+    "forest_car_scientist_tuman_7": {
+      "Picture": "forest_scientist_frightened",
+      "Text": "Курьер: \"Где его найти?\"",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "forest_car_scientist_tuman_8"
+      }
+    },
+    "forest_car_scientist_tuman_8": {
+      "Picture": "forest_scientist",
+      "Text": "Учёный: \"...\"",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "forest_car_scientist_tuman_9"
+      }
+    },
+    "forest_car_scientist_tuman_9": {
+      "Picture": "forest_scientist",
+      "Text": "Учёный: \"Я... не знаю. Н-но знаю, кто может знать!\"",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "forest_car_scientist_tuman_10"
+      }
+    },
+    "forest_car_scientist_tuman_10": {
+      "Picture": "forest_scientist",
+      "Text": "Учёный: \"Но я...\"",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "forest_car_scientist_tuman_11"
+      }
+    },
+    "forest_car_scientist_tuman_11": {
+      "Picture": "forest_scientist",
+      "Text": "Учёный: \"Я скажу тебе, но я пойду с тобой! Я... должен пойти! Правда.\"",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "forest_car_scientist_tuman_12"
+      }
+    },
+    "forest_car_scientist_tuman_12": {
+      "Picture": "forest_scientist",
+      "Text": "Курьер вопросительно поднимает бровь. Его не радует перспектива возиться с Учёным – тем более, он привык работать один.",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "forest_car_scientist_tuman_13"
+      }
+    },
+    "forest_car_scientist_tuman_13": {
+      "Picture": "forest_scientist_frightened",
+      "Text": "Учёный: \"Я знаю, как работает ЛИХО. И н-на мне ответственность за него, п-понимаешь?\"",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "forest_car_scientist_tuman_14"
+      }
+    },
+    "forest_car_scientist_tuman_14": {
+      "Picture": "forest_scientist",
+      "Text": "Курьер: \"...\"",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "forest_car_scientist_tuman_15"
+      }
+    },
+    "forest_car_scientist_tuman_15": {
+      "Picture": "forest_scientist",
+      "Text": "Курьер: \"Просто отведи меня к Туману.\"",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "forest_car_scientist_tuman_16"
+      }
+    },
+    "forest_car_scientist_tuman_16": {
+      "Picture": "forest_scientist_happy",
+      "Text": "Учёный: \"Д-да, да, договорились!\"",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "forest_car_scientist_tuman_17"
+      }
+    },
+    "forest_car_scientist_tuman_17": {
+      "Picture": "forest_scientist",
+      "TextDelay": 0.09,
+      "Text": "Учёный: \"Нам нужно пойти в казино.\"",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "forest_car_scientist_tuman_18"
+      }
+    },
+    "forest_car_scientist_tuman_18": {
+      "Picture": "forest_scientist",
+      "TextDelay": 0.065,
+      "Text": "Учёный: \"П-после закрытия института моя жизнь пошла... н-не очень хорошо, скажем так. Но в слотах я м-могу хоть немного порадоваться, я могу что-нибудь выиграть в конце к-концов!\"",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "forest_car_scientist_tuman_19"
+      }
+    },
+    "forest_car_scientist_tuman_19": {
+      "Picture": "forest_scientist",
+      "Text": "Учёный: \"И я п-пару раз пересекался с владельцем. Мутный тип... Но я знаю, что у него какой-то к-конфликт с Т-туманом. Значит, он может нам п-помочь.\"",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "forest_car_scientist_tuman_20"
+      }
+    },
+    "forest_car_scientist_tuman_20": {
+      "Picture": "forest_scientist",
+      "Text": "Курьер: \"...\"",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "forest_car_scientist_tuman_21"
+      }
+    },
+    "forest_car_scientist_tuman_21": {
+      "Picture": "forest_scientist",
+      "Text": "Учёный: \"П-пойдём же! Я покажу дорогу.\"",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "forest_car_scientist_tuman_22"
+      }
+    },
+    "forest_car_scientist_tuman_22": {
+      "Picture": "forest_car_found",
+      "Sound": "footsteps",
+      "Text": "Учёный и Курьер выходят из леса и отправляются в казино.",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "forest_car_scientist_tuman_23"
+      }
+    },
+    "forest_car_scientist_tuman_23": {
+      "Picture": "forest_car_found",
+      "TextDelay": 0.09,
+      "Text": " . . . . .",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "casino_entrance"
       }
     },
     
@@ -2321,7 +2834,7 @@
     "casino_hall": {
       "Picture": "casino_hall",
       "Music": "Barbie Super Model - Riding in Hollywood, CA",
-      "Text": "Спустившись по лестнице вниз Учёный и Курьер оказываются в игорном зале.\nПриглушенный тёплый свет, стойкий запах табака.",
+      "Text": "Спустившись по лестнице вниз Учёный и Курьер оказываются в игорном зале. Приглушенный тёплый свет, стойкий запах табака.",
       "Type": "Simple",
       "Transition": {
         "Type": "Frame",
@@ -2694,7 +3207,16 @@
     },
     "casino_boss_2": {
       "Picture": "casino_hall",
-      "Text": "Владелец казино: \"Приветствую, парни! Я – владелец этого заведения Георгий Контрабасов, хотя вы меня и так должны знать. Чем могу быть полезен?\"",
+      "Text": "Владелец казино: \"Приветствую, парни! Я – владелец этого заведения Георгий Контрабасов, хотя вы меня и так должны знать.\"",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "casino_boss_2_1"
+      }
+    },
+    "casino_boss_2_1": {
+      "Picture": "casino_hall",
+      "Text": "Владелец казино: \"Чем могу быть полезен?\"",
       "Type": "Simple",
       "Transition": {
         "Type": "Frame",
@@ -2778,7 +3300,7 @@
     },
     "casino_boss_8_1": {
       "Picture": "casino_hall",
-      "Text": "Владелец казино: \"Но где они сидят каждый вечер – это не секрет, ха!\"",
+      "Text": "Владелец казино: \"Но где они сидят каждый вечер – это я сказать могу, ха!\"",
       "Type": "Simple",
       "Transition": {
         "Type": "Frame",
