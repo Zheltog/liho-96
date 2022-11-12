@@ -17,6 +17,7 @@ namespace Frames
         public ChoicesController choices;
 
         private string _bossFightSceneName = "BossFightScene";
+        private ScenesController _sceneController;
         
         private void Start()
         {
@@ -30,6 +31,7 @@ namespace Frames
                 StateHolder.State = State.Frame;
             }
 
+            _sceneController = GetComponent<ScenesController>();
             player.NewMusic(StateHolder.LastMusic);
             
             UpdateFrame();
@@ -104,11 +106,11 @@ namespace Frames
                         Boss.StateHolder.Init(StateHolder.Flags);
                     }
                     
-                    SceneManager.LoadScene(nextSceneName, LoadSceneMode.Single);
+                    _sceneController.LoadSceneForName(nextSceneName);
                     break;
                 }
                 case TransitionType.Exit:
-                    Application.Quit();
+                    _sceneController.Exit();
                     break;
                 default:
                     throw new ArgumentOutOfRangeException();

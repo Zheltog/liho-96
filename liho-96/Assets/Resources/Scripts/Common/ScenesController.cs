@@ -1,4 +1,3 @@
-using Final;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -8,25 +7,35 @@ namespace Common
     {
         public void LoadPreviousScene()
         {
+            if (GameFinishedController.IsGameFinished)
+            {
+                Exit();
+                return;
+            }
             switch (SceneStateHolder.LastSavableSceneState)
             {
-                // TODO кал
                 case SceneState.Final:
-                    if (Final.StateHolder.CurrentState == State.Quit)
-                    {
-                        Exit();
-                    }
-                    else
-                    {
-                        SceneManager.LoadScene(
-                            Final.StateHolder.CurrentState == State.Final ? "FrameScene" : "FinalScene",
-                            LoadSceneMode.Single);
-                    }
+                    LoadFinalScene();
                     break;
                 default:
-                    SceneManager.LoadScene("FrameScene", LoadSceneMode.Single);
+                    LoadFramesScene();
                     break;
             }
+        }
+
+        public void LoadSceneForName(string sceneName)
+        {
+            SceneManager.LoadScene(sceneName, LoadSceneMode.Single);
+        }
+
+        public void LoadFramesScene()
+        {
+            SceneManager.LoadScene("FrameScene", LoadSceneMode.Single);
+        }
+        
+        public void LoadFinalScene()
+        {
+            SceneManager.LoadScene("FinalScene", LoadSceneMode.Single);
         }
 
         public void LoadAuthorsScene()

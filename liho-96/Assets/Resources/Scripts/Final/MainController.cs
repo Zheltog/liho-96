@@ -76,9 +76,9 @@ namespace Final
                     break;
                 case State.AuthSkipped:
                 case State.AuthPassed:
-                    StateHolder.CurrentState = State.Final;
+                    SceneStateHolder.LastSavableSceneState = SceneState.Frame;
                     _scenes.LoadPreviousScene();
-                    StateHolder.CurrentState = State.Quit;
+                    GameFinishedController.IsGameFinished = true;
                     break;
             }
         }
@@ -103,12 +103,10 @@ namespace Final
                     OpenCardInfoForm(CommentsHolder.CardIfAuthPassed);
                     break;
                 case State.AuthSkipped:
-                    StateHolder.CurrentState = State.Final;
-                    _scenes.LoadAuthorsScene();
-                    break;
                 case State.AuthPassed:
-                    StateHolder.CurrentState = State.Final;
-                    _scenes.LoadAuthorsScene();
+                    SceneStateHolder.LastSavableSceneState = SceneState.Frame;
+                    _scenes.LoadFramesScene();
+                    GameFinishedController.IsGameFinished = true;
                     break;
             }
         }

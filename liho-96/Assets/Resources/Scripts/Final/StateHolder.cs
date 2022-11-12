@@ -11,6 +11,6 @@
 
     public enum State
     {
-        Auth, AuthSkipped, AuthPassed, Final, Quit
+        Auth, AuthSkipped, AuthPassed
     }
 }

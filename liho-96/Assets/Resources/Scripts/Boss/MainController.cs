@@ -96,7 +96,7 @@ namespace Boss
                     NextPhase();
                     break;
                 case FightState.GameOver:
-                    Application.Quit();
+                    Application.Quit(); // TODO: использовать scenes controller
                     break;
                 case FightState.LastItemChosen:
                     Win();

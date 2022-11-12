@@ -1,4 +1,4 @@
-﻿using Final;
+﻿using Common;
 using UnityEngine;
 
 namespace Authors
@@ -13,7 +13,7 @@ namespace Authors
 
         private void Start()
         {
-            var isGameFinished = Final.StateHolder.CurrentState == State.Quit;
+            var isGameFinished = GameFinishedController.IsGameFinished;
             rolesOpened.SetActive(isGameFinished);
             rolesClosed.SetActive(!isGameFinished);
             secretGuestOpened.SetActive(isGameFinished);

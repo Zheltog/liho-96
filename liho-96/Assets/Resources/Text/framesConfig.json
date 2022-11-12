@@ -797,7 +797,7 @@
     "garage_attack_1": {
       "Picture": "garage_madman",
       "Music": "Bram Stoker's Dracula - Demon Bat Attack!",
-      "Text": "Из темноты на Курьера бросается безумный человек в рваной одежде.\nОн валит Курьера на бетонный пол и пытается задушить.",
+      "Text": "Из темноты на Курьера бросается безумец в рваной одежде.\nОн валит Курьера на бетонный пол и пытается задушить.",
       "Type": "Choice",
       "Choices": [
         {
@@ -1502,7 +1502,7 @@
     },
     "market_items_grenade_after": {
       "Picture": "market_merchant",
-      "Text": "Женщина осматривает пистолет. Торговка: \"Состояние... удовлетворительное. Давно не чищен...\"",
+      "Text": "Женщина осматривает пистолет.\nТорговка: \"Состояние... удовлетворительное. Давно не чищен...\"",
       "Type": "Choice",
       "Choices": [
         {
@@ -5728,7 +5728,7 @@
       "Type": "Simple",
       "Transition": {
         "Type": "Frame",
-        "Next": "klumba_after_fight_14"
+        "Next": "klumba_after_fight_15"
       }
     },
     "klumba_after_fight_15": {

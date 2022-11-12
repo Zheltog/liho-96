@@ -65,7 +65,7 @@ namespace Final
         private IEnumerator CheckAnswer() {
             var uwr = UnityWebRequest.Post(ApiInfoHolder.QuestDomain + ApiInfoHolder.CheckTaskPath, "");
             uwr.uploadHandler = new UploadHandlerRaw(Encoding.UTF8.GetBytes(
-                JsonUtility.ToJson(new CheckTaskRequest(ApiInfoHolder.TaskId, StateHolder.Token))
+                JsonUtility.ToJson(new CheckTaskRequest(ApiInfoHolder.TaskId, StateHolder.Answer))
             ));
             uwr.SetRequestHeader("Content-Type", "application/json");
             yield return uwr.SendWebRequest();
