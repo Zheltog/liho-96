@@ -1168,7 +1168,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: d2ed11f198e67a448bd70ee4f25d8551, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 0.3
   m_Pitch: 1
   Loop: 1
@@ -1584,6 +1584,7 @@ MonoBehaviour:
   rolesClosed: {fileID: 2085784362}
   secretGuestOpened: {fileID: 1557405161}
   secretGuestClosed: {fileID: 1798287745}
+  audioPlayer: {fileID: 851974014}
 --- !u!114 &1094797002
 MonoBehaviour:
   m_ObjectHideFlags: 0

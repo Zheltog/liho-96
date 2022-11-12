@@ -2,16 +2,16 @@
 {
     public static class CommentsHolder
     {
-        public const string Auth = "Давай давай вводи хорошего";
-        public const string CardIfAuthSkipped = "Ну хотя бы это введи тогда что ли";
-        public const string CardIfAuthPassed = "Нормально нормально ну давай тогда и это введи раз такая тема ;)))";
+        public const string Auth = "В общем, с Курьером пока что все ясно. Но вот от Вас мне бы хотелось еще кое-что узнать...";
+        public const string CardIfAuthSkipped = "Ладно. Такими данными с кем попало и правда делиться не стоит. Но хотя бы это можно указать, верно?";
+        public const string CardIfAuthPassed = "Знаем такого человечка. Теперь нужно получить от Вас кодовые слова - и готово...";
 
-        public const string LoginEmpty = "Нужно заполнить поле \"Адрес эл. почты\"";
-        public const string PassEmpty = "Нужно заполнить поле \"Пароль\"";
-        public const string AuthError = "Не удалось авторизоваться. Возможно, данные некорректны";
-        public const string InvalidCard = "Нужно корректно заполнить поле \"Номер карты\"";
-        public const string InvalidDate = "Нужно корректно заполнить поля месяца и года";
-        public const string InvalidCvv = "Нужно корректно заполнить поле \"CVV\"";
-        public const string CheckTaskError = "Засчитать ответ на задание не удалось...";
+        public const string LoginEmpty = "Нужно заполнить адрес электронной почты, он же логин";
+        public const string PassEmpty = "Нужно заполнить пароль";
+        public const string AuthError = "Такой работяга у нас не числится. Возможно, в данных какая-то путаница";
+        public const string InvalidCard = "Нужно заполнить номер карты";
+        public const string InvalidDate = "Нужно корректно заполнить месяц и год окончания действия карты";
+        public const string InvalidCvv = "Нужно заполнить CVV";
+        public const string CheckTaskError = "Вроде все так, да что-то не так... Свяжитесь с организаторами";
     }
 }

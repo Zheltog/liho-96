@@ -9,6 +9,7 @@ namespace Authors
         public GameObject rolesClosed;
         public GameObject secretGuestOpened;
         public GameObject secretGuestClosed;
+        public AudioSource audioPlayer;
 
         private void Start()
         {
@@ -17,6 +18,11 @@ namespace Authors
             rolesClosed.SetActive(!isGameFinished);
             secretGuestOpened.SetActive(isGameFinished);
             secretGuestClosed.SetActive(!isGameFinished);
+
+            if (isGameFinished)
+            {
+                audioPlayer.Play();
+            }
         }
     }
 }

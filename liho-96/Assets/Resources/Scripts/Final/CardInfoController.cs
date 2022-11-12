@@ -23,16 +23,18 @@ namespace Final
 
         public void CheckInfo()
         {
-            ValidateCardInfo(numberInput.text, monthInput.text, yearInput.text, cvvInput.text);
-            // TODO: запрос
+            if (ValidateCardInfo(numberInput.text, monthInput.text, yearInput.text, cvvInput.text))
+            {
+                StartCoroutine(CheckAnswer());
+            }
         }
         
-        private void ValidateCardInfo(string number, string month, string year, string cvv)
+        private bool ValidateCardInfo(string number, string month, string year, string cvv)
         {
             if (string.IsNullOrEmpty(number) || number.Length != 16)
             {
                 _mainController.Error(CommentsHolder.InvalidCard);
-                return;
+                return false;
             }
             
             if (string.IsNullOrEmpty(month) ||
@@ -42,23 +44,22 @@ namespace Final
                 (year[0] == '0' && year.Length == 1))
             {
                 _mainController.Error(CommentsHolder.InvalidDate);
-                return;
+                return false;
             }
             
             if (string.IsNullOrEmpty(cvv) || cvv.Length != 3)
             {
                 _mainController.Error(CommentsHolder.InvalidCvv);
-                return;
+                return false;
             }
             
             if (StateHolder.Token == null)
             {
                 _mainController.Success();
+                return false;
             }
-            else
-            {
-                StartCoroutine(CheckAnswer());
-            }
+            
+            return true;
         }
         
         private IEnumerator CheckAnswer() {

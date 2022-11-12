@@ -24,8 +24,10 @@ namespace Final
         {
             var login = loginInput.text;
             var pass = passInput.text;
-            ValidateInput(login, pass);
-            StartCoroutine(Login(login, pass));
+            if (ValidateInput(login, pass))
+            {
+                StartCoroutine(Login(login, pass));
+            }
         }
         
         private IEnumerator Login(string login, string password) {
@@ -48,18 +50,21 @@ namespace Final
             }
         }
         
-        private void ValidateInput(string login, string pass)
+        private bool ValidateInput(string login, string pass)
         {
             if (string.IsNullOrEmpty(login))
             {
                 _mainController.Error(CommentsHolder.LoginEmpty);
-                return;
+                return false;
             }
             
             if (string.IsNullOrEmpty(pass))
             {
                 _mainController.Error(CommentsHolder.PassEmpty);
+                return false;
             }
+
+            return true;
         }
     }
 }
