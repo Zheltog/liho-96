@@ -1,5 +1,5 @@
 {
-  "StartingFrame": "klumba_kanevsky",
+  "StartingFrame": "start",
   "StartingFlags": [
     "SmallMoney",
     "Lighter",
@@ -291,7 +291,7 @@
         "Actions": [
           {
             "Type": "Add",
-            "Value": "NotHungry"
+            "Name": "NotHungry"
           }
         ]
       }
@@ -505,7 +505,7 @@
         "Actions": [
           {
             "Type": "Add",
-            "Value": "GirlPhoneNumber"
+            "Name": "GirlPhoneNumber"
           }
         ]
       }

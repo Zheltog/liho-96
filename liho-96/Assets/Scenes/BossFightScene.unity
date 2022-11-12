@@ -2950,7 +2950,7 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 418250740}
           m_TargetAssemblyTypeName: Common.ButtonTextStyleController, Assembly-CSharp
-          m_MethodName: OnMouseOver
+          m_MethodName: SetUnderline
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -2966,7 +2966,23 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 418250740}
           m_TargetAssemblyTypeName: Common.ButtonTextStyleController, Assembly-CSharp
-          m_MethodName: OnMouseExit
+          m_MethodName: SetNormal
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 4
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 418250740}
+          m_TargetAssemblyTypeName: Common.ButtonTextStyleController, Assembly-CSharp
+          m_MethodName: SetNormal
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -4447,7 +4463,7 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 750335568}
           m_TargetAssemblyTypeName: Common.ButtonTextStyleController, Assembly-CSharp
-          m_MethodName: OnMouseOver
+          m_MethodName: SetUnderline
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -4463,7 +4479,23 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 750335568}
           m_TargetAssemblyTypeName: Common.ButtonTextStyleController, Assembly-CSharp
-          m_MethodName: OnMouseExit
+          m_MethodName: SetNormal
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 4
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 750335568}
+          m_TargetAssemblyTypeName: Common.ButtonTextStyleController, Assembly-CSharp
+          m_MethodName: SetNormal
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -4639,7 +4671,7 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 751656336}
           m_TargetAssemblyTypeName: Common.ButtonTextStyleController, Assembly-CSharp
-          m_MethodName: OnMouseOver
+          m_MethodName: SetUnderline
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -4655,7 +4687,23 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 751656336}
           m_TargetAssemblyTypeName: Common.ButtonTextStyleController, Assembly-CSharp
-          m_MethodName: OnMouseExit
+          m_MethodName: SetNormal
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 4
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 751656336}
+          m_TargetAssemblyTypeName: Common.ButtonTextStyleController, Assembly-CSharp
+          m_MethodName: SetNormal
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -4831,7 +4879,7 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 752911985}
           m_TargetAssemblyTypeName: Common.ButtonTextStyleController, Assembly-CSharp
-          m_MethodName: OnMouseOver
+          m_MethodName: SetUnderline
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -4847,7 +4895,23 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 752911985}
           m_TargetAssemblyTypeName: Common.ButtonTextStyleController, Assembly-CSharp
-          m_MethodName: OnMouseExit
+          m_MethodName: SetNormal
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 4
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 752911985}
+          m_TargetAssemblyTypeName: Common.ButtonTextStyleController, Assembly-CSharp
+          m_MethodName: SetNormal
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -5553,7 +5617,7 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 811760992}
           m_TargetAssemblyTypeName: Common.ButtonTextStyleController, Assembly-CSharp
-          m_MethodName: OnMouseOver
+          m_MethodName: SetUnderline
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -5569,7 +5633,23 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 811760992}
           m_TargetAssemblyTypeName: Common.ButtonTextStyleController, Assembly-CSharp
-          m_MethodName: OnMouseExit
+          m_MethodName: SetNormal
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 4
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 811760992}
+          m_TargetAssemblyTypeName: Common.ButtonTextStyleController, Assembly-CSharp
+          m_MethodName: SetNormal
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -6618,7 +6698,7 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 928323481}
           m_TargetAssemblyTypeName: Common.ButtonTextStyleController, Assembly-CSharp
-          m_MethodName: OnMouseOver
+          m_MethodName: SetUnderline
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -6634,7 +6714,23 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 928323481}
           m_TargetAssemblyTypeName: Common.ButtonTextStyleController, Assembly-CSharp
-          m_MethodName: OnMouseExit
+          m_MethodName: SetNormal
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 4
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 928323481}
+          m_TargetAssemblyTypeName: Common.ButtonTextStyleController, Assembly-CSharp
+          m_MethodName: SetNormal
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -9111,7 +9207,7 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 1397362630}
           m_TargetAssemblyTypeName: Common.ButtonTextStyleController, Assembly-CSharp
-          m_MethodName: OnMouseOver
+          m_MethodName: SetUnderline
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -9127,7 +9223,23 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 1397362630}
           m_TargetAssemblyTypeName: Common.ButtonTextStyleController, Assembly-CSharp
-          m_MethodName: OnMouseExit
+          m_MethodName: SetNormal
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 4
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1397362630}
+          m_TargetAssemblyTypeName: Common.ButtonTextStyleController, Assembly-CSharp
+          m_MethodName: SetNormal
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -9303,7 +9415,7 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 1401865672}
           m_TargetAssemblyTypeName: Common.ButtonTextStyleController, Assembly-CSharp
-          m_MethodName: OnMouseOver
+          m_MethodName: SetUnderline
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -9319,7 +9431,23 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 1401865672}
           m_TargetAssemblyTypeName: Common.ButtonTextStyleController, Assembly-CSharp
-          m_MethodName: OnMouseExit
+          m_MethodName: SetNormal
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 4
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1401865672}
+          m_TargetAssemblyTypeName: Common.ButtonTextStyleController, Assembly-CSharp
+          m_MethodName: SetNormal
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -9533,7 +9661,7 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 1457360268}
           m_TargetAssemblyTypeName: Common.ButtonTextStyleController, Assembly-CSharp
-          m_MethodName: OnMouseOver
+          m_MethodName: SetUnderline
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -9549,7 +9677,23 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 1457360268}
           m_TargetAssemblyTypeName: Common.ButtonTextStyleController, Assembly-CSharp
-          m_MethodName: OnMouseExit
+          m_MethodName: SetNormal
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 4
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1457360268}
+          m_TargetAssemblyTypeName: Common.ButtonTextStyleController, Assembly-CSharp
+          m_MethodName: SetNormal
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -10187,7 +10331,7 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 1561844191}
           m_TargetAssemblyTypeName: Common.ButtonTextStyleController, Assembly-CSharp
-          m_MethodName: OnMouseOver
+          m_MethodName: SetUnderline
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -10203,7 +10347,23 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 1561844191}
           m_TargetAssemblyTypeName: Common.ButtonTextStyleController, Assembly-CSharp
-          m_MethodName: OnMouseExit
+          m_MethodName: SetNormal
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 4
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1561844191}
+          m_TargetAssemblyTypeName: Common.ButtonTextStyleController, Assembly-CSharp
+          m_MethodName: SetNormal
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -10367,7 +10527,7 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 1575120362}
           m_TargetAssemblyTypeName: Common.ButtonTextStyleController, Assembly-CSharp
-          m_MethodName: OnMouseOver
+          m_MethodName: SetUnderline
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -10383,7 +10543,23 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 1575120362}
           m_TargetAssemblyTypeName: Common.ButtonTextStyleController, Assembly-CSharp
-          m_MethodName: OnMouseExit
+          m_MethodName: SetNormal
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 4
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1575120362}
+          m_TargetAssemblyTypeName: Common.ButtonTextStyleController, Assembly-CSharp
+          m_MethodName: SetNormal
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -13317,7 +13493,7 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 2121770962}
           m_TargetAssemblyTypeName: Common.ButtonTextStyleController, Assembly-CSharp
-          m_MethodName: OnMouseOver
+          m_MethodName: SetUnderline
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -13333,7 +13509,23 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 2121770962}
           m_TargetAssemblyTypeName: Common.ButtonTextStyleController, Assembly-CSharp
-          m_MethodName: OnMouseExit
+          m_MethodName: SetNormal
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 4
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 2121770962}
+          m_TargetAssemblyTypeName: Common.ButtonTextStyleController, Assembly-CSharp
+          m_MethodName: SetNormal
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}

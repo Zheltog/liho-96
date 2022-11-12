@@ -12,12 +12,12 @@ namespace Common
             _text = GetComponentInChildren<TextMeshProUGUI>();
         }
         
-        public void OnMouseOver()
+        public void SetUnderline()
         {
             _text.fontStyle = FontStyles.Underline;
         }
 
-        public void OnMouseExit()
+        public void SetNormal()
         {
             _text.fontStyle = FontStyles.Normal;
         }

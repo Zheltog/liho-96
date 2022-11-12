@@ -37,6 +37,11 @@ namespace Boss
             {
                 Empty();
             }
+
+            if (_currentHealth > maxHealth)
+            {
+                _currentHealth = maxHealth;
+            }
         }
 
         private void Empty()
