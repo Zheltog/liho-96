@@ -1,8 +1,7 @@
 {
-  "StartingFrame": "start",
+  "StartingFrame": "klumba",
   "StartingFlags": [
-    "SmallMoney",
-    "Pistol"
+    "SmallMoney"
   ],
   "Frames": {
     "start": {
@@ -1629,17 +1628,6 @@
         }
       ]
 
-    },
-
-    "forest_todo": {
-      "Picture": "blank",
-      "Music": "Clock Tower - Don't Cry, Jennifer",
-      "Text": "TODO курьер идёт к лесу, видит следы шин на дороге. Подходит, видит свою машину и мёртвых угонщиков. ЛИХО украдено бандитами. Знакомится с Учёным. Тот предлагает спросить у владельца казино о местоположении бандитов.",
-      "Type": "Simple",
-      "Transition": {
-        "Type": "Frame",
-        "Next": "casino_entrance"
-      }
     },
 
     "forest": {
@@ -3957,7 +3945,7 @@
           "Text": "\"Нужно пойти на место встречи\"",
           "Transition": {
             "Type": "Frame",
-            "Next": "after_casino_city_go_to_klumba_TODO"
+            "Next": "after_casino_city_go_to_klumba"
           }
         }
       ]
@@ -3979,6 +3967,79 @@
         "Type": "Exit"
       }
     },
+    "after_casino_city_go_to_klumba": {
+      "Picture": "city_walk_scientist",
+      "Text": "Учёный: \"...да, т-ты, н-наверное, прав. Может, там мы что-то узнаем...\"",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "after_casino_city_go_to_klumba_1"
+      }
+    },
+    "after_casino_city_go_to_klumba_1": {
+      "Picture": "city_walk_scientist",
+      "Text": "Учёный: \"А куда нам нужно идти?\"",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "after_casino_city_go_to_klumba_2"
+      }
+    },
+    "after_casino_city_go_to_klumba_2": {
+      "Picture": "city_walk_scientist",
+      "Text": "Курьер протягивает ему записку.",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "after_casino_city_go_to_klumba_3"
+      }
+    },
+    "after_casino_city_go_to_klumba_3": {
+      "Picture": "casino_entrance_scientist",
+      "Sound": "gasp_surprised",
+      "Text": "Учёный: \"Полночь. Старый... Клумба.\"",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "after_casino_city_go_to_klumba_4"
+      }
+    },
+    "after_casino_city_go_to_klumba_4": {
+      "Picture": "casino_entrance_scientist",
+      "Sound": "gasp_surprised",
+      "Text": "Учёный: \"Д-да, думаю, я знаю, где это. За старым университетом. П-плохой район конечно...\"",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "after_casino_city_go_to_klumba_5"
+      }
+    },
+    "after_casino_city_go_to_klumba_5": {
+      "Picture": "casino_entrance_scientist",
+      "Sound": "gasp_surprised",
+      "Text": "Учёный: \"Ладно, п-пойдём, покажу дорогу.\"",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "after_casino_city_go_to_klumba_6"
+      }
+    },
+    "after_casino_city_go_to_klumba_6": {
+      "Picture": "casino_entrance_scientist",
+      "Sound": "gasp_surprised",
+      "Text": "Курьер: \"...\"",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "park_exit",
+        "Actions": [
+          {
+            "Type": "Add",
+            "Name": "DoNotKnowTumansPlace"
+          }
+        ]
+      }
+    },
 
     "after_casino_to_klumba": {
       "Picture": "casino_entrance",
@@ -3986,12 +4047,12 @@
       "Type": "Simple",
       "Transition": {
         "Type": "Frame",
-        "Next": "after_casino_to_klumba"
+        "Next": "after_casino_to_klumba_1"
       }
     },
     "after_casino_to_klumba_1": {
       "Picture": "casino_entrance_scientist",
-      "Text": "Учёный: \"Старый универ! Конечно, я знаю, где это. Н-нужно только немного пройтись...\"",
+      "Text": "Учёный: \"Старый университет! Конечно, я знаю, где это. Н-нужно только немного пройтись...\"",
       "Type": "Simple",
       "Transition": {
         "Type": "Frame",
@@ -4074,7 +4135,6 @@
     },
     "after_casino_to_klumba_10": {
       "Picture": "casino_entrance_scientist",
-      "Music": "city_ambience",
       "Text": "Учёный: \"Верно, д-других вариантов у нас нет... Пойдём, я покажу дорогу.\"",
       "Type": "Simple",
       "Transition": {
@@ -4109,7 +4169,7 @@
       "Type": "Simple",
       "Transition": {
         "Type": "Frame",
-        "Next": "park_entrance_1"
+        "Next": "park_entrance_2"
       }
     },
     "park_entrance_2": {
@@ -4181,15 +4241,52 @@
     "park_exit_6": {
       "Picture": "blank",
       "Text": "Учёный: \"Достал его на барахолке месяц назад. Лучше не думать п-про его п-прошлых владельцев...\"",
-      "Type": "Simple",
-      "Transition": {
-        "Type": "Frame",
-        "Next": "park_exit_7"
-      }
+      "Type": "Choice",
+      "Choices": [
+        {
+          "Text": "костыль - вариант, если курьер не узнал, что туман на клумбе",
+          "Transition": {
+            "Type": "Frame",
+            "Next": "park_exit_7_other"
+          },
+          "Visibility": [
+            {
+              "Type": "And",
+              "Flags": [
+                "DoNotKnowTumansPlace"
+              ]
+            }
+          ]
+        },
+        {
+          "Text": "костыль - вариант, если курьер узнал, что туман на клумбе",
+          "Transition": {
+            "Type": "Frame",
+            "Next": "park_exit_7"
+          },
+          "Visibility": [
+            {
+              "Type": "AndNot",
+              "Flags": [
+                "DoNotKnowTumansPlace"
+              ]
+            }
+          ]
+        }
+      ]
     },
     "park_exit_7": {
       "Picture": "blank",
       "Text": "Учёный: \"Я п-попробую договориться и обезвредить ЛИХО. Н-но если что-то случится, звони в милицию. Или ещё кому, н-не знаю, знакомым, друзьям... чтобы хоть знали, где нас искать.\"",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "park_exit_8"
+      }
+    },
+    "park_exit_7_other": {
+      "Picture": "blank",
+      "Text": "Учёный: \"Я н-не знаю, что нас т-там ждёт. Н-но если что-то случится, звони в милицию. Или ещё кому, н-не знаю, знакомым, друзьям... чтобы хоть знали, где нас искать.\"",
       "Type": "Simple",
       "Transition": {
         "Type": "Frame",
@@ -4202,7 +4299,13 @@
       "Type": "Simple",
       "Transition": {
         "Type": "Frame",
-        "Next": "park_exit_9"
+        "Next": "park_exit_9",
+        "Actions": [
+          {
+            "Type": "Add",
+            "Name": "Cellphone"
+          }
+        ]
       }
     },
     "park_exit_9": {
@@ -4211,7 +4314,7 @@
       "Type": "Simple",
       "Transition": {
         "Type": "Frame",
-        "Next": "park_exit_3"
+        "Next": "klumba"
       }
     },
 
@@ -4222,7 +4325,663 @@
       "Type": "Simple",
       "Transition": {
         "Type": "Frame",
-        "Next": "park_exit_1"
+        "Next": "klumba_entrance"
+      }
+    },
+    "klumba_entrance": {
+      "Picture": "blank",
+      "Text": "Небольшой дворик за заброшенным зданием университета. В центре стоит аляповатая фигура в форме цветка.",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "klumba_entrance_1"
+      }
+    },
+    "klumba_entrance_1": {
+      "Picture": "blank",
+      "Text": "На скамейках вокруг цветка сидят бандиты и празднуют успешное дело. На одной из скамеек в окружении бандитов сидит большой лысый мужчина и курит кальян.",
+      "Type": "Choice",
+      "Choices": [
+        {
+          "Text": "костыль - вариант, если курьер не узнал, что туман на клумбе",
+          "Transition": {
+            "Type": "Frame",
+            "Next": "klumba_entrance_2_other"
+          },
+          "Visibility": [
+            {
+              "Type": "And",
+              "Flags": [
+                "DoNotKnowTumansPlace"
+              ]
+            }
+          ]
+        },
+        {
+          "Text": "костыль - вариант, если курьер узнал, что туман на клумбе",
+          "Transition": {
+            "Type": "Frame",
+            "Next": "klumba_entrance_2"
+          },
+          "Visibility": [
+            {
+              "Type": "AndNot",
+              "Flags": [
+                "DoNotKnowTumansPlace"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "klumba_entrance_2": {
+      "Picture": "blank",
+      "Text": "Учёный: \"Вот он. Т-туман...\"",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "klumba_entrance_3"
+      }
+    },
+    "klumba_entrance_2_other": {
+      "Picture": "blank",
+      "Text": "Учёный: \"П-погоди, это же... тумановские? Что-то они т-тут делают? Это з-з-засада??\"",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "klumba_entrance_3"
+      }
+    },
+    "klumba_entrance_3": {
+      "Picture": "blank",
+      "Text": "Бандиты заметили незваных гостей и затихли.",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "klumba_entrance_4"
+      }
+    },
+    "klumba_entrance_4": {
+      "Picture": "blank",
+      "Text": "Учёный: \"...\"",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "klumba_entrance_5"
+      }
+    },
+    "klumba_entrance_5": {
+      "Picture": "blank",
+      "Text": "Курьер: \"...пойдём. Поговорим с ними.\"",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "klumba_tuman_start"
+      }
+    },
+
+    "klumba_tuman_start": {
+      "Picture": "blank",
+      "Text": "Курьер и Учёный подходят к лысому мужчине. Бандиты злобно смотрят на них, но расступаются.",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "klumba_tuman_start_1"
+      }
+    },
+    "klumba_tuman_start_1": {
+      "Picture": "blank",
+      "Text": "Туман откладывает мундштук от кальяна в сторону и смотрит на Курьера и Учёного.",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "klumba_tuman_start_2"
+      }
+    },
+    "klumba_tuman_start_2": {
+      "Picture": "blank",
+      "Text": "Туман: \"Опа-на, кто это к нам пожаловал? Чего надо, молодые?\"",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "klumba_tuman_start_3"
+      }
+    },
+    "klumba_tuman_start_3": {
+      "Picture": "blank",
+      "Text": "Курьер: \"...\"",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "klumba_tuman_start_4"
+      }
+    },
+    "klumba_tuman_start_4": {
+      "Picture": "blank",
+      "Text": "Учёный: \"Д-д-добрый вечер. Нам н-надо узнать...\"",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "klumba_tuman_start_5"
+      }
+    },
+    "klumba_tuman_start_5": {
+      "Picture": "blank",
+      "Text": "Туман: \"Ха-ха, ну ты выдал, дятел, внатуре! Добрый вечер ему!\"\nБандиты смеются.",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "klumba_tuman_start_6"
+      }
+    },
+    "klumba_tuman_start_6": {
+      "Picture": "blank",
+      "Text": "Учёный: \"Н-н-нам нужно ЛИХО.\"",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "klumba_tuman_start_7"
+      }
+    },
+    "klumba_tuman_start_7": {
+      "Picture": "blank",
+      "Text": "Бандиты замолкают.\nТуман: \"Откуда ты знаешь про ЛИХО, дятел?\"",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "klumba_tuman_start_8"
+      }
+    },
+    "klumba_tuman_start_8": {
+      "Picture": "blank",
+      "Text": "Курьер: \"Я курьер. Вы забрали ЛИХО из моей машины.\"",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "klumba_tuman_start_9"
+      }
+    },
+    "klumba_tuman_start_9": {
+      "Picture": "blank",
+      "Text": "Туман: \"Ха, вот так номер. А мне мужики сказали, что всех в той машине грохнули...\"",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "klumba_tuman_start_10"
+      }
+    },
+    "klumba_tuman_start_10": {
+      "Picture": "blank",
+      "Text": "Туман: \"Ха-ха, так у тебя сегодня второй день рождения! Лети, значит, отсюда, воробей!\"",
+      "Type": "Choice",
+      "Choices": [
+        {
+          "Text": "\"Зачем вам ЛИХО?\"",
+          "Transition": {
+            "Type": "Frame",
+            "Next": "klumba_tuman_what_for"
+          }
+        },
+        {
+          "Text": "\"Я должен был доставить ЛИХО вам\"",
+          "Transition": {
+            "Type": "Frame",
+            "Next": "klumba_tuman_had_to_deliver_to_you"
+          }
+        }
+      ]
+    },
+
+    "klumba_tuman_what_for": {
+      "Picture": "blank",
+      "Text": "Туман: \"Че за тупые вопросы, внатуре...\"",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "klumba_tuman_what_for_1"
+      }
+    },
+    "klumba_tuman_what_for_1": {
+      "Picture": "blank",
+      "Text": "Туман: \"Чем больше у нас оружия - тем больше нас боятся! Скоро о нас по всей стране знать будут, внатуре!\"",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "klumba_tuman_what_for_2"
+      }
+    },
+    "klumba_tuman_what_for_2": {
+      "Picture": "blank",
+      "Text": "Учёный: \"Н-но всё-таки... вы п-понимаете, что т-такое ЛИХО?\"",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "klumba_tuman_what_for_3"
+      }
+    },
+    "klumba_tuman_what_for_3": {
+      "Picture": "blank",
+      "Text": "Туман: \"Да какая мне нахер разница? То ли бомба какая, то ли что... Но мы с мужиками и без вас, бакланов, разберёмся.\"",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "klumba_tuman_where_is_liho"
+      }
+    },
+    
+    "klumba_tuman_had_to_deliver_to_you": {
+      "Picture": "blank",
+      "Text": "Туман хмурится.\nТуман: \"Ниче такого не знаю.\"",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "klumba_tuman_had_to_deliver_to_you_1"
+      }
+    },
+    "klumba_tuman_had_to_deliver_to_you_1": {
+      "Picture": "blank",
+      "Text": "Туман: \"Птичка нам нашептала про ЛИХО и про машину – ну мы машину и грабанули. А ты мне щас какую-то херь втираешь.\"",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "klumba_tuman_had_to_deliver_to_you_2"
+      }
+    },
+    "klumba_tuman_had_to_deliver_to_you_2": {
+      "Picture": "blank",
+      "Text": "Курьер: \"...\"",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "klumba_tuman_where_is_liho"
+      }
+    },
+
+    "klumba_tuman_where_is_liho": {
+      "Picture": "blank",
+      "Text": "Учёный: \"...а г-где сейчас ЛИХО?\"",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "klumba_tuman_where_is_liho_1"
+      }
+    },
+    "klumba_tuman_where_is_liho_1": {
+      "Picture": "blank",
+      "Text": "Туман: \"Ха-ха, ну вы вообще слепые видать, ага? Вон же, мои мужики с ним щас чето мудрят.\"",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "klumba_tuman_where_is_liho_2"
+      }
+    },
+    "klumba_tuman_where_is_liho_2": {
+      "Picture": "blank",
+      "Text": "Туман указывает на скамейку на другом конце клумбы. Там два бандита пытаются вскрыть ЛИХО складным ножом.",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "klumba_tuman_choice"
+      }
+    },
+
+    "klumba_tuman_choice": {
+      "Picture": "blank",
+      "Text": "Туман: \"Ну так и че ж вам от меня надо внатуре? Че мне делать с вами? Я чето пока совсем не вдупляю.\"",
+      "Type": "Choice",
+      "Choices": [
+        {
+          "Text": "\"...\"",
+          "Transition": {
+            "Type": "Frame",
+            "Next": "klumba_tuman_why_you_came_here"
+          }
+        },
+        {
+          "Text": "\"Я хочу присоединиться к тебе\"",
+          "Transition": {
+            "Type": "Frame",
+            "Next": "klumba_tuman_join"
+          }
+        }
+      ]
+    },
+    "klumba_tuman_why_you_came_here": {
+      "Picture": "blank",
+      "Text": "Курьер и Учёный молчат. Туман затягивается кальяном и выдыхает им в лица.",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "klumba_tuman_why_you_came_here_1"
+      }
+    },
+    "klumba_tuman_why_you_came_here_1": {
+      "Picture": "blank",
+      "Text": "Туман: \"Ну так и че вы сюда припёрлись, бакланы? Валите отсюда, пока живы, внатуре!\"",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "klumba_tuman_why_you_came_here_2"
+      }
+    },
+    "klumba_tuman_why_you_came_here_2": {
+      "Picture": "blank",
+      "Text": "Учёный: \"...\"",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "klumba_tuman_scientist"
+      }
+    },
+    "klumba_tuman_join": {
+      "Picture": "blank",
+      "Text": "Туман: \"А че, ты не такой уж и тупень! Ха-ха, хорош!\"",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "klumba_tuman_join_1"
+      }
+    },
+    "klumba_tuman_join_1": {
+      "Picture": "blank",
+      "Text": "Туман: \"Вижу, ты за себя постоять можешь. Мне такие нужны. У меня ты не просто водилой будешь, будешь в лица стрелять! В масле кататься, внатуре!\"",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "klumba_tuman_join_2"
+      }
+    },
+    "klumba_tuman_join_2": {
+      "Picture": "blank",
+      "Text": "Туман: \"На, это будет мой знак. Типа ты под моим э... под моей защитой короче.\"",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "klumba_tuman_join_3"
+      }
+    },
+    "klumba_tuman_join_3": {
+      "Picture": "blank",
+      "Text": "Туман протягивает Курьеру позолоченные щипцы от кальяна.\n<Предмет добавлен: [Щипцы от кальяна]>",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "klumba_tuman_join_4",
+        "Actions": [
+          {
+            "Type": "Add",
+            "Name": "HookahTongs"
+          }
+        ]
+      }
+    },
+    "klumba_tuman_join_4": {
+      "Picture": "blank",
+      "Text": "Туман: \"Завтра придёшь сюда, в это же время. Покажешь эту хрень моим мужикам, они всё поймут. Посвятят тебя, станешь нам внатуре братом!\"",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "klumba_tuman_join_5"
+      }
+    },
+    "klumba_tuman_join_5": {
+      "Picture": "blank",
+      "Text": "Учёный огорчённо смотрит на Курьера.",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "klumba_tuman_join_6"
+      }
+    },
+    "klumba_tuman_join_6": {
+      "Picture": "blank",
+      "Text": "Учёный: \"Н-нет-нет-нет, зачем? Что ты д-делаешь???\"",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "klumba_tuman_scientist"
+      }
+    },
+
+    "klumba_tuman_scientist": {
+      "Picture": "blank",
+      "Text": "Учёный: \"Да вы же совсем ничего н-не понимаете! ЛИХО опасно! Вы же весь мир угробите!\"",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "klumba_tuman_scientist_1"
+      }
+    },
+    "klumba_tuman_scientist_1": {
+      "Picture": "blank",
+      "TextDelay": "0.12",
+      "Text": "Учёный: \"Отдайте мне ЛИХО!!!\"",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "klumba_tuman_scientist_2"
+      }
+    },
+    "klumba_tuman_scientist_2": {
+      "Picture": "blank",
+      "Text": " ! ! ! ! !",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "klumba_tuman_scientist_dead"
+      }
+    },
+    "klumba_tuman_scientist_dead": {
+      "Picture": "blank",
+      "Text": "Туман стреляет Учёному в живот, и тот падает на землю.",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "klumba_tuman_scientist_dead_1"
+      }
+    },
+    "klumba_tuman_scientist_dead_1": {
+      "Picture": "blank",
+      "Text": "Учёный пытается что-то сказать, но слова даются ему тяжело.\nКурьер наклоняется над ним. Учёный кашляет кровью.",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "klumba_tuman_scientist_dead_2"
+      }
+    },
+    "klumba_tuman_scientist_dead_2": {
+      "Picture": "blank",
+      "Text": "Учёный: \"Я... кха... кха...\"",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "klumba_tuman_scientist_dead_3"
+      }
+    },
+    "klumba_tuman_scientist_dead_3": {
+      "Picture": "blank",
+      "Text": "Учёный: \"...п...прошу.....забери...ЛИХО......\"",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "klumba_tuman_scientist_dead_4"
+      }
+    },
+    "klumba_tuman_scientist_dead_4": {
+      "Picture": "blank",
+      "Text": "Учёный: \". . . . .\"",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "klumba_tuman_scientist_dead_5"
+      }
+    },
+    "klumba_tuman_scientist_dead_5": {
+      "Picture": "blank",
+      "Text": ". . . . .",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "klumba_tuman_scientist_dead_6"
+      }
+    },
+    "klumba_tuman_scientist_dead_6": {
+      "Picture": "blank",
+      "Text": "Курьер: \"...\"",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "klumba_tuman_end"
+      }
+    },
+    "klumba_tuman_end": {
+      "Picture": "blank",
+      "Text": "Туман: \"Ха-ха, ну дятел внатуре! Чето пацан дохера борзый был, ага?\"\nБандиты смеются.",
+      "Type": "Choice",
+      "Choices": [
+        {
+          "Text": "\"...\"",
+          "Transition": {
+            "Type": "Frame",
+            "Next": "klumba_soldiers_arrive"
+          }
+        },
+        {
+          "Text": "Достать пистолет",
+          "Transition": {
+            "Type": "Frame",
+            "Next": "klumba_tuman_end_gun"
+          },
+          "Visibility": [
+            {
+              "Type": "And",
+              "Flags": [
+                "Pistol"
+              ]
+            }
+          ]
+        },
+        {
+          "Text": "Напасть на Тумана",
+          "Transition": {
+            "Type": "Frame",
+            "Next": "klumba_tuman_end_attack"
+          },
+          "Visibility": [
+            {
+              "Type": "AndNot",
+              "Flags": [
+                "Pistol"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "klumba_tuman_end_gun": {
+      "Picture": "blank",
+      "Text": "Курьер достаёт пистолет и наставляет его на Тумана. Окружающие его бандиты тоже достают оружие и целятся в Курьера.\nТуман не шелохнулся.",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "klumba_tuman_end_gun_1"
+      }
+    },
+    "klumba_tuman_end_gun_1": {
+      "Picture": "blank",
+      "Text": "Туман: \"Ты че вытворяешь, шкет? Пистолет опустил быстро.\"",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "klumba_tuman_end_gun_2"
+      }
+    },
+    "klumba_tuman_end_gun_2": {
+      "Picture": "blank",
+      "Text": "Туман: \"Считаю до трёх. Один...\"",
+      "Type": "Choice",
+      "Choices": [
+        {
+          "Text": "Опустить пистолет",
+          "Transition": {
+            "Type": "Frame",
+            "Next": "klumba_tuman_end_lower_gun"
+          }
+        },
+        {
+          "Text": "Не опускать",
+          "Transition": {
+            "Type": "Frame",
+            "Next": "klumba_tuman_end_gun_3"
+          }
+        }
+      ]
+    },
+    "klumba_tuman_end_gun_3": {
+      "Picture": "blank",
+      "Text": "Туман: \"Два...\"",
+      "Type": "Choice",
+      "Choices": [
+        {
+          "Text": "Опустить пистолет",
+          "Transition": {
+            "Type": "Frame",
+            "Next": "klumba_tuman_end_lower_gun"
+          }
+        },
+        {
+          "Text": "Не опускать",
+          "Transition": {
+            "Type": "Frame",
+            "Next": "klumba_soldiers_arrive"
+          }
+        }
+      ]
+    },
+    "klumba_tuman_end_lower_gun": {
+      "Picture": "blank",
+      "Text": "Курьер опускает пистолет. Бандиты тут же расстреливают его.",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "klumba_tuman_pre_game_over"
+      }
+    },
+    "klumba_tuman_end_attack": {
+      "Picture": "blank",
+      "Text": "Туман: \"Ты че творишь, гнида?\"",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "klumba_tuman_end_attack_1"
+      }
+    },
+    "klumba_tuman_end_attack_1": {
+      "Picture": "blank",
+      "Text": "Туман отталкивает Курьера, и бандиты тут же расстреливают его.",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "klumba_tuman_pre_game_over"
+      }
+    },
+    "klumba_tuman_pre_game_over": {
+      "Picture": "blank",
+      "Text": "Туман: \"Ну и баклан внатуре...\"",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "klumba_tuman_game_over"
+      }
+    },
+    "klumba_tuman_game_over": {
+      "Picture": "game_over",
+      "Music": "",
+      "Sound": "game_over",
+      "Text": "Игра окончена!\nКурьер погиб в стычке с Тумановской ОПГ.",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Exit"
       }
     }
   }
