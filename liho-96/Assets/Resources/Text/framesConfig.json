@@ -496,7 +496,7 @@
     },
     "cafe_inside_phone_number_1": {
       "Picture": "cafe_inside_worker_blush",
-      "Text": "Она достаёт из ящика бумажку и ручку, записывает номер телефона и протягивает Курьеру.\n<Предмет добавлен: [Номер телефона]>",
+      "Text": "Она достаёт из ящика бумажку и ручку, записывает номер телефона и протягивает Курьеру.\n<Предмет добавлен: [Номер работницы столовой]>",
       "Type": "Simple",
       "Transition": {
         "Type": "Frame",
@@ -3982,13 +3982,248 @@
 
     "after_casino_to_klumba": {
       "Picture": "casino_entrance",
-      "Text": "TODO Кадр после казино, если персонажи знают, что Туман на клумбе.",
+      "Text": " . . . . .",
       "Type": "Simple",
       "Transition": {
         "Type": "Frame",
         "Next": "after_casino_to_klumba"
       }
+    },
+    "after_casino_to_klumba_1": {
+      "Picture": "casino_entrance_scientist",
+      "Text": "Учёный: \"Старый универ! Конечно, я знаю, где это. Н-нужно только немного пройтись...\"",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "after_casino_to_klumba_2"
+      }
+    },
+    "after_casino_to_klumba_2": {
+      "Picture": "casino_entrance_scientist",
+      "Text": "Курьер: \"...что-то тут не так.\"",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "after_casino_to_klumba_3"
+      }
+    },
+    "after_casino_to_klumba_3": {
+      "Picture": "casino_entrance_scientist",
+      "Music": "Doom - Suspense",
+      "Text": "Учёный: \"Что? В чём п-проблема?\"",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "after_casino_to_klumba_4"
+      }
+    },
+    "after_casino_to_klumba_4": {
+      "Picture": "casino_entrance_scientist",
+      "Text": "Курьер протягивает ему записку.",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "after_casino_to_klumba_5"
+      }
+    },
+    "after_casino_to_klumba_5": {
+      "Picture": "casino_entrance_scientist",
+      "Sound": "gasp_surprised",
+      "Text": "Учёный: \"Полночь. Старый... Клумба?\nТак Туман и должен был п-получить ЛИХО?\"",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "after_casino_to_klumba_6"
+      }
+    },
+    "after_casino_to_klumba_6": {
+      "Picture": "casino_entrance_scientist",
+      "Text": "Курьер: \"...\"",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "after_casino_to_klumba_7"
+      }
+    },
+    "after_casino_to_klumba_7": {
+      "Picture": "casino_entrance_scientist",
+      "Text": "Учёный: \"Ничего не понимаю... М-может, это засада? Кто-то подставил тебя?\"",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "after_casino_to_klumba_8"
+      }
+    },
+    "after_casino_to_klumba_8": {
+      "Picture": "casino_entrance_scientist",
+      "Text": "Курьер: \"...\"",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "after_casino_to_klumba_9"
+      }
+    },
+    "after_casino_to_klumba_9": {
+      "Picture": "casino_entrance_scientist",
+      "Text": "Курьер: \"Нужно идти.\"",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "after_casino_to_klumba_10"
+      }
+    },
+    "after_casino_to_klumba_10": {
+      "Picture": "casino_entrance_scientist",
+      "Music": "city_ambience",
+      "Text": "Учёный: \"Верно, д-других вариантов у нас нет... Пойдём, я покажу дорогу.\"",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "park"
+      }
+    },
+
+    "park": {
+      "Picture": "blank",
+      "Music": "Chrono Trigger - Ruined World",
+      "TextDelay": 0.1,
+      "Text": " . . . . .",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "park_entrance"
+      }
+    },
+    "park_entrance": {
+      "Picture": "blank",
+      "Text": "Курьер и Учёный идут по полузаброшенному парку. Почти нет фонарей. Сломанные скамейки и качели.",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "park_entrance_1"
+      }
+    },
+    "park_entrance_1": {
+      "Picture": "blank",
+      "Text": "Учёный: \"Ещё немного осталось. Минут п-пять...\"",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "park_entrance_1"
+      }
+    },
+    "park_entrance_2": {
+      "Picture": "blank",
+      "Text": "У одной скамейки собралась компания молодых людей. TODO: тусонавты",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "park_exit"
+      }
+    },
+
+    "park_exit": {
+      "Picture": "blank",
+      "Music": "Chrono Trigger - Ruined World",
+      "TextDelay": 0.1,
+      "Text": " . . . . .",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "park_exit_1"
+      }
+    },
+    "park_exit_1": {
+      "Picture": "blank",
+      "Text": "Учёный останавливается.\nУчёный: \"Клумба там, за п-поворотом.\"",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "park_exit_2"
+      }
+    },
+    "park_exit_2": {
+      "Picture": "blank",
+      "Text": "Курьер: \"...\"",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "park_exit_3"
+      }
+    },
+    "park_exit_3": {
+      "Picture": "blank",
+      "Text": "Учёный: \"П-понимаю, всё это очень опасно, всё может п-пойти не по п-плану...\"",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "park_exit_4"
+      }
+    },
+    "park_exit_4": {
+      "Picture": "blank",
+      "Text": "Учёный: \"Держи.\"\nУчёный протягивает Курьеру сотовый телефон.",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "park_exit_5"
+      }
+    },
+    "park_exit_5": {
+      "Picture": "blank",
+      "Text": "Учёный: \"Это телефон, только вообще без проводов! Впечатляет, п-правда?\"",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "park_exit_6"
+      }
+    },
+    "park_exit_6": {
+      "Picture": "blank",
+      "Text": "Учёный: \"Достал его на барахолке месяц назад. Лучше не думать п-про его п-прошлых владельцев...\"",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "park_exit_7"
+      }
+    },
+    "park_exit_7": {
+      "Picture": "blank",
+      "Text": "Учёный: \"Я п-попробую договориться и обезвредить ЛИХО. Н-но если что-то случится, звони в милицию. Или ещё кому, н-не знаю, знакомым, друзьям... чтобы хоть знали, где нас искать.\"",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "park_exit_8"
+      }
+    },
+    "park_exit_8": {
+      "Picture": "blank",
+      "Text": "Курьер: \"...\"\n<Предмет добавлен: [Сотовый телефон \"Нокиа 1610\"]>",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "park_exit_9"
+      }
+    },
+    "park_exit_9": {
+      "Picture": "blank",
+      "Text": "Курьер: \"Идём.\"",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "park_exit_3"
+      }
+    },
+
+    "klumba": {
+      "Picture": "blank",
+      "TextDelay": 0.1,
+      "Text": " . . . . .",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "park_exit_1"
+      }
     }
-    
   }
 }
