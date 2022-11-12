@@ -26,7 +26,7 @@ namespace Boss
             if (_timeRemainingBeforeEnd <= 0)
             {
                 // TODO: нормальный текст
-                mainController.GameOver("Коммунисты завели жигу и уехали в рассвет. С ЛИХО...");
+                mainController.GameOver(GameOverCommentsHolder.TimerRanOut);
                 return;
             }
             

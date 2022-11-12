@@ -45,11 +45,11 @@ namespace Boss
         
         public void ChooseItem(Item item)
         {
+            CurrentFightState = FightState.ItemChosen;
             backButton.SetActive(false);
             NewText(item.UseText);
             itemsChoicesController.DisableButtons();
             ApplyEffect(item.Effect);
-            CurrentFightState = FightState.ItemChosen;
         }
 
         public void ApplyEffect(Effect effect)
@@ -98,6 +98,9 @@ namespace Boss
                 case FightState.GameOver:
                     Application.Quit();
                     break;
+                case FightState.LastItemChosen:
+                    Win();
+                    break;
             }
         }
 
@@ -117,7 +120,7 @@ namespace Boss
 
         public void Surrender()
         {
-            GameOver("Курьер сдался. Pathetic.");
+            GameOver(GameOverCommentsHolder.CourierSurrendered);
         }
 
         public void Back()
@@ -133,10 +136,17 @@ namespace Boss
             switch (type)
             {
                 case HealthBarType.Courier:
-                    GameOver("Райан Гослинг умер...");
+                    GameOver(GameOverCommentsHolder.CourierDied);
                     break;
                 case HealthBarType.Enemies:
-                    GameOver("Райан Гослинг убил всех и стал плохим, а Райан Гослинг не может быть плохим... пиздец...");
+                    if (CurrentFightState == FightState.ItemChosen)
+                    {
+                        CurrentFightState = FightState.LastItemChosen;
+                    }
+                    else
+                    {
+                        Win();
+                    }
                     break;
             }
         }
@@ -151,6 +161,12 @@ namespace Boss
             NewText(comment);
             player.NewMusic("");
             player.NewSound("game_over");
+        }
+
+        public void Win()
+        {
+            // TODO
+            GameOver("Это не геймовер на самом деле Курьер победил ура");
         }
 
         private void UpdateTimeRemainingBeforeNextRest()
@@ -206,17 +222,17 @@ namespace Boss
 
         public enum FightState
         {
-            Initializing, NewPhase, Attack, ActionChoice, ItemChoosing, ItemChosen, GameOver
+            Initializing, NewPhase, Attack, ActionChoice, ItemChoosing, ItemChosen, LastItemChosen, GameOver
         }
 
         // TODO: удалить, инициализация холдера будет в конце фрейм-сцены
         private void InitHolder()
         {
             var flags = new List<string>();
-            flags.Add("Vodka");
-            flags.Add("Gum");
-            flags.Add("Snickers");
-            flags.Add("GirlPhoneNumber");
+            // flags.Add("Vodka");
+            // flags.Add("Gum");
+            // flags.Add("Snickers");
+            // flags.Add("GirlPhoneNumber");
             flags.Add("Wires");
             flags.Add("Dumbbell");
             flags.Add("Grenade");

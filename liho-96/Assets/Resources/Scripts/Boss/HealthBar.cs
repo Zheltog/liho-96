@@ -22,6 +22,9 @@ namespace Boss
 
         public void AddHp(float hp, bool shouldPulse)
         {
+            _animator.Rebind();
+            _animator.Update(0f);
+            
             _currentHealth += hp;
             _bar.value = _currentHealth / maxHealth;
 

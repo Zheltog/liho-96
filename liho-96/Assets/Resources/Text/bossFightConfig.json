@@ -110,7 +110,7 @@
       "Flag": "GirlPhoneNumber",
       "Effect": {
         "Type": "Heal",
-        "Value": 100.0
+        "Value": 150.0
       }
     },
     {
@@ -119,7 +119,7 @@
       "Flag": "Wires",
       "Effect": {
         "Type": "Damage",
-        "Value": 20.0
+        "Value": 25.0
       }
     },
     {
@@ -137,7 +137,7 @@
       "Flag": "Grenade",
       "Effect": {
         "Type": "Damage",
-        "Value": 100.0
+        "Value": 200.0
       }
     },
     {
@@ -146,7 +146,7 @@
       "Flag": "Molotov",
       "Effect": {
         "Type": "Damage",
-        "Value": 100.0
+        "Value": 200.0
       }
     },
     {
