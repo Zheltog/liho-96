@@ -1,7 +1,9 @@
 {
   "StartingFrame": "klumba_soldiers_arrive",
   "StartingFlags": [
-    "SmallMoney"
+    "SmallMoney",
+    "Lighter",
+    "Pistol"
   ],
   "Frames": {
     "start": {
@@ -4702,7 +4704,7 @@
     },
     "klumba_tuman_join_3": {
       "Picture": "blank",
-      "Text": "Туман протягивает Курьеру позолоченные щипцы от кальяна.\n<Предмет добавлен: [Щипцы от кальяна]>",
+      "Text": "Туман протягивает Курьеру позолоченные кальянные щипцы для углей.\n<Предмет добавлен: [Щипцы для кальяна]>",
       "Type": "Simple",
       "Transition": {
         "Type": "Frame",
@@ -4889,7 +4891,7 @@
     },
     "klumba_tuman_end_gun_1": {
       "Picture": "blank",
-      "Text": "Туман: \"Ты че вытворяешь, шкет? Пистолет опустил быстро.\"",
+      "Text": "Туман: \"Ты че вытворяешь, чижик? Пистолет опустил быстро.\"",
       "Type": "Simple",
       "Transition": {
         "Type": "Frame",
@@ -4949,7 +4951,7 @@
     },
     "klumba_tuman_end_attack": {
       "Picture": "blank",
-      "Text": "Туман: \"Ты че творишь, гнида?\"",
+      "Text": "Туман: \"Ты че творишь, чижик? Думал, я за ЛИХО драться с тобой буду?\"",
       "Type": "Simple",
       "Transition": {
         "Type": "Frame",
@@ -4967,7 +4969,7 @@
     },
     "klumba_tuman_pre_game_over": {
       "Picture": "blank",
-      "Text": "Туман: \"Ну и баклан внатуре...\"",
+      "Text": "Туман: \"Ну и баклан, внатуре...\"",
       "Type": "Simple",
       "Transition": {
         "Type": "Frame",
@@ -4984,15 +4986,623 @@
         "Type": "Exit"
       }
     },
-
+ 
     "klumba_soldiers_arrive": {
       "Picture": "blank",
-      "Text": "TODO приезжают солдаты.",
+      "Text": "Вдруг с другой стороны клумбы подъезжает зелёный УАЗ.\nТуман: \"Че за хрень?\"",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "klumba_soldiers_arrive_1"
+      }
+    },
+    "klumba_soldiers_arrive_1": {
+      "Picture": "blank",
+      "Text": " ! ! ! ! !",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "klumba_soldiers_arrive_2"
+      }
+    },
+    "klumba_soldiers_arrive_2": {
+      "Picture": "blank",
+      "Text": "Из машины выбегают люди в камуфляже и начинают стрелять в бандитов. Бандиты отстреливаются, но, бросив ЛИХО, отступают\nназад, за университет.\n\nТуман мёртв.",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "klumba_soldiers_arrive_3"
+      }
+    },
+    "klumba_soldiers_arrive_3": {
+      "Picture": "blank",
+      "Text": "Курьер прячется за скамейкой, пока перестрелка продолжается.\nОн видит, как из машины выходит высокая женщина в старой армейской шинели.",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "klumba_soldiers_arrive_4"
+      }
+    },
+    "klumba_soldiers_arrive_4": {
+      "Picture": "blank",
+      "Text": "Она подбирает ЛИХО на той скамейке, где его оставили бандиты.\nЗатем замечает Курьера и направляется к нему.",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "klumba_soldiers_vlada"
+      }
+    },
+
+    "klumba_soldiers_vlada": {
+      "Picture": "blank",
+      "Text": "Незнакомка: \"Salve! Приветствую тебя, посыльный. Рада встрече.\"",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "klumba_soldiers_vlada_1"
+      }
+    },
+    "klumba_soldiers_vlada_1": {
+      "Picture": "blank",
+      "Text": "Незнакомка: \"Я не ожидала встретить тебя здесь. Ты действительно смог меня удивить.\"",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "klumba_soldiers_vlada_2"
+      }
+    },
+    "klumba_soldiers_vlada_2": {
+      "Picture": "blank",
+      "Text": "Незнакомка: \"Наш план сработал в любом случае, но я ценю твою преданность своей работе. Acta non verba.\"",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "klumba_soldiers_vlada_3"
+      }
+    },
+    "klumba_soldiers_vlada_3": {
+      "Picture": "blank",
+      "Text": "Курьер: \"...\"",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "klumba_soldiers_vlada_4"
+      }
+    },
+    "klumba_soldiers_vlada_4": {
+      "Picture": "blank",
+      "Text": "Незнакомка: \"Ты любишь историю, посыльный? Последнее время я очень увлечена Древним Римом. Построить великую империю... а затем так унизительно её потерять.\"",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "klumba_soldiers_vlada_5"
+      }
+    },
+    "klumba_soldiers_vlada_5": {
+      "Picture": "blank",
+      "Text": "Незнакомка: \"Тебе не кажется это знакомым? Сейчас это и наша история тоже. И я хочу повернуть её вспять.\"",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "klumba_soldiers_vlada_6"
+      }
+    },
+    "klumba_soldiers_vlada_6": {
+      "Picture": "blank",
+      "Text": "Курьер: \"...\"",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "klumba_soldiers_vlada_7"
+      }
+    },
+    "klumba_soldiers_vlada_7": {
+      "Picture": "blank",
+      "Text": "Незнакомка: \"Позволь представиться: полковник Владилена Ильинична Железнякова. Для тебя – товарищ полковник.\"",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "klumba_soldiers_vlada_8"
+      }
+    },
+    "klumba_soldiers_vlada_8": {
+      "Picture": "blank",
+      "Text": "Владилена: \"Или, может, domina полковник? Хм, к этому мне нужно будет привыкнуть...\"",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "klumba_soldiers_vlada_9"
+      }
+    },
+    "klumba_soldiers_vlada_9": {
+      "Picture": "blank",
+      "Text": "Владилена: \"Я возглавляю отряд «СИЛА». Как ты мог догадаться, мы не подчиняемся вооруженным силам нашего текущего государства.\"",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "klumba_soldiers_vlada_10"
+      }
+    },
+    "klumba_soldiers_vlada_10": {
+      "Picture": "blank",
+      "Text": "Владилена: \"Армия сейчас... in pessimus conditio, скажем так. Но это мы тоже исправим.\"",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "klumba_soldiers_vlada_11"
+      }
+    },
+    "klumba_soldiers_vlada_11": {
+      "Picture": "blank",
+      "Text": "Владилена: \"ЛИХО приведёт нас ad victoriam. Поможет вернуть власть в руки тех, кто этого достоен.\"",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "klumba_soldiers_vlada_12"
+      }
+    },
+    "klumba_soldiers_vlada_12": {
+      "Picture": "blank",
+      "Text": "Владилена: \"Позволит нам восстановить Империю.\"",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "klumba_soldiers_vlada_13"
+      }
+    },
+    "klumba_soldiers_vlada_13": {
+      "Picture": "blank",
+      "Text": "Курьер: \"...\"",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "klumba_soldiers_vlada_14"
+      }
+    },
+    "klumba_soldiers_vlada_14": {
+      "Picture": "blank",
+      "Text": "Владилена: \"Я рассказываю это тебе с чистой совестью, bona fide.\nПотому что я хочу, чтобы ты присоединился к нам.\"",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "klumba_soldiers_vlada_15"
+      }
+    },
+    "klumba_soldiers_vlada_15": {
+      "Picture": "blank",
+      "Text": "Владилена: \"Нам не хватает полевых агентов, кто может собирать информацию, доставлять ресурсы, внедряться к нашим врагам и оставаться незамеченным.\"",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "klumba_soldiers_vlada_16"
+      }
+    },
+    "klumba_soldiers_vlada_16": {
+      "Picture": "blank",
+      "Text": "Владилена: \"Я слышала о тебе и ранее, но увидеть тебя в действии – совсем другое дело. Ты отправился в незнакомый город с таинственным грузом, не спрашивая ничего лишнего. Ты обзавелся информаторами на месте, не раскрывая себя. Нашёл общий язык даже с самыми опасным carnifices этого города.\"",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "klumba_soldiers_vlada_17"
+      }
+    },
+    "klumba_soldiers_vlada_17": {
+      "Picture": "blank",
+      "Text": "Владилена: \"Наконец, ты избежал верной смерти, несмотря на то, что мы сдали тебя тумановским. И ты всё равно продолжил выполнять своё задание.\"",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "klumba_soldiers_vlada_18"
+      }
+    },
+    "klumba_soldiers_vlada_18": {
+      "Picture": "blank",
+      "Text": "Курьер: \"...\"",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "klumba_soldiers_vlada_questions"
+      }
+    },
+    "klumba_soldiers_vlada_questions": {
+      "Picture": "blank",
+      "Text": "Владилена: \"Понимаю, у тебя всё ещё много вопросов. Я готова ответить на всё, пока мои бойцы добивают остатки этого отребья.\"",
+      "Type": "Choice",
+      "Choices": [
+        {
+          "Text": "\"В чём ваша идеология?\"",
+          "Transition": {
+            "Type": "Frame",
+            "Next": "klumba_soldiers_vlada_question_ideology",
+            "Actions": [
+              {
+                "Type": "Add",
+                "Name": "VladaQuestionAskedIdeology"
+              }
+            ]
+          }
+        },
+        {
+          "Text": "\"При чём тут банда Тумана?\"",
+          "Transition": {
+            "Type": "Frame",
+            "Next": "klumba_soldiers_vlada_question_tuman",
+            "Actions": [
+              {
+                "Type": "Add",
+                "Name": "VladaQuestionAskedTuman"
+              }
+            ]
+          }
+        },
+        {
+          "Text": "\"Зачем было меня подставлять?\"",
+          "Transition": {
+            "Type": "Frame",
+            "Next": "klumba_soldiers_vlada_question_betrayal",
+            "Actions": [
+              {
+                "Type": "Add",
+                "Name": "VladaQuestionAskedBetrayal"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "klumba_soldiers_vlada_questions_next": {
+      "Picture": "blank",
+      "Text": "Владилена: \"Ещё вопросы?\"",
+      "Type": "Choice",
+      "Choices": [
+        {
+          "Text": "\"В чём ваша идеология?\"",
+          "Transition": {
+            "Type": "Frame",
+            "Next": "klumba_soldiers_vlada_question_ideology",
+            "Actions": [
+              {
+                "Type": "Add",
+                "Name": "VladaQuestionAskedIdeology"
+              }
+            ]
+          },
+          "Visibility": [
+            {
+              "Type": "AndNot",
+              "Flags": [
+                "VladaQuestionAskedIdeology"
+              ]
+            }
+          ]
+        },
+        {
+          "Text": "\"При чём тут банда Тумана?\"",
+          "Transition": {
+            "Type": "Frame",
+            "Next": "klumba_soldiers_vlada_question_tuman",
+            "Actions": [
+              {
+                "Type": "Add",
+                "Name": "VladaQuestionAskedTuman"
+              }
+            ]
+          },
+          "Visibility": [
+            {
+              "Type": "AndNot",
+              "Flags": [
+                "VladaQuestionAskedTuman"
+              ]
+            }
+          ]
+        },
+        {
+          "Text": "\"Зачем было меня подставлять?\"",
+          "Transition": {
+            "Type": "Frame",
+            "Next": "klumba_soldiers_vlada_question_betrayal",
+            "Actions": [
+              {
+                "Type": "Add",
+                "Name": "VladaQuestionAskedBetrayal"
+              }
+            ]
+          },
+          "Visibility": [
+            {
+              "Type": "AndNot",
+              "Flags": [
+                "VladaQuestionAskedBetrayal"
+              ]
+            }
+          ]
+        },
+        {
+          "Text": "\"...\"",
+          "Transition": {
+            "Type": "Frame",
+            "Next": "klumba_soldiers_vlada_next"
+          }
+        }
+      ]
+    },
+
+    "klumba_soldiers_vlada_question_ideology": {
+      "Picture": "blank",
+      "Text": "Владилена: \"Рассказывает про идеологию TODO\"",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "klumba_soldiers_vlada_questions_next"
+      }
+    },
+
+    "klumba_soldiers_vlada_question_tuman": {
+      "Picture": "blank",
+      "Text": "Владилена: \"Рассказывает про тумановских TODO\"",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "klumba_soldiers_vlada_questions_next"
+      }
+    },
+
+    "klumba_soldiers_vlada_question_betrayal": {
+      "Picture": "blank",
+      "Text": "Владилена: \"Рассказывает про предательство курьера TODO\"",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "klumba_soldiers_vlada_questions_next"
+      }
+    },
+    
+    "klumba_soldiers_vlada_next": {
+      "Picture": "blank",
+      "Text": "Владилена: \"Больше вопросов нет, как я понимаю.\"",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "klumba_soldiers_vlada_next_1"
+      }
+    },
+    "klumba_soldiers_vlada_next_1": {
+      "Picture": "blank",
+      "Text": "Владилена: \"Точно, я ведь так ничего и не сказала про ЛИХО. Ты ведь всё ещё не знаешь, что это?\"",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "klumba_soldiers_vlada_next_2"
+      }
+    },
+    "klumba_soldiers_vlada_next_2": {
+      "Picture": "blank",
+      "Text": "Владилена: \"Я обойдусь без технических деталей. Всё, что тебе нужно знать – это настоящее оружие будущего. Единственный известный нам рабочий прототип.\"",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "klumba_soldiers_vlada_next_3"
+      }
+    },
+    "klumba_soldiers_vlada_next_3": {
+      "Picture": "blank",
+      "Text": "Владилена: \"Если мы сможем восстановить и воспроизвести его, создать столько копий, сколько нам нужно – мы будем контролировать всю технику будущего, настоящего и прошлого.\"",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "klumba_soldiers_vlada_next_4"
+      }
+    },
+    "klumba_soldiers_vlada_next_4": {
+      "Picture": "blank",
+      "Text": "Владилена: \"Но на случай, если и этого окажется мало, в ЛИХО был заложен ещё один секрет...\"",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "klumba_soldiers_vlada_next_5"
+      }
+    },
+    "klumba_soldiers_vlada_next_5": {
+      "Picture": "blank",
+      "Text": "Владилена: \"ПОРТАТИВНАЯ ЯДЕРНАЯ БОЕГОЛОВКА!\"",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "klumba_soldiers_vlada_next_6"
+      }
+    },
+    "klumba_soldiers_vlada_next_6": {
+      "Picture": "blank",
+      "Text": "Курьер: \"...\"",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "klumba_soldiers_vlada_next_7"
+      }
+    },
+    "klumba_soldiers_vlada_next_7": {
+      "Picture": "blank",
+      "Text": "Владилена: \"Теперь ты знаешь про «СИЛУ» всё, что тебе нужно знать. Знаешь, к чему мы стремимся и зачем. Знаешь, что нам хватит воли, людей и оружия, чтобы добиться наших целей.\"",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "klumba_soldiers_vlada_next_8"
+      }
+    },
+    "klumba_soldiers_vlada_next_8": {
+      "Picture": "blank",
+      "Text": "Владилена: \"И теперь я задам тебе вопрос. Но знай, что я не смогу тебя отпустить, если ты ответишь неправильно.\"",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "klumba_soldiers_vlada_next_9"
+      }
+    },
+    "klumba_soldiers_vlada_next_9": {
+      "Picture": "blank",
+      "Text": "Владилена: \"Готов ли ты присоединиться к «СИЛЕ»?\"",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "klumba_soldiers_vlada_next_10"
+      }
+    },
+    "klumba_soldiers_vlada_next_10": {
+      "Picture": "blank",
+      "Text": "Курьер: \"...\"",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "klumba_soldiers_vlada_next_11"
+      }
+    },
+    "klumba_soldiers_vlada_next_11": {
+      "Picture": "blank",
+      "Text": "Владилена: \"...?\"",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "klumba_soldiers_vlada_next_12"
+      }
+    },
+    "klumba_soldiers_vlada_next_12": {
+      "Picture": "blank",
+      "TextDelay": 0.15,
+      "Text": "Курьер: \"Нет.\"",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "klumba_soldiers_vlada_next_13"
+      }
+    },
+    "klumba_soldiers_vlada_next_13": {
+      "Picture": "blank",
+      "Text": "Владилена разочаровано вздыхает.\nВладилена: \"Pessimo.\"",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "klumba_soldiers_vlada_next_14"
+      }
+    },
+    "klumba_soldiers_vlada_next_14": {
+      "Picture": "blank",
+      "Text": "Курьер: \"И ЛИХО я вам не отдам.\"",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "klumba_soldiers_vlada_next_15"
+      }
+    },
+    "klumba_soldiers_vlada_next_15": {
+      "Picture": "blank",
+      "Text": "Владилена: \"Ты меня разочаровал. Ты не просто глупец – ты оказался полным идиотом.\"",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "klumba_soldiers_vlada_next_16"
+      }
+    },
+    "klumba_soldiers_vlada_next_16": {
+      "Picture": "blank",
+      "Text": "Владилена: \"Отряд! Тут ещё один, добейте его!\"",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "klumba_soldiers_vlada_next_17"
+      }
+    },
+    "klumba_soldiers_vlada_next_17": {
+      "Picture": "blank",
+      "Text": "Владилена убегает к машине, держа ЛИХО в руках. Курьер пытается её остановить, но попадает под огонь, и снова прячется за скамейку.",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "klumba_soldiers_fight_start"
+      }
+    },
+    "klumba_soldiers_fight_start": {
+      "Picture": "blank",
+      "Text": "Два солдата приходят на подмогу к Владилене, и начинают обстреливать Курьера.",
+      "Type": "Choice",
+      "Choices": [
+        {
+          "Text": "костыль - у курьера есть пистолет",
+          "Transition": {
+            "Type": "Frame",
+            "Next": "klumba_soldiers_fight_start_gun"
+          },
+          "Visibility": [
+            {
+              "Type": "And",
+              "Flags": [
+                "Pistol"
+              ]
+            }
+          ]
+        },
+        {
+          "Text": "костыль - у курьера нет пистолета",
+          "Transition": {
+            "Type": "Frame",
+            "Next": "klumba_soldiers_fight_start_no_gun"
+          },
+          "Visibility": [
+            {
+              "Type": "AndNot",
+              "Flags": [
+                "Pistol"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "klumba_soldiers_fight_start_gun": {
+      "Picture": "blank",
+      "Text": "Курьер достаёт свой пистолет. Похоже, без крови здесь не обойдётся.",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "klumba_soldiers_fight_car"
+      }
+    },
+    "klumba_soldiers_fight_start_no_gun": {
+      "Picture": "blank",
+      "Text": "Курьер обыскивает тело лежащего рядом бандита и подбирает пистолет. Не очень хороший, но сгодится.",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "klumba_soldiers_fight_car"
+      }
+    },
+    "klumba_soldiers_fight_car": {
+      "Picture": "blank",
+      "Text": "Владилена садится в УАЗ, но машина не заводится.\nВладилена: \"Что опять случилось? Срочно почините её, мы уезжаем!\"",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "klumba_soldiers_boss_fight_transition"
+      }
+    },
+    "klumba_soldiers_boss_fight_transition": {
+      "Picture": "blank",
+      "Text": "Курьер понимает, что это его шанс. В атаку!",
       "Type": "Simple",
       "Transition": {
         "Type": "Scene",
         "Next": "BossFightScene",
-        "ReturnFrame": "klumba_tuman_end_gun_1"
+        "ReturnFrame": "klumba_after_fight"
+      }
+    },
+
+    "klumba_after_fight": {
+      "Picture": "blank",
+      "Text": "TODO кадр после битвы",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "klumba_soldiers_fight_car"
       }
     }
   }
