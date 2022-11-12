@@ -87,10 +87,7 @@ namespace Final
 
         public void ClickOnText()
         {
-            if (text.IsPrinting)
-            {
-                text.FinishPrinting();
-            }
+            text.FinishPrinting();
         }
 
         public void Error(string comment)

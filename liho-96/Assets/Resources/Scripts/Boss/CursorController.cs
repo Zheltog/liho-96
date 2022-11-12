@@ -30,7 +30,12 @@ namespace Boss
         {
             var mousePosition = Input.mousePosition;
             var mousePosition2D = new Vector2(mousePosition.x, mousePosition.y);
-            _currentCursor = _aimRect.Contains(mousePosition2D) ? cursorAim : cursorDefault;
+            _currentCursor = IsCursorInAimRect(mousePosition2D) ? cursorAim : cursorDefault;
+        }
+
+        public bool IsCursorInAimRect(Vector2 mousePosition)
+        {
+            return _aimRect.Contains(mousePosition);
         }
 
         public void OnGUI()

@@ -6,7 +6,7 @@ namespace Boss
 {
     public class Courier : MonoBehaviour
     {
-        public MainController mainController;
+        public CursorController cursorController;
         public AudioController player;
         public HealthBar hpBar;
         public GameObject redPanel;
@@ -171,7 +171,11 @@ namespace Boss
 
         private bool ShootingAvailable()
         {
-            return transform.position.y >= minShootingHeight && _fireAllowed;
+            var mousePosition = Input.mousePosition;
+            var mousePosition2D = new Vector2(mousePosition.x, mousePosition.y);
+            return transform.position.y >= minShootingHeight &&
+                   _fireAllowed &&
+                   cursorController.IsCursorInAimRect(mousePosition2D);
         }
 
         private IEnumerator CheckCoolPistol()

@@ -27,6 +27,10 @@ namespace Common
 
         public void FinishPrinting()
         {
+            if (!IsPrinting)
+            {
+                return;
+            }
             StopCoroutine(_currentPrinting);
             _textBox.text = _currentPhraseFinal;
             IsPrinting = false;
@@ -35,6 +39,10 @@ namespace Common
         // Установка нового текста
         public void NewText(string text)
         {
+            if (IsPrinting)
+            {
+                FinishPrinting();
+            }
             IsPrinting = true;
             _currentPhraseFinal = text;
             _currentPhraseChars = _currentPhraseFinal.ToCharArray();
@@ -57,7 +65,6 @@ namespace Common
 
                 if (!IsPrinting)
                 {
-                    // TODO: всегда останавливать извне через возвращаемое значение корутины, протестировать
                     yield break;
                 }
 

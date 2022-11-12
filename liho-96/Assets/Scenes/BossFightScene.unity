@@ -3703,7 +3703,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6367fad50cf2a49409c09e6ffd63cd5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainController: {fileID: 248021001}
+  cursorController: {fileID: 248021004}
   player: {fileID: 1853889586}
   hpBar: {fileID: 1267802827}
   redPanel: {fileID: 1037149491}

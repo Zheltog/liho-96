@@ -45,13 +45,9 @@ namespace Boss
         
         public void ChooseItem(Item item)
         {
-            if (text.IsPrinting)
-            {
-                text.FinishPrinting();
-            }
             CurrentFightState = FightState.ItemChosen;
             backButton.SetActive(false);
-            NewText(item.UseText);
+            text.NewText(item.UseText);
             itemsChoicesController.DisableButtons();
             ApplyEffect(item.Effect);
         }
@@ -136,10 +132,6 @@ namespace Boss
 
         public void ToActionChoice()
         {
-            if (text.IsPrinting)
-            {
-                text.FinishPrinting();
-            }
             text.NewText(" ");
             itemsChoicesController.DisableButtons();
             backButton.SetActive(false);
@@ -174,7 +166,7 @@ namespace Boss
             _enemiesController.DisableAllEnemies();
             dynamicStuff.SetActive(false);
             gameOverImage.SetActive(true);
-            NewText(comment);
+            text.NewText(comment);
             player.NewMusic("");
             player.NewSound("game_over");
         }
@@ -221,18 +213,9 @@ namespace Boss
         private void NextAttack()
         {
             CurrentFightState = FightState.Attack;
-            NewText(" ");
+            text.NewText(" ");
             grayPanel.SetActive(false);
             courier.StopRest();
-        }
-
-        private void NewText(string newText)
-        {
-            if (text.IsPrinting)
-            {
-                text.FinishPrinting();
-            }
-            text.NewText(newText);
         }
 
         public enum FightState
