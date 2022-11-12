@@ -125,7 +125,7 @@ namespace Boss
             GameOver(GameOverCommentsHolder.CourierSurrendered);
         }
 
-        public void Back()
+        public void ToActionChoice()
         {
             itemsChoicesController.DisableButtons();
             backButton.SetActive(false);
@@ -240,8 +240,8 @@ namespace Boss
             flags.Add("Molotov");
             flags.Add("Awl");
             flags.Add("PartyPhoneNumber");
-            // flags.Add("Rag");
-            // flags.Add("Coins");
+            flags.Add("Rag");
+            flags.Add("Coins");
             StateHolder.Init(flags);
         }
     }
