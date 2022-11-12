@@ -24,6 +24,7 @@ namespace Boss
         private float _timeRemainingBeforeNextRest;
         private PhaseConfigurator _phaseConfig;
         private EnemiesController _enemiesController;
+        private ScenesController _scenes;
 
         private void Start()
         {
@@ -32,6 +33,7 @@ namespace Boss
             _timeRemainingBeforeNextRest = phaseSeconds;
             _phaseConfig = GetComponent<PhaseConfigurator>();
             _enemiesController = GetComponent<EnemiesController>();
+            _scenes = GetComponent<ScenesController>();
             StartCoroutine(NextPhaseWithDelay());
         }
 
@@ -165,8 +167,7 @@ namespace Boss
 
         public void Win()
         {
-            // TODO
-            GameOver("Это не геймовер на самом деле Курьер победил ура");
+            _scenes.LoadPreviousScene();
         }
 
         private void UpdateTimeRemainingBeforeNextRest()

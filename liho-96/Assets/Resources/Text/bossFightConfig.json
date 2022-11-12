@@ -146,7 +146,7 @@
       "Flag": "Molotov",
       "Effect": {
         "Type": "Damage",
-        "Value": 200.0
+        "Value": 2000.0
       }
     },
     {

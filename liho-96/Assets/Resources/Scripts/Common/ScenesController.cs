@@ -10,9 +10,6 @@ namespace Common
         {
             switch (SceneStateHolder.LastSavableSceneState)
             {
-                case SceneState.Frame:
-                    SceneManager.LoadScene("FrameScene", LoadSceneMode.Single);
-                    break;
                 case SceneState.Final:
                     if (Final.StateHolder.CurrentState == State.Final)
                     {
@@ -23,6 +20,9 @@ namespace Common
                     {
                         SceneManager.LoadScene("FinalScene", LoadSceneMode.Single);
                     }
+                    break;
+                default:
+                    SceneManager.LoadScene("FrameScene", LoadSceneMode.Single);
                     break;
             }
         }

@@ -1965,6 +1965,7 @@ GameObject:
   - component: {fileID: 248021003}
   - component: {fileID: 248021004}
   - component: {fileID: 248021005}
+  - component: {fileID: 248021006}
   m_Layer: 0
   m_Name: Controller
   m_TagString: Untagged
@@ -2063,6 +2064,18 @@ MonoBehaviour:
   enemyRunningLeft: {fileID: 555209474}
   enemyRunningRight: {fileID: 821919782}
   vlada: {fileID: 1092920842}
+--- !u!114 &248021006
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 248021000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0963c1f87d6fc17409963d9b5e55a2cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &259673713
 GameObject:
   m_ObjectHideFlags: 0
