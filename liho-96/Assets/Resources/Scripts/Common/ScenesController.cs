@@ -10,15 +10,17 @@ namespace Common
         {
             switch (SceneStateHolder.LastSavableSceneState)
             {
+                // TODO кал
                 case SceneState.Final:
-                    if (Final.StateHolder.CurrentState == State.Final)
+                    if (Final.StateHolder.CurrentState == State.Quit)
                     {
-                        Debug.Log("QUIT");
-                        Application.Quit();
+                        Exit();
                     }
                     else
                     {
-                        SceneManager.LoadScene("FinalScene", LoadSceneMode.Single);
+                        SceneManager.LoadScene(
+                            Final.StateHolder.CurrentState == State.Final ? "FrameScene" : "FinalScene",
+                            LoadSceneMode.Single);
                     }
                     break;
                 default:
@@ -34,6 +36,7 @@ namespace Common
 
         public void Exit()
         {
+            Debug.Log("QUIT");
             Application.Quit();
         }
     }

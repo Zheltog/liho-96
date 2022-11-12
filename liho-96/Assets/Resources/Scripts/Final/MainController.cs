@@ -75,12 +75,10 @@ namespace Final
                     OpenCardInfoForm(CommentsHolder.CardIfAuthSkipped);
                     break;
                 case State.AuthSkipped:
-                    StateHolder.CurrentState = State.Final;
-                    _scenes.LoadAuthorsScene();
-                    break;
                 case State.AuthPassed:
                     StateHolder.CurrentState = State.Final;
-                    _scenes.LoadAuthorsScene();
+                    _scenes.LoadPreviousScene();
+                    StateHolder.CurrentState = State.Quit;
                     break;
             }
         }

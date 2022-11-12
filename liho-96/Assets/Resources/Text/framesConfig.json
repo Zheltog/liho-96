@@ -1,5 +1,5 @@
 {
-  "StartingFrame": "klumba_soldiers_boss_fight_transition",
+  "StartingFrame": "klumba_kanevsky",
   "StartingFlags": [
     "SmallMoney",
     "Lighter",
@@ -5598,11 +5598,247 @@
 
     "klumba_after_fight": {
       "Picture": "blank",
-      "Text": "TODO кадр после битвы",
+      "Text": " . . . . .",
       "Type": "Simple",
       "Transition": {
         "Type": "Frame",
-        "Next": "klumba_soldiers_fight_car"
+        "Next": "klumba_after_fight_2"
+      }
+    },
+    "klumba_after_fight_1": {
+      "Picture": "blank",
+      "Text": "«СИЛА» повержена.",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "klumba_after_fight_2"
+      }
+    },
+    "klumba_after_fight_2": {
+      "Picture": "blank",
+      "Text": "Владилена лежит на разбитой плитке, и, кажется, говорит сама с собой. В руках она продолжает сжимать ЛИХО.",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "klumba_after_fight_3"
+      }
+    },
+    "klumba_after_fight_3": {
+      "Picture": "blank",
+      "Text": "Владилена: \"Нет.....нет... мы не можем проиграть... мы не можем... сдаться...\"",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "klumba_after_fight_4"
+      }
+    },
+    "klumba_after_fight_4": {
+      "Picture": "blank",
+      "Text": "Владилена: \"Мы не можем... сдаться...\"",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "klumba_after_fight_5"
+      }
+    },
+    "klumba_after_fight_5": {
+      "Picture": "blank",
+      "Text": "Курьер подходит к Владилене.",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "klumba_after_fight_6"
+      }
+    },
+    "klumba_after_fight_6": {
+      "Picture": "blank",
+      "Text": "Владилена: \"ТЫ!.. Futue te ipsum! Filius canis!..\"",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "klumba_after_fight_7"
+      }
+    },
+    "klumba_after_fight_7": {
+      "Picture": "blank",
+      "Text": "Владилена: \"Ты разрушил всё, что у меня было... Ради чего? Что тебе нужно???\"",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "klumba_after_fight_8"
+      }
+    },
+    "klumba_after_fight_8": {
+      "Picture": "blank",
+      "Text": "Курьер: \"Мне нужно ЛИХО.\"",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "klumba_after_fight_9"
+      }
+    },
+    "klumba_after_fight_9": {
+      "Picture": "blank",
+      "Text": "Курьер: \"Я уничтожу его.\"",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "klumba_after_fight_10"
+      }
+    },
+    "klumba_after_fight_10": {
+      "Picture": "blank",
+      "Text": "Владилена: \"Ха.. ха... ха.....\"",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "klumba_after_fight_11"
+      }
+    },
+    "klumba_after_fight_11": {
+      "Picture": "blank",
+      "Text": "Владилена: \"Morior... invictus...\"",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "klumba_after_fight_12"
+      }
+    },
+    "klumba_after_fight_12": {
+      "Picture": "blank",
+      "Text": "Владилена: \"...\"",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "klumba_after_fight_13"
+      }
+    },
+    "klumba_after_fight_13": {
+      "Picture": "blank",
+      "Text": "Владилена: \"...\"",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "klumba_after_fight_14"
+      }
+    },
+    "klumba_after_fight_14": {
+      "Picture": "blank",
+      "Text": " ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! !",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "klumba_after_fight_14"
+      }
+    },
+    "klumba_after_fight_15": {
+      "Picture": "blank",
+      "Text": " . . .",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "klumba_courier_lies"
+      }
+    },
+    "klumba_courier_lies": {
+      "Picture": "blank",
+      "Text": " . . .",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "klumba_courier_lies_1"
+      }
+    },
+    "klumba_courier_lies_1": {
+      "Picture": "blank",
+      "Text": "Светает. Первые лучи солнца падают на разрушенные здания старого университета.",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "klumba_courier_lies_2"
+      }
+    },
+    "klumba_courier_lies_2": {
+      "Picture": "blank",
+      "Text": "Свет касается век Курьера. Он жмурится, а затем открывает глаза.",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "klumba_courier_lies_3"
+      }
+    },
+    "klumba_courier_lies_3": {
+      "Picture": "blank",
+      "Text": " . . . TODO тут курьер лежит с открытыми глазами",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "klumba_courier_lies_4"
+      }
+    },
+    "klumba_courier_lies_4": {
+      "Picture": "blank",
+      "Text": " . . . TODO тут более общий план",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "klumba_courier_lies_5"
+      }
+    },
+    "klumba_courier_lies_5": {
+      "Picture": "blank",
+      "Text": " . . . TODO ещё сильнее отдаляется камера, курьер закрывает глаза",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "klumba_kanevsky"
+      }
+    },
+    "klumba_kanevsky": {
+      "Picture": "blank",
+      "Text": "На этом и заканчивается наша история, дорогие зрители.",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "klumba_kanevsky_1"
+      }
+    },
+    "klumba_kanevsky_1": {
+      "Picture": "blank",
+      "Text": "Бандиты и наёмники, секретное оружие и зловещие планы. Всё это не могло закончится хорошо для маленького городка.",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "klumba_kanevsky_2"
+      }
+    },
+    "klumba_kanevsky_2": {
+      "Picture": "blank",
+      "Text": "Но выжил ли Курьер после взрыва?..\nБоюсь, это уже совсем другая история...",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "klumba_kanevsky_3"
+      }
+    },
+    "klumba_kanevsky_3": {
+      "Picture": "blank",
+      "Text": " . . .",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Scene",
+        "Next": "FinalScene",
+        "ReturnFrame": "klumba_kanevsky_final"
+      }
+    },
+
+    "klumba_kanevsky_final": {
+      "Picture": "blank",
+      "Text": "На этом всё, дорогие зрители. Будьте счастливы и до новых встреч!",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Scene",
+        "Next": "AuthorsScene"
       }
     }
   }
