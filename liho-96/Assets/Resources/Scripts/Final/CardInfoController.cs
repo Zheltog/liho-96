@@ -1,6 +1,4 @@
-﻿using System;
-using JetBrains.Annotations;
-using TMPro;
+﻿using TMPro;
 using UnityEngine;
 
 namespace Final
@@ -12,17 +10,25 @@ namespace Final
         public TMP_InputField yearInput;
         public TMP_InputField cvvInput;
 
-        public string CheckInfo()
+        private MainController _mainController;
+
+        private void Start()
         {
-            return InputErrorOf(numberInput.text, monthInput.text, yearInput.text, cvvInput.text);
+            _mainController = GetComponent<MainController>();
+        }
+
+        public void CheckInfo()
+        {
+            ValidateCardInfo(numberInput.text, monthInput.text, yearInput.text, cvvInput.text);
+            // TODO: запрос
         }
         
-        [CanBeNull]
-        private string InputErrorOf(string number, string month, string year, string cvv)
+        private void ValidateCardInfo(string number, string month, string year, string cvv)
         {
             if (string.IsNullOrEmpty(number) || number.Length != 16)
             {
-                return "Номер карты вписывай... <харчок> ...блядина!";
+                _mainController.Error(CommentsHolder.InvalidCard);
+                return;
             }
             
             if (string.IsNullOrEmpty(month) ||
@@ -31,15 +37,17 @@ namespace Final
                 (month[0] != '0' && int.Parse(month) > 12) ||
                 (year[0] == '0' && year.Length == 1))
             {
-                return "Дату нормально введи... <харчок> ...блядина!";
+                _mainController.Error(CommentsHolder.InvalidDate);
+                return;
             }
             
             if (string.IsNullOrEmpty(cvv) || cvv.Length != 3)
             {
-                return "CVV тоже надо... <харчок> ...блядина!";
+                _mainController.Error(CommentsHolder.InvalidCvv);
+                return;
             }
-
-            return null;
+            
+            _mainController.Success();  // TODO: убрать
         }
     }
 }

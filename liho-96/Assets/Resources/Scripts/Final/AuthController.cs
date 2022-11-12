@@ -1,6 +1,5 @@
 ﻿using System.Collections;
 using System.Text;
-using JetBrains.Annotations;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Networking;
@@ -14,14 +13,19 @@ namespace Final
         public TMP_InputField passInput;
         public TextMeshProUGUI text;
 
-        [CanBeNull]
-        public string TryAuthError()
+        private MainController _mainController;
+
+        private void Start()
+        {
+            _mainController = GetComponent<MainController>();
+        }
+        
+        public void TryAuth()
         {
             var login = loginInput.text;
             var pass = passInput.text;
-            var inputError = InputErrorOf(login, pass);
-            
-            return inputError;
+            ValidateInput(login, pass);
+            // TODO: login
         }
         
         private IEnumerator Login(string login, string password) {
@@ -34,25 +38,28 @@ namespace Final
 
             if (uwr.result != UnityWebRequest.Result.Success) {
                 Debug.Log(uwr.error);
+                _mainController.Error(CommentsHolder.AuthError);
             } else {
                 var token = uwr.downloadHandler.text;
+                // TODO сохранить в холдер
             }
         }
         
-        [CanBeNull]
-        private string InputErrorOf(string login, string pass)
+        private void ValidateInput(string login, string pass)
         {
             if (string.IsNullOrEmpty(login))
             {
-                return "Почту вписывай... <харчок> ...блядина!";
+                _mainController.Error(CommentsHolder.LoginEmpty);
+                return;
             }
             
             if (string.IsNullOrEmpty(pass))
             {
-                return "Пароль выкладывай... <харчок> ...блядина!";
+                _mainController.Error(CommentsHolder.PassEmpty);
+                return;
             }
-
-            return null;
+            
+            _mainController.Success();  // TODO: убрать
         }
     }
 }

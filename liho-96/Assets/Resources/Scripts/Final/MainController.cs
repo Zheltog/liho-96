@@ -24,10 +24,13 @@ namespace Final
             switch (StateHolder.CurrentState)
             {
                 case State.Auth:
-                    text.NewText("Давай давай вводи хорошего :)");
+                    text.NewText(CommentsHolder.Auth);
                     break;
-                case State.Card:
-                    OpenCardInfoForm();
+                case State.AuthSkipped:
+                    OpenCardInfoForm(CommentsHolder.CardIfAuthSkipped);
+                    break;
+                case State.AuthPassed:
+                    OpenCardInfoForm(CommentsHolder.CardIfAuthPassed);
                     break;
             }
 
@@ -35,20 +38,49 @@ namespace Final
             SceneStateHolder.LastSavableSceneState = SceneState.Final;
         }
 
-        public void OnButtonClick()
+        public void Next()
         {
             if (text.IsPrinting)
             {
+                text.FinishPrinting();
                 return;
             }
             
             switch (StateHolder.CurrentState)
             {
                 case State.Auth:
-                    ProcessAuth();
+                    _auth.TryAuth();
                     break;
-                case State.Card:
-                    ProcessCard();
+                case State.AuthSkipped:
+                    _card.CheckInfo();
+                    break;
+                case State.AuthPassed:
+                    _card.CheckInfo();
+                    break;
+            }
+        }
+
+        public void Skip()
+        {
+            if (text.IsPrinting)
+            {
+                text.FinishPrinting();
+                return;
+            }
+            
+            switch (StateHolder.CurrentState)
+            {
+                case State.Auth:
+                    StateHolder.CurrentState = State.AuthSkipped;
+                    OpenCardInfoForm(CommentsHolder.CardIfAuthSkipped);
+                    break;
+                case State.AuthSkipped:
+                    StateHolder.CurrentState = State.Final;
+                    _scenes.LoadAuthorsScene();
+                    break;
+                case State.AuthPassed:
+                    StateHolder.CurrentState = State.Final;
+                    _scenes.LoadAuthorsScene();
                     break;
             }
         }
@@ -60,43 +92,38 @@ namespace Final
                 text.FinishPrinting();
             }
         }
-        
-        private void ProcessAuth()
-        {
-            var authError = _auth.TryAuthError();
 
-            if (authError != null)
-            {
-                text.NewText(authError);
-                LeonidAngry();
-                return;
-            }
-            
-            OpenCardInfoForm();
+        public void Error(string comment)
+        {
+            text.NewText(comment);
+            LeonidAngry();
         }
 
-        private void OpenCardInfoForm()
+        public void Success()
+        {
+            switch (StateHolder.CurrentState)
+            {
+                case State.Auth:
+                    StateHolder.CurrentState = State.AuthPassed;
+                    OpenCardInfoForm(CommentsHolder.CardIfAuthPassed);
+                    break;
+                case State.AuthSkipped:
+                    StateHolder.CurrentState = State.Final;
+                    _scenes.LoadAuthorsScene();
+                    break;
+                case State.AuthPassed:
+                    StateHolder.CurrentState = State.Final;
+                    _scenes.LoadAuthorsScene();
+                    break;
+            }
+        }
+
+        private void OpenCardInfoForm(string comment)
         {
             LeonidNorm();
             authFields.SetActive(false);
-            text.NewText("Нормально нормально. Раз такая тема пошла, мб и этого заполнишь? ;)))");
+            text.NewText(comment);
             cardFields.SetActive(true);
-            StateHolder.CurrentState = State.Card;
-        }
-
-        private void ProcessCard()
-        {
-            var cardError = _card.CheckInfo();
-
-            if (cardError != null)
-            {
-                text.NewText(cardError);
-                LeonidAngry();
-                return;
-            }
-
-            StateHolder.CurrentState = State.Final;
-            _scenes.LoadAuthorsScene();
         }
 
         private void LeonidAngry()
