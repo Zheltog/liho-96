@@ -12,5 +12,6 @@
         public const string InvalidCard = "Нужно корректно заполнить поле \"Номер карты\"";
         public const string InvalidDate = "Нужно корректно заполнить поля месяца и года";
         public const string InvalidCvv = "Нужно корректно заполнить поле \"CVV\"";
+        public const string CheckTaskError = "Засчитать ответ на задание не удалось...";
     }
 }

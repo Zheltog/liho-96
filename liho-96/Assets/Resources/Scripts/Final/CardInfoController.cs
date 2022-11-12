@@ -1,5 +1,9 @@
-﻿using TMPro;
+﻿using System.Collections;
+using System.Text;
+using Newtonsoft.Json;
+using TMPro;
 using UnityEngine;
+using UnityEngine.Networking;
 
 namespace Final
 {
@@ -47,7 +51,39 @@ namespace Final
                 return;
             }
             
-            _mainController.Success();  // TODO: убрать
+            if (StateHolder.Token == null)
+            {
+                _mainController.Success();
+            }
+            else
+            {
+                StartCoroutine(CheckAnswer());
+            }
+        }
+        
+        private IEnumerator CheckAnswer() {
+            var uwr = UnityWebRequest.Post(ApiInfoHolder.QuestDomain + ApiInfoHolder.CheckTaskPath, "");
+            uwr.uploadHandler = new UploadHandlerRaw(Encoding.UTF8.GetBytes(
+                JsonUtility.ToJson(new CheckTaskRequest(ApiInfoHolder.TaskId, StateHolder.Token))
+            ));
+            uwr.SetRequestHeader("Content-Type", "application/json");
+            yield return uwr.SendWebRequest();
+
+            if (uwr.result != UnityWebRequest.Result.Success) {
+                Debug.Log(uwr.error);
+                _mainController.Error(CommentsHolder.CheckTaskError);
+            } else {
+                var responseString = uwr.downloadHandler.text;
+                var response = JsonConvert.DeserializeObject<CheckTaskResponse>(responseString);
+                if (response.points != null)
+                {
+                    _mainController.Success();
+                }
+                else
+                {
+                    _mainController.Error(CommentsHolder.CheckTaskError);
+                }
+            }
         }
     }
 }

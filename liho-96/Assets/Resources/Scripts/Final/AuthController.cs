@@ -1,9 +1,9 @@
 ﻿using System.Collections;
 using System.Text;
+using Newtonsoft.Json;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Networking;
-using Object = UnityEngine.Object;
 
 namespace Final
 {
@@ -25,14 +25,14 @@ namespace Final
             var login = loginInput.text;
             var pass = passInput.text;
             ValidateInput(login, pass);
-            // TODO: login
+            StartCoroutine(Login(login, pass));
         }
         
         private IEnumerator Login(string login, string password) {
-            var uwr = UnityWebRequest.Post("path...", "");
+            var uwr = UnityWebRequest.Post(ApiInfoHolder.QuestDomain + ApiInfoHolder.LoginPath, "");
             uwr.uploadHandler = new UploadHandlerRaw(Encoding.UTF8.GetBytes(
-                    JsonUtility.ToJson(new Object()))   // dto
-            );
+                JsonUtility.ToJson(new LoginRequest(login, password))
+            ));
             uwr.SetRequestHeader("Content-Type", "application/json");
             yield return uwr.SendWebRequest();
 
@@ -40,8 +40,11 @@ namespace Final
                 Debug.Log(uwr.error);
                 _mainController.Error(CommentsHolder.AuthError);
             } else {
-                var token = uwr.downloadHandler.text;
-                // TODO сохранить в холдер
+                var responseString = uwr.downloadHandler.text;
+                var response = JsonConvert.DeserializeObject<LoginResponse>(responseString);
+                StateHolder.Token = response.token;
+                Debug.Log("token = " + StateHolder.Token);
+                _mainController.Success();
             }
         }
         
@@ -56,10 +59,7 @@ namespace Final
             if (string.IsNullOrEmpty(pass))
             {
                 _mainController.Error(CommentsHolder.PassEmpty);
-                return;
             }
-            
-            _mainController.Success();  // TODO: убрать
         }
     }
 }
