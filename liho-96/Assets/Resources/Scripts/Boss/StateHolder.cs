@@ -19,7 +19,7 @@ namespace Boss
 
         private const string _coolPistolFlagName = "Pistol";
 
-        public static void Init(List<string> flags)
+        public static void Init(HashSet<string> flags)
         {
             var jsonString = Resources.Load<TextAsset>("Text/bossFightConfig").text;
             var config = JsonConvert.DeserializeObject<Config>(jsonString);
@@ -29,7 +29,7 @@ namespace Boss
                 CourierCoolPistol = true;
             }
             
-            AvailableItems = FilterItems(config.Items, flags);
+            AvailableItems = FilterItems(config.Items, flags.ToList());
             Phases = config.Phases;
             _currentPhaseIndex = -1;
         }

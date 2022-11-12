@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using Common;
 using UnityEngine;
 
@@ -28,7 +27,6 @@ namespace Boss
 
         private void Start()
         {
-            InitHolder();
             CurrentFightState = FightState.Initializing;
             _timeRemainingBeforeNextRest = phaseSeconds;
             _phaseConfig = GetComponent<PhaseConfigurator>();
@@ -224,26 +222,6 @@ namespace Boss
         public enum FightState
         {
             Initializing, NewPhase, Attack, ActionChoice, ItemChoosing, ItemChosen, LastItemChosen, GameOver
-        }
-
-        // TODO: удалить, инициализация холдера будет в конце фрейм-сцены
-        private void InitHolder()
-        {
-            var flags = new List<string>();
-            // flags.Add("Vodka");
-            // flags.Add("Gum");
-            // flags.Add("Snickers");
-            // flags.Add("GirlPhoneNumber");
-            flags.Add("Wires");
-            flags.Add("Dumbbell");
-            flags.Add("Grenade");
-            flags.Add("Molotov");
-            flags.Add("Awl");
-            flags.Add("PartyPhoneNumber");
-            flags.Add("Rag");
-            flags.Add("Coins");
-            flags.Add("Pistol");
-            StateHolder.Init(flags);
         }
     }
 }

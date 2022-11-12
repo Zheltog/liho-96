@@ -16,6 +16,8 @@ namespace Frames
         public AudioController player;
         public ChoicesController choices;
 
+        private string _bossFightSceneName = "BossFightScene";
+        
         private void Start()
         {
             if (!StateHolder.Initialized)
@@ -96,6 +98,12 @@ namespace Frames
                     }
                     
                     var nextSceneName = transition.Next;
+
+                    if (nextSceneName == _bossFightSceneName)
+                    {
+                        Boss.StateHolder.Init(StateHolder.Flags);
+                    }
+                    
                     SceneManager.LoadScene(nextSceneName, LoadSceneMode.Single);
                     break;
                 }
