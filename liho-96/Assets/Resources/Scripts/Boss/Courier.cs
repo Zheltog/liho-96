@@ -12,6 +12,7 @@ namespace Boss
         public GameObject redPanel;
         public GameObject gun;
         public float damage = 10f;
+        public float coolPistolBonus = 0.5f;
         public float maxCameraHeight = 5f;
         public float minCameraHeight = 2f;
         public float cameraSpeed = 10f;
@@ -33,6 +34,7 @@ namespace Boss
             _animator = GetComponent<Animator>();
             _gunAnimator = gun.GetComponent<Animator>();
             _camera = GetComponentInChildren<Camera>();
+            StartCoroutine(CheckCoolPistol());
         }
 
         private void Update()
@@ -170,6 +172,15 @@ namespace Boss
         private bool ShootingAvailable()
         {
             return transform.position.y >= minShootingHeight && _fireAllowed;
+        }
+
+        private IEnumerator CheckCoolPistol()
+        {
+            yield return new WaitForSeconds(0.5f);
+            if (StateHolder.CourierCoolPistol)
+            {
+                damage += coolPistolBonus;
+            }
         }
     }
 }

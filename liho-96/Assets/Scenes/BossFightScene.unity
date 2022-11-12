@@ -1985,7 +1985,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d80c797172886049a59607c451ae987, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  phaseSeconds: 3
+  phaseSeconds: 30
   courier: {fileID: 584745251}
   enemiesHealthBar: {fileID: 86713064}
   grayPanel: {fileID: 860493342}

@@ -10,16 +10,25 @@ namespace Boss
         public static List<Item> AvailableItems { get; set; }
 
         public static List<Phase> Phases { get; set; }
+        
+        public static bool CourierCoolPistol { get; private set; }
 
         private static int _currentPhaseIndex;
 
         private static bool _lastPhaseFinished;
+
+        private const string _coolPistolFlagName = "Pistol";
 
         public static void Init(List<string> flags)
         {
             var jsonString = Resources.Load<TextAsset>("Text/bossFightConfig").text;
             var config = JsonConvert.DeserializeObject<Config>(jsonString);
 
+            if (flags.Contains(_coolPistolFlagName))
+            {
+                CourierCoolPistol = true;
+            }
+            
             AvailableItems = FilterItems(config.Items, flags);
             Phases = config.Phases;
             _currentPhaseIndex = -1;

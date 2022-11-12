@@ -28,8 +28,8 @@ namespace Boss
 
         private void Start()
         {
-            CurrentFightState = FightState.Initializing;
             InitHolder();
+            CurrentFightState = FightState.Initializing;
             _timeRemainingBeforeNextRest = phaseSeconds;
             _phaseConfig = GetComponent<PhaseConfigurator>();
             _enemiesController = GetComponent<EnemiesController>();
@@ -242,6 +242,7 @@ namespace Boss
             flags.Add("PartyPhoneNumber");
             flags.Add("Rag");
             flags.Add("Coins");
+            flags.Add("Pistol");
             StateHolder.Init(flags);
         }
     }
