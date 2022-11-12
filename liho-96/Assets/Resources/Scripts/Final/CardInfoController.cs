@@ -31,23 +31,23 @@ namespace Final
         
         private bool ValidateCardInfo(string number, string month, string year, string cvv)
         {
-            if (string.IsNullOrEmpty(number) || number.Length != 16)
+            if (string.IsNullOrEmpty(number) || number.Length != 16 || !long.TryParse(number, out var cardResult) || cardResult < 1)
             {
                 _mainController.Error(CommentsHolder.InvalidCard);
                 return false;
             }
             
+            // TODO некрасиво и трудно расширять
             if (string.IsNullOrEmpty(month) ||
                 string.IsNullOrEmpty(year) ||
-                (month[0] == '0' && month.Length == 1) ||
-                (month[0] != '0' && int.Parse(month) > 12) ||
-                (year[0] == '0' && year.Length == 1))
+                int.Parse(month) > 12 || int.Parse(month) < 1 ||
+                int.Parse(year) < 22)
             {
                 _mainController.Error(CommentsHolder.InvalidDate);
                 return false;
             }
-            
-            if (string.IsNullOrEmpty(cvv) || cvv.Length != 3)
+
+            if (string.IsNullOrEmpty(cvv) || cvv.Length != 3 || !int.TryParse(cvv, out var cvvResult) || cvvResult < 0)
             {
                 _mainController.Error(CommentsHolder.InvalidCvv);
                 return false;
