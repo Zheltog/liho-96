@@ -52,10 +52,6 @@ namespace Boss
 
         protected override void OnReset() { }
 
-        protected override void OnDamage()
-        {
-            // TODO
-            Debug.Log("A!");
-        }
+        protected override void OnDamage() { }
     }
 }

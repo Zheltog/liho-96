@@ -118,11 +118,7 @@ namespace Boss
             _currentDirection = startDirection;
         }
 
-        protected override void OnDamage()
-        {
-            // TODO
-            Debug.Log("A!");
-        }
+        protected override void OnDamage() { }
 
         public enum RunningDirection
         {

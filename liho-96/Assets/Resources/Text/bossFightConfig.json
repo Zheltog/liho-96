@@ -3,10 +3,6 @@
     {
       "Type": "Shooting",
       "StartText": "Используй W/S или вверх/вниз для движения и ЛКМ для стрельбы.",
-      "Effect": {
-        "Type": "Damage",
-        "Value": 950.0
-      },
       "Enemies": [
         "BenchLeft", "BenchRight"
       ],
@@ -168,7 +164,7 @@
       "Flag": "Molotov",
       "Effect": {
         "Type": "Damage",
-        "Value": 2000.0
+        "Value": 200.0
       }
     },
     {

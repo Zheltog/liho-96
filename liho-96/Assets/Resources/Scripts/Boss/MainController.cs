@@ -45,6 +45,10 @@ namespace Boss
         
         public void ChooseItem(Item item)
         {
+            if (text.IsPrinting)
+            {
+                text.FinishPrinting();
+            }
             CurrentFightState = FightState.ItemChosen;
             backButton.SetActive(false);
             NewText(item.UseText);
@@ -115,16 +119,28 @@ namespace Boss
             CurrentFightState = FightState.ItemChoosing;
             actionsButtons.SetActive(false);
             backButton.SetActive(true);
-            itemsChoicesController.NewChoices();
+            if (!itemsChoicesController.ItemsChoiceAvailable())
+            {
+                text.NewText(CommentsHolder.NoItems);
+            }
+            else
+            {
+                itemsChoicesController.NewChoices();
+            }
         }
 
         public void Surrender()
         {
-            GameOver(GameOverCommentsHolder.CourierSurrendered);
+            GameOver(CommentsHolder.CourierSurrendered);
         }
 
         public void ToActionChoice()
         {
+            if (text.IsPrinting)
+            {
+                text.FinishPrinting();
+            }
+            text.NewText(" ");
             itemsChoicesController.DisableButtons();
             backButton.SetActive(false);
             actionsButtons.SetActive(true);
@@ -136,7 +152,7 @@ namespace Boss
             switch (type)
             {
                 case HealthBarType.Courier:
-                    GameOver(GameOverCommentsHolder.CourierDied);
+                    GameOver(CommentsHolder.CourierDied);
                     break;
                 case HealthBarType.Enemies:
                     if (CurrentFightState == FightState.ItemChosen)
@@ -186,7 +202,7 @@ namespace Boss
             courier.Rest();
             actionsButtons.SetActive(true);
             grayPanel.SetActive(true);
-            _enemiesController.DisableAllEnemies();   // TODO: вынести куда-то из фазоконфига?
+            _enemiesController.DisableAllEnemies();
         }
 
         // TODO: починить и убрать?

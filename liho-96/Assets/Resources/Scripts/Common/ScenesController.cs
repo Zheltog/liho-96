@@ -27,11 +27,6 @@ namespace Common
             }
         }
 
-        public void LoadBossFightScene()
-        {
-            // TODO
-        }
-
         public void LoadAuthorsScene()
         {
             SceneManager.LoadScene("AuthorsScene", LoadSceneMode.Single);

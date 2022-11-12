@@ -127,7 +127,7 @@ namespace Boss
             ChooseItem(pageIndex * 6 + 5);
         }
         
-        private bool ItemsChoiceAvailable()
+        public bool ItemsChoiceAvailable()
         {
             return _currentItems.Count != 0;
         }

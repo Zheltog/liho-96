@@ -25,8 +25,7 @@ namespace Boss
         {
             if (_timeRemainingBeforeEnd <= 0)
             {
-                // TODO: нормальный текст
-                mainController.GameOver(GameOverCommentsHolder.TimerRanOut);
+                mainController.GameOver(CommentsHolder.TimerRanOut);
                 return;
             }
             
