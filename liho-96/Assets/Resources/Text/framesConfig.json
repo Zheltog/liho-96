@@ -1,5 +1,5 @@
 {
-  "StartingFrame": "klumba",
+  "StartingFrame": "klumba_soldiers_arrive",
   "StartingFlags": [
     "SmallMoney"
   ],
@@ -4982,6 +4982,17 @@
       "Type": "Simple",
       "Transition": {
         "Type": "Exit"
+      }
+    },
+
+    "klumba_soldiers_arrive": {
+      "Picture": "blank",
+      "Text": "TODO приезжают солдаты.",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Scene",
+        "Next": "BossFightScene",
+        "ReturnFrame": "klumba_tuman_end_gun_1"
       }
     }
   }

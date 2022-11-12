@@ -88,8 +88,15 @@ namespace Frames
                 }
                 case TransitionType.Scene:
                 {
+                    // фрейм, который откроется, если из сцены вернутся на FrameScene
+                    var returnFrame = transition.ReturnFrame;
+                    if (returnFrame != null)
+                    {
+                        StateHolder.SetFrame(returnFrame);
+                    }
+                    
                     var nextSceneName = transition.Next;
-                    SceneManager.LoadScene(nextSceneName, LoadSceneMode.Additive);
+                    SceneManager.LoadScene(nextSceneName, LoadSceneMode.Single);
                     break;
                 }
                 case TransitionType.Exit:
