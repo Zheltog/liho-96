@@ -1,9 +1,12 @@
 {
-  "StartingFrame": "klumba_courier_lies_5",
+  "StartingFrame": "park",
   "StartingFlags": [
     "SmallMoney",
     "Lighter",
-    "Pistol"
+    "Pistol",
+    "Rag",
+    "MolotovRecipe",
+    "Coins"
   ],
   "Frames": {
     "start": {
@@ -765,7 +768,7 @@
     },
     "garage_locker_items": {
       "Picture": "garage",
-      "Text": "Курьер решает забрать вещи себе. Вдруг пригодятся?\n<Предмет добавлен: [Шило]>\n<Предмет добавлен: [Рваная тряпка]>",
+      "Text": "Курьер решает забрать вещи себе. Вдруг пригодятся?\n<Предмет добавлен: [Острое шило]>\n<Предмет добавлен: [Рваная тряпка]>",
       "Type": "Simple",
       "Transition": {
         "Type": "Frame",
@@ -2119,7 +2122,7 @@
     "forest_car_scientist_i_am_not_with_them": {
       "Picture": "forest_scientist",
       "Sound": "gasp_relief",
-      "Text": "Незнакомец вздыхает с облегчением\nНезнакомец: \"Фух... А то я уж думал, что ты меня сейчас прикончишь...\"",
+      "Text": "Незнакомец вздыхает с облегчением.\nНезнакомец: \"Фух... А то я уж думал, что ты меня сейчас прикончишь...\"",
       "Type": "Simple",
       "Transition": {
         "Type": "Frame",
@@ -2137,7 +2140,6 @@
     },
     "forest_car_scientist_my_car": {
       "Picture": "forest_scientist_frightened",
-      "Sound": "gasp_relief",
       "Text": "Незнакомец: \"Т-так это твоя машина? П-погоди, а эти пацаны за рулём?..\"",
       "Type": "Simple",
       "Transition": {
@@ -4176,14 +4178,316 @@
     },
     "park_entrance_2": {
       "Picture": "blank",
-      "Text": "У одной скамейки собралась компания молодых людей. TODO: тусонавты",
+      "Text": "У одной скамейки собралась шумная компания молодых людей. Кажется, что они встают и идут по направлению к Курьеру и Учёному.",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "park_entrance_3"
+      }
+    },
+    "park_entrance_3": {
+      "Picture": "blank",
+      "Text": "Учёный: \"Опасно... Д-давай обойдём их.\"\nНо было уже поздно.",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "park_entrance_4"
+      }
+    },
+    "park_entrance_4": {
+      "Picture": "blank",
+      "Music": "",
+      "Text": "Из компании выходит девушка и заводит разговор.",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "park_party"
+      }
+    },
+    "park_party": {
+      "Picture": "blank",
+      "Music": "Boogerman A Pick and Flick Adventure - Unknown Song",
+      "Text": "Тусовщица: \"Хай, чуваки! Вы тоже на тусовку валите?\"",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "park_party_1"
+      }
+    },
+    "park_party_1": {
+      "Picture": "blank",
+      "Text": "Курьер: \"...\"",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "park_party_2"
+      }
+    },
+    "park_party_2": {
+      "Picture": "blank",
+      "Text": "Тусовщица: \"У нас на квартире – самые клёвые тусы! Такой сидюк прикупили, громкий, соседи в шоке!\"",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "park_party_3"
+      }
+    },
+    "park_party_3": {
+      "Picture": "blank",
+      "Text": "Тусовщица: \"...только один облом у нас сегодня. Бабки кончились вообще не вовремя. На том, что есть, далеко не уедем.\"",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "park_party_4"
+      }
+    },
+    "park_party_4": {
+      "Picture": "blank",
+      "Text": "Тусовщица: \"Короче, чуваки: рубль будет у вас?\"",
+      "Type": "Choice",
+      "Choices": [
+        {
+          "Text": "Дать денег",
+          "Transition": {
+            "Type": "Frame",
+            "Next": "park_party_give_money"
+          },
+          "Visibility": [
+            {
+              "Type": "And",
+              "Flags": [
+                "Coins"
+              ]
+            }
+          ]
+        },
+        {
+          "Text": "Не давать денег",
+          "Transition": {
+            "Type": "Frame",
+            "Next": "park_party_no_money"
+          }
+        }
+      ]
+    },
+
+    "park_party_give_money": {
+      "Picture": "blank",
+      "Text": "Курьер щедро отсыпает тусовщице выигранные в казино монеты.\n<Предмет удалён: [Горсть монет]>",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "park_party_give_money_1",
+        "Actions": [
+          {
+            "Type": "Remove",
+            "Name": "Coins"
+          }
+        ]
+      }
+    },
+    "park_party_give_money_1": {
+      "Picture": "blank",
+      "Text": "Тусовщица: \"Чувакиииии!.. Вы реально клёвые!!!\"",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "park_party_give_money_2"
+      }
+    },
+    "park_party_give_money_2": {
+      "Picture": "blank",
+      "Text": "Тусовщица: \"Приходите как-нибудь к нам, затусим? У нас тут рядом квартира, недалеко от универа заброшенного.\"",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "park_party_give_money_3"
+      }
+    },
+    "park_party_give_money_3": {
+      "Picture": "blank",
+      "Text": "Тусовщица: \"Вот, запиши номер! Звони вечером, там точно кто-то будет. Оттянемся все вместе!\"\n<Предмет добавлен: [Номер тусовщиков]>",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "park_party_give_money_4"
+      }
+    },
+    "park_party_give_money_4": {
+      "Picture": "blank",
+      "Text": "Тусовщица: \"Народ, погнали! Сегодня тусим всю ноооооооооочь!!!\"\nКомпания радостно кричит и уходит.",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "park_vodka"
+      }
+    },
+    
+    "park_party_no_money": {
+      "Picture": "blank",
+      "Text": "Учёный: \"Мы п-пьянство не спонсируем! У самих мало...\"",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "park_party_no_money_1"
+      }
+    },
+    "park_party_no_money_1": {
+      "Picture": "blank",
+      "Text": "Тусовщица разочарована.\nТусовщица: \"Чувакиииии... Ну вы и тухлые, конечно!\"",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "park_party_no_money_2"
+      }
+    },
+    "park_party_no_money_2": {
+      "Picture": "blank",
+      "Text": "Тусовщица: \"Ладно, народ, погнали! Эти совсем жмоты оказались, сегодня живой воды больше не будет!\"",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "park_party_no_money_3"
+      }
+    },
+    "park_party_no_money_3": {
+      "Picture": "blank",
+      "Text": "От тусовщиков слышны осуждающие возгласы. Девушка возвращается к своей компании, и они уходят.",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "park_vodka"
+      }
+    },
+
+    "park_vodka": {
+      "Picture": "blank",
+      "Text": "После себя тусовщики оставили на скамейке бутылки и какой-то мусор. Учёный смотрит на скамейку и осуждающе качает головой.",
+      "Type": "Choice",
+      "Choices": [
+        {
+          "Text": "Подойти поближе",
+          "Transition": {
+            "Type": "Frame",
+            "Next": "park_vodka_bench"
+          }
+        },
+        {
+          "Text": "Идти дальше",
+          "Transition": {
+            "Type": "Frame",
+            "Next": "park_vodka_move_along"
+          }
+        }
+      ]
+    },
+
+    "park_vodka_bench": {
+      "Picture": "blank",
+      "Text": "Курьер замечает, что одна в одной из бутылок ещё осталась жидкость. Быть может, она ему как-нибудь пригодится.",
+      "Type": "Choice",
+      "Choices": [
+        {
+          "Text": "Взять бутылку",
+          "Transition": {
+            "Type": "Frame",
+            "Next": "park_vodka_pick_up"
+          },
+          "Visibility": [
+            {
+              "Type": "OrNot",
+              "Flags": [
+                "MolotovRecipe",
+                "Rag"
+              ]
+            }
+          ]
+        },
+        {
+          "Text": "Взять бутылку",
+          "Transition": {
+            "Type": "Frame",
+            "Next": "park_vodka_molotov"
+          },
+          "Visibility": [
+            {
+              "Type": "And",
+              "Flags": [
+                "MolotovRecipe",
+                "Rag"
+              ]
+            }
+          ]
+        },
+        {
+          "Text": "Идти дальше",
+          "Transition": {
+            "Type": "Frame",
+            "Next": "park_vodka_move_along"
+          }
+        }
+      ]
+    },
+
+    "park_vodka_pick_up": {
+      "Picture": "blank",
+      "Text": "Курьер подбирает недопитую бутылку водки.\n<Предмет добавлен: [Полупустая бутылка водки \"Пшеничная\"]>",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "park_vodka_move_along",
+        "Actions": [
+          {
+            "Type": "Add",
+            "Name": "Vodka"
+          }
+        ]
+      }
+    },
+
+    "park_vodka_molotov": {
+      "Picture": "blank",
+      "Text": "По нехитрому рецепту Курьер изготавливает коктейль Молотова из бутылки водки и тряпки.\nУчёный: \"Ты уверен, что такое нам п-потребуется?\"",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "park_vodka_molotov_1"
+      }
+    },
+    "park_vodka_molotov_1": {
+      "Picture": "blank",
+      "Text": "<Предмет удалён: [Рваная тряпка]>\n<Предмет удалён: [Рецепт \"Коктейль Молотова\"]>\n<Предмет добавлен: [Коктейль Молотова]>",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "park_vodka_move_along",
+        "Actions": [
+          {
+            "Type": "Remove",
+            "Name": "Rag"
+          },
+          {
+            "Type": "Remove",
+            "Name": "MolotovRecipe"
+          },
+          {
+            "Type": "Add",
+            "Name": "MolotovCocktail"
+          }
+        ]
+      }
+    },
+
+    "park_vodka_move_along": {
+      "Picture": "blank",
+      "Text": "Курьер и Учёный продолжают двигаться к клумбе.",
       "Type": "Simple",
       "Transition": {
         "Type": "Frame",
         "Next": "park_exit"
       }
     },
-
+    
     "park_exit": {
       "Picture": "blank",
       "Music": "Chrono Trigger - Ruined World",
@@ -4505,7 +4809,7 @@
     },
     "klumba_tuman_start_9": {
       "Picture": "blank",
-      "Text": "Туман: \"Ха, вот так номер. А мне мужики сказали, что всех в той машине грохнули...\"",
+      "Text": "Туман: \"Ха, вот так номер. А мне базарили мужики, что всех в той машине грохнули...\"",
       "Type": "Simple",
       "Transition": {
         "Type": "Frame",
@@ -5467,7 +5771,7 @@
 
     "klumba_soldiers_vlada_question_betrayal": {
       "Picture": "blank",
-      "Text": "Владилена: \"Нам недостаточно было заполучить ЛИХО. Нам нужно было выманить и устранить Тумана.\"",
+      "Text": "Владилена: \"Заполучить ЛИХО – большая победа для нас, но этого было бы недостаточно. Нам нужно было выманить и устранить Тумана.\"",
       "Type": "Simple",
       "Transition": {
         "Type": "Frame",
