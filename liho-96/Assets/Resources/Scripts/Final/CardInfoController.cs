@@ -81,10 +81,10 @@ namespace Final
         
         private IEnumerator CheckAnswer() {
             var uwr = UnityWebRequest.Post(ApiInfoHolder.QuestDomain + ApiInfoHolder.CheckTaskPath, "");
-            uwr.uploadHandler = new UploadHandlerRaw(Encoding.UTF8.GetBytes(
-                JsonUtility.ToJson(new CheckTaskRequest(ApiInfoHolder.TaskId, StateHolder.Answer))
-            ));
+            var responseJson = JsonUtility.ToJson(new CheckTaskRequest(ApiInfoHolder.TaskId, StateHolder.Answer));
+            uwr.uploadHandler = new UploadHandlerRaw(Encoding.UTF8.GetBytes(responseJson));
             uwr.SetRequestHeader("Content-Type", "application/json");
+            uwr.SetRequestHeader("Authorization", "Bearer " + StateHolder.Token);
             yield return uwr.SendWebRequest();
 
             if (uwr.result != UnityWebRequest.Result.Success) {
@@ -95,6 +95,7 @@ namespace Final
                 var response = JsonConvert.DeserializeObject<CheckTaskResponse>(responseString);
                 if (response.points != null)
                 {
+                    Debug.Log(response.points);
                     _mainController.Success();
                 }
                 else

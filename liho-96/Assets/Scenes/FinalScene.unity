@@ -452,7 +452,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &96557312
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1058,6 +1058,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   authFields: {fileID: 2076318945}
   cardFields: {fileID: 1248965131}
+  nextButton: {fileID: 96557311}
+  skipButton: {fileID: 595266842}
   image: {fileID: 796043733}
   text: {fileID: 1804880759}
 --- !u!114 &330855081
@@ -2105,7 +2107,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &595266843
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5258,7 +5260,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2076318946
 RectTransform:
   m_ObjectHideFlags: 0

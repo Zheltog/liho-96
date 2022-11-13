@@ -8,6 +8,8 @@ namespace Final
     {
         public GameObject authFields;
         public GameObject cardFields;
+        public GameObject nextButton;
+        public GameObject skipButton;
         public ImageController image;
         public TextBoxController text;
         
@@ -27,15 +29,43 @@ namespace Final
                     text.NewText(CommentsHolder.Auth);
                     break;
                 case State.AuthSkipped:
-                    OpenCardInfoForm(CommentsHolder.CardIfAuthSkipped);
+                    text.NewText(CommentsHolder.CardIfAuthSkipped);
                     break;
                 case State.AuthPassed:
-                    OpenCardInfoForm(CommentsHolder.CardIfAuthPassed);
+                    text.NewText(CommentsHolder.CardIfAuthPassed);
                     break;
             }
 
             LeonidNorm();
             SceneStateHolder.LastSavableSceneState = SceneState.Final;
+        }
+
+        private void Update()
+        {
+            if (text.IsPrinting) return;
+
+            switch (StateHolder.CurrentState)
+            {
+                case State.Auth:
+                    if (authFields.activeSelf) return;
+                    OpenAuthForm();
+                    break;
+                case State.AuthSkipped:
+                case State.AuthPassed:
+                    if (cardFields.activeSelf) return;
+                    OpenCardInfoForm();
+                    break;
+            }
+
+            if (!nextButton.activeSelf)
+            {
+                nextButton.SetActive(true);
+            }
+            
+            if (!skipButton.activeSelf)
+            {
+                skipButton.SetActive(true);
+            }
         }
 
         public void Next()
@@ -72,15 +102,21 @@ namespace Final
             {
                 case State.Auth:
                     StateHolder.CurrentState = State.AuthSkipped;
-                    OpenCardInfoForm(CommentsHolder.CardIfAuthSkipped);
+                    text.NewText(CommentsHolder.CardIfAuthSkipped);
+                    CloseAuthForm();
                     break;
                 case State.AuthSkipped:
-                case State.AuthPassed:
                     SceneStateHolder.LastSavableSceneState = SceneState.Frame;
                     _scenes.LoadPreviousScene();
                     GameFinishedController.IsGameFinished = true;
                     break;
+                case State.AuthPassed:
+                    Error(CommentsHolder.NoSkipCardIfNoAuth);
+                    return;
             }
+            
+            nextButton.SetActive(false);
+            skipButton.SetActive(false);
         }
 
         public void ClickOnText()
@@ -100,7 +136,8 @@ namespace Final
             {
                 case State.Auth:
                     StateHolder.CurrentState = State.AuthPassed;
-                    OpenCardInfoForm(CommentsHolder.CardIfAuthPassed);
+                    text.NewText(CommentsHolder.CardIfAuthPassed);
+                    CloseAuthForm();
                     break;
                 case State.AuthSkipped:
                 case State.AuthPassed:
@@ -109,13 +146,28 @@ namespace Final
                     GameFinishedController.IsGameFinished = true;
                     break;
             }
+            
+            nextButton.SetActive(false);
+            skipButton.SetActive(false);
         }
 
-        private void OpenCardInfoForm(string comment)
+        private void OpenAuthForm()
+        {
+            LeonidNorm();
+            authFields.SetActive(true);
+            cardFields.SetActive(false);
+        }
+
+        private void CloseAuthForm()
         {
             LeonidNorm();
             authFields.SetActive(false);
-            text.NewText(comment);
+        }
+
+        private void OpenCardInfoForm()
+        {
+            LeonidNorm();
+            authFields.SetActive(false);
             cardFields.SetActive(true);
         }
 

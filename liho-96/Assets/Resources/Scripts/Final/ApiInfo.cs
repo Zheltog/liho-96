@@ -7,7 +7,7 @@ namespace Final
         public const string QuestDomain = "https://fitfija.ru";
         public const string LoginPath = "/api/v1/auth/login";
         public const string CheckTaskPath = "/api/v1/tasks/check";
-        public const int TaskId = 22;
+        public const string TaskId = "22";
     }
 
     [Serializable]
@@ -28,10 +28,10 @@ namespace Final
     
     [Serializable]
     public class CheckTaskRequest {
-        public int taskId;
+        public string taskId;
         public string answer;
 
-        public CheckTaskRequest(int taskId, string answer) {
+        public CheckTaskRequest(string taskId, string answer) {
             this.taskId = taskId;
             this.answer = answer;
         }

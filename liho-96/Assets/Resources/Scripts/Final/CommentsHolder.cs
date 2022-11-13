@@ -13,5 +13,6 @@
         public const string InvalidDate = "Нужно корректно заполнить месяц и год окончания действия карты!";
         public const string InvalidCvv = "Нужно заполнить CVV!";
         public const string CheckTaskError = "Вроде все так, да что-то не так... Свяжитесь с организаторами или попробуйте ещё раз.";
+        public const string NoSkipCardIfNoAuth = "Сыщикам требуются эти сведения!";
     }
 }

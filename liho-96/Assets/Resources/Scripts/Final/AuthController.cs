@@ -45,7 +45,6 @@ namespace Final
                 var responseString = uwr.downloadHandler.text;
                 var response = JsonConvert.DeserializeObject<LoginResponse>(responseString);
                 StateHolder.Token = response.token;
-                Debug.Log("token = " + StateHolder.Token);
                 _mainController.Success();
             }
         }
