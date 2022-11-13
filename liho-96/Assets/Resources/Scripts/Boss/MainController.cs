@@ -24,6 +24,7 @@ namespace Boss
         private PhaseConfigurator _phaseConfig;
         private EnemiesController _enemiesController;
         private ScenesController _scenes;
+        private CursorController _cursor;
 
         private void Start()
         {
@@ -32,6 +33,7 @@ namespace Boss
             _phaseConfig = GetComponent<PhaseConfigurator>();
             _enemiesController = GetComponent<EnemiesController>();
             _scenes = GetComponent<ScenesController>();
+            _cursor = GetComponent<CursorController>();
             StartCoroutine(NextPhaseWithDelay());
         }
 
@@ -40,6 +42,13 @@ namespace Boss
             if (CurrentFightState == FightState.Attack)
             {
                 UpdateTimeRemainingBeforeNextRest();
+                return;
+            }
+
+            // TODO: очень костыль
+            if (Input.GetMouseButtonDown(0) && _cursor.IsCursorInAimRect())
+            {
+                FinishPrintingOrUpdateRoundState();
             }
         }
         

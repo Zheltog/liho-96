@@ -171,11 +171,9 @@ namespace Boss
 
         private bool ShootingAvailable()
         {
-            var mousePosition = Input.mousePosition;
-            var mousePosition2D = new Vector2(mousePosition.x, mousePosition.y);
             return transform.position.y >= minShootingHeight &&
                    _fireAllowed &&
-                   cursorController.IsCursorInAimRect(mousePosition2D);
+                   cursorController.IsCursorInAimRect();
         }
 
         private IEnumerator CheckCoolPistol()

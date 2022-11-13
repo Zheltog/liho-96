@@ -2259,6 +2259,7 @@ MonoBehaviour:
   soundsSource: {fileID: 98885820}
   musicSource: {fileID: 779177541}
   textSoundSource: {fileID: 193542140}
+  volumeChangeSpeed: 0.02
 --- !u!1 &300701702
 GameObject:
   m_ObjectHideFlags: 0
@@ -5116,6 +5117,7 @@ MonoBehaviour:
   soundsSource: {fileID: 2053291070}
   musicSource: {fileID: 1678838765}
   textSoundSource: {fileID: 2043034627}
+  volumeChangeSpeed: 0.02
 --- !u!1 &766678173
 GameObject:
   m_ObjectHideFlags: 0
@@ -6400,6 +6402,7 @@ MonoBehaviour:
   soundsSource: {fileID: 49534521}
   musicSource: {fileID: 704516105}
   textSoundSource: {fileID: 1341394378}
+  volumeChangeSpeed: 0.02
 --- !u!4 &909736239
 Transform:
   m_ObjectHideFlags: 0
@@ -7554,6 +7557,7 @@ MonoBehaviour:
   soundsSource: {fileID: 766678175}
   musicSource: {fileID: 1185804106}
   textSoundSource: {fileID: 348145212}
+  volumeChangeSpeed: 0.02
 --- !u!1 &1107313586
 GameObject:
   m_ObjectHideFlags: 0
@@ -10007,6 +10011,7 @@ MonoBehaviour:
   soundsSource: {fileID: 1623043225}
   musicSource: {fileID: 1775851859}
   textSoundSource: {fileID: 363589194}
+  volumeChangeSpeed: 0.02
 --- !u!1 &1528120956
 GameObject:
   m_ObjectHideFlags: 0
@@ -11701,6 +11706,7 @@ MonoBehaviour:
   soundsSource: {fileID: 1950793118}
   musicSource: {fileID: 917075726}
   textSoundSource: {fileID: 1814193693}
+  volumeChangeSpeed: 0.02
 --- !u!1 &1814193691
 GameObject:
   m_ObjectHideFlags: 0
@@ -11877,6 +11883,7 @@ MonoBehaviour:
   soundsSource: {fileID: 233910354}
   musicSource: {fileID: 1152574612}
   textSoundSource: {fileID: 68270798}
+  volumeChangeSpeed: 0.02
 --- !u!1 &1921453313
 GameObject:
   m_ObjectHideFlags: 0

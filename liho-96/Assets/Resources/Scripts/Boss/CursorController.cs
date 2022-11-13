@@ -28,14 +28,14 @@ namespace Boss
 
         private void Update()
         {
-            var mousePosition = Input.mousePosition;
-            var mousePosition2D = new Vector2(mousePosition.x, mousePosition.y);
-            _currentCursor = IsCursorInAimRect(mousePosition2D) ? cursorAim : cursorDefault;
+            _currentCursor = IsCursorInAimRect() ? cursorAim : cursorDefault;
         }
 
-        public bool IsCursorInAimRect(Vector2 mousePosition)
+        public bool IsCursorInAimRect()
         {
-            return _aimRect.Contains(mousePosition);
+            var mousePosition = Input.mousePosition;
+            var mousePosition2D = new Vector2(mousePosition.x, mousePosition.y);
+            return _aimRect.Contains(mousePosition2D);
         }
 
         public void OnGUI()
