@@ -1,5 +1,5 @@
 {
-  "StartingFrame": "klumba_tuman_join_5",
+  "StartingFrame": "after_casino_to_klumba",
   "StartingFlags": [
     "SmallMoney",
     "Lighter",
@@ -4150,6 +4150,7 @@
 
     "park": {
       "Picture": "park",
+      "Sound": "footsteps",
       "Music": "Chrono Trigger - Ruined World",
       "TextDelay": 0.1,
       "Text": " . . . . .",
@@ -4358,6 +4359,7 @@
     },
     "park_party_no_money_3": {
       "Picture": "park",
+      "Sound": "party_boo",
       "Text": "От тусовщиков слышны осуждающие возгласы. Девушка возвращается к своей компании, и они уходят.",
       "Type": "Simple",
       "Transition": {
@@ -4437,6 +4439,7 @@
 
     "park_vodka_pick_up": {
       "Picture": "park",
+      "Sound": "glass_bottle_tap",
       "Text": "Курьер подбирает недопитую бутылку водки.\n<Предмет добавлен: [Полупустая бутылка водки \"Пшеничная\"]>",
       "Type": "Simple",
       "Transition": {
@@ -4453,6 +4456,7 @@
 
     "park_vodka_molotov": {
       "Picture": "park",
+      "Sound": "glass_bottle_tap",
       "Text": "По нехитрому рецепту Курьер изготавливает коктейль Молотова из бутылки водки и тряпки.\nУчёный: \"Ты уверен, что такое нам п-потребуется?\"",
       "Type": "Simple",
       "Transition": {
@@ -4496,6 +4500,7 @@
     
     "park_exit": {
       "Picture": "park",
+      "Sound": "footsteps",
       "Music": "Chrono Trigger - Ruined World",
       "TextDelay": 0.1,
       "Text": " . . . . .",
@@ -4632,7 +4637,9 @@
 
     "klumba": {
       "Picture": "klumba",
+      "Sound": "footsteps",
       "TextDelay": 0.1,
+      "Music": "",
       "Text": " . . . . .",
       "Type": "Simple",
       "Transition": {
@@ -4642,6 +4649,7 @@
     },
     "klumba_entrance": {
       "Picture": "klumba",
+      "Music": "Bram Stoker's Dracula - Misty Catacombs I",
       "Text": "Небольшой дворик за заброшенным зданием университета. В центре стоит аляповатая фигура в форме цветка. Рядом с ней – неухоженная клумба.",
       "Type": "Simple",
       "Transition": {
@@ -4743,6 +4751,7 @@
     },
     "klumba_tuman_start_1": {
       "Picture": "klumba_tuman",
+      "Sound": "evil_cough_and_laugh",
       "Text": "Туман откладывает мундштук от кальяна в сторону и смотрит на Курьера и Учёного.",
       "Type": "Simple",
       "Transition": {
@@ -4779,6 +4788,7 @@
     },
     "klumba_tuman_start_5": {
       "Picture": "klumba_tuman_laughing",
+      "Sound": "evil_laugh",
       "Text": "Туман: \"Ха-ха, ну ты выдал, дятел, внатуре! Добрый вечер ему!\"\nБандиты смеются.",
       "Type": "Simple",
       "Transition": {
@@ -4824,6 +4834,7 @@
     },
     "klumba_tuman_start_10": {
       "Picture": "klumba_tuman_laughing",
+      "Sound": "evil_laugh",
       "Text": "Туман: \"Ха-ха, так у тебя сегодня второй день рождения! Лети, значит, отсюда, воробей!\"",
       "Type": "Choice",
       "Choices": [
@@ -4920,6 +4931,7 @@
     },
     "klumba_tuman_where_is_liho_1": {
       "Picture": "klumba_tuman_laughing",
+      "Sound": "evil_laugh",
       "Text": "Туман: \"Ха-ха, ну вы вообще слепые видать, ага? Вон же, мои мужики с ним щас чето мудрят.\"",
       "Type": "Simple",
       "Transition": {
@@ -4929,6 +4941,7 @@
     },
     "klumba_tuman_where_is_liho_2": {
       "Picture": "klumba_tuman_laughing",
+      "Sound": "knife_on_metal",
       "Text": "Туман указывает на скамейку на другом конце Клумбы. Там два бандита пытаются вскрыть ЛИХО складным ножом.",
       "Type": "Simple",
       "Transition": {
@@ -4960,6 +4973,7 @@
     },
     "klumba_tuman_why_you_came_here": {
       "Picture": "klumba_tuman",
+      "Sound": "exhale",
       "Text": "Курьер и Учёный молчат. Туман затягивается кальяном и выдыхает им в лица.",
       "Type": "Simple",
       "Transition": {
@@ -5077,6 +5091,7 @@
     "klumba_tuman_scientist_2": {
       "Picture": "klumba_tuman_gun",
       "Sound": "shot",
+      "Music": "",
       "Text": " ! ! ! ! !",
       "Type": "Simple",
       "Transition": {
@@ -5149,6 +5164,8 @@
     },
     "klumba_tuman_end": {
       "Picture": "klumba_tuman_laughing",
+      "Sound": "evil_laugh",
+      "Music": "Bram Stoker's Dracula - Misty Catacombs II",
       "Text": "Туман: \"Ха-ха, ну дятел внатуре! Чето пацан дохера борзый был, ага?\"\nБандиты смеются.",
       "Type": "Choice",
       "Choices": [
@@ -5300,6 +5317,7 @@
  
     "klumba_soldiers_arrive": {
       "Picture": "klumba_tuman_thinking",
+      "Sound": "car_arrives",
       "Text": "Вдруг с другой стороны Клумбы подъезжает зелёный УАЗ.\nТуман: \"Че за хрень?\"",
       "Type": "Simple",
       "Transition": {
@@ -5309,6 +5327,7 @@
     },
     "klumba_soldiers_arrive_1": {
       "Picture": "klumba_tuman_dead",
+      "Music": "firefight",
       "Text": " ! ! ! ! !",
       "Type": "Simple",
       "Transition": {
@@ -5336,6 +5355,7 @@
     },
     "klumba_soldiers_arrive_4": {
       "Picture": "klumba",
+      "Sound": "high_heels",
       "Text": "Она подбирает ЛИХО на той скамейке, где его оставили бандиты.\nЗатем замечает Курьера и направляется к нему.",
       "Type": "Simple",
       "Transition": {
@@ -5346,6 +5366,7 @@
 
     "klumba_soldiers_vlada": {
       "Picture": "klumba_vlada",
+      "Music": "Bram Stoker's Dracula - Mountains Beyond the Gate",
       "Text": "Незнакомка: \"Salve! Приветствую тебя, посыльный. Рада встрече.\"",
       "Type": "Simple",
       "Transition": {
@@ -5932,6 +5953,7 @@
     },
     "klumba_soldiers_vlada_next_12": {
       "Picture": "klumba_vlada_smug",
+      "Music": "",
       "TextDelay": 0.15,
       "Text": "Курьер: \"Нет.\"",
       "Type": "Simple",
@@ -5942,6 +5964,7 @@
     },
     "klumba_soldiers_vlada_next_13": {
       "Picture": "klumba_vlada",
+      "Music": "Bram Stoker's Dracula - Unknown Song 2",
       "Text": "Владилена разочаровано вздыхает.\nВладилена: \"Pessimo.\"",
       "Type": "Simple",
       "Transition": {
@@ -5978,6 +6001,7 @@
     },
     "klumba_soldiers_vlada_next_17": {
       "Picture": "klumba",
+      "Sound": "firefight",
       "Text": "Владилена убегает к машине, держа ЛИХО в руках. Курьер пытается её остановить, но попадает под огонь, и снова прячется за скамейку.",
       "Type": "Simple",
       "Transition": {
@@ -6089,6 +6113,7 @@
     },
     "klumba_after_fight_3": {
       "Picture": "final_vlada",
+      "Music": "Bram Stoker's Dracula - Unknown Song 4",
       "Text": "Владилена: \"Нет.....нет... мы не можем проиграть... мы не можем... сдаться...\"",
       "Type": "Simple",
       "Transition": {
@@ -6152,7 +6177,7 @@
     },
     "klumba_after_fight_10": {
       "Picture": "final_vlada_angry",
-      "Text": "Владилена: \"Ха.. ха... ха.....\"",
+      "Text": "Владилена: \"Ха.. ха... ха.......\"",
       "Type": "Simple",
       "Transition": {
         "Type": "Frame",
@@ -6161,7 +6186,7 @@
     },
     "klumba_after_fight_11": {
       "Picture": "final_vlada_finger",
-      "Text": "Владилена: \"Morior... invictus...\"",
+      "Text": "Владилена: \"Morior... invictus......\"",
       "Type": "Simple",
       "Transition": {
         "Type": "Frame",
@@ -6206,6 +6231,7 @@
     },
     "klumba_courier_lies_1": {
       "Picture": "blank",
+      "Music": "Earthbound Mother 2 (SNES) - Dr. Andonuts' Lab",
       "Text": "Светает. Первые лучи солнца падают на разрушенные здания старого университета.",
       "Type": "Simple",
       "Transition": {

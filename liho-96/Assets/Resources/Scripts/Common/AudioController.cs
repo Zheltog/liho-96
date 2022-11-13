@@ -44,6 +44,8 @@ namespace Common
             _currentMusic = musicName;
             
             var clip = Resources.Load<AudioClip>("Audio/" + musicName);
+            
+            // todo: починить! фейд не работает, потому что Stop() вызывается, не дожидаясь
             musicSource.Stop();
             musicSource.clip = clip;
             musicSource.volume = 0;
