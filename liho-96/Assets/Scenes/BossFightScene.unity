@@ -1634,8 +1634,8 @@ MonoBehaviour:
   shotBang: {fileID: 2080118329}
   hpBar: {fileID: 86713064}
   targetPoint: {x: 0, y: 5, z: -10}
-  maxHp: 30
-  damage: 1.5
+  maxHp: 40
+  damage: 2
   shotBangSeconds: 0.5
   secondsBeforeNextShooting: 1.5
   redOnHitSeconds: 0.2
@@ -3465,8 +3465,8 @@ MonoBehaviour:
   shotBang: {fileID: 1729232494}
   hpBar: {fileID: 86713064}
   targetPoint: {x: 0, y: 5, z: -10}
-  maxHp: 40
-  damage: 2
+  maxHp: 50
+  damage: 3
   shotBangSeconds: 0.5
   secondsBeforeNextShooting: 3
   redOnHitSeconds: 0.2
@@ -3724,7 +3724,7 @@ MonoBehaviour:
   hpBar: {fileID: 1267802827}
   redPanel: {fileID: 1037149491}
   gun: {fileID: 1791811666}
-  damage: 2.25
+  damage: 3
   coolPistolBonus: 0.5
   maxCameraHeight: 5
   minCameraHeight: 2
@@ -5706,8 +5706,8 @@ MonoBehaviour:
   shotBang: {fileID: 1094967852}
   hpBar: {fileID: 86713064}
   targetPoint: {x: 0, y: 5, z: -10}
-  maxHp: 40
-  damage: 2
+  maxHp: 50
+  damage: 3
   shotBangSeconds: 0.5
   secondsBeforeNextShooting: 2
   redOnHitSeconds: 0.2
@@ -7260,7 +7260,7 @@ MonoBehaviour:
   hpBar: {fileID: 86713064}
   targetPoint: {x: 0, y: 5, z: -10}
   maxHp: 1000
-  damage: 3
+  damage: 7
   shotBangSeconds: 0.1
   secondsBeforeNextShooting: 10
   redOnHitSeconds: 0.2
@@ -7703,7 +7703,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainController: {fileID: 248021001}
-  fightSeconds: 420
+  fightSeconds: 300
   redAlertSeconds: 30
 --- !u!95 &1107313591
 Animator:
@@ -12114,8 +12114,8 @@ MonoBehaviour:
   shotBang: {fileID: 1537234325}
   hpBar: {fileID: 86713064}
   targetPoint: {x: 0, y: 5, z: -10}
-  maxHp: 30
-  damage: 1.5
+  maxHp: 40
+  damage: 2
   shotBangSeconds: 0.5
   secondsBeforeNextShooting: 2
   redOnHitSeconds: 0.2
