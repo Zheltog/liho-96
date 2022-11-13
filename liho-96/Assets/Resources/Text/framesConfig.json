@@ -1,5 +1,5 @@
 {
-  "StartingFrame": "casino_entrance",
+  "StartingFrame": "klumba_tuman_join_5",
   "StartingFlags": [
     "SmallMoney",
     "Lighter",
@@ -5076,6 +5076,7 @@
     },
     "klumba_tuman_scientist_2": {
       "Picture": "klumba_tuman_gun",
+      "Sound": "shot",
       "Text": " ! ! ! ! !",
       "Type": "Simple",
       "Transition": {
@@ -5084,7 +5085,7 @@
       }
     },
     "klumba_tuman_scientist_dead": {
-      "Picture": "blank",
+      "Picture": "klumba_scientist_dead",
       "Text": "Туман стреляет Учёному в живот, и тот падает на землю.",
       "Type": "Simple",
       "Transition": {
@@ -5093,7 +5094,7 @@
       }
     },
     "klumba_tuman_scientist_dead_1": {
-      "Picture": "blank",
+      "Picture": "klumba_scientist_dead",
       "Text": "Учёный пытается что-то сказать, но слова даются ему тяжело.\nКурьер наклоняется над ним. Учёный кашляет кровью.",
       "Type": "Simple",
       "Transition": {
@@ -5102,7 +5103,7 @@
       }
     },
     "klumba_tuman_scientist_dead_2": {
-      "Picture": "blank",
+      "Picture": "klumba_scientist_dead",
       "Text": "Учёный: \"Я... кха... кха...\"",
       "Type": "Simple",
       "Transition": {
@@ -5111,7 +5112,7 @@
       }
     },
     "klumba_tuman_scientist_dead_3": {
-      "Picture": "blank",
+      "Picture": "klumba_scientist_dead",
       "Text": "Учёный: \"...п...прошу.....забери...ЛИХО......\"",
       "Type": "Simple",
       "Transition": {
@@ -5120,7 +5121,7 @@
       }
     },
     "klumba_tuman_scientist_dead_4": {
-      "Picture": "blank",
+      "Picture": "klumba_scientist_dead",
       "Text": "Учёный: \". . . . .\"",
       "Type": "Simple",
       "Transition": {
@@ -5129,7 +5130,7 @@
       }
     },
     "klumba_tuman_scientist_dead_5": {
-      "Picture": "blank",
+      "Picture": "klumba_scientist_dead",
       "Text": ". . . . .",
       "Type": "Simple",
       "Transition": {
@@ -5138,7 +5139,7 @@
       }
     },
     "klumba_tuman_scientist_dead_6": {
-      "Picture": "blank",
+      "Picture": "klumba_scientist_dead",
       "Text": "Курьер: \"...\"",
       "Type": "Simple",
       "Transition": {
@@ -6060,7 +6061,7 @@
     },
 
     "klumba_after_fight": {
-      "Picture": "klumba",
+      "Picture": "final_broken_tiles",
       "Text": " . . . . .",
       "Type": "Simple",
       "Transition": {
@@ -6069,7 +6070,7 @@
       }
     },
     "klumba_after_fight_1": {
-      "Picture": "klumba",
+      "Picture": "final_broken_tiles",
       "Text": "«СИЛА» повержена.",
       "Type": "Simple",
       "Transition": {
@@ -6078,7 +6079,7 @@
       }
     },
     "klumba_after_fight_2": {
-      "Picture": "blank",
+      "Picture": "final_vlada",
       "Text": "Владилена лежит на разбитой плитке, и, кажется, говорит сама с собой. В руках она продолжает сжимать ЛИХО.",
       "Type": "Simple",
       "Transition": {
@@ -6087,7 +6088,7 @@
       }
     },
     "klumba_after_fight_3": {
-      "Picture": "blank",
+      "Picture": "final_vlada",
       "Text": "Владилена: \"Нет.....нет... мы не можем проиграть... мы не можем... сдаться...\"",
       "Type": "Simple",
       "Transition": {
@@ -6096,7 +6097,7 @@
       }
     },
     "klumba_after_fight_4": {
-      "Picture": "blank",
+      "Picture": "final_vlada",
       "Text": "Владилена: \"Мы не можем... сдаться...\"",
       "Type": "Simple",
       "Transition": {
@@ -6105,7 +6106,7 @@
       }
     },
     "klumba_after_fight_5": {
-      "Picture": "blank",
+      "Picture": "final_vlada",
       "Text": "Курьер подходит к Владилене.",
       "Type": "Simple",
       "Transition": {
@@ -6114,8 +6115,8 @@
       }
     },
     "klumba_after_fight_6": {
-      "Picture": "blank",
-      "Text": "Владилена: \"ТЫ!.. Futue te ipsum! Filius canis!..\"",
+      "Picture": "final_vlada_angry",
+      "Text": "Владилена: \"ТЫ!!!.. Futue te ipsum! Filius canis!..\"",
       "Type": "Simple",
       "Transition": {
         "Type": "Frame",
@@ -6123,7 +6124,7 @@
       }
     },
     "klumba_after_fight_7": {
-      "Picture": "blank",
+      "Picture": "final_vlada_angry",
       "Text": "Владилена: \"Ты разрушил всё, что у меня было... Ради чего? Что тебе нужно???\"",
       "Type": "Simple",
       "Transition": {
@@ -6132,7 +6133,7 @@
       }
     },
     "klumba_after_fight_8": {
-      "Picture": "blank",
+      "Picture": "final_vlada_angry",
       "Text": "Курьер: \"Мне нужно ЛИХО.\"",
       "Type": "Simple",
       "Transition": {
@@ -6141,7 +6142,7 @@
       }
     },
     "klumba_after_fight_9": {
-      "Picture": "blank",
+      "Picture": "final_vlada_angry",
       "Text": "Курьер: \"Я уничтожу его.\"",
       "Type": "Simple",
       "Transition": {
@@ -6150,7 +6151,7 @@
       }
     },
     "klumba_after_fight_10": {
-      "Picture": "blank",
+      "Picture": "final_vlada_angry",
       "Text": "Владилена: \"Ха.. ха... ха.....\"",
       "Type": "Simple",
       "Transition": {
@@ -6159,7 +6160,7 @@
       }
     },
     "klumba_after_fight_11": {
-      "Picture": "blank",
+      "Picture": "final_vlada_finger",
       "Text": "Владилена: \"Morior... invictus...\"",
       "Type": "Simple",
       "Transition": {
@@ -6168,16 +6169,7 @@
       }
     },
     "klumba_after_fight_12": {
-      "Picture": "blank",
-      "Text": "Владилена: \"...\"",
-      "Type": "Simple",
-      "Transition": {
-        "Type": "Frame",
-        "Next": "klumba_after_fight_13"
-      }
-    },
-    "klumba_after_fight_13": {
-      "Picture": "blank",
+      "Picture": "final_vlada_button_pressed",
       "Text": "Владилена: \"...\"",
       "Type": "Simple",
       "Transition": {
