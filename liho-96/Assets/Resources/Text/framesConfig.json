@@ -3,10 +3,7 @@
   "StartingFlags": [
     "SmallMoney",
     "Lighter",
-    "Pistol",
-    "Rag",
-    "MolotovRecipe",
-    "Coins"
+    "Pistol"
   ],
   "Frames": {
     "start": {
@@ -1447,11 +1444,39 @@
     "market_items_grenade_2": {
       "Picture": "market_merchant",
       "Text": "У Курьера не хватает средств.\nТорговка: \"Денег нет? Тогда и товара нет.\"",
-      "Type": "Simple",
-      "Transition": {
-        "Type": "Frame",
-        "Next": "market_items_grenade_3"
-      }
+      "Type": "Choice",
+      "Choices": [
+        {
+          "Text": "костыль - есть пистолет",
+          "Transition": {
+            "Type": "Frame",
+            "Next": "market_items_grenade_3"
+          },
+          "Visibility": [
+            {
+              "Type": "And",
+              "Flags": [
+                "Pistol"
+              ]
+            }
+          ]
+        },
+        {
+          "Text": "костыль - нет пистолета",
+          "Transition": {
+            "Type": "Frame",
+            "Next": "market_items_grenade_leave_no_gun"
+          },
+          "Visibility": [
+            {
+              "Type": "AndNot",
+              "Flags": [
+                "Pistol"
+              ]
+            }
+          ]
+        }
+      ]
     },
     "market_items_grenade_3": {
       "Picture": "market_merchant",
@@ -1527,6 +1552,27 @@
     "market_items_grenade_leave": {
       "Picture": "market_merchant",
       "Text": "Торговка: \"Как знаешь. Моё дело – предложить.\"",
+      "Type": "Choice",
+      "Choices": [
+        {
+          "Text": "Спросить про машину",
+          "Transition": {
+            "Type": "Frame",
+            "Next": "market_car"
+          }
+        },
+        {
+          "Text": "Покинуть рынок",
+          "Transition": {
+            "Type": "Frame",
+            "Next": "market_leave"
+          }
+        }
+      ]
+    },
+    "market_items_grenade_leave_no_gun": {
+      "Picture": "market_merchant",
+      "Text": "Торговка: \"Ещё что-то нужно?\"",
       "Type": "Choice",
       "Choices": [
         {
@@ -2492,7 +2538,7 @@
     },
     "forest_car_scientist_danger_1": {
       "Picture": "forest_scientist_frightened",
-      "Text": "Учёный: \"С каждым днём в сети всё больше устройств. А значит, с каждым днём растёт и ущерб, который может причинить ЛИХО.\"",
+      "Text": "Учёный: \"С каждым днём в сети всё больше устройств. Они никак не защищены. А значит, с каждым днём растёт и ущерб, который может причинить ЛИХО.\"",
       "Type": "Simple",
       "Transition": {
         "Type": "Frame",
@@ -3216,7 +3262,7 @@
       }
     },
     "casino_boss_3": {
-      "Picture": "casino_hall_scientist",
+      "Picture": "casino_hall_boss",
       "Text": "Учёный: \"Д-добрый вечер... Нам очень н-нужно узнать...\"",
       "Type": "Simple",
       "Transition": {
@@ -3225,7 +3271,7 @@
       }
     },
     "casino_boss_3_1": {
-      "Picture": "casino_hall_scientist",
+      "Picture": "casino_hall_boss",
       "Music": "",
       "Text": "Учёный: \"Где обычно можно найти банду Т-т-тумана?\"",
       "Type": "Simple",
@@ -4066,7 +4112,7 @@
     },
     "after_casino_to_klumba_2": {
       "Picture": "casino_entrance_scientist",
-      "Text": "Курьер: \"...что-то тут не так.\"",
+      "Text": "Курьер: \"...тут что-то не так.\"",
       "Type": "Simple",
       "Transition": {
         "Type": "Frame",
@@ -5671,7 +5717,7 @@
     },
     "klumba_soldiers_vlada_question_ideology_1": {
       "Picture": "klumba_vlada",
-      "Text": "Владилена: \"Когда сила попадает в руки тех, кто её не достоен, начинается chao et degradation.\"",
+      "Text": "Владилена: \"Когда сила попадает в руки тех, кто её не достоин, начинается chao et degradation.\"",
       "Type": "Simple",
       "Transition": {
         "Type": "Frame",
@@ -5707,7 +5753,7 @@
     },
     "klumba_soldiers_vlada_question_ideology_5": {
       "Picture": "klumba_vlada",
-      "Text": "Владилена: \"Борьба за власть идёт во всём мире, и активное участие в этой борьбе является единственной по-настоящему значащей целью. Активное и безжалостное. Fortiter et fideliter.\"",
+      "Text": "Владилена: \"Борьба за власть идёт во всём мире, и активное участие в этой борьбе является единственной по-настоящему значимой целью. Активное и безжалостное. Fortiter et fideliter.\"",
       "Type": "Simple",
       "Transition": {
         "Type": "Frame",
