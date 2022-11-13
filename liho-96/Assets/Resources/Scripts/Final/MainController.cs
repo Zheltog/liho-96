@@ -121,12 +121,12 @@ namespace Final
 
         private void LeonidAngry()
         {
-            image.NewImage("Final/leonid_angry");
+            image.NewImage("leonid_angry");
         }
         
         private void LeonidNorm()
         {
-            image.NewImage("Final/leonid_norm");
+            image.NewImage("leonid_norm");
         }
     }
 }

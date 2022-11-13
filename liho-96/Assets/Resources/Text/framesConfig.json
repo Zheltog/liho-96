@@ -1,5 +1,5 @@
 {
-  "StartingFrame": "start",
+  "StartingFrame": "klumba_courier_lies_5",
   "StartingFlags": [
     "SmallMoney",
     "Lighter",
@@ -5948,7 +5948,7 @@
       }
     },
     "klumba_kanevsky": {
-      "Picture": "blank",
+      "Picture": "leonid_norm",
       "Text": "На этом и заканчивается наша история, дорогие зрители.",
       "Type": "Simple",
       "Transition": {
@@ -5957,7 +5957,7 @@
       }
     },
     "klumba_kanevsky_1": {
-      "Picture": "blank",
+      "Picture": "leonid_norm",
       "Text": "Бандиты и наёмники, секретное оружие и зловещие планы. Всё это не могло закончится хорошо для маленького городка.",
       "Type": "Simple",
       "Transition": {
@@ -5966,7 +5966,7 @@
       }
     },
     "klumba_kanevsky_2": {
-      "Picture": "blank",
+      "Picture": "leonid_norm",
       "Text": "Но выжил ли Курьер после взрыва?..\nБоюсь, это уже совсем другая история...",
       "Type": "Simple",
       "Transition": {
@@ -5975,7 +5975,7 @@
       }
     },
     "klumba_kanevsky_3": {
-      "Picture": "blank",
+      "Picture": "leonid_norm",
       "Text": " . . .",
       "Type": "Simple",
       "Transition": {
@@ -5986,7 +5986,7 @@
     },
 
     "klumba_kanevsky_final": {
-      "Picture": "blank",
+      "Picture": "leonid_norm",
       "Text": "На этом всё, дорогие зрители. Будьте счастливы и до новых встреч!",
       "Type": "Simple",
       "Transition": {

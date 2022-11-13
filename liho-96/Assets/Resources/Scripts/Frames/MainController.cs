@@ -40,7 +40,7 @@ namespace Frames
 
         private void Update()
         {
-            if (AnyKeyIgnoreMouse() && !choices.WaitingForChoice)
+            if (SpaceOrEnterPressed() && !choices.WaitingForChoice)
             {
                 NextFrame();
             }
@@ -172,9 +172,10 @@ namespace Frames
             }
         }
         
-        private static bool AnyKeyIgnoreMouse()
+        private static bool SpaceOrEnterPressed()
         {
-            return Input.anyKeyDown
+            return (Input.GetKey(KeyCode.Space) || Input.GetKey(KeyCode.Return))
+                   && Input.anyKeyDown
                    && !Input.GetMouseButtonDown(0)
                    && !Input.GetMouseButtonDown(1)
                    && !Input.GetMouseButtonDown(2);
