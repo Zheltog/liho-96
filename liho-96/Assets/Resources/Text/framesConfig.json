@@ -4148,7 +4148,7 @@
     },
 
     "park": {
-      "Picture": "blank",
+      "Picture": "park",
       "Music": "Chrono Trigger - Ruined World",
       "TextDelay": 0.1,
       "Text": " . . . . .",
@@ -4159,7 +4159,7 @@
       }
     },
     "park_entrance": {
-      "Picture": "blank",
+      "Picture": "park",
       "Text": "Курьер и Учёный идут по полузаброшенному парку. Почти нет фонарей. Сломанные скамейки и качели.",
       "Type": "Simple",
       "Transition": {
@@ -4168,7 +4168,7 @@
       }
     },
     "park_entrance_1": {
-      "Picture": "blank",
+      "Picture": "park_scientist",
       "Text": "Учёный: \"Ещё немного осталось. Минут п-пять...\"",
       "Type": "Simple",
       "Transition": {
@@ -4177,7 +4177,7 @@
       }
     },
     "park_entrance_2": {
-      "Picture": "blank",
+      "Picture": "park",
       "Text": "У одной скамейки собралась шумная компания молодых людей. Кажется, что они встают и идут по направлению к Курьеру и Учёному.",
       "Type": "Simple",
       "Transition": {
@@ -4186,8 +4186,8 @@
       }
     },
     "park_entrance_3": {
-      "Picture": "blank",
-      "Text": "Учёный: \"Опасно... Д-давай обойдём их.\"\nНо было уже поздно.",
+      "Picture": "park_scientist",
+      "Text": "Учёный: \"Опасно... Д-давай обойдём их.\"\nУчёный пытается свернуть с тропинки, но слишком поздно.",
       "Type": "Simple",
       "Transition": {
         "Type": "Frame",
@@ -4195,7 +4195,7 @@
       }
     },
     "park_entrance_4": {
-      "Picture": "blank",
+      "Picture": "park_party_girl",
       "Music": "",
       "Text": "Из компании выходит девушка и заводит разговор.",
       "Type": "Simple",
@@ -4205,7 +4205,7 @@
       }
     },
     "park_party": {
-      "Picture": "blank",
+      "Picture": "park_party_girl",
       "Music": "Boogerman A Pick and Flick Adventure - Unknown Song",
       "Text": "Тусовщица: \"Хай, чуваки! Вы тоже на тусовку валите?\"",
       "Type": "Simple",
@@ -4215,7 +4215,7 @@
       }
     },
     "park_party_1": {
-      "Picture": "blank",
+      "Picture": "park_party_girl",
       "Text": "Курьер: \"...\"",
       "Type": "Simple",
       "Transition": {
@@ -4224,7 +4224,7 @@
       }
     },
     "park_party_2": {
-      "Picture": "blank",
+      "Picture": "park_party_girl",
       "Text": "Тусовщица: \"У нас на квартире – самые клёвые тусы! Такой сидюк прикупили, громкий, соседи в шоке!\"",
       "Type": "Simple",
       "Transition": {
@@ -4233,7 +4233,7 @@
       }
     },
     "park_party_3": {
-      "Picture": "blank",
+      "Picture": "park_party_girl_sad",
       "Text": "Тусовщица: \"...только один облом у нас сегодня. Бабки кончились вообще не вовремя. На том, что есть, далеко не уедем.\"",
       "Type": "Simple",
       "Transition": {
@@ -4242,7 +4242,7 @@
       }
     },
     "park_party_4": {
-      "Picture": "blank",
+      "Picture": "park_party_girl",
       "Text": "Тусовщица: \"Короче, чуваки: рубль будет у вас?\"",
       "Type": "Choice",
       "Choices": [
@@ -4272,7 +4272,7 @@
     },
 
     "park_party_give_money": {
-      "Picture": "blank",
+      "Picture": "park_party_girl",
       "Text": "Курьер щедро отсыпает тусовщице выигранные в казино монеты.\n<Предмет удалён: [Горсть монет]>",
       "Type": "Simple",
       "Transition": {
@@ -4287,7 +4287,7 @@
       }
     },
     "park_party_give_money_1": {
-      "Picture": "blank",
+      "Picture": "park_party_girl_happy",
       "Text": "Тусовщица: \"Чувакиииии!.. Вы реально клёвые!!!\"",
       "Type": "Simple",
       "Transition": {
@@ -4296,7 +4296,7 @@
       }
     },
     "park_party_give_money_2": {
-      "Picture": "blank",
+      "Picture": "park_party_girl_happy",
       "Text": "Тусовщица: \"Приходите как-нибудь к нам, затусим? У нас тут рядом квартира, недалеко от универа заброшенного.\"",
       "Type": "Simple",
       "Transition": {
@@ -4305,7 +4305,7 @@
       }
     },
     "park_party_give_money_3": {
-      "Picture": "blank",
+      "Picture": "park_party_girl_happy",
       "Text": "Тусовщица: \"Вот, запиши номер! Звони вечером, там точно кто-то будет. Оттянемся все вместе!\"\n<Предмет добавлен: [Номер тусовщиков]>",
       "Type": "Simple",
       "Transition": {
@@ -4314,7 +4314,7 @@
       }
     },
     "park_party_give_money_4": {
-      "Picture": "blank",
+      "Picture": "park_party_girl_happy",
       "Text": "Тусовщица: \"Народ, погнали! Сегодня тусим всю ноооооооооочь!!!\"\nКомпания радостно кричит и уходит.",
       "Type": "Simple",
       "Transition": {
@@ -4324,8 +4324,8 @@
     },
     
     "park_party_no_money": {
-      "Picture": "blank",
-      "Text": "Учёный: \"Мы п-пьянство не спонсируем! У самих мало...\"",
+      "Picture": "park_scientist",
+      "Text": "Учёный: \"Мы п-пьянство не спонсируем! У нас у самих мало...\"",
       "Type": "Simple",
       "Transition": {
         "Type": "Frame",
@@ -4333,7 +4333,7 @@
       }
     },
     "park_party_no_money_1": {
-      "Picture": "blank",
+      "Picture": "park_party_girl_sad",
       "Text": "Тусовщица разочарована.\nТусовщица: \"Чувакиииии... Ну вы и тухлые, конечно!\"",
       "Type": "Simple",
       "Transition": {
@@ -4342,7 +4342,7 @@
       }
     },
     "park_party_no_money_2": {
-      "Picture": "blank",
+      "Picture": "park_party_girl_sad",
       "Text": "Тусовщица: \"Ладно, народ, погнали! Эти совсем жмоты оказались, сегодня живой воды больше не будет!\"",
       "Type": "Simple",
       "Transition": {
@@ -4351,7 +4351,7 @@
       }
     },
     "park_party_no_money_3": {
-      "Picture": "blank",
+      "Picture": "park",
       "Text": "От тусовщиков слышны осуждающие возгласы. Девушка возвращается к своей компании, и они уходят.",
       "Type": "Simple",
       "Transition": {
@@ -4361,7 +4361,7 @@
     },
 
     "park_vodka": {
-      "Picture": "blank",
+      "Picture": "park",
       "Text": "После себя тусовщики оставили на скамейке бутылки и какой-то мусор. Учёный смотрит на скамейку и осуждающе качает головой.",
       "Type": "Choice",
       "Choices": [
@@ -4383,7 +4383,7 @@
     },
 
     "park_vodka_bench": {
-      "Picture": "blank",
+      "Picture": "park",
       "Text": "Курьер замечает, что одна в одной из бутылок ещё осталась жидкость. Быть может, она ему как-нибудь пригодится.",
       "Type": "Choice",
       "Choices": [
@@ -4430,7 +4430,7 @@
     },
 
     "park_vodka_pick_up": {
-      "Picture": "blank",
+      "Picture": "park",
       "Text": "Курьер подбирает недопитую бутылку водки.\n<Предмет добавлен: [Полупустая бутылка водки \"Пшеничная\"]>",
       "Type": "Simple",
       "Transition": {
@@ -4446,7 +4446,7 @@
     },
 
     "park_vodka_molotov": {
-      "Picture": "blank",
+      "Picture": "park",
       "Text": "По нехитрому рецепту Курьер изготавливает коктейль Молотова из бутылки водки и тряпки.\nУчёный: \"Ты уверен, что такое нам п-потребуется?\"",
       "Type": "Simple",
       "Transition": {
@@ -4455,7 +4455,7 @@
       }
     },
     "park_vodka_molotov_1": {
-      "Picture": "blank",
+      "Picture": "park",
       "Text": "<Предмет удалён: [Рваная тряпка]>\n<Предмет удалён: [Рецепт \"Коктейль Молотова\"]>\n<Предмет добавлен: [Коктейль Молотова]>",
       "Type": "Simple",
       "Transition": {
@@ -4479,7 +4479,7 @@
     },
 
     "park_vodka_move_along": {
-      "Picture": "blank",
+      "Picture": "park",
       "Text": "Курьер и Учёный продолжают двигаться к клумбе.",
       "Type": "Simple",
       "Transition": {
@@ -4489,7 +4489,7 @@
     },
     
     "park_exit": {
-      "Picture": "blank",
+      "Picture": "park",
       "Music": "Chrono Trigger - Ruined World",
       "TextDelay": 0.1,
       "Text": " . . . . .",
@@ -4500,7 +4500,7 @@
       }
     },
     "park_exit_1": {
-      "Picture": "blank",
+      "Picture": "park_scientist",
       "Text": "Учёный останавливается.\nУчёный: \"Клумба там, за п-поворотом.\"",
       "Type": "Simple",
       "Transition": {
@@ -4509,7 +4509,7 @@
       }
     },
     "park_exit_2": {
-      "Picture": "blank",
+      "Picture": "park_scientist",
       "Text": "Курьер: \"...\"",
       "Type": "Simple",
       "Transition": {
@@ -4518,8 +4518,8 @@
       }
     },
     "park_exit_3": {
-      "Picture": "blank",
-      "Text": "Учёный: \"П-понимаю, всё это очень опасно, всё может п-пойти не по п-плану...\"",
+      "Picture": "park_scientist",
+      "Text": "Учёный: \"П-понимаю, всё это очень опасно, так что...\"",
       "Type": "Simple",
       "Transition": {
         "Type": "Frame",
@@ -4527,7 +4527,7 @@
       }
     },
     "park_exit_4": {
-      "Picture": "blank",
+      "Picture": "park_scientist",
       "Text": "Учёный: \"Держи.\"\nУчёный протягивает Курьеру сотовый телефон.",
       "Type": "Simple",
       "Transition": {
@@ -4536,7 +4536,7 @@
       }
     },
     "park_exit_5": {
-      "Picture": "blank",
+      "Picture": "park_scientist_happy",
       "Text": "Учёный: \"Это телефон, только вообще без проводов! Впечатляет, п-правда?\"",
       "Type": "Simple",
       "Transition": {
@@ -4545,7 +4545,7 @@
       }
     },
     "park_exit_6": {
-      "Picture": "blank",
+      "Picture": "park_scientist_happy",
       "Text": "Учёный: \"Достал его на барахолке месяц назад. Лучше не думать п-про его п-прошлых владельцев...\"",
       "Type": "Choice",
       "Choices": [
@@ -4582,7 +4582,7 @@
       ]
     },
     "park_exit_7": {
-      "Picture": "blank",
+      "Picture": "park_scientist",
       "Text": "Учёный: \"Я п-попробую договориться и обезвредить ЛИХО. Н-но если что-то случится, звони в милицию. Или ещё кому, н-не знаю, знакомым, друзьям... чтобы хоть знали, где нас искать.\"",
       "Type": "Simple",
       "Transition": {
@@ -4591,7 +4591,7 @@
       }
     },
     "park_exit_7_other": {
-      "Picture": "blank",
+      "Picture": "park_scientist",
       "Text": "Учёный: \"Я н-не знаю, что нас т-там ждёт. Н-но если что-то случится, звони в милицию. Или ещё кому, н-не знаю, знакомым, друзьям... чтобы хоть знали, где нас искать.\"",
       "Type": "Simple",
       "Transition": {
@@ -4600,7 +4600,7 @@
       }
     },
     "park_exit_8": {
-      "Picture": "blank",
+      "Picture": "park_scientist",
       "Text": "Курьер: \"...\"\n<Предмет добавлен: [Сотовый телефон \"Нокиа 1610\"]>",
       "Type": "Simple",
       "Transition": {
@@ -4615,7 +4615,7 @@
       }
     },
     "park_exit_9": {
-      "Picture": "blank",
+      "Picture": "park_scientist",
       "Text": "Курьер: \"Идём.\"",
       "Type": "Simple",
       "Transition": {
@@ -4625,7 +4625,7 @@
     },
 
     "klumba": {
-      "Picture": "blank",
+      "Picture": "klumba",
       "TextDelay": 0.1,
       "Text": " . . . . .",
       "Type": "Simple",
@@ -4635,7 +4635,7 @@
       }
     },
     "klumba_entrance": {
-      "Picture": "blank",
+      "Picture": "klumba",
       "Text": "Небольшой дворик за заброшенным зданием университета. В центре стоит аляповатая фигура в форме цветка.",
       "Type": "Simple",
       "Transition": {
@@ -4644,7 +4644,7 @@
       }
     },
     "klumba_entrance_1": {
-      "Picture": "blank",
+      "Picture": "klumba",
       "Text": "На скамейках вокруг цветка сидят бандиты и празднуют успешное дело. На одной из скамеек в окружении бандитов сидит большой лысый мужчина и курит кальян.",
       "Type": "Choice",
       "Choices": [
@@ -4681,7 +4681,7 @@
       ]
     },
     "klumba_entrance_2": {
-      "Picture": "blank",
+      "Picture": "klumba",
       "Text": "Учёный: \"Вот он. Т-туман...\"",
       "Type": "Simple",
       "Transition": {
@@ -4690,7 +4690,7 @@
       }
     },
     "klumba_entrance_2_other": {
-      "Picture": "blank",
+      "Picture": "klumba",
       "Text": "Учёный: \"П-погоди, это же... тумановские? Что-то они т-тут делают? Это з-з-засада??\"",
       "Type": "Simple",
       "Transition": {
@@ -4699,7 +4699,7 @@
       }
     },
     "klumba_entrance_3": {
-      "Picture": "blank",
+      "Picture": "klumba",
       "Text": "Бандиты заметили незваных гостей и затихли.",
       "Type": "Simple",
       "Transition": {
@@ -4708,7 +4708,7 @@
       }
     },
     "klumba_entrance_4": {
-      "Picture": "blank",
+      "Picture": "klumba",
       "Text": "Учёный: \"...\"",
       "Type": "Simple",
       "Transition": {
@@ -4717,7 +4717,7 @@
       }
     },
     "klumba_entrance_5": {
-      "Picture": "blank",
+      "Picture": "klumba",
       "Text": "Курьер: \"...пойдём. Поговорим с ними.\"",
       "Type": "Simple",
       "Transition": {
@@ -4727,7 +4727,7 @@
     },
 
     "klumba_tuman_start": {
-      "Picture": "blank",
+      "Picture": "klumba_tuman",
       "Text": "Курьер и Учёный подходят к лысому мужчине. Бандиты злобно смотрят на них, но расступаются.",
       "Type": "Simple",
       "Transition": {
@@ -4736,7 +4736,7 @@
       }
     },
     "klumba_tuman_start_1": {
-      "Picture": "blank",
+      "Picture": "klumba_tuman",
       "Text": "Туман откладывает мундштук от кальяна в сторону и смотрит на Курьера и Учёного.",
       "Type": "Simple",
       "Transition": {
@@ -4745,7 +4745,7 @@
       }
     },
     "klumba_tuman_start_2": {
-      "Picture": "blank",
+      "Picture": "klumba_tuman_thinking",
       "Text": "Туман: \"Опа-на, кто это к нам пожаловал? Чего надо, молодые?\"",
       "Type": "Simple",
       "Transition": {
@@ -4754,7 +4754,7 @@
       }
     },
     "klumba_tuman_start_3": {
-      "Picture": "blank",
+      "Picture": "klumba_tuman_thinking",
       "Text": "Курьер: \"...\"",
       "Type": "Simple",
       "Transition": {
@@ -4763,7 +4763,7 @@
       }
     },
     "klumba_tuman_start_4": {
-      "Picture": "blank",
+      "Picture": "klumba_tuman_thinking",
       "Text": "Учёный: \"Д-д-добрый вечер. Нам н-надо узнать...\"",
       "Type": "Simple",
       "Transition": {
@@ -4772,7 +4772,7 @@
       }
     },
     "klumba_tuman_start_5": {
-      "Picture": "blank",
+      "Picture": "klumba_tuman_laughing",
       "Text": "Туман: \"Ха-ха, ну ты выдал, дятел, внатуре! Добрый вечер ему!\"\nБандиты смеются.",
       "Type": "Simple",
       "Transition": {
@@ -4781,7 +4781,7 @@
       }
     },
     "klumba_tuman_start_6": {
-      "Picture": "blank",
+      "Picture": "klumba_tuman_laughing",
       "Text": "Учёный: \"Н-н-нам нужно ЛИХО.\"",
       "Type": "Simple",
       "Transition": {
@@ -4790,7 +4790,7 @@
       }
     },
     "klumba_tuman_start_7": {
-      "Picture": "blank",
+      "Picture": "klumba_tuman",
       "Text": "Бандиты замолкают.\nТуман: \"Откуда ты знаешь про ЛИХО, дятел?\"",
       "Type": "Simple",
       "Transition": {
@@ -4799,7 +4799,7 @@
       }
     },
     "klumba_tuman_start_8": {
-      "Picture": "blank",
+      "Picture": "klumba_tuman",
       "Text": "Курьер: \"Я курьер. Вы забрали ЛИХО из моей машины.\"",
       "Type": "Simple",
       "Transition": {
@@ -4808,7 +4808,7 @@
       }
     },
     "klumba_tuman_start_9": {
-      "Picture": "blank",
+      "Picture": "klumba_tuman",
       "Text": "Туман: \"Ха, вот так номер. А мне базарили мужики, что всех в той машине грохнули...\"",
       "Type": "Simple",
       "Transition": {
@@ -4817,7 +4817,7 @@
       }
     },
     "klumba_tuman_start_10": {
-      "Picture": "blank",
+      "Picture": "klumba_tuman_laughing",
       "Text": "Туман: \"Ха-ха, так у тебя сегодня второй день рождения! Лети, значит, отсюда, воробей!\"",
       "Type": "Choice",
       "Choices": [
@@ -4839,7 +4839,7 @@
     },
 
     "klumba_tuman_what_for": {
-      "Picture": "blank",
+      "Picture": "klumba_tuman_thinking",
       "Text": "Туман: \"Че за тупые вопросы, внатуре...\"",
       "Type": "Simple",
       "Transition": {
@@ -4848,7 +4848,7 @@
       }
     },
     "klumba_tuman_what_for_1": {
-      "Picture": "blank",
+      "Picture": "klumba_tuman",
       "Text": "Туман: \"Чем больше у нас оружия - тем больше нас боятся! Скоро о нас по всей стране знать будут, внатуре!\"",
       "Type": "Simple",
       "Transition": {
@@ -4857,7 +4857,7 @@
       }
     },
     "klumba_tuman_what_for_2": {
-      "Picture": "blank",
+      "Picture": "klumba_tuman",
       "Text": "Учёный: \"Н-но всё-таки... вы п-понимаете, что т-такое ЛИХО?\"",
       "Type": "Simple",
       "Transition": {
@@ -4866,7 +4866,7 @@
       }
     },
     "klumba_tuman_what_for_3": {
-      "Picture": "blank",
+      "Picture": "klumba_tuman_thinking",
       "Text": "Туман: \"Да какая мне нахер разница? То ли бомба какая, то ли что... Но мы с мужиками и без вас, бакланов, разберёмся.\"",
       "Type": "Simple",
       "Transition": {
@@ -4876,7 +4876,7 @@
     },
     
     "klumba_tuman_had_to_deliver_to_you": {
-      "Picture": "blank",
+      "Picture": "klumba_tuman_thinking",
       "Text": "Туман хмурится.\nТуман: \"Ниче такого не знаю.\"",
       "Type": "Simple",
       "Transition": {
@@ -4885,7 +4885,7 @@
       }
     },
     "klumba_tuman_had_to_deliver_to_you_1": {
-      "Picture": "blank",
+      "Picture": "klumba_tuman_thinking",
       "Text": "Туман: \"Птичка нам нашептала про ЛИХО и про машину – ну мы машину и грабанули. А ты мне щас какую-то херь втираешь.\"",
       "Type": "Simple",
       "Transition": {
@@ -4894,7 +4894,7 @@
       }
     },
     "klumba_tuman_had_to_deliver_to_you_2": {
-      "Picture": "blank",
+      "Picture": "klumba_tuman_thinking",
       "Text": "Курьер: \"...\"",
       "Type": "Simple",
       "Transition": {
@@ -4904,7 +4904,7 @@
     },
 
     "klumba_tuman_where_is_liho": {
-      "Picture": "blank",
+      "Picture": "klumba_tuman_thinking",
       "Text": "Учёный: \"...а г-где сейчас ЛИХО?\"",
       "Type": "Simple",
       "Transition": {
@@ -4913,7 +4913,7 @@
       }
     },
     "klumba_tuman_where_is_liho_1": {
-      "Picture": "blank",
+      "Picture": "klumba_tuman_laughing",
       "Text": "Туман: \"Ха-ха, ну вы вообще слепые видать, ага? Вон же, мои мужики с ним щас чето мудрят.\"",
       "Type": "Simple",
       "Transition": {
@@ -4922,7 +4922,7 @@
       }
     },
     "klumba_tuman_where_is_liho_2": {
-      "Picture": "blank",
+      "Picture": "klumba_tuman_laughing",
       "Text": "Туман указывает на скамейку на другом конце клумбы. Там два бандита пытаются вскрыть ЛИХО складным ножом.",
       "Type": "Simple",
       "Transition": {
@@ -4932,7 +4932,7 @@
     },
 
     "klumba_tuman_choice": {
-      "Picture": "blank",
+      "Picture": "klumba_tuman_thinking",
       "Text": "Туман: \"Ну так и че ж вам от меня надо внатуре? Че мне делать с вами? Я чето пока совсем не вдупляю.\"",
       "Type": "Choice",
       "Choices": [
@@ -4953,7 +4953,7 @@
       ]
     },
     "klumba_tuman_why_you_came_here": {
-      "Picture": "blank",
+      "Picture": "klumba_tuman",
       "Text": "Курьер и Учёный молчат. Туман затягивается кальяном и выдыхает им в лица.",
       "Type": "Simple",
       "Transition": {
@@ -4962,7 +4962,7 @@
       }
     },
     "klumba_tuman_why_you_came_here_1": {
-      "Picture": "blank",
+      "Picture": "klumba_tuman",
       "Text": "Туман: \"Ну так и че вы сюда припёрлись, бакланы? Валите отсюда, пока живы, внатуре!\"",
       "Type": "Simple",
       "Transition": {
@@ -4971,7 +4971,7 @@
       }
     },
     "klumba_tuman_why_you_came_here_2": {
-      "Picture": "blank",
+      "Picture": "klumba_tuman",
       "Text": "Учёный: \"...\"",
       "Type": "Simple",
       "Transition": {
@@ -4980,7 +4980,7 @@
       }
     },
     "klumba_tuman_join": {
-      "Picture": "blank",
+      "Picture": "klumba_tuman_laughing",
       "Text": "Туман: \"А че, ты не такой уж и тупень! Ха-ха, хорош!\"",
       "Type": "Simple",
       "Transition": {
@@ -4989,7 +4989,7 @@
       }
     },
     "klumba_tuman_join_1": {
-      "Picture": "blank",
+      "Picture": "klumba_tuman",
       "Text": "Туман: \"Вижу, ты за себя постоять можешь. Мне такие нужны. У меня ты не просто водилой будешь, будешь в лица стрелять! В масле кататься, внатуре!\"",
       "Type": "Simple",
       "Transition": {
@@ -4998,7 +4998,7 @@
       }
     },
     "klumba_tuman_join_2": {
-      "Picture": "blank",
+      "Picture": "klumba_tuman",
       "Text": "Туман: \"На, это будет мой знак. Типа ты под моим э... под моей защитой короче.\"",
       "Type": "Simple",
       "Transition": {
@@ -5007,7 +5007,7 @@
       }
     },
     "klumba_tuman_join_3": {
-      "Picture": "blank",
+      "Picture": "klumba_tuman",
       "Text": "Туман протягивает Курьеру позолоченные кальянные щипцы для углей.\n<Предмет добавлен: [Щипцы для кальяна]>",
       "Type": "Simple",
       "Transition": {
@@ -5022,7 +5022,7 @@
       }
     },
     "klumba_tuman_join_4": {
-      "Picture": "blank",
+      "Picture": "klumba_tuman",
       "Text": "Туман: \"Завтра придёшь сюда, в это же время. Покажешь эту хрень моим мужикам, они всё поймут. Посвятят тебя, станешь нам внатуре братом!\"",
       "Type": "Simple",
       "Transition": {
@@ -5031,7 +5031,7 @@
       }
     },
     "klumba_tuman_join_5": {
-      "Picture": "blank",
+      "Picture": "klumba_tuman",
       "Text": "Учёный огорчённо смотрит на Курьера.",
       "Type": "Simple",
       "Transition": {
@@ -5040,7 +5040,7 @@
       }
     },
     "klumba_tuman_join_6": {
-      "Picture": "blank",
+      "Picture": "klumba_tuman",
       "Text": "Учёный: \"Н-нет-нет-нет, зачем? Что ты д-делаешь???\"",
       "Type": "Simple",
       "Transition": {
@@ -5050,7 +5050,7 @@
     },
 
     "klumba_tuman_scientist": {
-      "Picture": "blank",
+      "Picture": "klumba_tuman",
       "Text": "Учёный: \"Да вы же совсем ничего н-не понимаете! ЛИХО опасно! Вы же весь мир угробите!\"",
       "Type": "Simple",
       "Transition": {
@@ -5059,7 +5059,7 @@
       }
     },
     "klumba_tuman_scientist_1": {
-      "Picture": "blank",
+      "Picture": "klumba_tuman",
       "TextDelay": "0.12",
       "Text": "Учёный: \"Отдайте мне ЛИХО!!!\"",
       "Type": "Simple",
@@ -5069,7 +5069,7 @@
       }
     },
     "klumba_tuman_scientist_2": {
-      "Picture": "blank",
+      "Picture": "klumba_tuman_gun",
       "Text": " ! ! ! ! !",
       "Type": "Simple",
       "Transition": {
@@ -5141,7 +5141,7 @@
       }
     },
     "klumba_tuman_end": {
-      "Picture": "blank",
+      "Picture": "klumba_tuman_laughing",
       "Text": "Туман: \"Ха-ха, ну дятел внатуре! Чето пацан дохера борзый был, ага?\"\nБандиты смеются.",
       "Type": "Choice",
       "Choices": [
@@ -5185,7 +5185,7 @@
       ]
     },
     "klumba_tuman_end_gun": {
-      "Picture": "blank",
+      "Picture": "klumba_tuman",
       "Text": "Курьер достаёт пистолет и наставляет его на Тумана. Окружающие его бандиты тоже достают оружие и целятся в Курьера.\nТуман не шелохнулся.",
       "Type": "Simple",
       "Transition": {
@@ -5194,7 +5194,7 @@
       }
     },
     "klumba_tuman_end_gun_1": {
-      "Picture": "blank",
+      "Picture": "klumba_tuman",
       "Text": "Туман: \"Ты че вытворяешь, чижик? Пистолет опустил быстро.\"",
       "Type": "Simple",
       "Transition": {
@@ -5203,7 +5203,7 @@
       }
     },
     "klumba_tuman_end_gun_2": {
-      "Picture": "blank",
+      "Picture": "klumba_tuman",
       "Text": "Туман: \"Считаю до трёх. Один...\"",
       "Type": "Choice",
       "Choices": [
@@ -5224,7 +5224,7 @@
       ]
     },
     "klumba_tuman_end_gun_3": {
-      "Picture": "blank",
+      "Picture": "klumba_tuman",
       "Text": "Туман: \"Два...\"",
       "Type": "Choice",
       "Choices": [
@@ -5245,7 +5245,7 @@
       ]
     },
     "klumba_tuman_end_lower_gun": {
-      "Picture": "blank",
+      "Picture": "klumba_tuman",
       "Text": "Курьер опускает пистолет. Бандиты тут же расстреливают его.",
       "Type": "Simple",
       "Transition": {
@@ -5254,7 +5254,7 @@
       }
     },
     "klumba_tuman_end_attack": {
-      "Picture": "blank",
+      "Picture": "klumba_tuman",
       "Text": "Туман: \"Ты че творишь, чижик? Думал, я за ЛИХО драться с тобой буду?\"",
       "Type": "Simple",
       "Transition": {
@@ -5263,7 +5263,7 @@
       }
     },
     "klumba_tuman_end_attack_1": {
-      "Picture": "blank",
+      "Picture": "klumba_tuman",
       "Text": "Туман отталкивает Курьера, и бандиты тут же расстреливают его.",
       "Type": "Simple",
       "Transition": {
@@ -5272,7 +5272,7 @@
       }
     },
     "klumba_tuman_pre_game_over": {
-      "Picture": "blank",
+      "Picture": "klumba_tuman",
       "Text": "Туман: \"Ну и баклан, внатуре...\"",
       "Type": "Simple",
       "Transition": {
@@ -5292,7 +5292,7 @@
     },
  
     "klumba_soldiers_arrive": {
-      "Picture": "blank",
+      "Picture": "klumba_tuman_thinking",
       "Text": "Вдруг с другой стороны клумбы подъезжает зелёный УАЗ.\nТуман: \"Че за хрень?\"",
       "Type": "Simple",
       "Transition": {
@@ -5301,7 +5301,7 @@
       }
     },
     "klumba_soldiers_arrive_1": {
-      "Picture": "blank",
+      "Picture": "klumba_tuman_dead",
       "Text": " ! ! ! ! !",
       "Type": "Simple",
       "Transition": {
@@ -5310,7 +5310,7 @@
       }
     },
     "klumba_soldiers_arrive_2": {
-      "Picture": "blank",
+      "Picture": "klumba",
       "Text": "Из машины выбегают люди в камуфляже и начинают стрелять в бандитов. Бандиты отстреливаются, но, бросив ЛИХО, отступают\nназад, за университет.\n\nТуман мёртв.",
       "Type": "Simple",
       "Transition": {
@@ -5319,7 +5319,7 @@
       }
     },
     "klumba_soldiers_arrive_3": {
-      "Picture": "blank",
+      "Picture": "klumba",
       "Text": "Курьер прячется за скамейкой, пока перестрелка продолжается.\nОн видит, как из машины выходит высокая женщина в старой армейской шинели.",
       "Type": "Simple",
       "Transition": {
@@ -5328,7 +5328,7 @@
       }
     },
     "klumba_soldiers_arrive_4": {
-      "Picture": "blank",
+      "Picture": "klumba",
       "Text": "Она подбирает ЛИХО на той скамейке, где его оставили бандиты.\nЗатем замечает Курьера и направляется к нему.",
       "Type": "Simple",
       "Transition": {
@@ -5338,7 +5338,7 @@
     },
 
     "klumba_soldiers_vlada": {
-      "Picture": "blank",
+      "Picture": "klumba_vlada",
       "Text": "Незнакомка: \"Salve! Приветствую тебя, посыльный. Рада встрече.\"",
       "Type": "Simple",
       "Transition": {
@@ -5347,7 +5347,7 @@
       }
     },
     "klumba_soldiers_vlada_1": {
-      "Picture": "blank",
+      "Picture": "klumba_vlada",
       "Text": "Незнакомка: \"Я не ожидала встретить тебя здесь. Ты действительно смог меня удивить.\"",
       "Type": "Simple",
       "Transition": {
@@ -5356,7 +5356,7 @@
       }
     },
     "klumba_soldiers_vlada_2": {
-      "Picture": "blank",
+      "Picture": "klumba_vlada",
       "Text": "Незнакомка: \"Наш план сработал в любом случае, но я ценю твою преданность своей работе. Acta non verba.\"",
       "Type": "Simple",
       "Transition": {
@@ -5365,7 +5365,7 @@
       }
     },
     "klumba_soldiers_vlada_3": {
-      "Picture": "blank",
+      "Picture": "klumba_vlada",
       "Text": "Курьер: \"...\"",
       "Type": "Simple",
       "Transition": {
@@ -5374,7 +5374,7 @@
       }
     },
     "klumba_soldiers_vlada_4": {
-      "Picture": "blank",
+      "Picture": "klumba_vlada",
       "Text": "Незнакомка: \"Ты любишь историю, посыльный? Последнее время я очень увлечена Древним Римом. Построить великую империю... а затем так унизительно её потерять.\"",
       "Type": "Simple",
       "Transition": {
@@ -5383,7 +5383,7 @@
       }
     },
     "klumba_soldiers_vlada_5": {
-      "Picture": "blank",
+      "Picture": "klumba_vlada",
       "Text": "Незнакомка: \"Тебе не кажется это знакомым? Сейчас это и наша история тоже. И я хочу повернуть её вспять.\"",
       "Type": "Simple",
       "Transition": {
@@ -5392,7 +5392,7 @@
       }
     },
     "klumba_soldiers_vlada_6": {
-      "Picture": "blank",
+      "Picture": "klumba_vlada",
       "Text": "Курьер: \"...\"",
       "Type": "Simple",
       "Transition": {
@@ -5401,7 +5401,7 @@
       }
     },
     "klumba_soldiers_vlada_7": {
-      "Picture": "blank",
+      "Picture": "klumba_vlada_salute",
       "Text": "Незнакомка: \"Позволь представиться: полковник Владилена Ильинична Железнякова. Для тебя – товарищ полковник.\"",
       "Type": "Simple",
       "Transition": {
@@ -5410,7 +5410,7 @@
       }
     },
     "klumba_soldiers_vlada_8": {
-      "Picture": "blank",
+      "Picture": "klumba_vlada_salute",
       "Text": "Владилена: \"Или, может, domina полковник? Хм, к этому мне нужно будет привыкнуть...\"",
       "Type": "Simple",
       "Transition": {
@@ -5419,7 +5419,7 @@
       }
     },
     "klumba_soldiers_vlada_9": {
-      "Picture": "blank",
+      "Picture": "klumba_vlada",
       "Text": "Владилена: \"Я возглавляю отряд «СИЛА». Как ты мог догадаться, мы не подчиняемся вооруженным силам нашего текущего государства.\"",
       "Type": "Simple",
       "Transition": {
@@ -5428,7 +5428,7 @@
       }
     },
     "klumba_soldiers_vlada_10": {
-      "Picture": "blank",
+      "Picture": "klumba_vlada",
       "Text": "Владилена: \"Армия сейчас... in pessimus conditio, скажем так. Но это мы тоже исправим.\"",
       "Type": "Simple",
       "Transition": {
@@ -5437,7 +5437,7 @@
       }
     },
     "klumba_soldiers_vlada_11": {
-      "Picture": "blank",
+      "Picture": "klumba_vlada",
       "Text": "Владилена: \"ЛИХО приведёт нас ad victoriam. Поможет вернуть власть в руки тех, кто этого достоен.\"",
       "Type": "Simple",
       "Transition": {
@@ -5446,7 +5446,7 @@
       }
     },
     "klumba_soldiers_vlada_12": {
-      "Picture": "blank",
+      "Picture": "klumba_vlada",
       "Text": "Владилена: \"Позволит нам восстановить Империю.\"",
       "Type": "Simple",
       "Transition": {
@@ -5455,7 +5455,7 @@
       }
     },
     "klumba_soldiers_vlada_13": {
-      "Picture": "blank",
+      "Picture": "klumba_vlada",
       "Text": "Курьер: \"...\"",
       "Type": "Simple",
       "Transition": {
@@ -5464,7 +5464,7 @@
       }
     },
     "klumba_soldiers_vlada_14": {
-      "Picture": "blank",
+      "Picture": "klumba_vlada",
       "Text": "Владилена: \"Я рассказываю это тебе с чистой совестью, bona fide.\nПотому что я хочу, чтобы ты присоединился к нам.\"",
       "Type": "Simple",
       "Transition": {
@@ -5473,7 +5473,7 @@
       }
     },
     "klumba_soldiers_vlada_15": {
-      "Picture": "blank",
+      "Picture": "klumba_vlada",
       "Text": "Владилена: \"Нам не хватает полевых агентов. Тех, кто может собирать информацию, доставлять ресурсы, внедряться к нашим врагам и оставаться незамеченным.\"",
       "Type": "Simple",
       "Transition": {
@@ -5482,7 +5482,7 @@
       }
     },
     "klumba_soldiers_vlada_16": {
-      "Picture": "blank",
+      "Picture": "klumba_vlada",
       "Text": "Владилена: \"Я слышала о тебе и ранее, но увидеть тебя в действии – совсем другое дело. Ты отправился в незнакомый город с таинственным грузом, не спрашивая ничего лишнего. Ты обзавелся информаторами на месте, не раскрывая себя. Нашёл общий язык даже с самыми опасным carnifices этого города.\"",
       "Type": "Simple",
       "Transition": {
@@ -5491,7 +5491,7 @@
       }
     },
     "klumba_soldiers_vlada_17": {
-      "Picture": "blank",
+      "Picture": "klumba_vlada_smug",
       "Text": "Владилена: \"Наконец, ты избежал верной смерти, несмотря на то, что мы сдали тебя тумановским. И ты всё равно продолжил выполнять своё задание.\"",
       "Type": "Simple",
       "Transition": {
@@ -5500,7 +5500,7 @@
       }
     },
     "klumba_soldiers_vlada_18": {
-      "Picture": "blank",
+      "Picture": "klumba_vlada_smug",
       "Text": "Курьер: \"...\"",
       "Type": "Simple",
       "Transition": {
@@ -5509,7 +5509,7 @@
       }
     },
     "klumba_soldiers_vlada_questions": {
-      "Picture": "blank",
+      "Picture": "klumba_vlada",
       "Text": "Владилена: \"Понимаю, у тебя всё ещё много вопросов. Я готова ответить на всё, пока мои бойцы добивают остатки этого отребья.\"",
       "Type": "Choice",
       "Choices": [
@@ -5555,7 +5555,7 @@
       ]
     },
     "klumba_soldiers_vlada_questions_next": {
-      "Picture": "blank",
+      "Picture": "klumba_vlada",
       "Text": "Владилена: \"Ещё вопросы?\"",
       "Type": "Choice",
       "Choices": [
@@ -5633,7 +5633,7 @@
     },
 
     "klumba_soldiers_vlada_question_ideology": {
-      "Picture": "blank",
+      "Picture": "klumba_vlada",
       "Text": "Владилена: \"Советский Союз, Царская Россия – всё это для меня одно и то же. За любой идеологической мишурой скрывается единственная истина: миром правит сила.\"",
       "Type": "Simple",
       "Transition": {
@@ -5642,7 +5642,7 @@
       }
     },
     "klumba_soldiers_vlada_question_ideology_1": {
-      "Picture": "blank",
+      "Picture": "klumba_vlada",
       "Text": "Владилена: \"Когда сила попадает в руки тех, кто её не достоен, начинается chao et degradation.\"",
       "Type": "Simple",
       "Transition": {
@@ -5651,7 +5651,7 @@
       }
     },
     "klumba_soldiers_vlada_question_ideology_2": {
-      "Picture": "blank",
+      "Picture": "klumba_vlada",
       "Text": "Владилена: \"Этот город – тому пример. Жалкие, потерянные люди, способные лишь на потакание своим самым низменным желаниям.\"",
       "Type": "Simple",
       "Transition": {
@@ -5660,7 +5660,7 @@
       }
     },
     "klumba_soldiers_vlada_question_ideology_3": {
-      "Picture": "blank",
+      "Picture": "klumba_vlada",
       "Text": "Владилена: \"Ты видел это своими глазами, верно? Они хотят вернуться назад. Назад к смыслу, к тому времени, когда в их жизни было что-то большее, чем они сами и их блеклая, бедная действительность.\"",
       "Type": "Simple",
       "Transition": {
@@ -5669,7 +5669,7 @@
       }
     },
     "klumba_soldiers_vlada_question_ideology_4": {
-      "Picture": "blank",
+      "Picture": "klumba_vlada",
       "Text": "Владилена: \"Всё они жили лучше, когда у них была цель. Когда у всего этого города, у всей страны была цель. Эта цель – война.\"",
       "Type": "Simple",
       "Transition": {
@@ -5678,7 +5678,7 @@
       }
     },
     "klumba_soldiers_vlada_question_ideology_5": {
-      "Picture": "blank",
+      "Picture": "klumba_vlada",
       "Text": "Владилена: \"Борьба за власть идёт во всём мире, и активное участие в этой борьбе является единственной по-настоящему значащей целью. Активное и безжалостное. Fortiter et fideliter.\"",
       "Type": "Simple",
       "Transition": {
@@ -5688,7 +5688,7 @@
     },
 
     "klumba_soldiers_vlada_question_tuman": {
-      "Picture": "blank",
+      "Picture": "klumba_vlada",
       "Text": "Владилена: \"Их нужно было устранить. И не только потому, что scelestus отродью нет места в Империи.\"",
       "Type": "Simple",
       "Transition": {
@@ -5697,7 +5697,7 @@
       }
     },
     "klumba_soldiers_vlada_question_tuman_1": {
-      "Picture": "blank",
+      "Picture": "klumba_vlada",
       "Text": "Владилена: \"Этот город – сокровищница потерянных военных технологий. И охотится за ними не только «СИЛА».\"",
       "Type": "Simple",
       "Transition": {
@@ -5706,7 +5706,7 @@
       }
     },
     "klumba_soldiers_vlada_question_tuman_2": {
-      "Picture": "blank",
+      "Picture": "klumba_vlada",
       "Text": "Владилена: \"Тумановской группировке несколько раз удавалось забирать оружие у нас из под носа. Они мало что знают о «СИЛЕ», но это не мешает им насмехаться над нами.\"",
       "Type": "Simple",
       "Transition": {
@@ -5715,7 +5715,7 @@
       }
     },
     "klumba_soldiers_vlada_question_tuman_3": {
-      "Picture": "blank",
+      "Picture": "klumba_vlada",
       "Text": "Владилена: \"Мы могли бы перестрелять обычных бандитов, но Туман способен быстро набрать новых. В городе достаточно людей, кого привлекает бандитская жизнь.\"",
       "Type": "Simple",
       "Transition": {
@@ -5724,7 +5724,7 @@
       }
     },
     "klumba_soldiers_vlada_question_tuman_4": {
-      "Picture": "blank",
+      "Picture": "klumba_vlada",
       "Text": "Владилена: \"Это значит, что Тумана нужно было выманить на клумбу, вместе с остальной бандой. Чтобы он потерял бдительность.\"",
       "Type": "Simple",
       "Transition": {
@@ -5733,7 +5733,7 @@
       }
     },
     "klumba_soldiers_vlada_question_tuman_5": {
-      "Picture": "blank",
+      "Picture": "klumba_vlada_smug",
       "Text": "Владилена: \"Он осторожен, но верит слухам. Верит, что ЛИХО – это самое мощное оружие, которое только можно найти, хотя даже не знает, как именно оно работает.\"",
       "Type": "Simple",
       "Transition": {
@@ -5742,7 +5742,7 @@
       }
     },
     "klumba_soldiers_vlada_question_tuman_6": {
-      "Picture": "blank",
+      "Picture": "klumba_vlada_smug",
       "Text": "Владилена: \"Я знала, что он будет праздновать на клумбе, если добудет ЛИХО. А значит, мы сможем не просто избавиться от него – мы убьём его тогда, когда он думает, что победил. Так и произошло.\"",
       "Type": "Simple",
       "Transition": {
@@ -5751,7 +5751,7 @@
       }
     },
     "klumba_soldiers_vlada_question_tuman_7": {
-      "Picture": "blank",
+      "Picture": "klumba_vlada_smug",
       "Text": "Владилена: \"Таким образом, мы получили нужный нам груз и устранили врага. Двух зайцев одним выстрелом.\"",
       "Type": "Simple",
       "Transition": {
@@ -5760,8 +5760,8 @@
       }
     },
     "klumba_soldiers_vlada_question_tuman_8": {
-      "Picture": "blank",
-      "Text": "Владилена: \"...хм, а есть ли такое выражение на латыни? Надо будет выучить.\"",
+      "Picture": "klumba_vlada_smug",
+      "Text": "Владилена: \"...хм, а есть ли такое выражение в латинском? Надо будет выучить.\"",
       "Type": "Simple",
       "Transition": {
         "Type": "Frame",
@@ -5770,7 +5770,7 @@
     },
 
     "klumba_soldiers_vlada_question_betrayal": {
-      "Picture": "blank",
+      "Picture": "klumba_vlada",
       "Text": "Владилена: \"Заполучить ЛИХО – большая победа для нас, но этого было бы недостаточно. Нам нужно было выманить и устранить Тумана.\"",
       "Type": "Simple",
       "Transition": {
@@ -5779,7 +5779,7 @@
       }
     },
     "klumba_soldiers_vlada_question_betrayal_1": {
-      "Picture": "blank",
+      "Picture": "klumba_vlada",
       "Text": "Владилена: \"Мы дали ему наводку с описанием машины, на которой будет перевозиться ЛИХО. Знали, что он сам захочет увидеть ЛИХО. Знали, что он наверняка встретится со своими бандитами на клумбе.\"",
       "Type": "Simple",
       "Transition": {
@@ -5788,7 +5788,7 @@
       }
     },
     "klumba_soldiers_vlada_question_betrayal_2": {
-      "Picture": "blank",
+      "Picture": "klumba_vlada_smug",
       "Text": "Владилена: \"А на тот случай, если они окажутся совсем безмозглыми, мы прямо направили тебя в их логово.\"",
       "Type": "Simple",
       "Transition": {
@@ -5797,7 +5797,7 @@
       }
     },
     "klumba_soldiers_vlada_question_betrayal_3": {
-      "Picture": "blank",
+      "Picture": "klumba_vlada_smug",
       "Text": "Владилена: \"Надеюсь, ты не в обиде. Знай: каждый человек стоит не больше, чем та польза, которую он приносит. Чем та сила, которую он передает коллективу, чему-то большему, чем он сам.\"",
       "Type": "Simple",
       "Transition": {
@@ -5806,7 +5806,7 @@
       }
     },
     "klumba_soldiers_vlada_question_betrayal_4": {
-      "Picture": "blank",
+      "Picture": "klumba_vlada_smug",
       "Text": "Владилена: \"Я недооценила пользу, которую мы можем получить от тебя. Именно поэтому сейчас я предлагаю тебе присоединиться.\"",
       "Type": "Simple",
       "Transition": {
@@ -5816,7 +5816,7 @@
     },
     
     "klumba_soldiers_vlada_next": {
-      "Picture": "blank",
+      "Picture": "klumba_vlada",
       "Text": "Владилена: \"Как я понимаю, больше вопросов нет.\"",
       "Type": "Simple",
       "Transition": {
@@ -5825,7 +5825,7 @@
       }
     },
     "klumba_soldiers_vlada_next_1": {
-      "Picture": "blank",
+      "Picture": "klumba_vlada",
       "Text": "Владилена: \"Ах да, я ведь так ничего и не сказала про ЛИХО. Ты ведь всё ещё не знаешь, что это?\"",
       "Type": "Simple",
       "Transition": {
@@ -5834,7 +5834,7 @@
       }
     },
     "klumba_soldiers_vlada_next_2": {
-      "Picture": "blank",
+      "Picture": "klumba_vlada",
       "Text": "Владилена: \"Я обойдусь без технических деталей. Всё, что тебе нужно знать – это оружие, к которому мир пока не готов. Единственный известный нам рабочий прототип.\"",
       "Type": "Simple",
       "Transition": {
@@ -5843,7 +5843,7 @@
       }
     },
     "klumba_soldiers_vlada_next_3": {
-      "Picture": "blank",
+      "Picture": "klumba_vlada",
       "Text": "Владилена: \"Если мы сможем восстановить и воспроизвести его, создать столько копий, сколько нам нужно – мы будем контролировать всю технику будущего, настоящего и прошлого.\"",
       "Type": "Simple",
       "Transition": {
@@ -5852,7 +5852,7 @@
       }
     },
     "klumba_soldiers_vlada_next_4": {
-      "Picture": "blank",
+      "Picture": "klumba_vlada",
       "Text": "Владилена: \"Но на случай, если и этого окажется мало, в ЛИХО был заложен ещё один секрет...\"",
       "Type": "Simple",
       "Transition": {
@@ -5861,7 +5861,7 @@
       }
     },
     "klumba_soldiers_vlada_next_5": {
-      "Picture": "blank",
+      "Picture": "klumba_vlada_mad",
       "Text": "Владилена: \"ПОРТАТИВНАЯ ЯДЕРНАЯ БОЕГОЛОВКА!\"",
       "Type": "Simple",
       "Transition": {
@@ -5870,7 +5870,7 @@
       }
     },
     "klumba_soldiers_vlada_next_6": {
-      "Picture": "blank",
+      "Picture": "klumba_vlada_mad",
       "Text": "Курьер: \"...\"",
       "Type": "Simple",
       "Transition": {
@@ -5879,7 +5879,7 @@
       }
     },
     "klumba_soldiers_vlada_next_7": {
-      "Picture": "blank",
+      "Picture": "klumba_vlada",
       "Text": "Владилена: \"Теперь ты знаешь про «СИЛУ» всё, что тебе нужно знать. Знаешь, к чему мы стремимся и зачем. Знаешь, что нам хватит воли, людей и оружия, чтобы добиться наших целей.\"",
       "Type": "Simple",
       "Transition": {
@@ -5888,7 +5888,7 @@
       }
     },
     "klumba_soldiers_vlada_next_8": {
-      "Picture": "blank",
+      "Picture": "klumba_vlada",
       "Text": "Владилена: \"И теперь я задам тебе вопрос. Но знай, что я не смогу тебя отпустить, если ты ответишь неправильно.\"",
       "Type": "Simple",
       "Transition": {
@@ -5897,7 +5897,7 @@
       }
     },
     "klumba_soldiers_vlada_next_9": {
-      "Picture": "blank",
+      "Picture": "klumba_vlada_smug",
       "Text": "Владилена: \"Готов ли ты присоединиться к «СИЛЕ»?\"",
       "Type": "Simple",
       "Transition": {
@@ -5906,7 +5906,7 @@
       }
     },
     "klumba_soldiers_vlada_next_10": {
-      "Picture": "blank",
+      "Picture": "klumba_vlada_smug",
       "Text": "Курьер: \"...\"",
       "Type": "Simple",
       "Transition": {
@@ -5915,7 +5915,7 @@
       }
     },
     "klumba_soldiers_vlada_next_11": {
-      "Picture": "blank",
+      "Picture": "klumba_vlada_smug",
       "Text": "Владилена: \"...?\"",
       "Type": "Simple",
       "Transition": {
@@ -5924,7 +5924,7 @@
       }
     },
     "klumba_soldiers_vlada_next_12": {
-      "Picture": "blank",
+      "Picture": "klumba_vlada_smug",
       "TextDelay": 0.15,
       "Text": "Курьер: \"Нет.\"",
       "Type": "Simple",
@@ -5934,7 +5934,7 @@
       }
     },
     "klumba_soldiers_vlada_next_13": {
-      "Picture": "blank",
+      "Picture": "klumba_vlada",
       "Text": "Владилена разочаровано вздыхает.\nВладилена: \"Pessimo.\"",
       "Type": "Simple",
       "Transition": {
@@ -5943,7 +5943,7 @@
       }
     },
     "klumba_soldiers_vlada_next_14": {
-      "Picture": "blank",
+      "Picture": "klumba_vlada",
       "Text": "Курьер: \"И ЛИХО я вам не отдам.\"",
       "Type": "Simple",
       "Transition": {
@@ -5952,7 +5952,7 @@
       }
     },
     "klumba_soldiers_vlada_next_15": {
-      "Picture": "blank",
+      "Picture": "klumba_vlada",
       "Text": "Владилена: \"Ты меня разочаровал. Ты не просто глупец – ты оказался полным идиотом.\"",
       "Type": "Simple",
       "Transition": {
@@ -5961,7 +5961,7 @@
       }
     },
     "klumba_soldiers_vlada_next_16": {
-      "Picture": "blank",
+      "Picture": "klumba_vlada_mad",
       "Text": "Владилена: \"Отряд! Тут ещё один, добейте его!\"",
       "Type": "Simple",
       "Transition": {
@@ -5970,7 +5970,7 @@
       }
     },
     "klumba_soldiers_vlada_next_17": {
-      "Picture": "blank",
+      "Picture": "klumba",
       "Text": "Владилена убегает к машине, держа ЛИХО в руках. Курьер пытается её остановить, но попадает под огонь, и снова прячется за скамейку.",
       "Type": "Simple",
       "Transition": {
@@ -5979,7 +5979,7 @@
       }
     },
     "klumba_soldiers_fight_start": {
-      "Picture": "blank",
+      "Picture": "klumba",
       "Text": "Два солдата приходят на подмогу к Владилене, и начинают обстреливать Курьера.",
       "Type": "Choice",
       "Choices": [
@@ -6016,7 +6016,7 @@
       ]
     },
     "klumba_soldiers_fight_start_gun": {
-      "Picture": "blank",
+      "Picture": "klumba",
       "Text": "Курьер достаёт свой пистолет. Похоже, без крови здесь не обойдётся.",
       "Type": "Simple",
       "Transition": {
@@ -6025,7 +6025,7 @@
       }
     },
     "klumba_soldiers_fight_start_no_gun": {
-      "Picture": "blank",
+      "Picture": "klumba",
       "Text": "Курьер обыскивает тело лежащего рядом бандита и подбирает пистолет. Не очень хороший, но сгодится.",
       "Type": "Simple",
       "Transition": {
@@ -6034,7 +6034,7 @@
       }
     },
     "klumba_soldiers_fight_car": {
-      "Picture": "blank",
+      "Picture": "klumba",
       "Text": "Владилена садится в УАЗ, но машина не заводится.\nВладилена: \"Что опять случилось? Срочно почините её, мы уезжаем!\"",
       "Type": "Simple",
       "Transition": {
@@ -6043,7 +6043,7 @@
       }
     },
     "klumba_soldiers_boss_fight_transition": {
-      "Picture": "blank",
+      "Picture": "klumba",
       "Text": "Курьер понимает, что это его шанс. В атаку!",
       "Type": "Simple",
       "Transition": {
@@ -6054,7 +6054,7 @@
     },
 
     "klumba_after_fight": {
-      "Picture": "blank",
+      "Picture": "klumba",
       "Text": " . . . . .",
       "Type": "Simple",
       "Transition": {
@@ -6063,7 +6063,7 @@
       }
     },
     "klumba_after_fight_1": {
-      "Picture": "blank",
+      "Picture": "klumba",
       "Text": "«СИЛА» повержена.",
       "Type": "Simple",
       "Transition": {
