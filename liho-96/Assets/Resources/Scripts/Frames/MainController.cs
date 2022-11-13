@@ -121,8 +121,8 @@ namespace Frames
 
         private void LogState()
         {
-            Debug.Log($"Frame: {StateHolder.CurrentFrameName}\n" +
-                      $"Flags: {string.Join(", ", StateHolder.Flags)}");
+            // Debug.Log($"Frame: {StateHolder.CurrentFrameName}\n" +
+            //           $"Flags: {string.Join(", ", StateHolder.Flags)}");
         }
 
         private void UpdateFrame()
