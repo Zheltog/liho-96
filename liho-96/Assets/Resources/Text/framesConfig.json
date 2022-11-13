@@ -6260,7 +6260,7 @@
       }
     },
     "klumba_courier_lies_4": {
-      "Picture": "courier_on_ruins_far_eyes_closed",
+      "Picture": "courier_on_ruins_far_eyes_opened",
       "Text": " . . .",
       "Type": "Simple",
       "Transition": {
