@@ -4310,7 +4310,13 @@
       "Type": "Simple",
       "Transition": {
         "Type": "Frame",
-        "Next": "park_party_give_money_4"
+        "Next": "park_party_give_money_4",
+        "Actions": [
+          {
+            "Type": "Add",
+            "Name": "PartyPhoneNumber"
+          }
+        ]
       }
     },
     "park_party_give_money_4": {
