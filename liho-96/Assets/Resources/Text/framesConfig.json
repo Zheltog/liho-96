@@ -1,5 +1,5 @@
 {
-  "StartingFrame": "klumba_tuman_join_5",
+  "StartingFrame": "klumba_after_fight_12",
   "StartingFlags": [
     "SmallMoney",
     "Lighter",
@@ -6178,8 +6178,10 @@
       }
     },
     "klumba_after_fight_14": {
-      "Picture": "blank",
+      "Picture": "explosion",
+      "Sound": "explosion",
       "Text": " ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! !",
+      "TextDelay": 0.01,
       "Type": "Simple",
       "Transition": {
         "Type": "Frame",
@@ -6197,7 +6199,7 @@
     },
     "klumba_courier_lies": {
       "Picture": "blank",
-      "Text": " . . .",
+      "Text": " . . . . . . .",
       "Type": "Simple",
       "Transition": {
         "Type": "Frame",
@@ -6205,7 +6207,7 @@
       }
     },
     "klumba_courier_lies_1": {
-      "Picture": "blank",
+      "Picture": "dorm_broken",
       "Text": "Светает. Первые лучи солнца падают на разрушенные здания старого университета.",
       "Type": "Simple",
       "Transition": {
@@ -6214,7 +6216,7 @@
       }
     },
     "klumba_courier_lies_2": {
-      "Picture": "blank",
+      "Picture": "courier_on_ruins_close_eyes_closed",
       "Text": "Свет касается век Курьера. Он жмурится, а затем открывает глаза.",
       "Type": "Simple",
       "Transition": {
@@ -6223,8 +6225,8 @@
       }
     },
     "klumba_courier_lies_3": {
-      "Picture": "blank",
-      "Text": " . . . TODO тут курьер лежит с открытыми глазами",
+      "Picture": "courier_on_ruins_close_eyes_opened",
+      "Text": " . . .",
       "Type": "Simple",
       "Transition": {
         "Type": "Frame",
@@ -6232,8 +6234,8 @@
       }
     },
     "klumba_courier_lies_4": {
-      "Picture": "blank",
-      "Text": " . . . TODO тут более общий план",
+      "Picture": "courier_on_ruins_far_eyes_closed",
+      "Text": " . . .",
       "Type": "Simple",
       "Transition": {
         "Type": "Frame",
@@ -6241,8 +6243,8 @@
       }
     },
     "klumba_courier_lies_5": {
-      "Picture": "blank",
-      "Text": " . . . TODO ещё сильнее отдаляется камера, курьер закрывает глаза",
+      "Picture": "courier_on_ruins_far_eyes_closed",
+      "Text": " . . .",
       "Type": "Simple",
       "Transition": {
         "Type": "Frame",
