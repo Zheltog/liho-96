@@ -1,4 +1,6 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
+using System.Linq;
 using System.Text;
 using Newtonsoft.Json;
 using TMPro;
@@ -31,7 +33,9 @@ namespace Final
         
         private bool ValidateCardInfo(string number, string month, string year, string cvv)
         {
-            if (string.IsNullOrEmpty(number) || number.Length != 16 || !long.TryParse(number, out var cardResult) || cardResult < 1)
+            if (string.IsNullOrEmpty(number) || number.Length != 16 || 
+                !long.TryParse(number, out var cardResult) || cardResult < 1 ||
+                !ChecksumLuhnAlgorithm(number))
             {
                 _mainController.Error(CommentsHolder.InvalidCard);
                 return false;
@@ -60,6 +64,19 @@ namespace Final
             }
             
             return true;
+        }
+
+        private bool ChecksumLuhnAlgorithm(string cardNumber)
+        {
+            var charToDigit = new Func<char, int>(c => c - 48);
+
+            return cardNumber.All(char.IsDigit) &&
+                   cardNumber.Reverse()                                 // алгоритм идет с конца
+                       .Select(charToDigit)                             // символы в цифры
+                       .Select((num, index) => 
+                               index % 2 == 0 ? num : (num * 2) % 10    // каждый второй элемент умножаем на два и берем по модулю 10
+                       )
+                       .Sum() % 10 == 0;                                // берём сумму по модулю 10
         }
         
         private IEnumerator CheckAnswer() {
