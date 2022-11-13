@@ -1,5 +1,5 @@
 {
-  "StartingFrame": "start",
+  "StartingFrame": "klumba_soldiers_vlada_14",
   "StartingFlags": [
     "SmallMoney",
     "Lighter",
@@ -291,7 +291,7 @@
         "Actions": [
           {
             "Type": "Add",
-            "Name": "NotHungry"
+            "Name": "Pancakes"
           }
         ]
       }
@@ -3795,7 +3795,7 @@
     },
     "after_casino_bratki_gun_4": {
       "Picture": "casino_entrance",
-      "Text": "Другой браток: \"Че, хочешь знать, где Туман? Да ты тупее, чем наш начальник! Он вас развёл, будто он крутой, и один всё знает.\"",
+      "Text": "Другой браток: \"Че, хочешь знать, где тумановские? Да ты тупее, чем наш начальник! Он вас развёл, будто он крутой, и один всё знает.\"",
       "Type": "Simple",
       "Transition": {
         "Type": "Frame",
@@ -3804,7 +3804,7 @@
     },
     "after_casino_bratki_gun_5": {
       "Picture": "casino_entrance",
-      "Text": "Браток: \"Все знают, где он сидит. Это вообще не тайна.\"",
+      "Text": "Браток: \"Все знают, где они сидит. Это вообще не тайна.\"",
       "Type": "Simple",
       "Transition": {
         "Type": "Frame",
@@ -3813,7 +3813,7 @@
     },
     "after_casino_bratki_gun_6": {
       "Picture": "casino_entrance",
-      "Text": "Другой браток: \"Он со своими чертилами на клумбе ошивается. На юге, где универ заброшенный. Их там каждый вечер найти можно.\"",
+      "Text": "Другой браток: \"Эти чертилы на клумбе ошиваются. На юге, где универ заброшенный. Их там каждый вечер найти можно.\"",
       "Type": "Simple",
       "Transition": {
         "Type": "Frame",
@@ -5170,7 +5170,7 @@
     },
     "klumba_soldiers_vlada_15": {
       "Picture": "blank",
-      "Text": "Владилена: \"Нам не хватает полевых агентов, кто может собирать информацию, доставлять ресурсы, внедряться к нашим врагам и оставаться незамеченным.\"",
+      "Text": "Владилена: \"Нам не хватает полевых агентов. Тех, кто может собирать информацию, доставлять ресурсы, внедряться к нашим врагам и оставаться незамеченным.\"",
       "Type": "Simple",
       "Transition": {
         "Type": "Frame",
@@ -5236,7 +5236,7 @@
           }
         },
         {
-          "Text": "\"Зачем было меня подставлять?\"",
+          "Text": "\"Зачем было подставлять меня?\"",
           "Transition": {
             "Type": "Frame",
             "Next": "klumba_soldiers_vlada_question_betrayal",
@@ -5298,7 +5298,7 @@
           ]
         },
         {
-          "Text": "\"Зачем было меня подставлять?\"",
+          "Text": "\"Зачем было подставлять меня?\"",
           "Transition": {
             "Type": "Frame",
             "Next": "klumba_soldiers_vlada_question_betrayal",
@@ -5330,7 +5330,52 @@
 
     "klumba_soldiers_vlada_question_ideology": {
       "Picture": "blank",
-      "Text": "Владилена: \"Рассказывает про идеологию TODO\"",
+      "Text": "Владилена: \"Советский Союз, Царская Россия – всё это для меня одно и то же. За любой идеологической мишурой скрывается единственная истина: миром правит сила.\"",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "klumba_soldiers_vlada_question_ideology_1"
+      }
+    },
+    "klumba_soldiers_vlada_question_ideology_1": {
+      "Picture": "blank",
+      "Text": "Владилена: \"Когда сила попадает в руки тех, кто её не достоен, начинается chao et degradation.\"",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "klumba_soldiers_vlada_question_ideology_2"
+      }
+    },
+    "klumba_soldiers_vlada_question_ideology_2": {
+      "Picture": "blank",
+      "Text": "Владилена: \"Этот город – тому пример. Жалкие, потерянные люди, способные лишь на потакание своим самым низменным желаниям.\"",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "klumba_soldiers_vlada_question_ideology_3"
+      }
+    },
+    "klumba_soldiers_vlada_question_ideology_3": {
+      "Picture": "blank",
+      "Text": "Владилена: \"Ты видел это своими глазами, верно? Они хотят вернуться назад. Назад к смыслу, к тому времени, когда в их жизни было что-то большее, чем они сами и их блеклая, бедная действительность.\"",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "klumba_soldiers_vlada_question_ideology_4"
+      }
+    },
+    "klumba_soldiers_vlada_question_ideology_4": {
+      "Picture": "blank",
+      "Text": "Владилена: \"Всё они жили лучше, когда у них была цель. Когда у всего этого города, у всей страны была цель. Эта цель – война.\"",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "klumba_soldiers_vlada_question_ideology_5"
+      }
+    },
+    "klumba_soldiers_vlada_question_ideology_5": {
+      "Picture": "blank",
+      "Text": "Владилена: \"Борьба за власть идёт во всём мире, и активное участие в этой борьбе является единственной по-настоящему значащей целью. Активное и безжалостное. Fortiter et fideliter.\"",
       "Type": "Simple",
       "Transition": {
         "Type": "Frame",
@@ -5340,7 +5385,79 @@
 
     "klumba_soldiers_vlada_question_tuman": {
       "Picture": "blank",
-      "Text": "Владилена: \"Рассказывает про тумановских TODO\"",
+      "Text": "Владилена: \"Их нужно было устранить. И не только потому, что scelestus отродью нет места в Империи.\"",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "klumba_soldiers_vlada_question_tuman_1"
+      }
+    },
+    "klumba_soldiers_vlada_question_tuman_1": {
+      "Picture": "blank",
+      "Text": "Владилена: \"Этот город – сокровищница потерянных военных технологий. И охотится за ними не только «СИЛА».\"",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "klumba_soldiers_vlada_question_tuman_2"
+      }
+    },
+    "klumba_soldiers_vlada_question_tuman_2": {
+      "Picture": "blank",
+      "Text": "Владилена: \"Тумановской группировке несколько раз удавалось забирать оружие у нас из под носа. Они мало что знают о «СИЛЕ», но это не мешает им насмехаться над нами.\"",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "klumba_soldiers_vlada_question_tuman_3"
+      }
+    },
+    "klumba_soldiers_vlada_question_tuman_3": {
+      "Picture": "blank",
+      "Text": "Владилена: \"Мы могли бы перестрелять обычных бандитов, но Туман способен быстро набрать новых. В городе достаточно людей, кого привлекает бандитская жизнь.\"",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "klumba_soldiers_vlada_question_tuman_4"
+      }
+    },
+    "klumba_soldiers_vlada_question_tuman_4": {
+      "Picture": "blank",
+      "Text": "Владилена: \"Это значит, что Тумана нужно было выманить на клумбу, вместе с остальной бандой. Чтобы он потерял бдительность.\"",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "klumba_soldiers_vlada_question_tuman_5"
+      }
+    },
+    "klumba_soldiers_vlada_question_tuman_5": {
+      "Picture": "blank",
+      "Text": "Владилена: \"Он осторожен, но верит слухам. Верит, что ЛИХО – это самое мощное оружие, которое только можно найти, хотя даже не знает, как именно оно работает.\"",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "klumba_soldiers_vlada_question_tuman_6"
+      }
+    },
+    "klumba_soldiers_vlada_question_tuman_6": {
+      "Picture": "blank",
+      "Text": "Владилена: \"Я знала, что он будет праздновать на клумбе, если добудет ЛИХО. А значит, мы сможем не просто избавиться от него – мы убьём его тогда, когда он думает, что победил. Так и произошло.\"",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "klumba_soldiers_vlada_question_tuman_7"
+      }
+    },
+    "klumba_soldiers_vlada_question_tuman_7": {
+      "Picture": "blank",
+      "Text": "Владилена: \"Таким образом, мы получили нужный нам груз и устранили врага. Двух зайцев одним выстрелом.\"",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "klumba_soldiers_vlada_question_tuman_8"
+      }
+    },
+    "klumba_soldiers_vlada_question_tuman_8": {
+      "Picture": "blank",
+      "Text": "Владилена: \"...хм, а есть ли такое выражение на латыни? Надо будет выучить.\"",
       "Type": "Simple",
       "Transition": {
         "Type": "Frame",
@@ -5350,7 +5467,43 @@
 
     "klumba_soldiers_vlada_question_betrayal": {
       "Picture": "blank",
-      "Text": "Владилена: \"Рассказывает про предательство курьера TODO\"",
+      "Text": "Владилена: \"Нам недостаточно было заполучить ЛИХО. Нам нужно было выманить и устранить Тумана.\"",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "klumba_soldiers_vlada_question_betrayal_1"
+      }
+    },
+    "klumba_soldiers_vlada_question_betrayal_1": {
+      "Picture": "blank",
+      "Text": "Владилена: \"Мы дали ему наводку с описанием машины, на которой будет перевозиться ЛИХО. Знали, что он сам захочет увидеть ЛИХО. Знали, что он наверняка встретится со своими бандитами на клумбе.\"",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "klumba_soldiers_vlada_question_betrayal_2"
+      }
+    },
+    "klumba_soldiers_vlada_question_betrayal_2": {
+      "Picture": "blank",
+      "Text": "Владилена: \"А на тот случай, если они окажутся совсем безмозглыми, мы прямо направили тебя в их логово.\"",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "klumba_soldiers_vlada_question_betrayal_3"
+      }
+    },
+    "klumba_soldiers_vlada_question_betrayal_3": {
+      "Picture": "blank",
+      "Text": "Владилена: \"Надеюсь, ты не в обиде. Знай: каждый человек стоит не больше, чем та польза, которую он приносит. Чем та сила, которую он передает коллективу, чему-то большему, чем он сам.\"",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "klumba_soldiers_vlada_question_betrayal_4"
+      }
+    },
+    "klumba_soldiers_vlada_question_betrayal_4": {
+      "Picture": "blank",
+      "Text": "Владилена: \"Я недооценила пользу, которую мы можем получить от тебя. Именно поэтому сейчас я предлагаю тебе присоединиться.\"",
       "Type": "Simple",
       "Transition": {
         "Type": "Frame",
@@ -5360,7 +5513,7 @@
     
     "klumba_soldiers_vlada_next": {
       "Picture": "blank",
-      "Text": "Владилена: \"Больше вопросов нет, как я понимаю.\"",
+      "Text": "Владилена: \"Как я понимаю, больше вопросов нет.\"",
       "Type": "Simple",
       "Transition": {
         "Type": "Frame",
@@ -5369,7 +5522,7 @@
     },
     "klumba_soldiers_vlada_next_1": {
       "Picture": "blank",
-      "Text": "Владилена: \"Точно, я ведь так ничего и не сказала про ЛИХО. Ты ведь всё ещё не знаешь, что это?\"",
+      "Text": "Владилена: \"Ах да, я ведь так ничего и не сказала про ЛИХО. Ты ведь всё ещё не знаешь, что это?\"",
       "Type": "Simple",
       "Transition": {
         "Type": "Frame",
@@ -5378,7 +5531,7 @@
     },
     "klumba_soldiers_vlada_next_2": {
       "Picture": "blank",
-      "Text": "Владилена: \"Я обойдусь без технических деталей. Всё, что тебе нужно знать – это настоящее оружие будущего. Единственный известный нам рабочий прототип.\"",
+      "Text": "Владилена: \"Я обойдусь без технических деталей. Всё, что тебе нужно знать – это оружие, к которому мир пока не готов. Единственный известный нам рабочий прототип.\"",
       "Type": "Simple",
       "Transition": {
         "Type": "Frame",
