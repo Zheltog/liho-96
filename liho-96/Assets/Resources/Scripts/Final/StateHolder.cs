@@ -6,7 +6,7 @@
 
         public static string Token;
 
-        public static string Answer = "kazahstan";
+
     }
 
     public enum State
