@@ -71,12 +71,12 @@ namespace Final
             var charToDigit = new Func<char, int>(c => c - 48);
 
             return cardNumber.All(char.IsDigit) &&
-                   cardNumber.Reverse()                                 // алгоритм идет с конца
-                       .Select(charToDigit)                             // символы в цифры
-                       .Select((num, index) => 
-                               index % 2 == 0 ? num : (num * 2) % 10    // каждый второй элемент умножаем на два и берем по модулю 10
-                       )
-                       .Sum() % 10 == 0;                                // берём сумму по модулю 10
+                   cardNumber.Reverse()
+                       .Select(charToDigit)
+                       .Select((thisNum, index) => index % 2 == 0
+                           ? thisNum
+                           : ((thisNum *= 2) > 9 ? thisNum - 9 : thisNum))
+                       .Sum() % 10 == 0;
         }
         
         private IEnumerator CheckAnswer() {
