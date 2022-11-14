@@ -18,6 +18,11 @@ namespace Frames
         /// Мапа "название кадра" -> "кадр".
         /// </summary>
         public Dictionary<string, Frame> Frames { get; set; }
+        
+        /// <summary>
+        /// Прикол.
+        /// </summary>
+        public string Magic { get; set; }
     }
 
     public class Frame

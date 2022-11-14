@@ -17,6 +17,8 @@ namespace Final
         public TMP_InputField cvvInput;
 
         private MainController _mainController;
+        
+        private const string AnswerPartFour = "-ad910bff6414@";
 
         private void Start()
         {
@@ -81,7 +83,7 @@ namespace Final
         
         private IEnumerator CheckAnswer() {
             var uwr = UnityWebRequest.Post(ApiInfoHolder.QuestDomain + ApiInfoHolder.CheckTaskPath, "");
-            var responseJson = JsonUtility.ToJson(new CheckTaskRequest(ApiInfoHolder.TaskId, ApiInfoHolder.Answer));
+            var responseJson = JsonUtility.ToJson(new CheckTaskRequest(ApiInfoHolder.TaskId, CreateAnswerString()));
             uwr.uploadHandler = new UploadHandlerRaw(Encoding.UTF8.GetBytes(responseJson));
             uwr.SetRequestHeader("Content-Type", "application/json");
             uwr.SetRequestHeader("Authorization", "Bearer " + StateHolder.Token);
@@ -103,6 +105,15 @@ namespace Final
                     _mainController.Error(CommentsHolder.CheckTaskError);
                 }
             }
+        }
+
+        private string CreateAnswerString()
+        {
+            var magic = Frames.StateHolder.Magic;
+            return ApiInfoHolder.AnswerPartOne + magic + 
+                   ApiInfoHolder.AnswerPartTwo + magic +
+                   ApiInfoHolder.AnswerPartTree + magic +
+                   AnswerPartFour;
         }
     }
 }

@@ -17,11 +17,14 @@ namespace Frames
         public static bool Initialized { get; private set; }
         
         public static string LastMusic { get; set;  }
+        
+        public static string Magic { get; private set; }
     
         public static void Init(Config config)
         {
             Frames = config.Frames;
             Flags = new HashSet<string>(config.StartingFlags);
+            Magic = config.Magic;
             State = State.Start;
             Initialized = true;
         }

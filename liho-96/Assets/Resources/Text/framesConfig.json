@@ -1,10 +1,11 @@
 {
-  "StartingFrame": "start",
+  "StartingFrame": "klumba_kanevsky_3",
   "StartingFlags": [
     "SmallMoney",
     "Lighter",
     "Pistol"
   ],
+  "Magic": "!",
   "Frames": {
     "start": {
       "Picture": "blank",
