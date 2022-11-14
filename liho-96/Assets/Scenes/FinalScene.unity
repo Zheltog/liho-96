@@ -1179,6 +1179,7 @@ MonoBehaviour:
   soundsSource: {fileID: 1899460314}
   musicSource: {fileID: 1944736019}
   textSoundSource: {fileID: 534097307}
+  volumeChangeSpeed: 0.02
 --- !u!4 &380389186
 Transform:
   m_ObjectHideFlags: 0
@@ -3251,7 +3252,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: "\xAB\u041B\u0418\u0425\u041E-96\xBB. \u0420\u0430\u0437\u0440\u0430\u0431\u043E\u0442\u043A\u0430
-    \u0417\u0410\u041E \xAB\u041D\u0443\u0440\u043C\u0430\u043A \u0421\u0442\u0443\u0434\u0438\u0438\xBB
+    \u0422\u041E\u041E \xAB\u041D\u0443\u0440\u043C\u0430\u043A \u0421\u0442\u0443\u0434\u0438\u0438\xBB
     \u043F\u043E \u0437\u0430\u043A\u0430\u0437\u0443 \u041E\u041E\u041E \xAB\u0424\u0418\u0422\u0424\u0418\u042F\xBB"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: f5e2f29014125154582b2f5e6e5b5577, type: 2}

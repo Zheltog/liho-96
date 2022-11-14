@@ -32,7 +32,9 @@ namespace Frames
             }
 
             _sceneController = GetComponent<ScenesController>();
-            player.NewMusic(StateHolder.LastMusic);
+
+            var music = StateHolder.CurrentFrame.Music ?? StateHolder.LastMusic;
+            player.NewMusic(music);
             
             UpdateFrame();
             LogState();

@@ -1,5 +1,5 @@
 {
-  "StartingFrame": "start",
+  "StartingFrame": "klumba_after_fight_12",
   "StartingFlags": [
     "SmallMoney",
     "Lighter",
@@ -3925,6 +3925,7 @@
     },
     "after_casino_city_1": {
       "Picture": "city_walk",
+      "Music": "wind_ambience",
       "Text": ". . . . .",
       "Type": "Simple",
       "Transition": {
@@ -3962,7 +3963,7 @@
       }
     },
     "after_casino_city_4": {
-      "Picture": "city_walk",
+      "Picture": "city_walk_scientist",
       "Text": "Курьер: \"...\"",
       "Type": "Simple",
       "Transition": {
@@ -4045,8 +4046,7 @@
       }
     },
     "after_casino_city_go_to_klumba_3": {
-      "Picture": "casino_entrance_scientist",
-      "Sound": "gasp_surprised",
+      "Picture": "city_walk_scientist",
       "Text": "Учёный: \"Полночь. Старый... Клумба.\"",
       "Type": "Simple",
       "Transition": {
@@ -4055,8 +4055,7 @@
       }
     },
     "after_casino_city_go_to_klumba_4": {
-      "Picture": "casino_entrance_scientist",
-      "Sound": "gasp_surprised",
+      "Picture": "city_walk_scientist",
       "Text": "Учёный: \"Д-да, думаю, я знаю, где это. За старым университетом. П-плохой район конечно...\"",
       "Type": "Simple",
       "Transition": {
@@ -4065,8 +4064,7 @@
       }
     },
     "after_casino_city_go_to_klumba_5": {
-      "Picture": "casino_entrance_scientist",
-      "Sound": "gasp_surprised",
+      "Picture": "city_walk_scientist",
       "Text": "Учёный: \"Ладно, п-пойдём, покажу дорогу.\"",
       "Type": "Simple",
       "Transition": {
@@ -4075,8 +4073,7 @@
       }
     },
     "after_casino_city_go_to_klumba_6": {
-      "Picture": "casino_entrance_scientist",
-      "Sound": "gasp_surprised",
+      "Picture": "city_walk_scientist",
       "Text": "Курьер: \"...\"",
       "Type": "Simple",
       "Transition": {
@@ -4807,7 +4804,7 @@
     },
     "klumba_tuman_start_2": {
       "Picture": "klumba_tuman_thinking",
-      "Text": "Туман: \"Опа-на, кто это к нам пожаловал? Чего надо, молодые?\"",
+      "Text": "Туман: \"Опа-на, кто это к нам пожаловал? Чего надо, щеглы?\"",
       "Type": "Simple",
       "Transition": {
         "Type": "Frame",
@@ -5047,6 +5044,7 @@
     },
     "klumba_tuman_join": {
       "Picture": "klumba_tuman_laughing",
+      "Sound": "evil_laugh",
       "Text": "Туман: \"А че, ты не такой уж и тупень! Ха-ха, хорош!\"",
       "Type": "Simple",
       "Transition": {
@@ -5126,7 +5124,7 @@
     },
     "klumba_tuman_scientist_1": {
       "Picture": "klumba_tuman",
-      "TextDelay": "0.12",
+      "TextDelay": 0.12,
       "Text": "Учёный: \"Отдайте мне ЛИХО!!!\"",
       "Type": "Simple",
       "Transition": {
@@ -5373,6 +5371,7 @@
     },
     "klumba_soldiers_arrive_1": {
       "Picture": "klumba_tuman_dead",
+      "Sound": "shot",
       "Music": "firefight",
       "Text": " ! ! ! ! !",
       "Type": "Simple",
@@ -6020,6 +6019,7 @@
     },
     "klumba_soldiers_vlada_next_14": {
       "Picture": "klumba_vlada",
+      "TextDelay": 0.1,
       "Text": "Курьер: \"И ЛИХО я вам не отдам.\"",
       "Type": "Simple",
       "Transition": {
@@ -6112,6 +6112,7 @@
     },
     "klumba_soldiers_fight_car": {
       "Picture": "klumba",
+      "Sound": "car_engine",
       "Text": "Владилена садится в УАЗ, но машина не заводится.\nВладилена: \"Что опять случилось? Срочно почините её, мы уезжаем!\"",
       "Type": "Simple",
       "Transition": {
@@ -6132,15 +6133,17 @@
 
     "klumba_after_fight": {
       "Picture": "final_broken_tiles",
+      "Music": "wind_ambience",
       "Text": " . . . . .",
       "Type": "Simple",
       "Transition": {
         "Type": "Frame",
-        "Next": "klumba_after_fight_2"
+        "Next": "klumba_after_fight_1"
       }
     },
     "klumba_after_fight_1": {
       "Picture": "final_broken_tiles",
+      "TextDelay": 0.1,
       "Text": "«СИЛА» повержена.",
       "Type": "Simple",
       "Transition": {
@@ -6150,6 +6153,7 @@
     },
     "klumba_after_fight_2": {
       "Picture": "final_vlada",
+      "TextDelay": 0.09,
       "Text": "Владилена лежит на разбитой плитке, и, кажется, говорит сама с собой. В руках она продолжает сжимать ЛИХО.",
       "Type": "Simple",
       "Transition": {
@@ -6200,11 +6204,21 @@
       "Type": "Simple",
       "Transition": {
         "Type": "Frame",
+        "Next": "klumba_after_fight_7_1"
+      }
+    },
+    "klumba_after_fight_7_1": {
+      "Picture": "final_vlada_angry",
+      "Text": "Курьер: \"...\"",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
         "Next": "klumba_after_fight_8"
       }
     },
     "klumba_after_fight_8": {
       "Picture": "final_vlada_angry",
+      "TextDelay": 0.15,
       "Text": "Курьер: \"Мне нужно ЛИХО.\"",
       "Type": "Simple",
       "Transition": {
@@ -6214,6 +6228,7 @@
     },
     "klumba_after_fight_9": {
       "Picture": "final_vlada_angry",
+      "TextDelay": 0.1,
       "Text": "Курьер: \"Я уничтожу его.\"",
       "Type": "Simple",
       "Transition": {
@@ -6232,6 +6247,7 @@
     },
     "klumba_after_fight_11": {
       "Picture": "final_vlada_finger",
+      "TextDelay": 0.09,
       "Text": "Владилена: \"Morior... invictus......\"",
       "Type": "Simple",
       "Transition": {
@@ -6241,7 +6257,9 @@
     },
     "klumba_after_fight_12": {
       "Picture": "final_vlada_button_pressed",
-      "Text": "Владилена: \"...\"",
+      "Sound": "button_click",
+      "TextDelay": 0.09,
+      "Text": " . . .",
       "Type": "Simple",
       "Transition": {
         "Type": "Frame",
@@ -6250,8 +6268,9 @@
     },
     "klumba_after_fight_14": {
       "Picture": "explosion",
+      "Music": "",
       "Sound": "explosion",
-      "Text": " ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! !",
+      "Text": " ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .",
       "TextDelay": 0.01,
       "Type": "Simple",
       "Transition": {
@@ -6261,6 +6280,8 @@
     },
     "klumba_after_fight_15": {
       "Picture": "blank",
+      "Music": "wind_ambience",
+      "TextDelay": 0.1,
       "Text": " . . .",
       "Type": "Simple",
       "Transition": {
@@ -6270,7 +6291,8 @@
     },
     "klumba_courier_lies": {
       "Picture": "blank",
-      "Text": " . . . . . . .",
+      "TextDelay": 0.1,
+      "Text": " . . . . . .",
       "Type": "Simple",
       "Transition": {
         "Type": "Frame",
@@ -6278,9 +6300,31 @@
       }
     },
     "klumba_courier_lies_1": {
+      "Picture": "blank",
+      "TextDelay": 0.1,
+      "Text": " . . . . . . . . .",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "klumba_courier_lies_1_1"
+      }
+    },
+    "klumba_courier_lies_1_1": {
+      "Picture": "blank",
+      "TextDelay": 0.12,
+      "Text": "Светает...",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "klumba_courier_lies_1_2"
+      }
+    },
+    "klumba_courier_lies_1_2": {
       "Picture": "dorm_broken",
       "Music": "Earthbound Mother 2 (SNES) - Dr. Andonuts' Lab",
-      "Text": "Светает. Первые лучи солнца падают на разрушенные здания старого университета.",
+      "Sound": "wind_ambience",
+      "TextDelay": 0.1,
+      "Text": "Первые лучи солнца падают на разрушенные здания университета.",
       "Type": "Simple",
       "Transition": {
         "Type": "Frame",
@@ -6289,6 +6333,7 @@
     },
     "klumba_courier_lies_2": {
       "Picture": "courier_on_ruins_close_eyes_closed",
+      "TextDelay": 0.09,
       "Text": "Свет касается век Курьера. Он жмурится, а затем открывает глаза.",
       "Type": "Simple",
       "Transition": {
@@ -6316,7 +6361,18 @@
     },
     "klumba_courier_lies_5": {
       "Picture": "courier_on_ruins_far_eyes_closed",
-      "Text": " . . .",
+      "TextDelay": 0.12,
+      "Text": " . . . . .",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "klumba_courier_lies_6"
+      }
+    },
+    "klumba_courier_lies_6": {
+      "Picture": "courier_on_ruins_far_eyes_closed",
+      "TextDelay": 0.15,
+      "Text": " .  .  .  .  .  .  .",
       "Type": "Simple",
       "Transition": {
         "Type": "Frame",
@@ -6325,6 +6381,7 @@
     },
     "klumba_kanevsky": {
       "Picture": "leonid_norm",
+      "TextDelay": 0.09,
       "Text": "На этом и заканчивается наша история, дорогие зрители.",
       "Type": "Simple",
       "Transition": {
@@ -6334,6 +6391,7 @@
     },
     "klumba_kanevsky_1": {
       "Picture": "leonid_norm",
+      "TextDelay": 0.09,
       "Text": "Бандиты и наёмники, секретное оружие и зловещие планы. Всё это не могло закончится хорошо для маленького городка.",
       "Type": "Simple",
       "Transition": {
@@ -6343,6 +6401,7 @@
     },
     "klumba_kanevsky_2": {
       "Picture": "leonid_norm",
+      "TextDelay": 0.09,
       "Text": "Но выжил ли Курьер после взрыва?..\nБоюсь, это уже совсем другая история...",
       "Type": "Simple",
       "Transition": {
@@ -6352,6 +6411,7 @@
     },
     "klumba_kanevsky_3": {
       "Picture": "leonid_norm",
+      "TextDelay": 0.09,
       "Text": " . . .",
       "Type": "Simple",
       "Transition": {
@@ -6363,6 +6423,7 @@
 
     "klumba_kanevsky_final": {
       "Picture": "leonid_norm",
+      "Music": "",
       "Text": "На этом всё, дорогие зрители. Будьте счастливы и до новых встреч!",
       "Type": "Simple",
       "Transition": {
