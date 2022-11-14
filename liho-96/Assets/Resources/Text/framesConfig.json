@@ -1,5 +1,5 @@
 {
-  "StartingFrame": "casino_entrance",
+  "StartingFrame": "start",
   "StartingFlags": [
     "SmallMoney",
     "Lighter",

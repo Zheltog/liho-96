@@ -20,18 +20,18 @@ namespace Boss
         protected float hp;
         
         private SpriteRenderer _sprite;
-        private bool initialized;   // TODO: обойтись без этого?
+        private bool _initialized;
 
         protected void Start()
         {
-            _sprite = GetComponent<SpriteRenderer>();
             hp = maxHp;
-            initialized = true;
+            _sprite = GetComponent<SpriteRenderer>();
+            _initialized = true;
         }
 
         public void Reset()
         {
-            if (!initialized)
+            if (!_initialized)
             {
                 Start();
             }

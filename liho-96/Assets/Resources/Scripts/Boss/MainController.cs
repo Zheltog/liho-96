@@ -18,17 +18,16 @@ namespace Boss
         public AudioController player;
         public TextBoxController text;
         public ItemsChoicesController itemsChoicesController;
-        public FightState CurrentFightState { get; private set; }
         
         private float _timeRemainingBeforeNextRest;
         private PhaseConfigurator _phaseConfig;
         private EnemiesController _enemiesController;
         private ScenesController _scenes;
         private CursorController _cursor;
+        private FightState _currentFightState = FightState.Initializing;
 
         private void Start()
         {
-            CurrentFightState = FightState.Initializing;
             _timeRemainingBeforeNextRest = phaseSeconds;
             _phaseConfig = GetComponent<PhaseConfigurator>();
             _enemiesController = GetComponent<EnemiesController>();
@@ -39,7 +38,7 @@ namespace Boss
 
         private void Update()
         {
-            if (CurrentFightState == FightState.Attack)
+            if (_currentFightState == FightState.Attack)
             {
                 UpdateTimeRemainingBeforeNextRest();
                 return;
@@ -54,7 +53,7 @@ namespace Boss
         
         public void ChooseItem(Item item)
         {
-            CurrentFightState = FightState.ItemChosen;
+            _currentFightState = FightState.ItemChosen;
             backButton.SetActive(false);
             text.NewText(item.UseText);
             itemsChoicesController.DisableButtons();
@@ -85,9 +84,9 @@ namespace Boss
 
         public void FinishPrintingOrUpdateRoundState()
         {
-            if (CurrentFightState == FightState.Initializing)
+            if (_currentFightState == FightState.Initializing)
             {
-                return; // TODO починить как-нибудь, убрать Initializing
+                return;
             }
             
             if (text.IsPrinting)
@@ -96,7 +95,7 @@ namespace Boss
                 return;
             }
 
-            switch (CurrentFightState)
+            switch (_currentFightState)
             {
                 case FightState.NewPhase:
                     NextAttack();
@@ -105,7 +104,7 @@ namespace Boss
                     NextPhase();
                     break;
                 case FightState.GameOver:
-                    Application.Quit(); // TODO: использовать scenes controller
+                    _scenes.Exit();
                     break;
                 case FightState.LastItemChosen:
                     Win();
@@ -121,7 +120,7 @@ namespace Boss
 
         public void Inventory()
         {
-            CurrentFightState = FightState.ItemChoosing;
+            _currentFightState = FightState.ItemChoosing;
             actionsButtons.SetActive(false);
             backButton.SetActive(true);
             if (!itemsChoicesController.ItemsChoiceAvailable())
@@ -145,7 +144,7 @@ namespace Boss
             itemsChoicesController.DisableButtons();
             backButton.SetActive(false);
             actionsButtons.SetActive(true);
-            CurrentFightState = FightState.ActionChoice;
+            _currentFightState = FightState.ActionChoice;
         }
 
         public void HealthBarEmpty(HealthBarType type)
@@ -156,9 +155,9 @@ namespace Boss
                     GameOver(CommentsHolder.CourierDied);
                     break;
                 case HealthBarType.Enemies:
-                    if (CurrentFightState == FightState.ItemChosen)
+                    if (_currentFightState == FightState.ItemChosen)
                     {
-                        CurrentFightState = FightState.LastItemChosen;
+                        _currentFightState = FightState.LastItemChosen;
                     }
                     else
                     {
@@ -170,7 +169,7 @@ namespace Boss
         
         public void GameOver(string comment)
         {
-            CurrentFightState = FightState.GameOver;
+            _currentFightState = FightState.GameOver;
             courier.Rest();
             _enemiesController.DisableAllEnemies();
             dynamicStuff.SetActive(false);
@@ -199,14 +198,13 @@ namespace Boss
 
         private void Rest()
         {
-            CurrentFightState = FightState.ActionChoice;
+            _currentFightState = FightState.ActionChoice;
             courier.Rest();
             actionsButtons.SetActive(true);
             grayPanel.SetActive(true);
             _enemiesController.DisableAllEnemies();
         }
 
-        // TODO: починить и убрать?
         private IEnumerator NextPhaseWithDelay()
         {
             yield return new WaitForSeconds(1);
@@ -215,19 +213,19 @@ namespace Boss
 
         private void NextPhase()
         {
-            CurrentFightState = FightState.NewPhase;
+            _currentFightState = FightState.NewPhase;
             _phaseConfig.NewPhase();
         }
         
         private void NextAttack()
         {
-            CurrentFightState = FightState.Attack;
+            _currentFightState = FightState.Attack;
             text.NewText(" ");
             grayPanel.SetActive(false);
             courier.StopRest();
         }
 
-        public enum FightState
+        private enum FightState
         {
             Initializing, NewPhase, Attack, ActionChoice, ItemChoosing, ItemChosen, LastItemChosen, GameOver
         }

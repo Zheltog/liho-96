@@ -22,17 +22,16 @@ namespace Frames
     
         public void NewImage(string imageName)
         {
+            if (!_initialized)
+            {
+                Start();
+            }
+            
             if (imageName == null || imageName == _lastImageName)
             {
                 return;
             }
 
-            if (!_initialized)
-            {
-                Start();
-                // TODO: почему
-            }
-        
             _animator.SetBool("lighting", false);
             _animator.SetBool("darking", true);
             StartCoroutine(WaitAndSetNewImage(imageName));
