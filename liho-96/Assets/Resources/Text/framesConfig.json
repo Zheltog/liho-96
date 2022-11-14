@@ -1,5 +1,5 @@
 {
-  "StartingFrame": "klumba_after_fight_12",
+  "StartingFrame": "casino_entrance",
   "StartingFlags": [
     "SmallMoney",
     "Lighter",
@@ -4785,6 +4785,7 @@
 
     "klumba_tuman_start": {
       "Picture": "klumba_tuman",
+      "Sound": "hookah",
       "Text": "Курьер и Учёный подходят к лысому мужчине. Бандиты злобно смотрят на них, но расступаются.",
       "Type": "Simple",
       "Transition": {
