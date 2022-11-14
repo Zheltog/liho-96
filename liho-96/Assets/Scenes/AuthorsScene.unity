@@ -1263,8 +1263,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -1087.5}
-  m_SizeDelta: {x: 0, y: 2175}
+  m_AnchoredPosition: {x: 0, y: -1112.5}
+  m_SizeDelta: {x: 0, y: 2225}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &772791865
 MonoBehaviour:
@@ -1951,7 +1951,7 @@ MonoBehaviour:
     A Pick and Flick Adventure\nBarbie Super Model\n\n\u0421\u043F\u0430\u0441\u0438\u0431\u043E
     \u0437\u0430 \u043A\u043E\u043B\u043B\u0435\u043A\u0446\u0438\u044E \u043C\u0443\u0437\u044B\u043A\u0438
     \u043F\u0430\u0431\u043B\u0438\u043A\u0443 SNES Music\nvk.com/snes_music\n\n\u0410
-    \u0422\u0410\u041A\u0416\u0415\n\u041C\u043E\u043D\u0435\u0442\u043E\u0447\u043A\u0430
+    \u0422\u0410\u041A\u0416\u0415\nfun. - We Are Young (8bit version by 8BitUzz)\n\u041C\u043E\u043D\u0435\u0442\u043E\u0447\u043A\u0430
     - 90 (covers by \u0414\u0430\u043D\u0438\u0438\u043B \u0411\u0435\u043B\u043E\u0433\u043B\u0430\u0437\u043E\u0432)\n\n\n\u0417\u0412\u0423\u041A\u0418\n\u0421
     \u0441\u0430\u0439\u0442\u0430 freesounds.org \u043E\u0442 \u043F\u043E\u043B\u044C\u0437\u043E\u0432\u0430\u0442\u0435\u043B\u0435\u0439:\nInspectorJ,
     BMacZero, bone666138, lukaso, milton., nvalbuena22, amszala, AryaNotStark, DrMaysta,
@@ -1959,9 +1959,9 @@ MonoBehaviour:
     BMacZero, osivo, CosmicEmbers, craigsmith, nick121087, Juandamb, Tuben, colorsCrimsonTears,
     MihirFreeSound, sjturia, RutgerMuller, Edelhanie, Jarebear1223, bacruz666, smcameron,
     Britical_Hit, ryansnook, ValentinPetiteau, kintana24, romulofs, tigersound, valeriebbb96,
-    squashy555, Kolombooo, prometheus888\n\n\u0410 \u0442\u0430\u043A\u0436\u0435
+    squashy555, Kolombooo, prometheus888, AENHS, ameslynn, Clutvh\n\n\u0410 \u0442\u0430\u043A\u0436\u0435
     \u0437\u0432\u0443\u043A \u0412\u0438\u0442\u0430\u043B\u0438 \u0437\u0430 \u043A\u0430\u043B\u044C\u044F\u043D\u043E\u043C
-    \u0438\u0437 \u0438\u0433\u0440\u044B Bubliki Jebliki\n\n\n\u0428\u0420\u0418\u0424\u0422\u042B\nSnowstorm
+    \u0438\u0437 \u0438\u0433\u0440\u044B Bubliki-Jebliki\n\n\n\u0428\u0420\u0418\u0424\u0422\u042B\nSnowstorm
     by Denis Sherbak\nUSSR Stencil by Anastasia Mihaleva & Jovanny Lemonad\n\n\n\u0418\u0417\u041E\u0411\u0420\u0410\u0416\u0415\u041D\u0418\u042F\n\u0444\u043E\u0442\u043E\u0441\u0442\u043E\u043A\u0438
     \u0438 \u043F\u043E\u0438\u0441\u043A\u043E\u0432\u0438\u043A\u0438\n\u043F\u0430\u043D\u043E\u0440\u0430\u043C\u044B
     \u0443\u043B\u0438\u0446 \u041D\u043E\u0432\u043E\u0441\u0438\u0431\u0438\u0440\u0441\u043A\u0430
@@ -2430,7 +2430,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 1570739381}
   m_Direction: 2
   m_Value: 1
-  m_Size: 0.121212125
+  m_Size: 0.11881188
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
