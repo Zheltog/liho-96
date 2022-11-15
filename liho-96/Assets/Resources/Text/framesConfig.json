@@ -2631,7 +2631,7 @@
     "forest_car_scientist_tuman_6": {
       "Picture": "forest_scientist_frightened",
       "Sound": "gasp_scared",
-      "Text": "Учёный: \"Он часто сам выезжает н-на дела, и, г-говорят, д-д-даже собственные бандиты его боятся... Он б-безумец...\"",
+      "Text": "Учёный: \"Говорят, д-д-даже собственные бандиты его боятся... Он б-безумец...\"",
       "Type": "Simple",
       "Transition": {
         "Type": "Frame",
@@ -4295,11 +4295,54 @@
           "Text": "Дать денег",
           "Transition": {
             "Type": "Frame",
-            "Next": "park_party_give_money"
+            "Next": "park_party_give_money_from_casino"
           },
           "Visibility": [
             {
               "Type": "And",
+              "Flags": [
+                "Coins",
+                "SmallMoney"
+              ]
+            }
+          ]
+        },
+        {
+          "Text": "Дать денег",
+          "Transition": {
+            "Type": "Frame",
+            "Next": "park_party_give_money_from_casino"
+          },
+          "Visibility": [
+            {
+              "Type": "And",
+              "Flags": [
+                "Coins"
+              ]
+            },
+            {
+              "Type": "AndNot",
+              "Flags": [
+                "SmallMoney"
+              ]
+            }
+          ]
+        },
+        {
+          "Text": "Дать денег",
+          "Transition": {
+            "Type": "Frame",
+            "Next": "park_party_give_money_from_wallet"
+          },
+          "Visibility": [
+            {
+              "Type": "And",
+              "Flags": [
+                "SmallMoney"
+              ]
+            },
+            {
+              "Type": "AndNot",
               "Flags": [
                 "Coins"
               ]
@@ -4316,7 +4359,22 @@
       ]
     },
 
-    "park_party_give_money": {
+    "park_party_give_money_from_wallet": {
+      "Picture": "park_party_girl",
+      "Text": "Курьер находит в кармане немного наличных и отдаёт их тусовщице.",
+      "Type": "Simple",
+      "Transition": {
+        "Type": "Frame",
+        "Next": "park_party_give_money_1",
+        "Actions": [
+          {
+            "Type": "Remove",
+            "Name": "SmallMoney"
+          }
+        ]
+      }
+    },
+    "park_party_give_money_from_casino": {
       "Picture": "park_party_girl",
       "Text": "Курьер щедро отсыпает тусовщице выигранные в казино монеты.\n<Предмет удалён: [Горсть монет]>",
       "Type": "Simple",
