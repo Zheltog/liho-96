@@ -6466,7 +6466,7 @@
       "Type": "Simple",
       "Transition": {
         "Type": "Frame",
-        "Next": "klumba_kanevsky_3"
+        "Next": "klumba_kanevsky_final"
       }
     },
     "klumba_kanevsky_3": {
