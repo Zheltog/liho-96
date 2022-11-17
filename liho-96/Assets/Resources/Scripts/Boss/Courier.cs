@@ -173,7 +173,7 @@ namespace Boss
         {
             return transform.position.y >= minShootingHeight &&
                    _fireAllowed &&
-                   cursorController.IsCursorInAimRect();
+                   cursorController.IsCursorInsideCrtLines;
         }
 
         private IEnumerator CheckCoolPistol()

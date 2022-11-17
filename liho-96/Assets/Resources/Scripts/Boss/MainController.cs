@@ -45,7 +45,7 @@ namespace Boss
             }
 
             // TODO: очень костыль
-            if (Input.GetMouseButtonDown(0) && _cursor.IsCursorInAimRect())
+            if (Input.GetMouseButtonDown(0) && _cursor.IsCursorInsideCrtLines)
             {
                 FinishPrintingOrUpdateRoundState();
             }

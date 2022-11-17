@@ -6,36 +6,29 @@ namespace Boss
     {
         public Texture2D cursorDefault;
         public Texture2D cursorAim;
-        public int aimAreaCenterX = 320;
-        public int aimAreaCenterY = 320;
-        public int aimAreaWith = 575;
-        public int aimAreaHeight = 245;
         public int cursorSize = 20;
+        public bool IsCursorInsideCrtLines { get; set; }
 
         private Texture2D _currentCursor;
-        private Rect _aimRect;
 
         private void Start() {
             Cursor.visible = false;
             _currentCursor = cursorDefault;
-            _aimRect = new Rect(
-                aimAreaCenterX - aimAreaWith / 2,
-                aimAreaCenterY - aimAreaHeight / 2,
-                aimAreaWith,
-                aimAreaHeight
-            );
         }
 
         private void Update()
         {
-            _currentCursor = IsCursorInAimRect() ? cursorAim : cursorDefault;
+            _currentCursor = IsCursorInsideCrtLines ? cursorAim : cursorDefault;
         }
 
-        public bool IsCursorInAimRect()
+        public void SetCursorInsideCrtLines()
         {
-            var mousePosition = Input.mousePosition;
-            var mousePosition2D = new Vector2(mousePosition.x, mousePosition.y);
-            return _aimRect.Contains(mousePosition2D);
+            IsCursorInsideCrtLines = true;
+        }
+
+        public void SetCursorOutsideCrtLines()
+        {
+            IsCursorInsideCrtLines = false;
         }
 
         public void OnGUI()
