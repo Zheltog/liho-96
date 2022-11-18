@@ -166,8 +166,7 @@ namespace Boss
         
         public void GameOver(string comment)
         {
-            GameFinishedStateHolder.GameOverComment = comment;
-            GameFinishedStateHolder.GameOverSound = GameFinishedStateHolder.DefaultGameOverSound;
+            GameFinishedStateHolder.InitGameOverStuff(comment, null, null);
             _scenes.LoadGameOverScene();
         }
 

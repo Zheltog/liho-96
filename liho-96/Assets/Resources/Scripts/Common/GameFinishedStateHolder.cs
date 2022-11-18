@@ -11,5 +11,12 @@
         public static string GameOverSound = "game_over";
 
         public static string DefaultGameOverSound = "game_over";
+
+        public static void InitGameOverStuff(string comment, string sound, string music)
+        {
+            GameOverComment = comment;
+            GameOverSound = sound ?? DefaultGameOverSound;
+            GameOverMusic = music;
+        }
     }
 }

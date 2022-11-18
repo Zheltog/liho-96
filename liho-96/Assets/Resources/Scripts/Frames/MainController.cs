@@ -5,6 +5,7 @@ using Common;
 using Newtonsoft.Json;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 namespace Frames
 {
@@ -195,9 +196,7 @@ namespace Frames
         // TODO: это костыль, надо доработать конфиг
         private void HandleGameOver(Frame info)
         {
-            GameFinishedStateHolder.GameOverComment = info.Text;
-            GameFinishedStateHolder.GameOverMusic = info.Music;
-            GameFinishedStateHolder.GameOverSound = info.Sound;
+            GameFinishedStateHolder.InitGameOverStuff(info.Text, info.Sound, info.Music);
             _sceneController.LoadGameOverScene();
         }
     }

@@ -11,7 +11,7 @@ namespace Common
         public float volumeChangeSpeed = 0.02f;
 
         private AudioClip _textSoundClip;
-        private string _currentMusic;
+        private string _currentMusic = "";
         private float _originalMusicVolume;
 
         private void Start()

@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using UnityEngine;
 
 namespace Common
@@ -7,12 +8,22 @@ namespace Common
     {
         public TextBoxController text;
         public AudioController player;
+        public GameObject newGameButton;
         
         private ScenesController _scenes;
+        private bool _initialized;
 
         private void Start()
         {
             StartCoroutine(SuspendedStart());
+        }
+
+        private void Update()
+        {
+            if (_initialized && !text.IsPrinting && !newGameButton.activeSelf)
+            {
+                newGameButton.SetActive(true);
+            }
         }
 
         public void NewGame()
@@ -47,6 +58,8 @@ namespace Common
             {
                 player.NewMusic(gameOverMusic);
             }
+
+            _initialized = true;
         }
     }
 }
