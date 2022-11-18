@@ -1,11 +1,7 @@
 ﻿using System;
-using System.Collections;
 using System.Linq;
-using System.Text;
-using Newtonsoft.Json;
 using TMPro;
 using UnityEngine;
-using UnityEngine.Networking;
 
 namespace Final
 {
@@ -17,8 +13,6 @@ namespace Final
         public TMP_InputField cvvInput;
 
         private MainController _mainController;
-        
-        private const string AnswerPartFour = "-ad910bff6414@";
 
         private void Start()
         {
@@ -29,7 +23,7 @@ namespace Final
         {
             if (ValidateCardInfo(numberInput.text, monthInput.text, yearInput.text, cvvInput.text))
             {
-                StartCoroutine(CheckAnswer());
+                _mainController.Finish();
             }
         }
         
@@ -59,12 +53,6 @@ namespace Final
                 return false;
             }
             
-            if (StateHolder.Token == null)
-            {
-                _mainController.Success();
-                return false;
-            }
-            
             return true;
         }
 
@@ -79,41 +67,6 @@ namespace Final
                            ? thisNum
                            : ((thisNum *= 2) > 9 ? thisNum - 9 : thisNum))
                        .Sum() % 10 == 0;
-        }
-        
-        private IEnumerator CheckAnswer() {
-            var uwr = UnityWebRequest.Post(ApiInfoHolder.QuestDomain + ApiInfoHolder.CheckTaskPath, "");
-            var responseJson = JsonUtility.ToJson(new CheckTaskRequest(ApiInfoHolder.TaskId, CreateAnswerString()));
-            uwr.uploadHandler = new UploadHandlerRaw(Encoding.UTF8.GetBytes(responseJson));
-            uwr.SetRequestHeader("Content-Type", "application/json");
-            uwr.SetRequestHeader("Authorization", "Bearer " + StateHolder.Token);
-            yield return uwr.SendWebRequest();
-
-            if (uwr.result != UnityWebRequest.Result.Success) {
-                Debug.Log(uwr.error);
-                _mainController.Error(CommentsHolder.CheckTaskError);
-            } else {
-                var responseString = uwr.downloadHandler.text;
-                var response = JsonConvert.DeserializeObject<CheckTaskResponse>(responseString);
-                if (response.points != null)
-                {
-                    Debug.Log(response.points);
-                    _mainController.Success();
-                }
-                else
-                {
-                    _mainController.Error(CommentsHolder.CheckTaskError);
-                }
-            }
-        }
-
-        private string CreateAnswerString()
-        {
-            var magic = Frames.StateHolder.Magic;
-            return ApiInfoHolder.AnswerPartOne + magic + 
-                   ApiInfoHolder.AnswerPartTwo + magic +
-                   ApiInfoHolder.AnswerPartTree + magic +
-                   AnswerPartFour;
         }
     }
 }
