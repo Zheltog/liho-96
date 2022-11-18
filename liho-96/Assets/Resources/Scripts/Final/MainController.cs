@@ -11,6 +11,7 @@ namespace Final
         public GameObject skipButton;
         public ImageController image;
         public TextBoxController text;
+        public Vector2 nextButtonPositionAfterFirstError = new Vector2(-150, -200);
         
         private CardInfoController _card;
         private ScenesController _scenes;
@@ -26,21 +27,9 @@ namespace Final
 
         private void Update()
         {
-            if (text.IsPrinting) return;
-
-            if (cardFields.activeSelf) return;
-            
+            if (text.IsPrinting || cardFields.activeSelf) return;
             cardFields.SetActive(true);
-
-            if (!nextButton.activeSelf)
-            {
-                nextButton.SetActive(true);
-            }
-            
-            if (!skipButton.activeSelf)
-            {
-                skipButton.SetActive(true);
-            }
+            nextButton.SetActive(true);
         }
 
         public void Next()
@@ -74,6 +63,11 @@ namespace Final
         {
             text.NewText(comment);
             LeonidAngry();
+
+            if (skipButton.activeSelf) return;
+            
+            skipButton.SetActive(true);
+            nextButton.transform.localPosition = nextButtonPositionAfterFirstError;
         }
 
         public void Finish()
@@ -81,9 +75,6 @@ namespace Final
             SceneStateHolder.LastSavableSceneState = SceneState.Frame;
             _scenes.LoadFramesScene();
             GameFinishedController.IsGameFinished = true;
-            
-            nextButton.SetActive(false);
-            skipButton.SetActive(false);
         }
 
         private void LeonidAngry()
