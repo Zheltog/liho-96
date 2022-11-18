@@ -34,6 +34,12 @@ namespace Frames
             CurrentFrame = Frames[frameName];
             CurrentFrameName = frameName;
         }
+
+        // TODO: нужно для костыля с гейм-овером
+        public static Frame FrameForName(string frameName)
+        {
+            return Frames[frameName];
+        }
     
         public static void UpdateFlags(List<FlagAction> actions)
         {

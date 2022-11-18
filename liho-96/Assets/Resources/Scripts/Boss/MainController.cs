@@ -103,9 +103,6 @@ namespace Boss
                 case FightState.ItemChosen:
                     NextPhase();
                     break;
-                case FightState.GameOver:
-                    _scenes.Exit();
-                    break;
                 case FightState.LastItemChosen:
                     Win();
                     break;
@@ -169,14 +166,9 @@ namespace Boss
         
         public void GameOver(string comment)
         {
-            _currentFightState = FightState.GameOver;
-            courier.Rest();
-            _enemiesController.DisableAllEnemies();
-            dynamicStuff.SetActive(false);
-            gameOverImage.SetActive(true);
-            text.NewText(comment);
-            player.NewMusic("");
-            player.NewSound("game_over");
+            GameFinishedStateHolder.GameOverComment = comment;
+            GameFinishedStateHolder.GameOverSound = GameFinishedStateHolder.DefaultGameOverSound;
+            _scenes.LoadGameOverScene();
         }
 
         public void Win()
@@ -227,7 +219,7 @@ namespace Boss
 
         private enum FightState
         {
-            Initializing, NewPhase, Attack, ActionChoice, ItemChoosing, ItemChosen, LastItemChosen, GameOver
+            Initializing, NewPhase, Attack, ActionChoice, ItemChoosing, ItemChosen, LastItemChosen
         }
     }
 }

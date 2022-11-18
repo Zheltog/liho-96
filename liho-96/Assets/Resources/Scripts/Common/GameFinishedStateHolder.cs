@@ -9,5 +9,7 @@
         public static string GameOverMusic = "Earthbound Mother 2 (SNES) - Dr. Andonuts' Lab";
 
         public static string GameOverSound = "game_over";
+
+        public static string DefaultGameOverSound = "game_over";
     }
 }

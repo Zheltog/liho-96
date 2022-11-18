@@ -88,6 +88,15 @@ namespace Frames
                 case TransitionType.Frame:
                 {
                     var nextFrameName = transition.Next;
+
+                    // TODO: костыль костыль костыль
+                    var frame = StateHolder.FrameForName(nextFrameName);
+                    if (frame.Picture == "game_over")
+                    {
+                        HandleGameOver(frame);
+                        return;
+                    }
+                    
                     StateHolder.SetFrame(nextFrameName);
                     UpdateFrame();
                     break;
@@ -181,6 +190,15 @@ namespace Frames
                    && !Input.GetMouseButtonDown(0)
                    && !Input.GetMouseButtonDown(1)
                    && !Input.GetMouseButtonDown(2);
+        }
+
+        // TODO: это костыль, надо доработать конфиг
+        private void HandleGameOver(Frame info)
+        {
+            GameFinishedStateHolder.GameOverComment = info.Text;
+            GameFinishedStateHolder.GameOverMusic = info.Music;
+            GameFinishedStateHolder.GameOverSound = info.Sound;
+            _sceneController.LoadGameOverScene();
         }
     }
 }

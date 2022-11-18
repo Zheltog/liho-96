@@ -43,6 +43,11 @@ namespace Common
             SceneManager.LoadScene("AuthorsScene", LoadSceneMode.Single);
         }
 
+        public void LoadGameOverScene()
+        {
+            SceneManager.LoadScene("GameOverScene", LoadSceneMode.Single);
+        }
+
         public void Exit()
         {
             Debug.Log("QUIT");

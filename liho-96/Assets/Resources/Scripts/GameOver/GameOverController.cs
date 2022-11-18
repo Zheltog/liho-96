@@ -28,7 +28,7 @@ namespace Common
         
         private IEnumerator SuspendedStart()
         {
-            yield return new WaitForSeconds(0.5f);
+            yield return new WaitForSeconds(0.1f);
             _scenes = GetComponent<ScenesController>();
             var gameOverComment = GameFinishedStateHolder.GameOverComment;
             if (gameOverComment != null)
