@@ -74,7 +74,7 @@ namespace Final
         {
             SceneStateHolder.LastSavableSceneState = SceneState.Frame;
             _scenes.LoadFramesScene();
-            GameFinishedController.IsGameFinished = true;
+            GameFinishedStateHolder.IsGameFinished = true;
         }
 
         private void LeonidAngry()

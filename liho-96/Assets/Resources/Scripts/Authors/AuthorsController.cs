@@ -13,7 +13,7 @@ namespace Authors
 
         private void Start()
         {
-            var isGameFinished = GameFinishedController.IsGameFinished;
+            var isGameFinished = GameFinishedStateHolder.IsGameFinished;
             rolesOpened.SetActive(isGameFinished);
             rolesClosed.SetActive(!isGameFinished);
             secretGuestOpened.SetActive(isGameFinished);

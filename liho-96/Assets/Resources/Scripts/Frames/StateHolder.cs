@@ -14,7 +14,7 @@ namespace Frames
         
         public static State State { get; set; }
         
-        public static bool Initialized { get; private set; }
+        public static bool Initialized { get; set; }
         
         public static string LastMusic { get; set;  }
         

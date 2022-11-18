@@ -7,7 +7,7 @@ namespace Common
     {
         public void LoadPreviousScene()
         {
-            if (GameFinishedController.IsGameFinished)
+            if (GameFinishedStateHolder.IsGameFinished)
             {
                 Exit();
                 return;
