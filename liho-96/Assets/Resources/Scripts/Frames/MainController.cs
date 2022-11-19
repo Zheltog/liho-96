@@ -30,6 +30,14 @@ namespace Frames
                 StateHolder.Init(config);
                 StateHolder.SetFrame(config.StartingFrame);
                 StateHolder.State = State.Frame;
+            } 
+            else if (StateHolder.InitFromSave)
+            {
+                StateHolder.SetFrame(StateHolder.Save.FrameName);
+                StateHolder.Flags = StateHolder.Save.Flags;
+                StateHolder.LastMusic = StateHolder.Save.LastMusic;
+                
+                StateHolder.State = State.Frame;
             }
 
             _sceneController = GetComponent<ScenesController>();
@@ -149,6 +157,11 @@ namespace Frames
 
             player.NewMusic(music);
             player.NewSound(currentFrame.Sound);
+
+            if (currentFrame.Save == true)
+            {
+                StateHolder.CreateSave();
+            }
 
             var choicesList = currentFrame.Choices;
             if (choicesList != null)

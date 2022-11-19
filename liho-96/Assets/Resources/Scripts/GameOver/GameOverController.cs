@@ -10,6 +10,7 @@ namespace Common
         public AudioController player;
         public ImageController image;
         public GameObject newGameButton;
+        public GameObject loadGameButton;
         
         private ScenesController _scenes;
         private bool _initialized;
@@ -24,12 +25,18 @@ namespace Common
             if (_initialized && !text.IsPrinting && !newGameButton.activeSelf)
             {
                 newGameButton.SetActive(true);
+                loadGameButton.SetActive(true);
             }
         }
 
         public void NewGame()
         {
             _scenes.StartNewGame();
+        }
+        
+        public void LoadSave()
+        {
+            _scenes.LoadFramesSceneSave();
         }
 
         public void FinishText()

@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using UnityEngine;
 
 namespace Frames
 {
@@ -18,7 +19,11 @@ namespace Frames
         
         public static bool Initialized { get; set; }
         
-        public static string LastMusic { get; set;  }
+        public static bool InitFromSave { get; set; }
+        
+        public static Save Save { get; set; }
+        
+        public static string LastMusic { get; set; }
         
         public static string Magic { get; private set; }
 
@@ -64,10 +69,32 @@ namespace Frames
                 }
             }
         }
+
+        public static void CreateSave()
+        {
+            Debug.Log("Saving...");
+            Save = new Save(CurrentFrameName, new HashSet<string>(Flags), LastMusic);
+        }
     }
     
     public enum State
     {
         Start, Frame, Scene
+    }
+
+    public class Save
+    {
+        public Save(string frameName, HashSet<string> flags, string lastMusic)
+        {
+            FrameName = frameName;
+            Flags = flags;
+            LastMusic = lastMusic;
+        }
+
+        public string FrameName { get; set; }
+        
+        public HashSet<string> Flags { get; set; }
+        
+        public string LastMusic { get; set; }
     }
 }

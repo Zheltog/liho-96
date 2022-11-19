@@ -1,5 +1,5 @@
 {
-  "StartingFrame": "start",
+  "StartingFrame": "cafe_outside_car_stolen_choice",
   "StartingFlags": [
     "SmallMoney",
     "Lighter",
@@ -664,6 +664,7 @@
       "Music": "",
       "Text": "Гравийная дорога. Ряд гаражей. У одного из них приоткрыта дверь.",
       "Type": "Simple",
+      "Save": true,
       "Transition": {
         "Type": "Frame",
         "Next": "garage_1"
@@ -2867,6 +2868,7 @@
       "Music": "Barbie Super Model - Riding in Hollywood, CA",
       "Text": "Спустившись по лестнице вниз Учёный и Курьер оказываются в игорном зале. Приглушенный тёплый свет, стойкий запах табака.",
       "Type": "Simple",
+      "Save": true,
       "Transition": {
         "Type": "Frame",
         "Next": "casino_hall_0"
@@ -3700,6 +3702,7 @@
       "Music": "city_ambience",
       "Text": "Учёный: \"Не т-трогайте меня! Сволочи, увальни! Н-негодяи!\nЯ-я уважаемый н-научный сотрудник!\"",
       "Type": "Simple",
+      "Save": true,
       "Transition": {
         "Type": "Frame",
         "Next": "after_casino_bratki_1"
@@ -5162,6 +5165,7 @@
       "Music": "",
       "Text": " ! ! ! ! !",
       "Type": "Simple",
+      "Save": true,
       "Transition": {
         "Type": "Frame",
         "Next": "klumba_tuman_scientist_dead"
@@ -5987,6 +5991,7 @@
       "Picture": "klumba_vlada_smug",
       "Text": "Владилена: \"Готов ли ты присоединиться к «СИЛЕ»?\"",
       "Type": "Simple",
+      "Save": true,
       "Transition": {
         "Type": "Frame",
         "Next": "klumba_soldiers_vlada_next_10"

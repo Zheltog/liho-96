@@ -47,6 +47,12 @@ namespace Common
         {
             SceneManager.LoadScene("FrameScene", LoadSceneMode.Single);
         }
+
+        public void LoadFramesSceneSave()
+        {
+            StateHolder.InitFromSave = true;
+            LoadFramesScene();
+        }
         
         public void LoadFinalScene()
         {

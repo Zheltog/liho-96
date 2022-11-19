@@ -84,6 +84,11 @@ namespace Frames
         /// Список вариантов выбора. Только для кадра типа Choice.
         /// </summary>
         public List<Choice> Choices { get; set; }
+        
+        /// <summary>
+        /// Означает, что на этом кадре требуется автосохранение.
+        /// </summary>
+        public bool? Save { get; set; }
     }
 
     public enum FrameType
