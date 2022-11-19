@@ -23,6 +23,9 @@ namespace Common
             }
             switch (SceneStateHolder.LastSavableSceneState)
             {
+                case SceneState.GameOver:
+                    LoadGameOverScene();
+                    break;
                 case SceneState.Final:
                     LoadFinalScene();
                     break;

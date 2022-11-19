@@ -52,6 +52,7 @@ namespace Common
         private IEnumerator SuspendedStart()
         {
             yield return new WaitForSeconds(0.1f);
+            SceneStateHolder.LastSavableSceneState = SceneState.GameOver;
             _scenes = GetComponent<ScenesController>();
             
             var gameOverText = GameFinishedStateHolder.GameOverText;

@@ -7,6 +7,6 @@
 
     public enum SceneState
     {
-        Frame, Final
+        Frame, Final, GameOver
     }
 }
