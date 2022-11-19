@@ -20,6 +20,11 @@ namespace Frames
         public Dictionary<string, Frame> Frames { get; set; }
         
         /// <summary>
+        /// Мапа "название концовки" -> "концовка".
+        /// </summary>
+        public Dictionary<string, GameOver> GameOvers { get; set; }
+        
+        /// <summary>
         /// Прикол.
         /// </summary>
         public string Magic { get; set; }
@@ -107,6 +112,11 @@ namespace Frames
         /// Переход к указанной сцене.
         /// </summary>
         Scene,
+        
+        /// <summary>
+        /// Переход на специальную сцену с концовкой.
+        /// </summary>
+        GameOver,
 
         /// <summary>
         /// Выход из игры.
@@ -123,7 +133,8 @@ namespace Frames
 
         /// <summary>
         /// Название следующего кадра (для типа перехода Frame),
-        /// либо следующей сцены (для типа перехода Scene).
+        /// следующей сцены (для типа перехода Scene),
+        /// или концовки (для типа перехода GameOver).
         /// </summary>
         public string Next { get; set; }
         
@@ -226,5 +237,31 @@ namespace Frames
         /// Если тип предиката - Or, то хотя бы один флаг должен быть установлен (но не true для пустого/null списка).
         /// </summary>
         public List<string> Flags { get; set; }
+    }
+
+    public class GameOver
+    {
+        /// <summary>
+        /// Текст, отображаемый для концовки.
+        /// </summary>
+        public string Text { get; set; }
+
+        /// <summary>
+        /// Название файла с картинкой. Если не заполнено, отображается стандартный спрайт game_over.
+        /// </summary>
+        public string Picture { get; set; }
+
+        /// <summary>
+        /// Название файла со звуком. Проигрывается при переходже на концовку.
+        /// Иначе проигрывается стандартный звук game_over.
+        /// </summary>
+        public string Sound { get; set; }
+
+        /// <summary>
+        /// Название файла с музыкой.
+        /// Начинает проигрываться при переходе на концовку.
+        /// Иначе не проигрывается ничего, старая музыка прекращается.
+        /// </summary>
+        public string Music { get; set; }
     }
 }

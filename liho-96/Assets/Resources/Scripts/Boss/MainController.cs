@@ -166,7 +166,7 @@ namespace Boss
         
         public void GameOver(string comment)
         {
-            GameFinishedStateHolder.InitGameOverStuff(comment, null, null);
+            GameFinishedStateHolder.InitGameOver(comment, null, null, null, null);
             _scenes.LoadGameOverScene();
         }
 

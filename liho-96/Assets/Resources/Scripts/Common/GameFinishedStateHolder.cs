@@ -4,19 +4,23 @@
     {
         public static bool IsGameFinished { get; set; }
 
-        public static string GameOverComment = "Игра окончена!";
+        public static string GameOverText = "Игра окончена!";
 
-        public static string GameOverMusic = "Earthbound Mother 2 (SNES) - Dr. Andonuts' Lab";
+        public static string GameOverStartImage = "blank";
+        
+        public static string GameOverImage = "game_over";
+
+        public static string GameOverMusic = "";
 
         public static string GameOverSound = "game_over";
 
-        public static string DefaultGameOverSound = "game_over";
-
-        public static void InitGameOverStuff(string comment, string sound, string music)
+        public static void InitGameOver(string text, string image, string startImage, string sound, string music)
         {
-            GameOverComment = comment;
-            GameOverSound = sound ?? DefaultGameOverSound;
-            GameOverMusic = music;
+            GameOverText = text ?? GameOverText;
+            GameOverImage = image ?? GameOverImage;
+            GameOverStartImage = startImage ?? GameOverStartImage;
+            GameOverSound = sound ?? GameOverSound;
+            GameOverMusic = music ?? GameOverMusic;
         }
     }
 }

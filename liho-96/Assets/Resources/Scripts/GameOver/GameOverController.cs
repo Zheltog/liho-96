@@ -1,5 +1,5 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
+using Frames;
 using UnityEngine;
 
 namespace Common
@@ -8,6 +8,7 @@ namespace Common
     {
         public TextBoxController text;
         public AudioController player;
+        public ImageController image;
         public GameObject newGameButton;
         
         private ScenesController _scenes;
@@ -28,7 +29,7 @@ namespace Common
 
         public void NewGame()
         {
-            Frames.StateHolder.Initialized = false;
+            StateHolder.Initialized = false;
             _scenes.LoadFramesScene();
         }
 
@@ -41,10 +42,23 @@ namespace Common
         {
             yield return new WaitForSeconds(0.1f);
             _scenes = GetComponent<ScenesController>();
-            var gameOverComment = GameFinishedStateHolder.GameOverComment;
-            if (gameOverComment != null)
+            
+            var gameOverText = GameFinishedStateHolder.GameOverText;
+            if (gameOverText != null)
             {
-                text.NewText(gameOverComment);
+                text.NewText(gameOverText);
+            }
+
+            var gameOverStartImage = GameFinishedStateHolder.GameOverStartImage;
+            if (gameOverStartImage != null)
+            {
+                image.NewImageImmediate(gameOverStartImage);
+            }
+            
+            var gameOverImage = GameFinishedStateHolder.GameOverImage;
+            if (gameOverImage != null)
+            {
+                image.NewImage(gameOverImage);
             }
             
             var gameOverSound = GameFinishedStateHolder.GameOverSound;
@@ -58,7 +72,7 @@ namespace Common
             {
                 player.NewMusic(gameOverMusic);
             }
-
+            
             _initialized = true;
         }
     }

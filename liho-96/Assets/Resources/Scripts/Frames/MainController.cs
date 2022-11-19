@@ -89,15 +89,6 @@ namespace Frames
                 case TransitionType.Frame:
                 {
                     var nextFrameName = transition.Next;
-
-                    // TODO: костыль костыль костыль
-                    var frame = StateHolder.FrameForName(nextFrameName);
-                    if (frame.Picture == "game_over")
-                    {
-                        HandleGameOver(frame);
-                        return;
-                    }
-                    
                     StateHolder.SetFrame(nextFrameName);
                     UpdateFrame();
                     break;
@@ -123,6 +114,10 @@ namespace Frames
                 }
                 case TransitionType.Exit:
                     _sceneController.Exit();
+                    break;
+                case TransitionType.GameOver:
+                    var endingName = transition.Next;
+                    HandleGameOver(endingName);
                     break;
                 default:
                     throw new ArgumentOutOfRangeException();
@@ -192,11 +187,12 @@ namespace Frames
                    && !Input.GetMouseButtonDown(1)
                    && !Input.GetMouseButtonDown(2);
         }
-
-        // TODO: это костыль, надо доработать конфиг
-        private void HandleGameOver(Frame info)
+        
+        private void HandleGameOver(string endingName)
         {
-            GameFinishedStateHolder.InitGameOverStuff(info.Text, info.Sound, info.Music);
+            var ending = StateHolder.GameOvers[endingName];
+            var currentImage = StateHolder.CurrentFrame.Picture;
+            GameFinishedStateHolder.InitGameOver(ending.Text, ending.Picture, currentImage, ending.Sound, ending.Music);
             _sceneController.LoadGameOverScene();
         }
     }

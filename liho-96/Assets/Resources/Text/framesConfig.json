@@ -921,20 +921,11 @@
       "Text": "Курьер чувствует, как силы покидают его...",
       "Type": "Simple",
       "Transition": {
-        "Type": "Frame",
+        "Type": "GameOver",
         "Next": "garage_attack_game_over"
       }
     },
-    "garage_attack_game_over": {
-      "Picture": "game_over",
-      "Music": "",
-      "Sound": "game_over",
-      "Text": "Игра окончена!\nКурьер проиграл в схватке с безумцем из заброшенного гаража.",
-      "Type": "Simple",
-      "Transition": {
-        "Type": "Exit"
-      }
-    },
+    
     "garage_attack_hand": {
       "Picture": "garage_madman",
       "Text": "Курьер бьёт безумца кулаком в подбородок. Тот немного ослабляет хватку.",
@@ -3094,18 +3085,8 @@
       "Text": "Учёный: \"С-слушай, а мы в-ведь зачем-то ещё сюда шли, да? Н-не помню...\"",
       "Type": "Simple",
       "Transition": {
-        "Type": "Frame",
+        "Type": "GameOver",
         "Next": "casino_slots_game_over"
-      }
-    },
-    "casino_slots_game_over": {
-      "Picture": "game_over",
-      "Music": "",
-      "Sound": "game_over",
-      "Text": "Игра окончена!\nКурьер всю ночь просидел в казино и не забрал ЛИХО у бандитов.",
-      "Type": "Simple",
-      "Transition": {
-        "Type": "Exit"
       }
     },
     "casino_slots_exit": {
@@ -3767,7 +3748,7 @@
           "Text": "\"...\"",
           "Transition": {
             "Type": "Frame",
-            "Next": "after_casino_bratki_game_over"
+            "Next": "after_casino_bratki_fight"
           }
         },
         {
@@ -3792,18 +3773,8 @@
       "Text": "Браток: \"Ах ты гнида! Получай!\"",
       "Type": "Simple",
       "Transition": {
-        "Type": "Frame",
+        "Type": "GameOver",
         "Next": "after_casino_bratki_game_over"
-      }
-    },
-    "after_casino_bratki_game_over": {
-      "Picture": "game_over",
-      "Music": "",
-      "Sound": "game_over",
-      "Text": "Игра окончена!\nБратки избили Курьера и Учёного у входа в казино.\nКурьер не смог вернуть ЛИХО.",
-      "Type": "Simple",
-      "Transition": {
-        "Type": "Exit"
       }
     },
 
@@ -4005,19 +3976,11 @@
     },
     "after_casino_city_7": {
       "Picture": "city_walk_scientist_happy",
-      "Text": "Учёный: \"Да... Можешь не говорить, но я знаю, что ты меня понимаешь...\"",
+      "Text": "Учёный: \"Да... Можешь не говорить, но я знаю, что ты меня понимаешь.\"",
       "Type": "Simple",
       "Transition": {
-        "Type": "Frame",
+        "Type": "GameOver",
         "Next": "after_casino_city_game_over"
-      }
-    },
-    "after_casino_city_game_over": {
-      "Picture": "game_over",
-      "Text": "Игра окончена!\nВместо поисков ЛИХО Курьер и Учёный пошли гулять по городу.\nМожет, оно и правда того не стоило?",
-      "Type": "Simple",
-      "Transition": {
-        "Type": "Exit"
       }
     },
     "after_casino_city_go_to_klumba": {
@@ -5405,18 +5368,8 @@
       "Text": "Туман: \"Ну и баклан, внатуре...\"",
       "Type": "Simple",
       "Transition": {
-        "Type": "Frame",
+        "Type": "GameOver",
         "Next": "klumba_tuman_game_over"
-      }
-    },
-    "klumba_tuman_game_over": {
-      "Picture": "game_over",
-      "Music": "",
-      "Sound": "game_over",
-      "Text": "Игра окончена!\nКурьер погиб в стычке с Тумановской ОПГ.",
-      "Type": "Simple",
-      "Transition": {
-        "Type": "Exit"
       }
     },
  
@@ -6491,6 +6444,25 @@
         "Type": "Scene",
         "Next": "AuthorsScene"
       }
+    }
+  },
+  "GameOvers": {
+    "garage_attack_game_over": {
+      "Text": "Игра окончена!\nКурьер проиграл в схватке с безумцем из заброшенного гаража."
+    },
+    "casino_slots_game_over": {
+      "Text": "Игра окончена!\nКурьер всю ночь просидел в казино и не забрал ЛИХО у бандитов."
+    },
+    "after_casino_bratki_game_over": {
+      "Text": "Игра окончена!\nБратки избили Курьера и Учёного у входа в казино.\nКурьер не смог вернуть ЛИХО."
+    },
+    "after_casino_city_game_over": {
+      "Music": "Earthbound Mother 2 (SNES) - Dr. Andonuts' Lab",
+      "Sound": "",
+      "Text": "Игра окончена!\nВместо поисков ЛИХО Курьер и Учёный пошли гулять по городу.\nМожет, оно и правда того не стоило?"
+    },
+    "klumba_tuman_game_over": {
+      "Text": "Игра окончена!\nКурьер погиб в стычке с Тумановской ОПГ."
     }
   }
 }

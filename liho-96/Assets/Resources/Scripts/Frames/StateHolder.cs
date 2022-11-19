@@ -5,6 +5,8 @@ namespace Frames
     public class StateHolder
     {
         private static Dictionary<string, Frame> Frames { get; set; }
+        
+        public static Dictionary<string, GameOver> GameOvers { get; set; }
     
         public static Frame CurrentFrame { get; private set; }
         
@@ -19,10 +21,11 @@ namespace Frames
         public static string LastMusic { get; set;  }
         
         public static string Magic { get; private set; }
-    
+
         public static void Init(Config config)
         {
             Frames = config.Frames;
+            GameOvers = config.GameOvers;
             Flags = new HashSet<string>(config.StartingFlags);
             Magic = config.Magic;
             State = State.Start;

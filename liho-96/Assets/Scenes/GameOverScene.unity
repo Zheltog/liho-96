@@ -2844,7 +2844,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "> \u0417\u0430\u043D\u043E\u0432\u043E"
+  m_text: "> \u041D\u0430\u0447\u0430\u0442\u044C \u0441\u043D\u0430\u0447\u0430\u043B\u0430"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ed4e1291b97678349b35d914e99517a6, type: 2}
   m_sharedMaterial: {fileID: -7953744970066264230, guid: ed4e1291b97678349b35d914e99517a6, type: 2}
@@ -3419,6 +3419,7 @@ GameObject:
   - component: {fileID: 1667445123}
   - component: {fileID: 1667445122}
   - component: {fileID: 1667445121}
+  - component: {fileID: 1667445120}
   m_Layer: 5
   m_Name: Image
   m_TagString: Untagged
@@ -3446,6 +3447,25 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 80}
   m_SizeDelta: {x: 575, y: 245}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!95 &1667445120
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1667445118}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: e5725acf25a58784aa2ada412a2cd03d, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &1667445121
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3479,7 +3499,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 52de4dbff409272439a16f7ef714afdf, type: 3}
+  m_Sprite: {fileID: 21300000, guid: f9785071e6db1284da5a561a6129a5e6, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -3531,6 +3551,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   text: {fileID: 334938172}
   player: {fileID: 412730863}
+  image: {fileID: 1667445121}
   newGameButton: {fileID: 1196969814}
 --- !u!114 &1931767523
 MonoBehaviour:
