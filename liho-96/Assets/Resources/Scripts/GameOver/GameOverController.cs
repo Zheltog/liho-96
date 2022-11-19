@@ -55,16 +55,10 @@ namespace Common
                 text.NewText(gameOverText);
             }
 
-            var gameOverStartImage = GameFinishedStateHolder.GameOverStartImage;
-            if (gameOverStartImage != null)
-            {
-                image.NewImageImmediate(gameOverStartImage);
-            }
-            
             var gameOverImage = GameFinishedStateHolder.GameOverImage;
             if (gameOverImage != null)
             {
-                image.NewImage(gameOverImage);
+                image.NewImage(gameOverImage, ImageController.NewImageLoadType.JustLighter);
             }
             
             var gameOverSound = GameFinishedStateHolder.GameOverSound;

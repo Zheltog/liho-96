@@ -1,5 +1,5 @@
 {
-  "StartingFrame": "cafe_outside_car_stolen_choice",
+  "StartingFrame": "start",
   "StartingFlags": [
     "SmallMoney",
     "Lighter",

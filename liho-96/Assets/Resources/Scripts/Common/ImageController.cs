@@ -21,29 +21,10 @@ namespace Frames
         }
 
         /// <summary>
-        /// Сразу устанавливает изображение, без анимации затухания.
-        /// Нужно для начала игры и переходов между сценами.
-        /// </summary>
-        public void NewImageImmediate(string imageName)
-        {
-            if (!_initialized)
-            {
-                Start();
-            }
-            
-            if (imageName == null || imageName == _lastImageName)
-            {
-                return;
-            }
-            
-            setImage(imageName);
-        }
-    
-        /// <summary>
         /// Плавно переключает старое изображение на новое.
         /// Если это одно и то же изображение, анимация не проигрывается.
         /// </summary>
-        public void NewImage(string imageName)
+        public void NewImage(string imageName, NewImageLoadType loadType)
         {
             if (!_initialized)
             {
@@ -55,26 +36,48 @@ namespace Frames
                 return;
             }
 
+            switch (loadType)
+            {
+                case NewImageLoadType.DarkerThenLighter:
+                    DimImage();
+                    StartCoroutine(WaitAndSetNewImage(imageName));
+                    break;
+                case NewImageLoadType.JustLighter:
+                    SetNewImage(imageName);
+                    break;
+            }
+        }
+
+        public void DimImage()
+        {
             _animator.SetBool("lighting", false);
             _animator.SetBool("darking", true);
-            StartCoroutine(WaitAndSetNewImage(imageName));
         }
 
         private IEnumerator WaitAndSetNewImage(string imageName)
         {
             yield return new WaitForSeconds(darkingSeconds);
             
-            setImage(imageName);
-            
             _animator.SetBool("darking", false);
+            SetNewImage(imageName);
+        }
+
+        private void SetNewImage(string imageName)
+        {
+            SetImage(imageName);
             _animator.SetBool("lighting", true);
         }
 
-        private void setImage(string imageName)
+        private void SetImage(string imageName)
         {
             var sprite = Resources.Load<Sprite>("Images/" + imageName);
             _image.sprite = sprite;
             _lastImageName = imageName;
+        }
+
+        public enum NewImageLoadType
+        {
+            DarkerThenLighter, JustLighter
         }
     }
 }

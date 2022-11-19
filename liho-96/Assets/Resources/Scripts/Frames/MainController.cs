@@ -125,7 +125,7 @@ namespace Frames
                     break;
                 case TransitionType.GameOver:
                     var endingName = transition.Next;
-                    HandleGameOver(endingName);
+                    StartCoroutine(HandleGameOver(endingName));
                     break;
                 default:
                     throw new ArgumentOutOfRangeException();
@@ -147,7 +147,7 @@ namespace Frames
             textBox.NewText(currentFrame.Text);
             textBox.secondsBeforeNextSymbol = currentFrame.TextDelay ?? textBox.defaultSecondsBeforeNextSymbol;
             
-            image.NewImage(currentFrame.Picture);
+            image.NewImage(currentFrame.Picture, ImageController.NewImageLoadType.DarkerThenLighter);
 
             var music = currentFrame.Music;
             if (music != null)
@@ -201,11 +201,13 @@ namespace Frames
                    && !Input.GetMouseButtonDown(2);
         }
         
-        private void HandleGameOver(string endingName)
+        private IEnumerator HandleGameOver(string endingName)
         {
             var ending = StateHolder.GameOvers[endingName];
-            var currentImage = StateHolder.CurrentFrame.Picture;
-            GameFinishedStateHolder.InitGameOver(ending.Text, ending.Picture, currentImage, ending.Sound, ending.Music);
+            GameFinishedStateHolder.InitGameOver(ending.Text, ending.Picture, ending.Sound, ending.Music);
+            textBox.NewText(" ");
+            image.DimImage();
+            yield return new WaitForSeconds(0.5f);
             _sceneController.LoadGameOverScene();
         }
     }

@@ -79,12 +79,12 @@ namespace Final
 
         private void LeonidAngry()
         {
-            image.NewImage("leonid_angry");
+            image.NewImage("leonid_angry", ImageController.NewImageLoadType.DarkerThenLighter);
         }
         
         private void LeonidNorm()
         {
-            image.NewImage("leonid_norm");
+            image.NewImage("leonid_norm", ImageController.NewImageLoadType.DarkerThenLighter);
         }
     }
 }
