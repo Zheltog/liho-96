@@ -29,8 +29,7 @@ namespace Common
 
         public void NewGame()
         {
-            StateHolder.Initialized = false;
-            _scenes.LoadFramesScene();
+            _scenes.StartNewGame();
         }
 
         public void FinishText()

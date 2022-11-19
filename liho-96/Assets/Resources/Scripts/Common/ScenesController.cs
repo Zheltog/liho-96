@@ -1,3 +1,4 @@
+using Frames;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -9,7 +10,15 @@ namespace Common
         {
             if (GameFinishedStateHolder.IsGameFinished)
             {
-                Exit();
+                if (Application.platform == RuntimePlatform.WebGLPlayer)
+                {
+                    StartNewGame();
+                }
+                else
+                {
+                    Exit();
+                }
+
                 return;
             }
             switch (SceneStateHolder.LastSavableSceneState)
@@ -21,6 +30,12 @@ namespace Common
                     LoadFramesScene();
                     break;
             }
+        }
+
+        public void StartNewGame()
+        {
+            StateHolder.Initialized = false;
+            LoadFramesScene();
         }
 
         public void LoadSceneForName(string sceneName)
