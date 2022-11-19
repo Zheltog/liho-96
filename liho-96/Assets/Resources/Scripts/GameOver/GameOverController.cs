@@ -27,6 +27,11 @@ namespace Common
                 newGameButton.SetActive(true);
                 loadGameButton.SetActive(true);
             }
+
+            if (Utils.SpaceOrEnterPressed() && text.IsPrinting)
+            {
+                text.FinishPrinting();
+            }
         }
 
         public void NewGame()

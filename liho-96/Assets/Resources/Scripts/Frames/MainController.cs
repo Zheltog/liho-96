@@ -51,7 +51,7 @@ namespace Frames
 
         private void Update()
         {
-            if (SpaceOrEnterPressed() && !choices.WaitingForChoice)
+            if (Utils.SpaceOrEnterPressed() && !choices.WaitingForChoice)
             {
                 NextFrame();
             }
@@ -190,15 +190,6 @@ namespace Frames
                 yield return new WaitUntil(() => !textBox.IsPrinting);
                 choices.NewChoices(availableChoices);
             }
-        }
-        
-        private static bool SpaceOrEnterPressed()
-        {
-            return (Input.GetKey(KeyCode.Space) || Input.GetKey(KeyCode.Return))
-                   && Input.anyKeyDown
-                   && !Input.GetMouseButtonDown(0)
-                   && !Input.GetMouseButtonDown(1)
-                   && !Input.GetMouseButtonDown(2);
         }
         
         private IEnumerator HandleGameOver(string endingName)
