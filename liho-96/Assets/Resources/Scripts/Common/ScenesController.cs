@@ -12,6 +12,7 @@ namespace Common
             {
                 if (Application.platform == RuntimePlatform.WebGLPlayer)
                 {
+                    GameFinishedStateHolder.IsGameFinished = false;
                     StartNewGame();
                 }
                 else
