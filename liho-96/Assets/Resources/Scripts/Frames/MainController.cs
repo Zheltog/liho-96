@@ -38,6 +38,7 @@ namespace Frames
                 StateHolder.LastMusic = StateHolder.Save.LastMusic;
                 
                 StateHolder.State = State.Frame;
+                StateHolder.InitFromSave = false;
             }
 
             _sceneController = GetComponent<ScenesController>();

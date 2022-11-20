@@ -48,6 +48,7 @@ namespace Common
 
         public void LoadFramesScene()
         {
+            SceneStateHolder.LastSavableSceneState = SceneState.Frame;
             SceneManager.LoadScene("FrameScene", LoadSceneMode.Single);
         }
 
@@ -59,6 +60,7 @@ namespace Common
         
         public void LoadFinalScene()
         {
+            SceneStateHolder.LastSavableSceneState = SceneState.Final;
             SceneManager.LoadScene("FinalScene", LoadSceneMode.Single);
         }
 
@@ -69,6 +71,7 @@ namespace Common
 
         public void LoadGameOverScene()
         {
+            SceneStateHolder.LastSavableSceneState = SceneState.GameOver;
             SceneManager.LoadScene("GameOverScene", LoadSceneMode.Single);
         }
 

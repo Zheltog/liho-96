@@ -22,7 +22,6 @@ namespace Final
             _scenes = GetComponent<ScenesController>();
             text.NewText(CommentsHolder.CardInfo);
             LeonidNorm();
-            SceneStateHolder.LastSavableSceneState = SceneState.Final;
         }
 
         private void Update()
@@ -72,7 +71,6 @@ namespace Final
 
         public void Finish()
         {
-            SceneStateHolder.LastSavableSceneState = SceneState.Frame;
             _scenes.LoadFramesScene();
             GameFinishedStateHolder.IsGameFinished = true;
         }
