@@ -885,7 +885,7 @@ MonoBehaviour:
   skipButton: {fileID: 595266842}
   image: {fileID: 796043733}
   text: {fileID: 1804880759}
-  nextButtonXAfterFirstError: -150
+  nextButtonPositionAfterFirstError: {x: -150, y: -200}
 --- !u!114 &330855081
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2946,7 +2946,7 @@ MonoBehaviour:
           m_CallState: 2
         - m_Target: {fileID: 1350471689}
           m_TargetAssemblyTypeName: Common.ButtonTextStyleController, Assembly-CSharp
-          m_MethodName: OnMouseOver
+          m_MethodName: SetUnderline
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -2974,7 +2974,7 @@ MonoBehaviour:
           m_CallState: 2
         - m_Target: {fileID: 1350471689}
           m_TargetAssemblyTypeName: Common.ButtonTextStyleController, Assembly-CSharp
-          m_MethodName: OnMouseExit
+          m_MethodName: SetNormal
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}

@@ -60,7 +60,6 @@ namespace Common
         
         public void LoadFinalScene()
         {
-            SceneStateHolder.LastSavableSceneState = SceneState.Final;
             SceneManager.LoadScene("FinalScene", LoadSceneMode.Single);
         }
 
