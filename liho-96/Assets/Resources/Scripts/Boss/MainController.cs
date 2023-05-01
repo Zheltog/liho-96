@@ -26,6 +26,9 @@ namespace Boss
         private CursorController _cursor;
         private FightState _currentFightState = FightState.Initializing;
 
+        public string[] cheatCode = {"s", "k", "i", "p"};
+        private int _currentCheatInputIndex = 0;
+
         private void Start()
         {
             _timeRemainingBeforeNextRest = phaseSeconds;
@@ -49,8 +52,33 @@ namespace Boss
             {
                 FinishPrintingOrUpdateRoundState();
             }
+
+            if (Input.anyKeyDown)
+            {
+                CheckCheatCode();
+            }
         }
-        
+
+        private void CheckCheatCode()
+        {
+            // введен следующий символ чит-кода
+            if (Input.GetKeyDown(cheatCode[_currentCheatInputIndex]))
+            {
+                _currentCheatInputIndex++;
+                
+                // если весь чит-код введен, пропускаем битву с боссом
+                if (_currentCheatInputIndex == cheatCode.Length)
+                {
+                    Debug.Log("Cheat code used! Skipping boss fight...");
+                    Win();
+                }
+            }
+            // введен неверный символ, обнуляем ввод
+            else {
+                _currentCheatInputIndex = 0;    
+            }
+        }
+
         public void ChooseItem(Item item)
         {
             _currentFightState = FightState.ItemChosen;
